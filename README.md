@@ -1,1 +1,1 @@
-# Sistema de geração de orçamentos automático (SGOA)
+# Sistema de orçamentos automátizado (SOA)
