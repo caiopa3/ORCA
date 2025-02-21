@@ -1,1 +1,1 @@
-# Sistema de orçamentos automátizado (SOA)
+# Orçamentos rápidos, computadorizados e automatizados (ORCA)
