@@ -1,20 +1,72 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient; 
+using System.IO;
+using MigraDoc.DocumentObjectModel;
+using MigraDoc.DocumentObjectModel.Tables;
+using MigraDoc.Rendering;
+using PdfSharp.Pdf;
+using System.Data.SqlClient;
 
 namespace ORCA
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public string servidor = "srv1889.hstgr.io";
+        public string bd = "u202947255_orca";
+        public string usr = "u202947255_root";
+        public string senha = "TCCorca123";
+        public string connectionString;
+
+        public Login()
         {
             InitializeComponent();
+            connectionString = $"SERVER={servidor}; PORT=3306; DATABASE={bd}; UID={usr}; PASSWORD={senha};";
+            MessageBox.Show(connectionString);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string username = textBoxUsername.Text;
+            string password = textBoxPassword.Text;
+
+            using (MySqlConnection conexao = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conexao.Open();
+
+                    string query = "SELECT COUNT(*) FROM users WHERE username = @username AND password = @password";
+                    using (MySqlCommand comando = new MySqlCommand(query, conexao))
+                    {
+                        comando.Parameters.AddWithValue("@username", username);
+                        comando.Parameters.AddWithValue("@password", password);
+
+                        object resultado = comando.ExecuteScalar();
+                        int count = Convert.ToInt32(resultado);
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Login realizado com sucesso!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Usuário ou senha incorretos.");
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show($"Erro ao conectar no banco de dados:\n{ex.Message}");
+                }
+            }
+
         }
     }
 }
