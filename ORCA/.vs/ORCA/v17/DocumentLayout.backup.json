@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\",
+  "WorkspaceRootPath": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F29051EF-F53B-4E53-9DDD-A719CF027E26}|ORCA\\ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\orca\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F29051EF-F53B-4E53-9DDD-A719CF027E26}|ORCA\\ORCA.csproj|C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\orca\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F29051EF-F53B-4E53-9DDD-A719CF027E26}|ORCA\\ORCA.csproj|solutionrelative:orca\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F29051EF-F53B-4E53-9DDD-A719CF027E26}|ORCA\\ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\orca\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F29051EF-F53B-4E53-9DDD-A719CF027E26}|ORCA\\ORCA.csproj|c:\\users\\caiopa3\\desktop\\orca\\orca\\orca\\orca\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F29051EF-F53B-4E53-9DDD-A719CF027E26}|ORCA\\ORCA.csproj|solutionrelative:orca\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -18,25 +18,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\Login.cs",
+              "DocumentMoniker": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA\\Login.cs",
               "RelativeDocumentMoniker": "ORCA\\Login.cs",
-              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\Login.cs",
+              "ToolTip": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA\\Login.cs",
               "RelativeToolTip": "ORCA\\Login.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwBkAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwC8AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-21T17:59:04.788Z",
               "EditorCaption": ""
@@ -45,9 +37,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Login.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\Login.cs",
+              "DocumentMoniker": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA\\Login.cs",
               "RelativeDocumentMoniker": "ORCA\\Login.cs",
-              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\Login.cs [Design]",
+              "ToolTip": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA\\Login.cs [Design]",
               "RelativeToolTip": "ORCA\\Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-21T13:46:38.544Z",

@@ -33,7 +33,7 @@ namespace ORCA
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = textBoxUsername.Text;
+            string email = textBoxUsername.Text;
             string password = textBoxPassword.Text;
 
             using (MySqlConnection conexao = new MySqlConnection(connectionString))
@@ -42,10 +42,10 @@ namespace ORCA
                 {
                     conexao.Open();
 
-                    string query = "SELECT COUNT(*) FROM users WHERE username = @username AND password = @password";
+                    string query = "SELECT COUNT(*) FROM usuario WHERE email = @email AND senha = @password";
                     using (MySqlCommand comando = new MySqlCommand(query, conexao))
                     {
-                        comando.Parameters.AddWithValue("@username", username);
+                        comando.Parameters.AddWithValue("@email", email);
                         comando.Parameters.AddWithValue("@password", password);
 
                         object resultado = comando.ExecuteScalar();
