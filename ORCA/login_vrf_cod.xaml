@@ -1,0 +1,14 @@
+﻿<Window x:Class="ORCA.login_vrf_cod"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ORCA"
+        mc:Ignorable="d"
+        Title="login_vrf_cod" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="txtCodigo" TextWrapping="Wrap" Text="TextBox" Margin="102,116,542,273"/>
+        <Button x:Name="btnVerificar" Content="Button" Margin="69,217,508,180" Click="btnVerificar_Click_1"/>
+
+    </Grid>
+</Window>
