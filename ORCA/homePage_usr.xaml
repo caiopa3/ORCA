@@ -1,0 +1,12 @@
+﻿<Window x:Class="ORCA.homePage_usr"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Orçamentos" Height="450" Width="800">
+    <StackPanel Margin="10">
+        <Button Content="Criar Orçamento" Click="BtnCriarOrcamento_Click" Width="150" Margin="0,0,0,10" />
+
+        <ScrollViewer Height="350">
+            <WrapPanel Name="wrapPanelOrcamentos" />
+        </ScrollViewer>
+    </StackPanel>
+</Window>

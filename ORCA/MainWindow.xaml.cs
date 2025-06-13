@@ -51,6 +51,18 @@ namespace ORCA
                         if (count > 0)
                         {
                             MessageBox.Show("Login realizado com sucesso!");
+
+                            string query_permissao = "SELECT permissao FROM usuario WHERE email = @email AND senha = @password";
+                            MySqlCommand comando_permissao = new MySqlCommand(query_permissao, conexao);
+                            object resultado_permissao = comando_permissao.ExecuteScalar();
+                            string permissao = Convert.ToString(resultado_permissao);
+
+                            if (permissao == "usr")
+                            {
+                                homePage_usr homePage_Usr = new homePage_usr();
+                                homePage_Usr.Show();
+                                this.Close();
+                            } // Falta o do adm
                         }
                         else
                         {

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\
 ORCA
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\internet.info\Desktop\ORCA\ORCA\App.xaml
-4241044951
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\App.xaml
+5849322766
 
-9-1636854578
+101901985968
 222-1448646605
-login_alt_senha.xaml;login_esq_senha.xaml;login_vrf_cod.xaml;MainWindow.xaml;
+homePage_usr.xaml;login_alt_senha.xaml;login_esq_senha.xaml;login_vrf_cod.xaml;MainWindow.xaml;
 
-True
+False
 
