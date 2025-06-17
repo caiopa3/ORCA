@@ -20,10 +20,10 @@ namespace ORCA
     /// </summary>
     public partial class homePage_usr : Window
     {
-        public string servidor = "localhost";
+        public string servidor = "srv1889.hstgr.io";
         public string bd = "u202947255_orca";
-        public string usr = "root";
-        public string senha = "";
+        public string usr = "u202947255_root";
+        public string senha = "TCCorca123";
         public string connectionString;
 
         private int contadorOrcamentos = 1;
@@ -36,13 +36,14 @@ namespace ORCA
 
         private void BtnCriarOrcamento_Click(object sender, RoutedEventArgs e)
         {
-            string nome = $"Orçamento {contadorOrcamentos++}";
-
-            int id = InserirOrcamentoNoBanco(nome);
-            if (id > 0)
+            InputBox("Criar Orçamento", "Digite o nome do orçamento:", "Novo Orçamento", nome =>
             {
-                CriarOrcamentoVisual(id, nome);
-            }
+                int id = InserirOrcamentoNoBanco(nome);
+                if (id > 0)
+                {
+                    CriarOrcamentoVisual(id, nome);
+                }
+            });
         }
 
 
@@ -158,7 +159,6 @@ namespace ORCA
                     int id = reader.GetInt32(0);
                     string nome = reader.GetString(1);
                     CriarOrcamentoVisual(id, nome);
-                    contadorOrcamentos++;
                 }
             }
             catch (Exception ex)
@@ -169,6 +169,7 @@ namespace ORCA
 
         private void InputBox(string title, string prompt, string defaultValue, Action<string> onConfirm)
         {
+
             Window inputWindow = new Window
             {
                 Title = title,

@@ -15,10 +15,10 @@ namespace ORCA
 
     public partial class MainWindow : Window
     {
-        public string servidor = "localhost";
+        public string servidor = "srv1889.hstgr.io";
         public string bd = "u202947255_orca";
-        public string usr = "root";
-        public string senha = "";
+        public string usr = "u202947255_root";
+        public string senha = "TCCorca123";
         public string connectionString;
         public MainWindow()
         {
@@ -54,7 +54,10 @@ namespace ORCA
 
                             string query_permissao = "SELECT permissao FROM usuario WHERE email = @email AND senha = @password";
                             MySqlCommand comando_permissao = new MySqlCommand(query_permissao, conexao);
+                            comando_permissao.Parameters.AddWithValue("@email", email);
+                            comando_permissao.Parameters.AddWithValue("@password", password);
                             object resultado_permissao = comando_permissao.ExecuteScalar();
+
                             string permissao = Convert.ToString(resultado_permissao);
 
                             if (permissao == "usr")

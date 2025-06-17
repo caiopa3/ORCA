@@ -69,7 +69,7 @@ namespace ORCA {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ORCA;V1.0.0.0;component/login_vrf_cod.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ORCA;component/login_vrf_cod.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\login_vrf_cod.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
