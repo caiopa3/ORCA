@@ -62,7 +62,7 @@ namespace ORCA
 
                             if (permissao == "usr")
                             {
-                                homePage_usr homePage_Usr = new homePage_usr();
+                                homePage_usr homePage_Usr = new homePage_usr(email);
                                 homePage_Usr.Show();
                                 this.Close();
                             } // Falta o do adm

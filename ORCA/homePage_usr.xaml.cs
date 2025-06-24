@@ -25,11 +25,13 @@ namespace ORCA
         public string usr = "u202947255_root";
         public string senha = "TCCorca123";
         public string connectionString;
+        public string email = "";
 
         private int contadorOrcamentos = 1;
-        public homePage_usr()
+        public homePage_usr(string e)
         {
             InitializeComponent();
+            email = e;
             connectionString = $"SERVER={servidor}; PORT=3306; DATABASE={bd}; UID={usr}; PASSWORD={senha};";
             CarregarOrcamentosExistentes();
         }
@@ -115,9 +117,10 @@ namespace ORCA
             {
                 using MySqlConnection conn = new MySqlConnection(connectionString);
                 conn.Open();
-                string query = "INSERT INTO orcamentos (nome) VALUES (@Nome); SELECT LAST_INSERT_ID();";
+                string query = "INSERT INTO orcamentos (nome, usr_email) VALUES (@Nome, @Email); SELECT LAST_INSERT_ID();";
                 using MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nome", nome);
+                cmd.Parameters.AddWithValue("@Email", email); // ← relaciona orçamento com o e-mail do usuário
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }
             catch (Exception ex)
@@ -151,8 +154,9 @@ namespace ORCA
             {
                 using MySqlConnection conn = new MySqlConnection(connectionString);
                 conn.Open();
-                string query = "SELECT id, nome FROM orcamentos";
+                string query = "SELECT id, nome FROM orcamentos WHERE usr_email = @Email";
                 using MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Email", email);
                 using MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
