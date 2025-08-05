@@ -22,10 +22,22 @@ namespace ORCA
     {
         private readonly HttpClient httpClient = new HttpClient();
         private readonly string email;
-        public login_vrf_cod(string emailUsuario)
+
+        public string servidor = "";
+        public string bd = "";
+        public string usr = "";
+        public string senha = "";
+
+        public login_vrf_cod(string emailUsuario, string s, string b, string u, string se)
         {
             InitializeComponent();
+
             email = emailUsuario;
+            servidor = s;
+            bd = b;
+            usr = u;
+            senha = se;
+
         }
 
         private async Task<string> VerificarCodigoAsync(string email, string codigo)

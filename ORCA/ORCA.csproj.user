@@ -7,6 +7,15 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="criar_orca.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="homePage_adm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="homePage_ges.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="homePage_usr.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

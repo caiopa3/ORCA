@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA.csproj": {}
+    "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA.csproj": {
+    "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA.csproj",
+        "projectUniqueName": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj",
         "projectName": "ORCA",
-        "projectPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA.csproj",
+        "projectPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj",
         "packagesPath": "C:\\Users\\internet.info\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\obj\\",
+        "outputPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -82,7 +82,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

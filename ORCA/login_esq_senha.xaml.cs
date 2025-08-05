@@ -20,10 +20,21 @@ namespace ORCA
     /// </summary>
     public partial class login_esq_senha : Window
     {
+        public string servidor = "";
+        public string bd = "";
+        public string usr = "";
+        public string senha = "";
+
         private readonly HttpClient httpClient = new HttpClient();
-        public login_esq_senha()
+        public login_esq_senha(string s, string b, string u, string se)
         {
             InitializeComponent();
+
+            servidor = s;
+            bd = b;
+            usr = u;
+            senha = se;
+
         }
         private async Task<string> EnviarCodigoPorEmailAsync(string email)
         {
@@ -55,7 +66,7 @@ namespace ORCA
             if (resposta.Contains("sucesso"))
             {
                 // Abrir a janela de verificação de código, passando o email
-                login_vrf_cod login_vrf_cod = new login_vrf_cod(email);
+                login_vrf_cod login_vrf_cod = new login_vrf_cod(email, servidor, bd, usr, senha);
                 login_vrf_cod.Show();
 
                 // Fecha esta janela

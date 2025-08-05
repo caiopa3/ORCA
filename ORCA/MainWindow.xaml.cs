@@ -15,10 +15,10 @@ namespace ORCA
 
     public partial class MainWindow : Window
     {
-        public string servidor = "srv1889.hstgr.io";
-        public string bd = "u202947255_orca";
-        public string usr = "u202947255_root";
-        public string senha = "TCCorca123";
+        public string servidor = "localhost";
+        public string bd = "banco";
+        public string usr = "root";
+        public string senha = "";
         public string connectionString;
         public MainWindow()
         {
@@ -62,10 +62,25 @@ namespace ORCA
 
                             if (permissao == "usr")
                             {
-                                homePage_usr homePage_Usr = new homePage_usr(email);
+                                homePage_usr homePage_Usr = new homePage_usr(email, servidor, bd, usr, senha);
                                 homePage_Usr.Show();
                                 this.Close();
-                            } // Falta o do adm
+                            }
+
+                            if (permissao == "adm")
+                            {
+                                homePage_adm homePage_Adm = new homePage_adm(email, servidor, bd, usr, senha);
+                                homePage_Adm.Show();
+                                this.Close();
+
+                            } 
+
+                            if (permissao == "ges")
+                            {
+                                homePage_ges homePage_Ges = new homePage_ges(email, servidor, bd, usr, senha);
+                                homePage_Ges.Show();
+                                this.Close();
+                            } 
                         }
                         else
                         {
@@ -82,7 +97,7 @@ namespace ORCA
 
         private void click(object sender, MouseButtonEventArgs e)
         {
-            login_esq_senha login_esq_senha = new login_esq_senha();
+            login_esq_senha login_esq_senha = new login_esq_senha(servidor, bd, usr, senha);
             login_esq_senha.Show();
             this.Close();
         }

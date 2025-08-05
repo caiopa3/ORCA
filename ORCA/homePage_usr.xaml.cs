@@ -20,19 +20,25 @@ namespace ORCA
     /// </summary>
     public partial class homePage_usr : Window
     {
-        public string servidor = "srv1889.hstgr.io";
-        public string bd = "u202947255_orca";
-        public string usr = "u202947255_root";
-        public string senha = "TCCorca123";
+        public string servidor = "";
+        public string bd = "";
+        public string usr = "";
+        public string senha = "";
         public string connectionString;
         public string email = "";
 
         private int contadorOrcamentos = 1;
-        public homePage_usr(string e)
+        public homePage_usr(string e, string s, string b, string u, string se)
         {
             InitializeComponent();
             email = e;
+            servidor = s;
+            bd = b;
+            usr = u;
+            senha = se;
+
             connectionString = $"SERVER={servidor}; PORT=3306; DATABASE={bd}; UID={usr}; PASSWORD={senha};";
+
             CarregarOrcamentosExistentes();
         }
 
@@ -111,13 +117,40 @@ namespace ORCA
             }
         }
 
-        private int InserirOrcamentoNoBanco(string nome)
-        {
+        private int PesquisarNomeNoBanco(string nome) {
+
             try
             {
                 using MySqlConnection conn = new MySqlConnection(connectionString);
                 conn.Open();
-                string query = "INSERT INTO orcamentos (nome, usr_email) VALUES (@Nome, @Email); SELECT LAST_INSERT_ID();";
+                string pesquisa = "SELECT @Nome FROM orcamento WHERE orcamento.usr_email = @Email;";
+                using MySqlCommand cmd2 = new MySqlCommand(pesquisa, conn);
+                cmd2.Parameters.AddWithValue("@Nome", nome);
+                cmd2.Parameters.AddWithValue("@Email", email); // ← relaciona orçamento com o e-mail do usuário
+                return Convert.ToInt32(cmd2.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir no banco: " + ex.Message);
+                return -1;
+            }
+
+             
+
+        }
+
+        private int InserirOrcamentoNoBanco(string nome)
+        {
+            string name = nome;
+            int teste = 0;
+
+            teste = PesquisarNomeNoBanco(name);
+
+            try
+            {
+                using MySqlConnection conn = new MySqlConnection(connectionString);
+                conn.Open();
+                string query = "INSERT INTO orcamento (nome, usr_email) VALUES (@Nome, @Email); SELECT LAST_INSERT_ID();";
                 using MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nome", nome);
                 cmd.Parameters.AddWithValue("@Email", email); // ← relaciona orçamento com o e-mail do usuário
@@ -128,6 +161,7 @@ namespace ORCA
                 MessageBox.Show("Erro ao inserir no banco: " + ex.Message);
                 return -1;
             }
+
         }
 
         private void AtualizarNomeOrcamentoNoBanco(int id, string novoNome)
@@ -136,7 +170,7 @@ namespace ORCA
             {
                 using MySqlConnection conn = new MySqlConnection(connectionString);
                 conn.Open();
-                string query = "UPDATE orcamentos SET nome = @Nome WHERE id = @Id";
+                string query = "UPDATE orcamento SET nome = @Nome WHERE id = @Id";
                 using MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nome", novoNome);
                 cmd.Parameters.AddWithValue("@Id", id);
@@ -154,7 +188,7 @@ namespace ORCA
             {
                 using MySqlConnection conn = new MySqlConnection(connectionString);
                 conn.Open();
-                string query = "SELECT id, nome FROM orcamentos WHERE usr_email = @Email";
+                string query = "SELECT id, nome FROM orcamento WHERE usr_email = @Email";
                 using MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Email", email);
                 using MySqlDataReader reader = cmd.ExecuteReader();

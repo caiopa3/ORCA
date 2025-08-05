@@ -1,0 +1,13 @@
+﻿<Window x:Class="ORCA.homePage_adm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ORCA"
+        mc:Ignorable="d"
+        Title="homePage_adm" Height="450" Width="800">
+    <Grid>
+        <Button Content="Criar Orçamento" HorizontalAlignment="Left" Margin="101,116,0,0" VerticalAlignment="Top" Height="50" Width="109" Click="Button_Click"/>
+
+    </Grid>
+</Window>
