@@ -1,0 +1,18 @@
+﻿<Window x:Class="ORCA.SelecionarUsuariosWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ORCA"
+        mc:Ignorable="d"
+        Title="SelecionarUsuariosWindow" Height="450" Width="300">
+    <Grid>
+        
+        <StackPanel Margin="10">
+            <TextBlock Text="Selecione os usuários que poderão usar este modelo:" Margin="0,0,0,10"/>
+            <ListBox x:Name="listaUsuarios" SelectionMode="Multiple" DisplayMemberPath="Email" Height="250"/>
+            <Button Content="Confirmar" Click="Confirmar_Click" Margin="0,10,0,0"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

@@ -28,6 +28,12 @@
     <Compile Update="login_vrf_cod.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="NovaColunaWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SelecionarUsuariosWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="homePage_usr.xaml">
@@ -43,6 +49,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NovaColunaWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SelecionarUsuariosWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
