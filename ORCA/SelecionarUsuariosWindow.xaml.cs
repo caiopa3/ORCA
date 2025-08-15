@@ -31,15 +31,27 @@ namespace ORCA
 
         private void Confirmar_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var item in listaUsuarios.SelectedItems)
+            if (listaUsuarios.SelectedItems.Count == 0)
             {
-                var usuario = item as UsuarioInfo;
-                if (usuario != null)
-                    UsuariosSelecionados.Add(usuario.Id);
+
+                MessageBox.Show("Selecione um usuário!");
+
             }
 
-            this.DialogResult = true;
-            this.Close();
+            else {
+
+                foreach (var item in listaUsuarios.SelectedItems)
+                {
+                    var usuario = item as UsuarioInfo;
+                    if (usuario != null)
+                        UsuariosSelecionados.Add(usuario.Id);
+                }
+
+                this.DialogResult = true;
+                this.Close();
+
+            }
+
         }
 
         private void CarregarUsuarios()
