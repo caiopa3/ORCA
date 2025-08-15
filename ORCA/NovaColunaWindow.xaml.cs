@@ -49,6 +49,8 @@ namespace ORCA
         {
             if (cmbTipoDado.Text == "Número")
             {
+                txtBlockOperacao.Visibility = Visibility.Visible;
+                txtBlockRelacionamento.Visibility = Visibility.Visible;
                 txtOperacao.Visibility = Visibility.Visible;
                 txtRelacionamento.Visibility = Visibility.Visible;
             }

@@ -26,14 +26,44 @@ namespace ORCA
     public partial class criar_orca : Window
     {
         private ObservableCollection<ExpandoObject> dados = new ObservableCollection<ExpandoObject>();
+        public string servidor = "";
+        public string bd = "";
+        public string usr = "";
+        public string senha = "";
+        public string email = "";
 
-        // Aqui coloque o ID do usuário que está criando (gestor/admin)
-        private int usuarioCriadorId = 1;
+        private int usuarioCriadorId;
 
-        public criar_orca()
+        public criar_orca(string e, string s, string b, string u, string se)
         {
             InitializeComponent();
-            InitializeComponent();
+
+            email = e;
+            servidor = s;
+            bd = b;
+            usr = u;
+            senha = se;
+
+            string connectionString = $"SERVER={servidor}; PORT=3306; DATABASE={bd}; UID={usr}; PASSWORD={senha};";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = "SELECT id FROM usuario WHERE email = @Email";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Email", email);
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        usuarioCriadorId = Convert.ToInt32(result);
+                    }
+                }
+            }
 
             meuDataGrid.ItemsSource = dados;
 

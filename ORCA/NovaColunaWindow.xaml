@@ -20,7 +20,7 @@
                 <ComboBoxItem Content="Booleano"/>
             </ComboBox>
 
-            <TextBlock Text="Operação:" Visibility="Hidden"/>
+            <TextBlock x:Name="txtBlockOperacao" Text="Operação:" Visibility="Hidden"/>
             <ComboBox x:Name="txtOperacao" Margin="0,5" Visibility="Hidden">
                 <ComboBoxItem Content="Soma (+)"/>
                 <ComboBoxItem Content="Subtração (-)"/>
@@ -28,7 +28,7 @@
                 <ComboBoxItem Content="Divisão (/)"/>
             </ComboBox>
 
-            <TextBlock Text="Relacionamento com outra coluna:" Visibility="Hidden"/>
+            <TextBlock x:Name="txtBlockRelacionamento" Text="Relacionamento com outra coluna:" Visibility="Hidden"/>
             <ComboBox x:Name="txtRelacionamento" Margin="0,5" Visibility="Hidden">
                 <ComboBoxItem Content="Soma (+)"/>
                 <ComboBoxItem Content="Subtração (-)"/>

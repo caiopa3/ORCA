@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,13 +22,14 @@ namespace ORCA
     {
         public string servidor = "";
         public string bd = "";
-        public string usr = "oot";
+        public string usr = "";
         public string senha = "";
+        public string email = "";
 
         public homePage_adm(string e, string s, string b, string u, string se)
         {
             InitializeComponent();
-
+            email = e;
             servidor = s;
             bd = b;
             usr = u;
@@ -36,7 +38,7 @@ namespace ORCA
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            criar_orca criarOrcamento = new criar_orca();
+            criar_orca criarOrcamento = new criar_orca(email, servidor, bd, usr, senha);
             criarOrcamento.Show();
             this.Close();
         }

@@ -273,3 +273,16 @@ D:\Familia Costa\Downloads\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.sourcelink.js
 D:\Familia Costa\Downloads\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.Up2Date
 D:\Familia Costa\Downloads\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.genruntimeconfig.cache
 D:\Familia Costa\Downloads\ORCA\ORCA\obj\Debug\net8.0-windows\ref\ORCA.dll
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_usr.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\criar_orca.g.cs
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_adm.g.cs
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_ges.g.cs
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_usr.g.cs
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.g.cs
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.g.cs
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\criar_orca.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_adm.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_ges.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.baml
