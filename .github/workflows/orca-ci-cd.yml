@@ -1,0 +1,55 @@
+name: ORCA CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
+    runs-on: windows-latest
+
+    env:
+      Solution_Name: ORCA.sln
+      Test_Project_Path: ORCA.Tests/ORCA.Tests.csproj
+      Wap_Project_Directory: ORCA
+      Wap_Project_Path: ORCA/ORCA.csproj
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Instalar .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Adicionar MSBuild ao PATH
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Executar testes
+      run: dotnet test $env:Test_Project_Path
+
+    - name: Restaurar aplicação
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
+
+    - name: Compilar aplicação
+      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
+
+    - name: Publicar artefato (Build do ORCA)
+      uses: actions/upload-artifact@v4
+      with:
+        name: ORCA-App
+        path: ORCA/bin/${{ matrix.configuration }}/net8.0-windows/**/*
+
