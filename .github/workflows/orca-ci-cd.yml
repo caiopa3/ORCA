@@ -8,31 +8,16 @@ on:
 
 jobs:
   build:
+    runs-on: windows-latest
+
     strategy:
       matrix:
         configuration: [Debug, Release]
 
-    runs-on: ubuntu-latest
-
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: orca
-        ports:
-          - 3306:3306
-        options: >-
-          --health-cmd="mysqladmin ping -h localhost -proot"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=5
-
     env:
-      Solution_Name: ORCA.sln
-      Test_Project_Path: ORCA.Testes/ORCA.Testes.csproj
-      Wap_Project_Path: ORCA/ORCA.csproj
-      CONNECTION_STRING: "server=127.0.0.1;port=3306;database=orca;uid=root;pwd=root;"
+      Solution_Name: ORCA/ORCA/ORCA.sln
+      Test_Project_Path: ORCA/ORCA.Testes/ORCA.Testes.csproj
+      Wap_Project_Path: ORCA/ORCA/ORCA.csproj
 
     steps:
     - name: Checkout código
@@ -45,17 +30,44 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Restaurar dependências
+    - name: Adicionar MSBuild ao PATH
+      uses: microsoft/setup-msbuild@v2
+
+    # Sobe container MySQL para rodar os testes
+    - name: Start MySQL
+      run: |
+        docker run --name mysql-8 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=banco -p 3306:3306 -d mysql:8
+        # espera o container iniciar
+        for i in {1..30}; do
+          if docker exec mysql-8 mysqladmin ping -h "127.0.0.1" --password=root --silent; then
+            break
+          fi
+          echo "Esperando MySQL iniciar..."
+          sleep 2
+        done
+
+    # Restaura os pacotes
+    - name: Restaurar pacotes
       run: dotnet restore $env:Solution_Name
 
-    - name: Compilar solução
-      run: dotnet build $env:Solution_Name --configuration ${{ matrix.configuration }} --no-restore
-
+    # Executa os testes apontando para o MySQL do container
     - name: Executar testes
-      run: dotnet test $env:Test_Project_Path --logger "trx;LogFileName=test_results.trx" --results-directory ./TestResults --no-build
+      env:
+        MYSQL_HOST: 127.0.0.1
+        MYSQL_PORT: 3306
+        MYSQL_USER: root
+        MYSQL_PASSWORD: root
+        MYSQL_DATABASE: banco
+      run: dotnet test $env:Test_Project_Path --logger "trx;LogFileName=test_results.trx"
+
+    # Compila a aplicação
+    - name: Compilar aplicação
+      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
 
     - name: Publicar artefato (Build do ORCA)
       uses: actions/upload-artifact@v4
       with:
         name: ORCA-App
-        path: ORCA/bin/${{ matrix.configuration }}/net8.0-windows/**/*
+        path: ORCA/ORCA/bin/${{ matrix.configuration }}/net8.0-windows/**/*
