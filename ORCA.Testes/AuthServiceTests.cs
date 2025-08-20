@@ -4,78 +4,66 @@ using ORCA.Services;
 namespace ORCA.Testes
 {
     [TestClass]
-    public class AuthServiceTests
+public class AuthServiceTests
+{
+    private string _connectionString;
+
+    [TestInitialize]
+    public void Setup()
     {
-        private AuthService _authService;
+        _connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING")
+                          ?? "server=127.0.0.1;port=3306;database=orca;uid=root;pwd=root;";
 
-        [TestInitialize]
-        public void Setup()
+        using (var conexao = new MySqlConnection(_connectionString))
         {
-            // use os mesmos dados do ORCA/ORCA.csproj
-            string servidor = "localhost";
-            string bd = "banco";
-            string usr = "root";
-            string senha = "";
+            conexao.Open();
 
-            _authService = new AuthService(servidor, bd, usr, senha);
-        }
+            // Cria a tabela
+            string createTable = @"
+                CREATE TABLE IF NOT EXISTS usuario (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    email TEXT,
+                    senha VARCHAR(255),
+                    permissao VARCHAR(3)
+                );";
+            new MySqlCommand(createTable, conexao).ExecuteNonQuery();
 
-        [TestMethod]
-        public void TestLoginValido_DeveRetornarTrue()
-        {
-            // arrange
-            string email = "yslan_usr@gmail.com";  // precisa existir no banco
-            string password = "123";           // senha que você cadastrou no banco
+            // Limpa tabela
+            new MySqlCommand("DELETE FROM usuario;", conexao).ExecuteNonQuery();
 
-            // act
-            bool resultado = _authService.ValidarLogin(email, password);
-
-            // assert
-            Assert.IsTrue(resultado, "Login válido deveria retornar true.");
-        }
-
-        [TestMethod]
-        public void TestLoginInvalido_DeveRetornarFalse()
-        {
-            string email = "naoexiste@gmail.com";
-            string password = "senhaerrada";
-
-            bool resultado = _authService.ValidarLogin(email, password);
-
-            Assert.IsFalse(resultado, "Login inválido deveria retornar false.");
-        }
-
-        [TestMethod]
-        public void TestObterPermissao_UsuarioUsr()
-        {
-            string email = "yslan_usr@gmail.com"; // no banco, este usuário deve ter permissao = 'usr'
-            string password = "123";
-
-            string permissao = _authService.ObterPermissao(email, password);
-
-            Assert.AreEqual("usr", permissao, "Permissão esperada era 'usr'.");
-        }
-
-        [TestMethod]
-        public void TestObterPermissao_UsuarioAdm()
-        {
-            string email = "yslan_adm@gmail.com"; // no banco, este deve ter permissao = 'adm'
-            string password = "123";
-
-            string permissao = _authService.ObterPermissao(email, password);
-
-            Assert.AreEqual("adm", permissao, "Permissão esperada era 'adm'.");
-        }
-
-        [TestMethod]
-        public void TestObterPermissao_UsuarioGes()
-        {
-            string email = "yslan_ges@gmail.com"; // no banco, este deve ter permissao = 'ges'
-            string password = "123";
-
-            string permissao = _authService.ObterPermissao(email, password);
-
-            Assert.AreEqual("ges", permissao, "Permissão esperada era 'ges'.");
+            // Insere seus fakes
+            string insert = @"
+                INSERT INTO usuario (email, senha, permissao) VALUES
+                ('yslan_adm@gmail.com', '123', 'adm'),
+                ('yslan_usr@gmail.com', '123', 'usr'),
+                ('yslan_ges@gmail.com', '123', 'ges');";
+            new MySqlCommand(insert, conexao).ExecuteNonQuery();
         }
     }
+
+    [TestMethod]
+    public void TestLoginValido_DeveRetornarTrue()
+    {
+        var auth = new AuthService("localhost", "orca", "root", "root");
+        bool result = auth.ValidarLogin("yslan_adm@gmail.com", "123");
+        Assert.IsTrue(result, "Login válido deveria retornar true.");
+    }
+
+    [TestMethod]
+    public void TestLoginInvalido_DeveRetornarFalse()
+    {
+        var auth = new AuthService("localhost", "orca", "root", "root");
+        bool result = auth.ValidarLogin("fake@fake.com", "errado");
+        Assert.IsFalse(result, "Login inválido deveria retornar false.");
+    }
+
+    [TestMethod]
+    public void TestObterPermissao_Adm()
+    {
+        var auth = new AuthService("localhost", "orca", "root", "root");
+        string permissao = auth.ObterPermissao("yslan_adm@gmail.com", "123");
+        Assert.AreEqual("adm", permissao);
+    }
+}
+
 }
