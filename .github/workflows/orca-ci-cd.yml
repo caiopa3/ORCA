@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest   # << trocado de windows para ubuntu
 
     services:
       mysql:
@@ -21,16 +21,13 @@ jobs:
         ports:
           - 3306:3306
         options: >-
-          --health-cmd="mysqladmin ping -h localhost -uroot -proot"
+          --health-cmd="mysqladmin ping -h localhost"
           --health-interval=10s
           --health-timeout=5s
           --health-retries=5
 
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
 
       - name: Instalar .NET
         uses: actions/setup-dotnet@v4
@@ -43,7 +40,7 @@ jobs:
       - name: Compilar solução
         run: dotnet build ORCA/ORCA.sln --configuration Debug --no-restore
 
-      - name: Aguardar MySQL iniciar
+      - name: Esperar MySQL iniciar
         run: |
           echo "Aguardando MySQL..."
           for i in {1..30}; do
@@ -51,24 +48,10 @@ jobs:
             sleep 2
           done
 
-      - name: Rodar seed no MySQL
-        run: |
-          echo "Rodando seed.sql no MySQL..."
-          mysql -h 127.0.0.1 -P 3306 -u orca -porca banco < seed.sql
+      - name: Executar seed no banco
+        run: mysql -h 127.0.0.1 -P 3306 -u orca -porca banco < ORCA/Database/seed.sql
 
       - name: Rodar testes
         env:
           ConnectionStrings__DefaultConnection: "server=127.0.0.1;port=3306;user=orca;password=orca;database=banco"
         run: dotnet test ORCA/ORCA.Testes/ORCA.Testes.csproj --configuration Debug --no-build --logger "trx;LogFileName=test_results.trx"
-
-      - name: Publicar resultados de teste
-        uses: actions/upload-artifact@v4
-        with:
-          name: TestResults
-          path: '**/TestResults/*.trx'
-
-      - name: Publicar artefato (Build do ORCA)
-        uses: actions/upload-artifact@v4
-        with:
-          name: ORCA-App
-          path: ORCA/bin/Debug/net8.0-windows/**
