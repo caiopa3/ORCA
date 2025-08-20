@@ -28,16 +28,17 @@ jobs:
     - name: Instalar MySQL
       run: |
         choco install mysql -y
-        choco install mysql.workbench -y
-        net start MySQL
 
     - name: Configurar MySQL
       run: |
         echo "CREATE DATABASE IF NOT EXISTS banco;" > init.sql
+        echo "CREATE USER IF NOT EXISTS 'orca'@'localhost' IDENTIFIED BY '123';" >> init.sql
+        echo "GRANT ALL PRIVILEGES ON banco.* TO 'orca'@'localhost';" >> init.sql
+        echo "FLUSH PRIVILEGES;" >> init.sql
         type seed.sql >> init.sql
         "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -proot < init.sql
       shell: cmd
-
+      
     - name: Restaurar pacotes
       run: dotnet restore ORCA/ORCA.sln
 
