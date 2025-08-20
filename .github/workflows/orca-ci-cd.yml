@@ -8,34 +8,31 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
+    runs-on: ubuntu-latest
 
     services:
       mysql:
         image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: banco
-          MYSQL_USER: orca
-          MYSQL_PASSWORD: 123
+          MYSQL_DATABASE: orca
         ports:
           - 3306:3306
-        volumes:
-          - ./Database/seed.sql:/docker-entrypoint-initdb.d/seed.sql:ro
         options: >-
-          --health-cmd="mysqladmin ping -h localhost -uroot -proot"
+          --health-cmd="mysqladmin ping -h localhost -proot"
           --health-interval=10s
           --health-timeout=5s
-          --health-retries=3
-
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
+          --health-retries=5
 
     env:
-      Solution_Name: ORCA/ORCA.sln
-      Test_Project_Path: ORCA.Tests/ORCA.Tests.csproj
+      Solution_Name: ORCA.sln
+      Test_Project_Path: ORCA.Testes/ORCA.Testes.csproj
       Wap_Project_Path: ORCA/ORCA.csproj
+      CONNECTION_STRING: "server=127.0.0.1;port=3306;database=orca;uid=root;pwd=root;"
 
     steps:
     - name: Checkout código
@@ -48,27 +45,14 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Adicionar MSBuild ao PATH
-      uses: microsoft/setup-msbuild@v2
-
-    - name: Restaurar pacotes
+    - name: Restaurar dependências
       run: dotnet restore $env:Solution_Name
 
-    - name: Aguardar MySQL iniciar
-      run: |
-        echo "Aguardando MySQL ficar disponível..."
-        for /l %%i in (1,1,30) do (
-          "C:\Program Files\Git\usr\bin\curl.exe" http://127.0.0.1:3306 || (timeout /t 2 >nul) 
-        )
-      shell: cmd
+    - name: Compilar solução
+      run: dotnet build $env:Solution_Name --configuration ${{ matrix.configuration }} --no-restore
 
     - name: Executar testes
-      run: dotnet test $env:Test_Project_Path
-
-    - name: Compilar aplicação
-      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration
-      env:
-        Configuration: ${{ matrix.configuration }}
+      run: dotnet test $env:Test_Project_Path --logger "trx;LogFileName=test_results.trx" --results-directory ./TestResults --no-build
 
     - name: Publicar artefato (Build do ORCA)
       uses: actions/upload-artifact@v4
