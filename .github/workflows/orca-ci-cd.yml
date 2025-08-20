@@ -26,10 +26,10 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Restaurar pacotes
-      run: dotnet restore ORCA.sln
+      run: dotnet restore ORCA/ORCA.sln
 
     - name: Compilar solução
-      run: dotnet build ORCA.sln --configuration ${{ matrix.configuration }} --no-restore
+      run: dotnet build ORCA/ORCA.sln --configuration ${{ matrix.configuration }} --no-restore
 
     - name: Executar testes
       run: dotnet test ORCA.Testes/ORCA.Testes.csproj --configuration ${{ matrix.configuration }} --no-build --logger "trx;LogFileName=test_results.trx"
