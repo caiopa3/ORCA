@@ -29,71 +29,53 @@ namespace ORCA
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             string email = textBoxEmail.Text;
             string password = textBoxSenha.Text;
 
-            using (MySqlConnection conexao = new MySqlConnection(connectionString))
+            var authService = new ORCA.Services.AuthService(servidor, bd, usr, senha);
+
+            try
             {
-                try
+                if (authService.ValidarLogin(email, password))
                 {
-                    conexao.Open();
+                    MessageBox.Show("Login realizado com sucesso!");
 
-                    string query = "SELECT COUNT(*) FROM usuario WHERE email = @email AND senha = @password";
-                    using (MySqlCommand comando = new MySqlCommand(query, conexao))
+                    string permissao = authService.ObterPermissao(email, password);
+
+                    if (permissao == "usr")
                     {
-                        comando.Parameters.AddWithValue("@email", email);
-                        comando.Parameters.AddWithValue("@password", password);
-
-                        object resultado = comando.ExecuteScalar();
-                        int count = Convert.ToInt32(resultado);
-
-                        if (count > 0)
-                        {
-                            MessageBox.Show("Login realizado com sucesso!");
-
-                            string query_permissao = "SELECT permissao FROM usuario WHERE email = @email AND senha = @password";
-                            MySqlCommand comando_permissao = new MySqlCommand(query_permissao, conexao);
-                            comando_permissao.Parameters.AddWithValue("@email", email);
-                            comando_permissao.Parameters.AddWithValue("@password", password);
-                            object resultado_permissao = comando_permissao.ExecuteScalar();
-
-                            string permissao = Convert.ToString(resultado_permissao);
-
-                            if (permissao == "usr")
-                            {
-                                homePage_usr homePage_Usr = new homePage_usr(email, servidor, bd, usr, senha);
-                                homePage_Usr.Show();
-                                this.Close();
-                            }
-
-                            if (permissao == "adm")
-                            {
-                                homePage_adm homePage_Adm = new homePage_adm(email, servidor, bd, usr, senha);
-                                homePage_Adm.Show();
-                                this.Close();
-
-                            } 
-
-                            if (permissao == "ges")
-                            {
-                                homePage_ges homePage_Ges = new homePage_ges(email, servidor, bd, usr, senha);
-                                homePage_Ges.Show();
-                                this.Close();
-                            } 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Usuário ou senha incorretos.");
-                        }
+                        homePage_usr homePage_Usr = new homePage_usr(email, servidor, bd, usr, senha);
+                        homePage_Usr.Show();
+                        this.Close();
+                    }
+                    else if (permissao == "adm")
+                    {
+                        homePage_adm homePage_Adm = new homePage_adm(email, servidor, bd, usr, senha);
+                        homePage_Adm.Show();
+                        this.Close();
+                    }
+                    else if (permissao == "ges")
+                    {
+                        homePage_ges homePage_Ges = new homePage_ges(email, servidor, bd, usr, senha);
+                        homePage_Ges.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Permissão desconhecida.");
                     }
                 }
-                catch (MySqlException ex)
+                else
                 {
-                    MessageBox.Show($"Erro ao conectar no banco de dados:\n{ex.Message}");
+                    MessageBox.Show("Usuário ou senha incorretos.");
                 }
             }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"Erro ao conectar no banco de dados:\n{ex.Message}");
+            }
         }
+
 
         private void click(object sender, MouseButtonEventArgs e)
         {
