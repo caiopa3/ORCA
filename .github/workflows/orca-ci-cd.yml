@@ -8,50 +8,55 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest   # << trocado de windows para ubuntu
+    runs-on: windows-latest
 
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: banco
-          MYSQL_USER: orca
-          MYSQL_PASSWORD: orca
-        ports:
-          - 3306:3306
-        options: >-
-          --health-cmd="mysqladmin ping -h localhost"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=5
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
 
     steps:
-      - uses: actions/checkout@v4
+    - name: Checkout código
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
-      - name: Instalar .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 8.0.x
+    - name: Instalar .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
 
-      - name: Restaurar pacotes
-        run: dotnet restore ORCA/ORCA.sln
+    - name: Instalar MySQL
+      run: |
+        choco install mysql -y
+        choco install mysql.workbench -y
+        net start MySQL
 
-      - name: Compilar solução
-        run: dotnet build ORCA/ORCA.sln --configuration Debug --no-restore
+    - name: Configurar MySQL
+      run: |
+        echo "CREATE DATABASE IF NOT EXISTS banco;" > init.sql
+        type seed.sql >> init.sql
+        "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -proot < init.sql
+      shell: cmd
 
-      - name: Esperar MySQL iniciar
-        run: |
-          echo "Aguardando MySQL..."
-          for i in {1..30}; do
-            (echo > /dev/tcp/127.0.0.1/3306) >/dev/null 2>&1 && break
-            sleep 2
-          done
+    - name: Restaurar pacotes
+      run: dotnet restore ORCA/ORCA.sln
 
-      - name: Executar seed no banco
-        run: mysql -h 127.0.0.1 -P 3306 -u orca -porca banco < ORCA/Database/seed.sql
+    - name: Compilar solução
+      run: dotnet build ORCA/ORCA.sln --configuration ${{ matrix.configuration }} --no-restore
 
-      - name: Rodar testes
-        env:
-          ConnectionStrings__DefaultConnection: "server=127.0.0.1;port=3306;user=orca;password=orca;database=banco"
-        run: dotnet test ORCA/ORCA.Testes/ORCA.Testes.csproj --configuration Debug --no-build --logger "trx;LogFileName=test_results.trx"
+    - name: Executar testes
+      env:
+        ConnectionStrings__DefaultConnection: "server=127.0.0.1;port=3306;user=root;password=root;database=banco"
+      run: dotnet test ORCA.Testes/ORCA.Testes.csproj --configuration ${{ matrix.configuration }} --no-build --logger "trx;LogFileName=test_results.trx"
+
+    - name: Publicar resultados de teste
+      uses: actions/upload-artifact@v4
+      with:
+        name: TestResults
+        path: '**/TestResults/*.trx'
+
+    - name: Publicar artefato (Build do ORCA)
+      uses: actions/upload-artifact@v4
+      with:
+        name: ORCA-App
+        path: ORCA/bin/${{ matrix.configuration }}/net8.0-windows/**
