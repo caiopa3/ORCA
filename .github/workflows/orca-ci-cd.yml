@@ -10,9 +10,32 @@ jobs:
   build:
     runs-on: windows-latest
 
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: banco
+          MYSQL_USER: orca
+          MYSQL_PASSWORD: 123
+        ports:
+          - 3306:3306
+        volumes:
+          - ./Database/seed.sql:/docker-entrypoint-initdb.d/seed.sql:ro
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -uroot -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
     strategy:
       matrix:
         configuration: [Debug, Release]
+
+    env:
+      Solution_Name: ORCA/ORCA.sln
+      Test_Project_Path: ORCA.Tests/ORCA.Tests.csproj
+      Wap_Project_Path: ORCA/ORCA.csproj
 
     steps:
     - name: Checkout código
@@ -25,39 +48,30 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Instalar MySQL
-      run: |
-        choco install mysql -y
+    - name: Adicionar MSBuild ao PATH
+      uses: microsoft/setup-msbuild@v2
 
-    - name: Configurar MySQL
-      run: |
-        echo "CREATE DATABASE IF NOT EXISTS banco;" > init.sql
-        echo "CREATE USER IF NOT EXISTS 'orca'@'localhost' IDENTIFIED BY '123';" >> init.sql
-        echo "GRANT ALL PRIVILEGES ON banco.* TO 'orca'@'localhost';" >> init.sql
-        echo "FLUSH PRIVILEGES;" >> init.sql
-        type seed.sql >> init.sql
-        "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -proot < init.sql
-      shell: cmd
-      
     - name: Restaurar pacotes
-      run: dotnet restore ORCA/ORCA.sln
+      run: dotnet restore $env:Solution_Name
 
-    - name: Compilar solução
-      run: dotnet build ORCA/ORCA.sln --configuration ${{ matrix.configuration }} --no-restore
+    - name: Aguardar MySQL iniciar
+      run: |
+        echo "Aguardando MySQL ficar disponível..."
+        for /l %%i in (1,1,30) do (
+          "C:\Program Files\Git\usr\bin\curl.exe" http://127.0.0.1:3306 || (timeout /t 2 >nul) 
+        )
+      shell: cmd
 
     - name: Executar testes
-      env:
-        ConnectionStrings__DefaultConnection: "server=127.0.0.1;port=3306;user=root;password=root;database=banco"
-      run: dotnet test ORCA.Testes/ORCA.Testes.csproj --configuration ${{ matrix.configuration }} --no-build --logger "trx;LogFileName=test_results.trx"
+      run: dotnet test $env:Test_Project_Path
 
-    - name: Publicar resultados de teste
-      uses: actions/upload-artifact@v4
-      with:
-        name: TestResults
-        path: '**/TestResults/*.trx'
+    - name: Compilar aplicação
+      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
 
     - name: Publicar artefato (Build do ORCA)
       uses: actions/upload-artifact@v4
       with:
         name: ORCA-App
-        path: ORCA/bin/${{ matrix.configuration }}/net8.0-windows/**
+        path: ORCA/bin/${{ matrix.configuration }}/net8.0-windows/**/*
