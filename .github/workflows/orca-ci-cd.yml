@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
 
     services:
@@ -22,7 +22,11 @@ jobs:
           --health-cmd="mysqladmin ping -h localhost -uroot -proot"
           --health-interval=10s
           --health-timeout=5s
-          --health-retries=3
+          --health-retries=10
+
+    env:
+      Solution_Name: ORCA/ORCA.sln
+      Test_Project_Path: ORCA/ORCA.Testes/ORCA.Testes.csproj
 
     steps:
       - name: Checkout código
@@ -33,19 +37,18 @@ jobs:
         with:
           dotnet-version: 8.0.x
 
-      - name: Aguardar MySQL estar pronto
+      - name: Aguardar MySQL iniciar
         run: |
           for i in {1..30}; do
             if mysqladmin ping -h127.0.0.1 -uroot -proot --silent; then
               echo "MySQL está pronto!"
-              exit 0
+              break
             fi
-            echo "Aguardando MySQL subir..."
+            echo "Aguardando MySQL..."
             sleep 2
           done
-          exit 1
 
-      - name: Criar schema e dados fake
+      - name: Criar tabela e inserir dados fake
         run: |
           mysql -h127.0.0.1 -uroot -proot banco <<'EOF'
           CREATE TABLE IF NOT EXISTS usuario (
@@ -54,6 +57,7 @@ jobs:
             senha VARCHAR(255),
             permissao VARCHAR(3)
           );
+
           INSERT INTO usuario (email, senha, permissao) VALUES
             ('yslan_adm@gmail.com', '123', 'adm'),
             ('yslan_usr@gmail.com', '123', 'usr'),
@@ -61,7 +65,13 @@ jobs:
           EOF
 
       - name: Restaurar dependências
-        run: dotnet restore orca/orca/orca.sln
+        run: dotnet restore $Solution_Name
 
       - name: Rodar testes
-        run: dotnet test ORCA/ORCA.Testes/ORCA.Testes.csproj --logger "trx;LogFileName=test_results.trx"
+        run: dotnet test $Test_Project_Path --logger "trx;LogFileName=test_results.trx" --results-directory TestResults
+
+      - name: Publicar resultados dos testes
+        uses: actions/upload-artifact@v4
+        with:
+          name: TestResults
+          path: TestResults
