@@ -26,7 +26,7 @@ jobs:
 
     env:
       Solution_Name: ORCA/ORCA.sln
-      Test_Project_Path: ORCA.Testes/ORCA.Testes.csproj
+      Test_Project_Path: ORCA/ORCA.Testes/ORCA.Testes.csproj
 
     steps:
       - name: Checkout código
@@ -64,8 +64,14 @@ jobs:
             ('yslan_ges@gmail.com', '123', 'ges');
           EOF
 
+      - name: Debug - Listar estrutura de pastas
+        run: ls -R
+
       - name: Restaurar dependências
         run: dotnet restore $Solution_Name
+
+      - name: Debug - Listar estrutura de pastas (após restore)
+        run: ls -R
 
       - name: Rodar testes
         run: dotnet test $Test_Project_Path --logger "trx;LogFileName=test_results.trx" --results-directory TestResults
