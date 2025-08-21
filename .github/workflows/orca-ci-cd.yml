@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-and-test:
+  test:
     runs-on: ubuntu-latest
 
     services:
@@ -56,7 +56,7 @@ jobs:
     - name: Restaurar dependências
       run: dotnet restore $Solution_Name
 
-    - name: Rodar testes
+    - name: Rodar apenas testes
       run: dotnet test $Test_Project_Path --logger "trx;LogFileName=test_results.trx" --results-directory TestResults
 
     - name: Publicar resultados dos testes
