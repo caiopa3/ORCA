@@ -27,7 +27,7 @@ jobs:
     env:
       ConnectionStrings__Default: "Server=127.0.0.1;Port=3306;Database=banco;User ID=root;Password=root;SslMode=none;"
       Solution_Name: ORCA/ORCA.sln
-      Test_Project_Path: ORCA/ORCA.Testes/ORCA.Testes.csproj
+      Test_Project_Path: ORCA.Testes/ORCA.Testes.csproj
 
     steps:
     - name: Checkout código
@@ -37,18 +37,6 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-
-    - name: Aguardar MySQL ficar pronto
-      run: |
-        echo "Aguardando MySQL..."
-        for i in {1..30}; do
-          if docker exec $(docker ps -q -f ancestor=mysql:8) mysqladmin ping -h localhost -proot --silent; then
-            echo "MySQL pronto!"
-            break
-          fi
-          echo "Aguardando..."
-          sleep 2
-        done
 
     - name: Criar tabela usuario e inserir dados fake
       run: |
