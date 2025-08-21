@@ -7,17 +7,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
-
+  test:
     runs-on: ubuntu-latest
-
-    env:
-      Solution_Name: ORCA/ORCA.sln
-      Test_Project_Path: ORCA.Testes/ORCA.Testes.csproj
-      Wap_Project_Path: ORCA/ORCA.csproj
 
     services:
       mysql:
@@ -28,59 +19,49 @@ jobs:
         ports:
           - 3306:3306
         options: >-
-          --health-cmd="mysqladmin ping -h 127.0.0.1 -uroot -proot"
+          --health-cmd="mysqladmin ping -h localhost -uroot -proot"
           --health-interval=10s
           --health-timeout=5s
-          --health-retries=10
+          --health-retries=3
 
     steps:
-    - name: Checkout código
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - name: Checkout código
+        uses: actions/checkout@v4
 
-    - name: Instalar .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
+      - name: Instalar .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
 
-    - name: Esperar MySQL iniciar
-      run: |
-        for i in {1..30}; do
-          if mysqladmin ping -h127.0.0.1 -uroot -proot --silent; then
-            echo "MySQL está pronto!"
-            break
-          fi
-          echo "Aguardando MySQL..."
-          sleep 2
-        done
+      - name: Aguardar MySQL estar pronto
+        run: |
+          for i in {1..30}; do
+            if mysqladmin ping -h127.0.0.1 -uroot -proot --silent; then
+              echo "MySQL está pronto!"
+              exit 0
+            fi
+            echo "Aguardando MySQL subir..."
+            sleep 2
+          done
+          exit 1
 
-    - name: Criar tabela e inserir dados fake
-      run: |
-        mysql -h127.0.0.1 -uroot -proot banco -e "
-        CREATE TABLE IF NOT EXISTS usuario (
-          id INT AUTO_INCREMENT PRIMARY KEY,
-          email TEXT,
-          senha VARCHAR(255),
-          permissao VARCHAR(3)
-        );
-        TRUNCATE TABLE usuario;
-        INSERT INTO usuario (email, senha, permissao) VALUES
-          ('yslan_adm@gmail.com', '123', 'adm'),
-          ('yslan_usr@gmail.com', '123', 'usr'),
-          ('yslan_ges@gmail.com', '123', 'ges');"
+      - name: Criar schema e dados fake
+        run: |
+          mysql -h127.0.0.1 -uroot -proot banco <<'EOF'
+          CREATE TABLE IF NOT EXISTS usuario (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            email TEXT,
+            senha VARCHAR(255),
+            permissao VARCHAR(3)
+          );
+          INSERT INTO usuario (email, senha, permissao) VALUES
+            ('yslan_adm@gmail.com', '123', 'adm'),
+            ('yslan_usr@gmail.com', '123', 'usr'),
+            ('yslan_ges@gmail.com', '123', 'ges');
+          EOF
 
-    - name: Restaurar pacotes
-      run: dotnet restore $Solution_Name
+      - name: Restaurar dependências
+        run: dotnet restore orca/orca/orca.sln
 
-    - name: Compilar solução
-      run: dotnet build $Solution_Name --configuration ${{ matrix.configuration }} --no-restore
-
-    - name: Rodar testes
-      run: dotnet test $Test_Project_Path --configuration ${{ matrix.configuration }} --no-build --verbosity normal
-
-    - name: Publicar artefato (Build do ORCA)
-      uses: actions/upload-artifact@v4
-      with:
-        name: ORCA-App
-        path: ORCA/bin/${{ matrix.configuration }}/net8.0-windows/**/*
+      - name: Rodar testes
+        run: dotnet test ORCA/ORCA.Testes/ORCA.Testes.csproj --logger "trx;LogFileName=test_results.trx"
