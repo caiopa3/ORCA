@@ -7,11 +7,14 @@ namespace ORCA.Services
     {
         private readonly string _connectionString;
 
-        public AuthService(string servidor, string banco, string usuario, string senha)
+        public AuthService(string servidor, string bd, string usr, string senha)
         {
-            _connectionString = $"Server={servidor};Database={banco};Uid={usuario};Pwd={senha};";
+            _connectionString = $"Server={servidor};Database={bd};User ID={usr};Password={senha};SslMode=none;";
         }
 
+        /// <summary>
+        /// Verifica se o email e senha são válidos.
+        /// </summary>
         public bool ValidarLogin(string email, string senha)
         {
             using (var conexao = new MySqlConnection(_connectionString))
@@ -19,30 +22,33 @@ namespace ORCA.Services
                 conexao.Open();
 
                 string query = "SELECT COUNT(*) FROM usuario WHERE email = @Email AND senha = @Senha";
-                using (var cmd = new MySqlCommand(query, conexao))
+                using (var comando = new MySqlCommand(query, conexao))
                 {
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Senha", senha);
+                    comando.Parameters.AddWithValue("@Email", email);
+                    comando.Parameters.AddWithValue("@Senha", senha);
 
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    int count = Convert.ToInt32(comando.ExecuteScalar());
                     return count > 0;
                 }
             }
         }
 
-        public string? ObterPermissao(string email, string senha)
+        /// <summary>
+        /// Retorna a permissão do usuário (adm, usr, ges) ou null se não existir.
+        /// </summary>
+        public string ObterPermissao(string email, string senha)
         {
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
 
                 string query = "SELECT permissao FROM usuario WHERE email = @Email AND senha = @Senha LIMIT 1";
-                using (var cmd = new MySqlCommand(query, conexao))
+                using (var comando = new MySqlCommand(query, conexao))
                 {
-                    cmd.Parameters.AddWithValue("@Email", email);
-                    cmd.Parameters.AddWithValue("@Senha", senha);
+                    comando.Parameters.AddWithValue("@Email", email);
+                    comando.Parameters.AddWithValue("@Senha", senha);
 
-                    object result = cmd.ExecuteScalar();
+                    object result = comando.ExecuteScalar();
                     return result?.ToString();
                 }
             }
