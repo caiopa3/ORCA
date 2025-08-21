@@ -1,55 +1,61 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MySql.Data.MySqlClient;
 using ORCA.Services;
 using System;
 using NUnit.Framework;
-
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ORCA.Testes
 {
-    [TestFixture]
+    [TestClass]
     public class AuthServiceTests
     {
         private AuthService _authService;
 
-        [SetUp]
+        [TestInitialize]
         public void Setup()
         {
-            // Lê os dados de conexão do ambiente (definidos no workflow)
-            string servidor = Environment.GetEnvironmentVariable("MYSQL_HOST") ?? "127.0.0.1";
-            string bd = Environment.GetEnvironmentVariable("MYSQL_DATABASE") ?? "banco";
-            string usr = Environment.GetEnvironmentVariable("MYSQL_USER") ?? "root";
-            string senha = Environment.GetEnvironmentVariable("MYSQL_PASSWORD") ?? "root";
+            // Banco criado no container do GitHub Actions
+            string servidor = "127.0.0.1"; 
+            string bd = "banco"; 
+            string usr = "root"; 
+            string senha = "root";
 
             _authService = new AuthService(servidor, bd, usr, senha);
         }
 
-        [Test]
-        public void TestLoginValido_Admin_DeveRetornarTrue()
+        [TestMethod]
+        public void TestLoginValido_Adm_DeveRetornarTrue()
         {
-            bool resultado = _authService.ValidarLogin("yslan_adm@gmail.com", "123");
-            Assert.IsTrue(resultado, "Login válido de administrador deveria retornar true.");
+            bool result = _authService.ValidarLogin("yslan_adm@gmail.com", "123");
+            Assert.IsTrue(result, "Login válido ADM deveria retornar true.");
         }
 
-        [Test]
-        public void TestLoginValido_Usuario_DeveRetornarTrue()
+        [TestMethod]
+        public void TestLoginValido_Usr_DeveRetornarTrue()
         {
-            bool resultado = _authService.ValidarLogin("yslan_usr@gmail.com", "123");
-            Assert.IsTrue(resultado, "Login válido de usuário deveria retornar true.");
+            bool result = _authService.ValidarLogin("yslan_usr@gmail.com", "123");
+            Assert.IsTrue(result, "Login válido USR deveria retornar true.");
         }
 
-        [Test]
-        public void TestLoginValido_Gestor_DeveRetornarTrue()
+        [TestMethod]
+        public void TestLoginValido_Ges_DeveRetornarTrue()
         {
-            bool resultado = _authService.ValidarLogin("yslan_ges@gmail.com", "123");
-            Assert.IsTrue(resultado, "Login válido de gestor deveria retornar true.");
+            bool result = _authService.ValidarLogin("yslan_ges@gmail.com", "123");
+            Assert.IsTrue(result, "Login válido GES deveria retornar true.");
         }
 
-        [Test]
-        public void TestLoginInvalido_DeveRetornarFalse()
+        [TestMethod]
+        public void TestLoginInvalido_EmailErrado_DeveRetornarFalse()
         {
-            bool resultado = _authService.ValidarLogin("naoexiste@gmail.com", "senhaErrada");
-            Assert.IsFalse(resultado, "Login inválido deveria retornar false.");
+            bool result = _authService.ValidarLogin("email_invalido@gmail.com", "123");
+            Assert.IsFalse(result, "Login com email inválido deveria retornar false.");
+        }
+
+        [TestMethod]
+        public void TestLoginInvalido_SenhaErrada_DeveRetornarFalse()
+        {
+            bool result = _authService.ValidarLogin("yslan_adm@gmail.com", "senhaerrada");
+            Assert.IsFalse(result, "Login com senha inválida deveria retornar false.");
         }
     }
 }
