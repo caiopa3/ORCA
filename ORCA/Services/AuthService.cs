@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using System;
 
 namespace ORCA.Services
@@ -7,60 +7,45 @@ namespace ORCA.Services
     {
         private readonly string _connectionString;
 
-        public AuthService(string servidor, string bd, string usr, string senha)
+        public AuthService(string servidor, string banco, string usuario, string senha)
         {
-            // Se as variáveis de ambiente do GitHub Actions existirem, usa elas
-            string envHost = Environment.GetEnvironmentVariable("MYSQL_HOST");
-            string envDb   = Environment.GetEnvironmentVariable("MYSQL_DATABASE");
-            string envUser = Environment.GetEnvironmentVariable("MYSQL_USER");
-            string envPass = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
-
-            servidor = !string.IsNullOrEmpty(envHost) ? envHost : servidor;
-            bd       = !string.IsNullOrEmpty(envDb)   ? envDb   : bd;
-            usr      = !string.IsNullOrEmpty(envUser) ? envUser : usr;
-            senha    = !string.IsNullOrEmpty(envPass) ? envPass : senha;
-
-            _connectionString = $"SERVER={servidor};PORT=3306;DATABASE={bd};UID={usr};PASSWORD={senha};";
+            _connectionString = $"Server={servidor};Database={banco};Uid={usuario};Pwd={senha};";
         }
 
-        public bool ValidarLogin(string email, string password)
+        public bool ValidarLogin(string email, string senha)
         {
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
 
                 string query = "SELECT COUNT(*) FROM usuario WHERE email = @Email AND senha = @Senha";
-                using (var comando = new MySqlCommand(query, conexao))
+                using (var cmd = new MySqlCommand(query, conexao))
                 {
-                    comando.Parameters.AddWithValue("@Email", email);
-                    comando.Parameters.AddWithValue("@Senha", password);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Senha", senha);
 
-                    int count = Convert.ToInt32(comando.ExecuteScalar());
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
                     return count > 0;
                 }
             }
         }
 
-        public string ObterPermissao(string email, string password)
+        public string? ObterPermissao(string email, string senha)
         {
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
 
-                string query = "SELECT permissao FROM usuario WHERE email = @Email AND senha = @Senha";
-                using (var comando = new MySqlCommand(query, conexao))
+                string query = "SELECT permissao FROM usuario WHERE email = @Email AND senha = @Senha LIMIT 1";
+                using (var cmd = new MySqlCommand(query, conexao))
                 {
-                    comando.Parameters.AddWithValue("@Email", email);
-                    comando.Parameters.AddWithValue("@Senha", password);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Senha", senha);
 
-                    object result = comando.ExecuteScalar();
-                    return result?.ToString() ?? string.Empty;
+                    object result = cmd.ExecuteScalar();
+                    return result?.ToString();
                 }
             }
         }
     }
-}
-
-}
-
 }
