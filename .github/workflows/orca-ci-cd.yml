@@ -8,16 +8,30 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
-
     strategy:
       matrix:
         configuration: [Debug, Release]
 
+    runs-on: ubuntu-latest
+
     env:
-      Solution_Name: ORCA/ORCA/ORCA.sln
-      Test_Project_Path: ORCA/ORCA.Testes/ORCA.Testes.csproj
-      Wap_Project_Path: ORCA/ORCA/ORCA.csproj
+      Solution_Name: orca/orca/orca.sln
+      Test_Project_Path: orca/orca/ORCA.Testes/ORCA.Testes.csproj
+      Wap_Project_Path: orca/orca/ORCA/ORCA.csproj
+
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: banco
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
 
     steps:
     - name: Checkout código
@@ -30,44 +44,40 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Adicionar MSBuild ao PATH
-      uses: microsoft/setup-msbuild@v2
+    - name: Aguardar MySQL iniciar
+      run: sleep 30
 
-    # Sobe container MySQL para rodar os testes
-    - name: Start MySQL
+    - name: Criar schema de teste e inserir dados
       run: |
-        docker run --name mysql-8 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=banco -p 3306:3306 -d mysql:8
-        # espera o container iniciar
-        for i in {1..30}; do
-          if docker exec mysql-8 mysqladmin ping -h "127.0.0.1" --password=root --silent; then
-            break
-          fi
-          echo "Esperando MySQL iniciar..."
-          sleep 2
-        done
+        mysql -h 127.0.0.1 -P 3306 -uroot -proot banco <<'EOF'
+        CREATE TABLE IF NOT EXISTS usuario (
+          id INT AUTO_INCREMENT PRIMARY KEY,
+          email TEXT,
+          senha VARCHAR(255),
+          permissao VARCHAR(3)
+        );
+        INSERT INTO usuario (email, senha, permissao) VALUES
+        ('yslan_adm@gmail.com', '123', 'adm'),
+        ('yslan_usr@gmail.com', '123', 'usr'),
+        ('yslan_ges@gmail.com', '123', 'ges');
+        EOF
 
-    # Restaura os pacotes
     - name: Restaurar pacotes
-      run: dotnet restore $env:Solution_Name
+      run: dotnet restore $Solution_Name
 
-    # Executa os testes apontando para o MySQL do container
     - name: Executar testes
       env:
         MYSQL_HOST: 127.0.0.1
-        MYSQL_PORT: 3306
+        MYSQL_DATABASE: banco
         MYSQL_USER: root
         MYSQL_PASSWORD: root
-        MYSQL_DATABASE: banco
-      run: dotnet test $env:Test_Project_Path --logger "trx;LogFileName=test_results.trx"
+      run: dotnet test $Test_Project_Path --logger "trx;LogFileName=test_results.trx"
 
-    # Compila a aplicação
     - name: Compilar aplicação
-      run: msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration
-      env:
-        Configuration: ${{ matrix.configuration }}
+      run: dotnet build $Wap_Project_Path --configuration ${{ matrix.configuration }} --no-restore
 
     - name: Publicar artefato (Build do ORCA)
       uses: actions/upload-artifact@v4
       with:
         name: ORCA-App
-        path: ORCA/ORCA/bin/${{ matrix.configuration }}/net8.0-windows/**/*
+        path: orca/orca/ORCA/bin/${{ matrix.configuration }}/net8.0-windows/**/*
