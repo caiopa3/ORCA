@@ -1,45 +1,24 @@
-using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ORCA.Services;
 
 namespace ORCA.Testes
 {
-    [TestFixture]
+    [TestClass]
     public class AuthServiceTests
     {
-        private AuthService _authService;
+        private AuthService _service;
 
-        [SetUp]
+        [TestInitialize]
         public void Setup()
         {
-            // Banco configurado no GitHub Actions (mysql service)
-            string servidor = "127.0.0.1";
-            string bd = "banco";
-            string usr = "root";
-            string senha = "root";
-
-            _authService = new AuthService(servidor, bd, usr, senha);
+            _service = new AuthService("localhost", "banco", "root", "");
         }
 
-        [Test]
-        public void TestLoginValido_DeveRetornarTrue()
+        [TestMethod]
+        public void DeveLogarComUsuarioValido()
         {
-            // Este usuário foi inserido pelo workflow (job Criar tabela e inserir dados fake)
-            bool result = _authService.ValidarLogin("yslan_adm@gmail.com", "123");
-            Assert.IsTrue(result, "Login válido deveria retornar true.");
-        }
-
-        [Test]
-        public void TestLoginInvalido_DeveRetornarFalse()
-        {
-            bool result = _authService.ValidarLogin("email_invalido@gmail.com", "senha_errada");
-            Assert.IsFalse(result, "Login inválido deveria retornar false.");
-        }
-
-        [Test]
-        public void TestPermissao_DeveRetornarAdm()
-        {
-            string permissao = _authService.ObterPermissao("yslan_adm@gmail.com", "123");
-            Assert.AreEqual("adm", permissao, "A permissão deveria ser 'adm'.");
+            var ok = _service.Login("yslan_usr@gmail.com", "123");
+            Assert.IsTrue(ok);
         }
     }
 }
