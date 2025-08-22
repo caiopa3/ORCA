@@ -3951,11 +3951,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA.Testes\\ORCA.Testes.csproj",
+      "projectUniqueName": "D:\\deu errado\\ORCA - FUNCIONANDO C TESTES\\ORCA.Testes\\ORCA.Testes.csproj",
       "projectName": "ORCA.Testes",
-      "projectPath": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA.Testes\\ORCA.Testes.csproj",
+      "projectPath": "D:\\deu errado\\ORCA - FUNCIONANDO C TESTES\\ORCA.Testes\\ORCA.Testes.csproj",
       "packagesPath": "C:\\Users\\internet.info\\.nuget\\packages\\",
-      "outputPath": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA.Testes\\obj\\",
+      "outputPath": "D:\\deu errado\\ORCA - FUNCIONANDO C TESTES\\ORCA.Testes\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3976,8 +3976,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\ORCA.csproj": {
-              "projectPath": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\ORCA.csproj"
+            "D:\\deu errado\\ORCA - FUNCIONANDO C TESTES\\ORCA\\ORCA.csproj": {
+              "projectPath": "D:\\deu errado\\ORCA - FUNCIONANDO C TESTES\\ORCA\\ORCA.csproj"
             }
           }
         }

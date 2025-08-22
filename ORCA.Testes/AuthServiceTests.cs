@@ -20,5 +20,26 @@ namespace ORCA.Testes
             var ok = _service.Login("yslan_usr@gmail.com", "123");
             Assert.IsTrue(ok);
         }
+
+        [TestMethod]
+        public void NaoDeveLogarComSenhaErrada()
+        {
+            var ok = _service.Login("yslan_usr@gmail.com", "senhaErrada");
+            Assert.IsFalse(ok);
+        }
+
+        [TestMethod]
+        public void NaoDeveLogarComUsuarioInexistente()
+        {
+            var ok = _service.Login("naoexiste@email.com", "123");
+            Assert.IsFalse(ok);
+        }
+
+        [TestMethod]
+        public void NaoDeveLogarComCamposVazios()
+        {
+            var ok = _service.Login("", "");
+            Assert.IsFalse(ok);
+        }
     }
 }

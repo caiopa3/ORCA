@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ORCA.Services;
-using MySql.Data.MySqlClient;
 using System.Linq;
+using MySql.Data.MySqlClient;
 
 namespace ORCA.Testes
 {
@@ -9,51 +9,48 @@ namespace ORCA.Testes
     public class OrcamentoServiceTests
     {
         private OrcamentoService _service;
-        private string _connectionString = "SERVER=localhost;DATABASE=banco;UID=root;PASSWORD=;";
-        private int _usuarioId;
-        private string _emailTeste = "teste_orcamento@email.com";
+        private string _emailTeste = "yslan_usr@gmail.com"; // já existe no banco
+        private int _orcamentoCriadoId;
 
         [TestInitialize]
         public void Setup()
         {
             _service = new OrcamentoService("localhost", "banco", "root", "");
-
-            using var conn = new MySqlConnection(_connectionString);
-            conn.Open();
-
-            var cmd = new MySqlCommand(
-                "INSERT INTO usuario (email, senha, permissao) VALUES (@Email, '123', 'usr')", conn);
-            cmd.Parameters.AddWithValue("@Email", _emailTeste);
-            cmd.ExecuteNonQuery();
-
-            _usuarioId = (int)cmd.LastInsertedId;
+            _orcamentoCriadoId = 0;
         }
 
         [TestCleanup]
         public void Cleanup()
         {
-            using var conn = new MySqlConnection(_connectionString);
-            conn.Open();
-
-            var cmd = new MySqlCommand("DELETE FROM usuario WHERE id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", _usuarioId);
-            cmd.ExecuteNonQuery();
+            if (_orcamentoCriadoId > 0)
+            {
+                using (var conn = new MySqlConnection("SERVER=localhost;DATABASE=banco;UID=root;PWD=;"))
+                {
+                    conn.Open();
+                    var cmd = new MySqlCommand("DELETE FROM orcamento WHERE id=@id", conn);
+                    cmd.Parameters.AddWithValue("@id", _orcamentoCriadoId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         [TestMethod]
         public void DeveInserirOrcamento()
         {
-            int id = _service.InserirOrcamento("OrcamentoTeste", _emailTeste);
-            Assert.IsTrue(id > 0);
+            var id = _service.InserirOrcamento("OrcamentoTeste_Insert", _emailTeste);
+            _orcamentoCriadoId = id;
+            Assert.IsTrue(id > 0, "Falha ao inserir orçamento.");
         }
 
         [TestMethod]
         public void DeveListarOrcamentos()
         {
-            _service.InserirOrcamento("OrcamentoTeste2", _emailTeste);
+            // insere primeiro
+            var id = _service.InserirOrcamento("OrcamentoTeste_List", _emailTeste);
+            _orcamentoCriadoId = id;
 
             var lista = _service.ListarPorEmail(_emailTeste);
-            Assert.IsTrue(lista.Any());
+            Assert.IsTrue(lista.Any(o => o.Id == id), "Orçamento inserido não foi encontrado na listagem.");
         }
     }
 }

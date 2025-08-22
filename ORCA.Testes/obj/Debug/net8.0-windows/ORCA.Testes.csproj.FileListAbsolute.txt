@@ -414,3 +414,419 @@ D:\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\ORCA.Testes\obj\Debug\net8.0-wi
 D:\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.pdb
 D:\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.genruntimeconfig.cache
 D:\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\ORCA.Testes\obj\Debug\net8.0-windows\ref\ORCA.Testes.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\.msCoverageSourceRootsMapping_ORCA.Testes
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\testhost.exe
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\testhost.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.TestPlatform.AdapterUtilities.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.deps.json
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.runtimeconfig.json
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.exe
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.Testes.deps.json
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.Testes.runtimeconfig.json
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.Testes.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.Testes.pdb
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Google.Protobuf.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.ApplicationInsights.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.CodeCoverage.Shim.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Testing.Extensions.Telemetry.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Testing.Extensions.TrxReport.Abstractions.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Testing.Extensions.VSTestBridge.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Testing.Platform.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Testing.Platform.MSBuild.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.TestPlatform.CoreUtilities.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.TestPlatform.PlatformAbstractions.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.TestPlatform.CommunicationUtilities.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.TestPlatform.CrossPlatEngine.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.TestPlatform.Utilities.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.Common.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\MySql.Data.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\MySqlConnector.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.BarCodes.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.Cryptography.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.Shared.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.System.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\System.Text.Json.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ZstdSharp.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.Testing.Platform.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.Testing.Platform.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.Testing.Platform.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.Testing.Platform.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.Testing.Platform.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.Testing.Platform.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.Testing.Platform.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.Testing.Platform.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.Testing.Platform.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.Testing.Platform.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.Testing.Platform.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Testing.Platform.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Testing.Platform.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.pdb
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.csproj.AssemblyReference.cache
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.GeneratedMSBuildEditorConfig.editorconfig
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.AssemblyInfoInputs.cache
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.AssemblyInfo.cs
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.csproj.CoreCompileInputs.cache
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Tes.BF1D8B8F.Up2Date
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\refint\ORCA.Testes.dll
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.pdb
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.genruntimeconfig.cache
+D:\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ref\ORCA.Testes.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\.msCoverageSourceRootsMapping_ORCA.Testes
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\testhost.exe
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\testhost.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.TestPlatform.AdapterUtilities.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.deps.json
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.runtimeconfig.json
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.exe
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.Testes.deps.json
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.Testes.runtimeconfig.json
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.Testes.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.Testes.pdb
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Google.Protobuf.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.ApplicationInsights.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.CodeCoverage.Shim.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Testing.Extensions.Telemetry.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Testing.Extensions.TrxReport.Abstractions.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Testing.Extensions.VSTestBridge.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Testing.Platform.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.Testing.Platform.MSBuild.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.TestPlatform.CoreUtilities.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.TestPlatform.PlatformAbstractions.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.TestPlatform.CommunicationUtilities.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.TestPlatform.CrossPlatEngine.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.TestPlatform.Utilities.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.Common.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\MySql.Data.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\MySqlConnector.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.BarCodes.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.Cryptography.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.Shared.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.System.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\PdfSharp.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\System.Text.Json.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ZstdSharp.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Testing.Extensions.Telemetry.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Testing.Extensions.VSTestBridge.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.Testing.Platform.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.Testing.Platform.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.Testing.Platform.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.Testing.Platform.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.Testing.Platform.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.Testing.Platform.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.Testing.Platform.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.Testing.Platform.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.Testing.Platform.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.Testing.Platform.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.Testing.Platform.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Testing.Platform.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Testing.Platform.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.Testing.Platform.MSBuild.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.TestPlatform.CoreUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\cs\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\de\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\it\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ja\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ko\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pl\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\pt-BR\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ru\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\tr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hans\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\ORCA.pdb
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\bin\Debug\net8.0-windows\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.csproj.AssemblyReference.cache
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.GeneratedMSBuildEditorConfig.editorconfig
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.AssemblyInfoInputs.cache
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.AssemblyInfo.cs
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.csproj.CoreCompileInputs.cache
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Tes.BF1D8B8F.Up2Date
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\refint\ORCA.Testes.dll
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.pdb
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ORCA.Testes.genruntimeconfig.cache
+D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA.Testes\obj\Debug\net8.0-windows\ref\ORCA.Testes.dll
