@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA\obj\Debug\net8.0-windows\
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\
 ORCA
 none
 false
-TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA\App.xaml
-10-1300841086
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+C:\Users\internet.info\Desktop\ORCA\ORCA\App.xaml
+12395363049
 
-181249008932
-223567119524
-criar_orca.xaml;homePage_adm.xaml;homePage_ges.xaml;homePage_usr.xaml;login_alt_senha.xaml;login_esq_senha.xaml;login_vrf_cod.xaml;MainWindow.xaml;NovaColunaWindow.xaml;SelecionarUsuariosWindow.xaml;
+20769031724
+2231499673259
+criar_orca.xaml;homePage_adm.xaml;homePage_ges.xaml;homePage_usr.xaml;login_alt_senha.xaml;login_esq_senha.xaml;login_vrf_cod.xaml;MainWindow.xaml;NovaColunaWindow.xaml;OrcamentoWindow.xaml;SelecionarModeloWindow.xaml;SelecionarUsuariosWindow.xaml;
 
 False
 

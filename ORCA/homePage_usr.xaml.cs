@@ -1,5 +1,6 @@
 ﻿using ORCA.Services;
 using System;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -43,21 +44,47 @@ namespace ORCA
         // CHAME este método num botão da sua tela (ex.: Click="BtnCriarOrcamento_Click")
         private void BtnCriarOrcamento_Click(object sender, RoutedEventArgs e)
         {
-            InputBox("Criar Orçamento", "Digite o nome do orçamento:", "Novo Orçamento", nome =>
+            try
             {
-                if (string.IsNullOrWhiteSpace(nome)) return;
+                // 🔹 1. Buscar modelos de orçamento disponíveis para o usuário
+                var modelos = _orcamentoService.ListarModelosDisponiveis(_email);
 
-                try
+                if (modelos.Count == 0)
                 {
-                    int id = _orcamentoService.InserirOrcamento(nome, _email);
-                    if (id > 0)
-                        CriarOrcamentoVisual(id, nome);
+                    MessageBox.Show("Nenhum modelo disponível para você. Contate o gestor/administrador.");
+                    return;
                 }
-                catch (Exception ex)
+
+                // 🔹 2. Abrir janela de seleção de modelo
+                SelecionarModeloWindow sel = new SelecionarModeloWindow(modelos);
+                if (sel.ShowDialog() == true)
                 {
-                    MessageBox.Show("Erro ao criar orçamento: " + ex.Message);
+                    var modeloEscolhido = sel.ModeloSelecionado;
+                    if (modeloEscolhido == null) return;
+
+                    // 🔹 3. Perguntar nome do novo orçamento
+                    InputBox("Criar Orçamento", "Digite o nome do orçamento:", "Novo Orçamento", nome =>
+                    {
+                        if (string.IsNullOrWhiteSpace(nome)) return;
+
+                        try
+                        {
+                            // Inserir o orçamento já ligado ao modelo
+                            int id = _orcamentoService.InserirOrcamentoComModelo(nome, _email, modeloEscolhido.Id);
+                            if (id > 0)
+                                CriarOrcamentoVisual(id, nome);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Erro ao criar orçamento: " + ex.Message);
+                        }
+                    });
                 }
-            });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao buscar modelos: " + ex.Message);
+            }
         }
 
         private void CriarOrcamentoVisual(int id, string nome)
@@ -83,40 +110,20 @@ namespace ORCA
                 Tag = id
             };
 
-            // opcional: renomear via clique
-            nomeText.MouseLeftButtonDown += (s, e) =>
-            {
-                if (e.ClickCount == 2)
-                {
-                    InputBox("Renomear Orçamento", "Novo nome:", nome, novoNome =>
-                    {
-                        if (!string.IsNullOrWhiteSpace(novoNome))
-                        {
-                            try
-                            {
-                                _orcamentoService.AtualizarNome(id, novoNome);
-                                nomeText.Text = novoNome;
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("Erro ao renomear: " + ex.Message);
-                            }
-                        }
-                    });
-                }
-            };
-
             var btnEntrar = new Button
             {
                 Content = "Entrar",
                 Margin = new Thickness(0, 5, 0, 0),
-                Tag = nome
+                Tag = id // ✅ o botão carrega o ID do orçamento
             };
 
             btnEntrar.Click += (s, e) =>
             {
-                MessageBox.Show($"Entrando em: {nome}");
-                // TODO: abra a janela do orçamento real
+                if ((s as Button)?.Tag is int orcamentoId)
+                {
+                    var win = new OrcamentoWindow(orcamentoId, _orcamentoService);
+                    win.Show(); // ou ShowDialog()
+                }
             };
 
             panel.Children.Add(nomeText);

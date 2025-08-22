@@ -511,3 +511,12 @@ D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA\obj\Debug\net8.0-windows\refint\O
 D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA\obj\Debug\net8.0-windows\ORCA.pdb
 D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA\obj\Debug\net8.0-windows\ORCA.genruntimeconfig.cache
 D:\deu errado\ORCA - FUNCIONANDO C TESTES\ORCA\obj\Debug\net8.0-windows\ref\ORCA.dll
+C:\Users\internet.info\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.g.cs
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.g.cs
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.g.cs
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.g.cs

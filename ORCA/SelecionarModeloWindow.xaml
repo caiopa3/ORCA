@@ -1,0 +1,11 @@
+﻿<Window x:Class="ORCA.SelecionarModeloWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Selecionar Modelo" Height="250" Width="400">
+    <StackPanel Margin="10">
+        <TextBlock Text="Selecione um modelo de orçamento:" Margin="0,0,0,10"/>
+        <ListBox x:Name="listModelos" DisplayMemberPath="Nome" Height="150"/>
+        <Button Content="Confirmar" Width="100" Margin="0,10,0,0"
+                HorizontalAlignment="Right" Click="BtnConfirmar_Click"/>
+    </StackPanel>
+</Window>

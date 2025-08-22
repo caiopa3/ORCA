@@ -31,6 +31,12 @@
     <Compile Update="NovaColunaWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="OrcamentoWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SelecionarModeloWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SelecionarUsuariosWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
