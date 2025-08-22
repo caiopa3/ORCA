@@ -13,8 +13,9 @@ jobs:
     env:
       # String de conexão para o banco da nuvem
       ConnectionStrings__Default: "Server=srv1889.hstgr.io;Port=3306;Database=u202947255_orca;User ID=u202947255_root;Password=TCCorca123;SslMode=none;"
-      Solution_Name: ORCA/ORCA.sln
+      Solution_Name: ORCA.sln
       Test_Project_Path: ORCA.Testes/ORCA.Testes.csproj
+
 
     steps:
     - name: Checkout código
