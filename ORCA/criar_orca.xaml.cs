@@ -1,113 +1,100 @@
-﻿using System;
+﻿using ORCA.Services;
+using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Dynamic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
-using System.Collections.ObjectModel;
-using Newtonsoft.Json;
-using System.Collections.ObjectModel;
 
 namespace ORCA
 {
-    /// <summary>
-    /// Lógica interna para criar_orca.xaml
-    /// </summary>
     public partial class criar_orca : Window
     {
-        private ObservableCollection<ExpandoObject> dados = new ObservableCollection<ExpandoObject>();
-        public string servidor = "";
-        public string bd = "";
-        public string usr = "";
-        public string senha = "";
-        public string email = "";
+        private readonly ModeloOrcamentoService _modeloService;
+        private readonly string _email;
 
-        private int usuarioCriadorId;
+        // dados em memória
+        private readonly List<string> _colunas = new();
+        private readonly List<Dictionary<string, object>> _linhas = new();
 
-        public criar_orca(string e, string s, string b, string u, string se)
+        public criar_orca(string email, string servidor, string bd, string usr, string senha)
         {
             InitializeComponent();
 
-            email = e;
-            servidor = s;
-            bd = b;
-            usr = u;
-            senha = se;
+            _email = email;
+            _modeloService = new ModeloOrcamentoService(servidor, bd, usr, senha);
 
-            string connectionString = $"SERVER={servidor}; PORT=3306; DATABASE={bd}; UID={usr}; PASSWORD={senha};";
+            // uma linha inicial vazia para o usuário começar
+            _linhas.Add(new Dictionary<string, object>());
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            // bind do grid
+            meuDataGrid.AutoGenerateColumns = false;
+            meuDataGrid.ItemsSource = _linhas;
+            meuDataGrid.CanUserAddRows = true;
+
+            // quando o usuário adiciona uma nova linha no grid, garantimos o dicionário
+            meuDataGrid.RowEditEnding += (s, e) =>
             {
-                conn.Open();
-
-                string query = "SELECT id FROM usuario WHERE email = @Email";
-
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                if (e.EditAction == DataGridEditAction.Commit && e.Row.Item is Dictionary<string, object> dic)
                 {
-                    cmd.Parameters.AddWithValue("@Email", email);
-
-                    object result = cmd.ExecuteScalar();
-
-                    if (result != null)
-                    {
-                        usuarioCriadorId = Convert.ToInt32(result);
-                    }
+                    foreach (var c in _colunas)
+                        if (!dic.ContainsKey(c)) dic[c] = "";
                 }
-            }
-
-            meuDataGrid.ItemsSource = dados;
-
-            // Adiciona linha inicial
-            dynamic linha = new ExpandoObject();
-            dados.Add(linha);
+            };
         }
 
         private void AdicionarColuna_Click(object sender, RoutedEventArgs e)
         {
-            var janela = new NovaColunaWindow();
-
-            if (janela.ShowDialog() == true)
+            try
             {
-                string nomeColuna = janela.NomeColuna;
-
-                var novaColuna = new DataGridTextColumn
+                var dlg = new NovaColunaWindow();
+                if (dlg.ShowDialog() == true)
                 {
-                    Header = $"{nomeColuna} ({janela.TipoDado})",
-                    Binding = new System.Windows.Data.Binding(nomeColuna)
-                };
+                    var nomeColuna = dlg.NomeColuna?.Trim();
+                    var tipo = string.IsNullOrWhiteSpace(dlg.TipoDado) ? "Texto" : dlg.TipoDado.Trim();
 
-                meuDataGrid.Columns.Add(novaColuna);
+                    if (string.IsNullOrWhiteSpace(nomeColuna))
+                    {
+                        MessageBox.Show("Nome da coluna é obrigatório.");
+                        return;
+                    }
 
-                foreach (IDictionary<string, object> linha in dados)
-                {
-                    if (!linha.ContainsKey(nomeColuna))
-                        linha[nomeColuna] = "";
+                    var header = $"{nomeColuna} ({tipo})";
+
+                    // adiciona na lista de colunas (usamos o nome 'cru' como chave no dicionário)
+                    if (!_colunas.Contains(nomeColuna))
+                        _colunas.Add(nomeColuna);
+
+                    // cria a coluna visualmente
+                    var novaColuna = new DataGridTextColumn
+                    {
+                        Header = header,
+                        Binding = new System.Windows.Data.Binding(nomeColuna)
+                    };
+                    meuDataGrid.Columns.Add(novaColuna);
+
+                    // garante que todas as linhas tenham essa chave
+                    foreach (var linha in _linhas)
+                        if (!linha.ContainsKey(nomeColuna))
+                            linha[nomeColuna] = "";
+
+                    meuDataGrid.Items.Refresh();
                 }
-
-                meuDataGrid.Items.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao adicionar coluna: " + ex.Message);
             }
         }
 
         private void SalvarModelo_Click(object sender, RoutedEventArgs e)
         {
-            SalvarTabelaNoBanco();
-        }
-
-        private void SalvarTabelaNoBanco()
-        {
             try
             {
-                string nomeModelo = Microsoft.VisualBasic.Interaction.InputBox("Digite o nome do modelo:", "Salvar Modelo", "Novo Modelo");
+                // pega nome via InputBox (já que não existe txtNomeModelo no XAML)
+                string nomeModelo = Microsoft.VisualBasic.Interaction.InputBox(
+                    "Digite o nome do modelo:",
+                    "Salvar Modelo",
+                    "Novo Modelo");
 
                 if (string.IsNullOrWhiteSpace(nomeModelo))
                 {
@@ -115,60 +102,31 @@ namespace ORCA
                     return;
                 }
 
-                int modeloId;
+                // resolve o id do criador a partir do email
+                int usuarioCriadorId = _modeloService.ObterUsuarioIdPorEmail(_email);
 
-                using (var conn = new MySqlConnection("SERVER=localhost;DATABASE=banco;UID=root;PWD=;"))
+                // se o usuário adicionou linhas diretamente no DataGrid, garanta que a fonte (List<Dictionary>) está sincronizada
+                // (o DataGrid já está ligado em _linhas; garantir chaves vazias)
+                foreach (var linha in _linhas)
+                    foreach (var c in _colunas)
+                        if (!linha.ContainsKey(c)) linha[c] = "";
+
+                // janela de seleção de usuários (opcional)
+                var selecao = new SelecionarUsuariosWindow();
+                var usuariosCompartilhados = new List<int>();
+                if (selecao.ShowDialog() == true)
                 {
-                    conn.Open();
-
-                    // 1️⃣ Criar modelo_orcamento
-                    var cmdModelo = new MySqlCommand("INSERT INTO modelo_orcamento (nome, usr_criador_id) VALUES (@nome, @usr)", conn);
-                    cmdModelo.Parameters.AddWithValue("@nome", nomeModelo);
-                    cmdModelo.Parameters.AddWithValue("@usr", usuarioCriadorId);
-                    cmdModelo.ExecuteNonQuery();
-
-                    modeloId = (int)cmdModelo.LastInsertedId;
-
-                    // 2️⃣ Salvar dados como JSON
-                    var colunas = meuDataGrid.Columns.Select(c => c.Header.ToString()).ToList();
-                    var linhas = dados.Select(linha =>
-                        ((IDictionary<string, object>)linha)
-                        .ToDictionary(k => k.Key, v => v.Value)
-                    ).ToList();
-
-                    var tabela = new
-                    {
-                        Colunas = colunas,
-                        Linhas = linhas
-                    };
-
-                    string json = JsonConvert.SerializeObject(tabela);
-
-                    var cmdDados = new MySqlCommand("INSERT INTO modelo_orcamento_dados (modelo_id, dados_json) VALUES (@mid, @json)", conn);
-                    cmdDados.Parameters.AddWithValue("@mid", modeloId);
-                    cmdDados.Parameters.AddWithValue("@json", json);
-                    cmdDados.ExecuteNonQuery();
+                    usuariosCompartilhados.AddRange(selecao.UsuariosSelecionados);
                 }
 
-                // 3️⃣ Seleção de usuários que terão acesso
-                var selecaoUsuarios = new SelecionarUsuariosWindow();
-                if (selecaoUsuarios.ShowDialog() == true)
-                {
-                    using (var conn = new MySqlConnection("SERVER=localhost;DATABASE=banco;UID=root;PWD=;"))
-                    {
-                        conn.Open();
+                int modeloId = _modeloService.CriarModeloOrcamento(
+                    nomeModelo,
+                    usuarioCriadorId,
+                    _colunas.ToList(),
+                    _linhas.ToList(),
+                    usuariosCompartilhados);
 
-                        foreach (var usuarioId in selecaoUsuarios.UsuariosSelecionados)
-                        {
-                            var cmdPermissao = new MySqlCommand("INSERT INTO modelo_orcamento_usuarios (modelo_id, usuario_id) VALUES (@mid, @uid)", conn);
-                            cmdPermissao.Parameters.AddWithValue("@mid", modeloId);
-                            cmdPermissao.Parameters.AddWithValue("@uid", usuarioId);
-                            cmdPermissao.ExecuteNonQuery();
-                        }
-                    }
-                }
-
-                MessageBox.Show("Modelo salvo com sucesso!");
+                MessageBox.Show($"Modelo salvo com sucesso! ID = {modeloId}");
             }
             catch (Exception ex)
             {

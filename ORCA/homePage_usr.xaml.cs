@@ -1,199 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ORCA.Services;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using MySql.Data.MySqlClient;
 
 namespace ORCA
 {
-    /// <summary>
-    /// Lógica interna para homePage_usr.xaml
-    /// </summary>
     public partial class homePage_usr : Window
     {
-        public string servidor = "";
-        public string bd = "";
-        public string usr = "";
-        public string senha = "";
-        public string connectionString;
-        public string email = "";
+        private readonly OrcamentoService _orcamentoService;
+        private readonly string _email;
 
-        private int contadorOrcamentos = 1;
-        public homePage_usr(string e, string s, string b, string u, string se)
+        public homePage_usr(string email, string servidor, string bd, string usr, string senha)
         {
             InitializeComponent();
-            email = e;
-            servidor = s;
-            bd = b;
-            usr = u;
-            senha = se;
 
-            connectionString = $"SERVER={servidor}; PORT=3306; DATABASE={bd}; UID={usr}; PASSWORD={senha};";
+            _email = email;
+            _orcamentoService = new OrcamentoService(servidor, bd, usr, senha);
 
             CarregarOrcamentosExistentes();
         }
 
-        private void BtnCriarOrcamento_Click(object sender, RoutedEventArgs e)
-        {
-            InputBox("Criar Orçamento", "Digite o nome do orçamento:", "Novo Orçamento", nome =>
-            {
-                int id = InserirOrcamentoNoBanco(nome);
-                if (id > 0)
-                {
-                    CriarOrcamentoVisual(id, nome);
-                }
-            });
-        }
-
-
-        private void CriarOrcamentoVisual(int id, string nome)
-        {
-            Border border = new Border
-            {
-                Width = 180,
-                Height = 80,
-                Margin = new Thickness(10),
-                Background = Brushes.LightGray,
-                CornerRadius = new CornerRadius(5),
-                Padding = new Thickness(10)
-            };
-
-            StackPanel panel = new StackPanel();
-
-            TextBlock nomeText = new TextBlock
-            {
-                Text = nome,
-                FontSize = 14,
-                FontWeight = FontWeights.Bold,
-                Cursor = Cursors.Hand,
-                Tag = id
-            };
-
-            // nomeText.MouseDoubleClick += NomeText_MouseDoubleClick;
-
-            Button btnEntrar = new Button
-            {
-                Content = "Entrar",
-                Margin = new Thickness(0, 5, 0, 0),
-                Tag = nome
-            };
-
-            btnEntrar.Click += (s, e) =>
-            {
-                MessageBox.Show($"Entrando em: {nome}");
-            };
-
-            panel.Children.Add(nomeText);
-            panel.Children.Add(btnEntrar);
-            border.Child = panel;
-
-            wrapPanelOrcamentos.Children.Add(border);
-        }
-
-        private void NomeText_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            if (sender is TextBlock tb)
-            {
-                string nomeAtual = tb.Text;
-                int id = (int)tb.Tag;
-
-                InputBox("Renomear Orçamento", "Novo nome:", nomeAtual, novoNome =>
-                {
-                    if (!string.IsNullOrWhiteSpace(novoNome))
-                    {
-                        tb.Text = novoNome;
-                        AtualizarNomeOrcamentoNoBanco(id, novoNome);
-                    }
-                });
-            }
-        }
-
-        private int PesquisarNomeNoBanco(string nome) {
-
-            try
-            {
-                using MySqlConnection conn = new MySqlConnection(connectionString);
-                conn.Open();
-                string pesquisa = "SELECT @Nome FROM orcamento WHERE orcamento.usr_email = @Email;";
-                using MySqlCommand cmd2 = new MySqlCommand(pesquisa, conn);
-                cmd2.Parameters.AddWithValue("@Nome", nome);
-                cmd2.Parameters.AddWithValue("@Email", email); // ← relaciona orçamento com o e-mail do usuário
-                return Convert.ToInt32(cmd2.ExecuteScalar());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao inserir no banco: " + ex.Message);
-                return -1;
-            }
-
-        }
-
-        private int InserirOrcamentoNoBanco(string nome)
-        {
-            string name = nome;
-            int teste = 0;
-
-            teste = PesquisarNomeNoBanco(name);
-
-            try
-            {
-                using MySqlConnection conn = new MySqlConnection(connectionString);
-                conn.Open();
-                string query = "INSERT INTO orcamento (nome, usr_email) VALUES (@Nome, @Email); SELECT LAST_INSERT_ID();";
-                using MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@Nome", nome);
-                cmd.Parameters.AddWithValue("@Email", email); // ← relaciona orçamento com o e-mail do usuário
-                return Convert.ToInt32(cmd.ExecuteScalar());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao inserir no banco: " + ex.Message);
-                return -1;
-            }
-
-        }
-
-        private void AtualizarNomeOrcamentoNoBanco(int id, string novoNome)
-        {
-            try
-            {
-                using MySqlConnection conn = new MySqlConnection(connectionString);
-                conn.Open();
-                string query = "UPDATE orcamento SET nome = @Nome WHERE id = @Id";
-                using MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@Nome", novoNome);
-                cmd.Parameters.AddWithValue("@Id", id);
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao atualizar nome: " + ex.Message);
-            }
-        }
-
         private void CarregarOrcamentosExistentes()
         {
+            wrapPanelOrcamentos.Children.Clear();
+
             try
             {
-                using MySqlConnection conn = new MySqlConnection(connectionString);
-                conn.Open();
-                string query = "SELECT id, nome FROM orcamento WHERE usr_email = @Email";
-                using MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@Email", email);
-                using MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                var itens = _orcamentoService.ListarPorEmail(_email);
+                foreach (var (id, nome) in itens)
                 {
-                    int id = reader.GetInt32(0);
-                    string nome = reader.GetString(1);
                     CriarOrcamentoVisual(id, nome);
                 }
             }
@@ -203,32 +40,118 @@ namespace ORCA
             }
         }
 
-        private void InputBox(string title, string prompt, string defaultValue, Action<string> onConfirm)
+        // CHAME este método num botão da sua tela (ex.: Click="BtnCriarOrcamento_Click")
+        private void BtnCriarOrcamento_Click(object sender, RoutedEventArgs e)
         {
-
-            Window inputWindow = new Window
+            InputBox("Criar Orçamento", "Digite o nome do orçamento:", "Novo Orçamento", nome =>
             {
-                Title = title,
-                Width = 300,
-                Height = 150,
-                WindowStartupLocation = WindowStartupLocation.CenterScreen,
-                ResizeMode = ResizeMode.NoResize
+                if (string.IsNullOrWhiteSpace(nome)) return;
+
+                try
+                {
+                    int id = _orcamentoService.InserirOrcamento(nome, _email);
+                    if (id > 0)
+                        CriarOrcamentoVisual(id, nome);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao criar orçamento: " + ex.Message);
+                }
+            });
+        }
+
+        private void CriarOrcamentoVisual(int id, string nome)
+        {
+            var border = new Border
+            {
+                Width = 180,
+                Height = 80,
+                Margin = new Thickness(10),
+                Background = Brushes.LightGray,
+                CornerRadius = new CornerRadius(5),
+                Padding = new Thickness(10)
             };
 
-            StackPanel panel = new StackPanel { Margin = new Thickness(10) };
+            var panel = new StackPanel();
+
+            var nomeText = new TextBlock
+            {
+                Text = nome,
+                FontSize = 14,
+                FontWeight = FontWeights.Bold,
+                Cursor = Cursors.Hand,
+                Tag = id
+            };
+
+            // opcional: renomear via clique
+            nomeText.MouseLeftButtonDown += (s, e) =>
+            {
+                if (e.ClickCount == 2)
+                {
+                    InputBox("Renomear Orçamento", "Novo nome:", nome, novoNome =>
+                    {
+                        if (!string.IsNullOrWhiteSpace(novoNome))
+                        {
+                            try
+                            {
+                                _orcamentoService.AtualizarNome(id, novoNome);
+                                nomeText.Text = novoNome;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Erro ao renomear: " + ex.Message);
+                            }
+                        }
+                    });
+                }
+            };
+
+            var btnEntrar = new Button
+            {
+                Content = "Entrar",
+                Margin = new Thickness(0, 5, 0, 0),
+                Tag = nome
+            };
+
+            btnEntrar.Click += (s, e) =>
+            {
+                MessageBox.Show($"Entrando em: {nome}");
+                // TODO: abra a janela do orçamento real
+            };
+
+            panel.Children.Add(nomeText);
+            panel.Children.Add(btnEntrar);
+            border.Child = panel;
+
+            wrapPanelOrcamentos.Children.Add(border);
+        }
+
+        private void InputBox(string title, string prompt, string defaultValue, Action<string> onConfirm)
+        {
+            var inputWindow = new Window
+            {
+                Title = title,
+                Width = 320,
+                Height = 160,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                ResizeMode = ResizeMode.NoResize,
+                Owner = this
+            };
+
+            var panel = new StackPanel { Margin = new Thickness(10) };
             panel.Children.Add(new TextBlock { Text = prompt });
 
-            TextBox input = new TextBox { Text = defaultValue };
+            var input = new TextBox { Text = defaultValue };
             panel.Children.Add(input);
 
-            Button okButton = new Button { Content = "OK", Margin = new Thickness(0, 10, 0, 0), Width = 60 };
-            okButton.Click += (s, e) =>
+            var ok = new Button { Content = "OK", Margin = new Thickness(0, 10, 0, 0), Width = 60 };
+            ok.Click += (_, __) =>
             {
                 onConfirm(input.Text.Trim());
                 inputWindow.Close();
             };
 
-            panel.Children.Add(okButton);
+            panel.Children.Add(ok);
             inputWindow.Content = panel;
             inputWindow.ShowDialog();
         }

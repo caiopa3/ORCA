@@ -1,74 +1,91 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\",
+  "WorkspaceRootPath": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DA7A4830-E353-4B97-AE7C-BD61DBDED0F3}|..\\ORCA.Testes\\ORCA.Testes.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca.testes\\authservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DA7A4830-E353-4B97-AE7C-BD61DBDED0F3}|..\\ORCA.Testes\\ORCA.Testes.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca.testes\\modeloorcamentoservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA7A4830-E353-4B97-AE7C-BD61DBDED0F3}|..\\ORCA.Testes\\ORCA.Testes.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca.testes\\mstestsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DA7A4830-E353-4B97-AE7C-BD61DBDED0F3}|..\\ORCA.Testes\\ORCA.Testes.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca.testes\\orcamentoservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA7A4830-E353-4B97-AE7C-BD61DBDED0F3}|..\\ORCA.Testes\\ORCA.Testes.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca.testes\\orca.testes.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\services\\orcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:services\\orcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{DA7A4830-E353-4B97-AE7C-BD61DBDED0F3}|..\\ORCA.Testes\\ORCA.Testes.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca.testes\\authservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\orca.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:orca.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA7A4830-E353-4B97-AE7C-BD61DBDED0F3}|..\\ORCA.Testes\\ORCA.Testes.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca.testes\\orca.testes.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\selecionarusuarioswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:selecionarusuarioswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\selecionarusuarioswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:selecionarusuarioswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\novacolunawindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:novacolunawindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\homepage_usr.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\homepage_usr.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:homepage_usr.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\homepage_usr.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:homepage_usr.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\criar_orca.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\criar_orca.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:criar_orca.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\homepage_adm.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:homepage_adm.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\services\\modeloorcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:services\\modeloorcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\homepage_adm.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:homepage_adm.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\criar_orca.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\criar_orca.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:criar_orca.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\noppa\\onedrive\\desktop\\orca-main\\orca\\novacolunawindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\AuthServiceTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\orca.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:orca.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\selecionarusuarioswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:selecionarusuarioswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\selecionarusuarioswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:selecionarusuarioswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\novacolunawindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:novacolunawindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\homepage_usr.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:homepage_usr.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\homepage_adm.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:homepage_adm.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\homepage_adm.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:homepage_adm.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|d:\\orca-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\orca\\novacolunawindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:novacolunawindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\ORCA.Testes.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\MSTestSettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\ORCA.Testes.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,28 +95,93 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
+              "Title": "ModeloOrcamentoService.cs",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\Services\\ModeloOrcamentoService.cs",
+              "RelativeDocumentMoniker": "Services\\ModeloOrcamentoService.cs",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\Services\\ModeloOrcamentoService.cs",
+              "RelativeToolTip": "Services\\ModeloOrcamentoService.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAiwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T11:19:09.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrcamentoService.cs",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\Services\\OrcamentoService.cs",
+              "RelativeDocumentMoniker": "Services\\OrcamentoService.cs",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\Services\\OrcamentoService.cs",
+              "RelativeToolTip": "Services\\OrcamentoService.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwDUAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T11:18:54.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ModeloOrcamentoServiceTests.cs",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA.Testes\\ModeloOrcamentoServiceTests.cs",
+              "RelativeDocumentMoniker": "..\\ORCA.Testes\\ModeloOrcamentoServiceTests.cs",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA.Testes\\ModeloOrcamentoServiceTests.cs",
+              "RelativeToolTip": "..\\ORCA.Testes\\ModeloOrcamentoServiceTests.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAADcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T11:16:07.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrcamentoServiceTests.cs",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA.Testes\\OrcamentoServiceTests.cs",
+              "RelativeDocumentMoniker": "..\\ORCA.Testes\\OrcamentoServiceTests.cs",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA.Testes\\OrcamentoServiceTests.cs",
+              "RelativeToolTip": "..\\ORCA.Testes\\OrcamentoServiceTests.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAswDgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T11:15:59.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthServiceTests.cs",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA.Testes\\AuthServiceTests.cs",
+              "RelativeDocumentMoniker": "..\\ORCA.Testes\\AuthServiceTests.cs",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA.Testes\\AuthServiceTests.cs",
+              "RelativeToolTip": "..\\ORCA.Testes\\AuthServiceTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T01:09:12.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\Services\\AuthService.cs",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\Services\\AuthService.cs",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\Services\\AuthService.cs",
               "RelativeToolTip": "Services\\AuthService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAiwCQAAABWAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAiwCcAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-20T00:34:47.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ORCA",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\ORCA.csproj",
+              "DocumentIndex": 12,
+              "Title": "ORCA.csproj",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\ORCA.csproj",
               "RelativeDocumentMoniker": "ORCA.csproj",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\ORCA.csproj",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\ORCA.csproj",
               "RelativeToolTip": "ORCA.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -108,61 +190,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 20,
               "Title": "ORCA.Testes.csproj",
               "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\ORCA.Testes.csproj",
-              "RelativeDocumentMoniker": "..\\ORCA.Testes\\ORCA.Testes.csproj",
               "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\ORCA.Testes.csproj",
-              "RelativeToolTip": "..\\ORCA.Testes\\ORCA.Testes.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-19T23:23:30.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-19T23:23:30.373Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "AuthServiceTests.cs",
               "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\AuthServiceTests.cs",
-              "RelativeDocumentMoniker": "..\\ORCA.Testes\\AuthServiceTests.cs",
               "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\AuthServiceTests.cs",
-              "RelativeToolTip": "..\\ORCA.Testes\\AuthServiceTests.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwCEAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T23:22:44.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-19T23:22:44.224Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 21,
               "Title": "MSTestSettings.cs",
               "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\MSTestSettings.cs",
-              "RelativeDocumentMoniker": "..\\ORCA.Testes\\MSTestSettings.cs",
               "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\MSTestSettings.cs",
-              "RelativeToolTip": "..\\ORCA.Testes\\MSTestSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T23:22:26.596Z",
+              "WhenOpened": "2025-08-19T23:22:26.596Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "homePage_usr.xaml",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\homePage_usr.xaml",
+              "RelativeDocumentMoniker": "homePage_usr.xaml",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\homePage_usr.xaml",
+              "RelativeToolTip": "homePage_usr.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-15T16:45:23.451Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "homePage_usr.xaml",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\homePage_usr.xaml",
-              "RelativeDocumentMoniker": "homePage_usr.xaml",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\homePage_usr.xaml",
-              "RelativeToolTip": "homePage_usr.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-15T16:45:23.451Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "homePage_adm.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\homePage_adm.xaml.cs",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\homePage_adm.xaml.cs",
               "RelativeDocumentMoniker": "homePage_adm.xaml.cs",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\homePage_adm.xaml.cs",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\homePage_adm.xaml.cs",
               "RelativeToolTip": "homePage_adm.xaml.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -170,71 +244,69 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "homePage_adm.xaml",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\homePage_adm.xaml",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\homePage_adm.xaml",
               "RelativeDocumentMoniker": "homePage_adm.xaml",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\homePage_adm.xaml",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\homePage_adm.xaml",
               "RelativeToolTip": "homePage_adm.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-15T16:39:54.026Z"
+              "WhenOpened": "2025-08-15T16:39:54.026Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAswBwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAArwCoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-15T16:39:19.393Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\MainWindow.xaml",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\MainWindow.xaml",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-15T16:39:17.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T16:39:17.569Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 4,
               "Title": "homePage_usr.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\homePage_usr.xaml.cs",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\homePage_usr.xaml.cs",
               "RelativeDocumentMoniker": "homePage_usr.xaml.cs",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\homePage_usr.xaml.cs",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\homePage_usr.xaml.cs",
               "RelativeToolTip": "homePage_usr.xaml.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAAAJgAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T16:45:25.249Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ORCA.Testes",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\ORCA.Testes.csproj",
-              "RelativeDocumentMoniker": "..\\ORCA.Testes\\ORCA.Testes.csproj",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\ORCA.Testes.csproj",
-              "RelativeToolTip": "..\\ORCA.Testes\\ORCA.Testes.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-19T23:25:49.827Z",
+              "WhenOpened": "2025-08-15T16:45:25.249Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 22,
+              "Title": "ORCA.Testes.csproj",
+              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\ORCA.Testes.csproj",
+              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA.Testes\\ORCA.Testes.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-19T23:25:49.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "SelecionarUsuariosWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\SelecionarUsuariosWindow.xaml.cs",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\SelecionarUsuariosWindow.xaml.cs",
               "RelativeDocumentMoniker": "SelecionarUsuariosWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\SelecionarUsuariosWindow.xaml.cs",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\SelecionarUsuariosWindow.xaml.cs",
               "RelativeToolTip": "SelecionarUsuariosWindow.xaml.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAcwFkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -242,23 +314,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "SelecionarUsuariosWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\SelecionarUsuariosWindow.xaml",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\SelecionarUsuariosWindow.xaml",
               "RelativeDocumentMoniker": "SelecionarUsuariosWindow.xaml",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\SelecionarUsuariosWindow.xaml",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\SelecionarUsuariosWindow.xaml",
               "RelativeToolTip": "SelecionarUsuariosWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-15T18:08:21.86Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T18:08:21.86Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "NovaColunaWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\NovaColunaWindow.xaml.cs",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\NovaColunaWindow.xaml.cs",
               "RelativeDocumentMoniker": "NovaColunaWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\NovaColunaWindow.xaml.cs",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\NovaColunaWindow.xaml.cs",
               "RelativeToolTip": "NovaColunaWindow.xaml.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAIwDEAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -266,34 +337,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "NovaColunaWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\NovaColunaWindow.xaml",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\NovaColunaWindow.xaml",
               "RelativeDocumentMoniker": "NovaColunaWindow.xaml",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\NovaColunaWindow.xaml",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\NovaColunaWindow.xaml",
               "RelativeToolTip": "NovaColunaWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-08-13T23:03:28.659Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 5,
               "Title": "criar_orca.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\criar_orca.xaml.cs",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\criar_orca.xaml.cs",
               "RelativeDocumentMoniker": "criar_orca.xaml.cs",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\criar_orca.xaml.cs",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\criar_orca.xaml.cs",
               "RelativeToolTip": "criar_orca.xaml.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAwEEAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAiwHIAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T17:43:53.505Z"
+              "WhenOpened": "2025-08-04T17:43:53.505Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 9,
               "Title": "criar_orca.xaml",
-              "DocumentMoniker": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\criar_orca.xaml",
+              "DocumentMoniker": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\criar_orca.xaml",
               "RelativeDocumentMoniker": "criar_orca.xaml",
-              "ToolTip": "C:\\Users\\Noppa\\OneDrive\\Desktop\\ORCA-main\\ORCA\\criar_orca.xaml",
+              "ToolTip": "D:\\ORCA-59c39adffafd8c1b4f1c2c7bcd1bcae344e47b8f\\ORCA\\criar_orca.xaml",
               "RelativeToolTip": "criar_orca.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-08-04T17:30:44.998Z",

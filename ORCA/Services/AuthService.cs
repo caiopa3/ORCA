@@ -1,4 +1,4 @@
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 
 namespace ORCA.Services
@@ -9,49 +9,60 @@ namespace ORCA.Services
 
         public AuthService(string servidor, string bd, string usr, string senha)
         {
-            _connectionString = $"Server={servidor};Database={bd};User ID={usr};Password={senha};SslMode=none;";
+            _connectionString = $"SERVER={servidor};PORT=3306;DATABASE={bd};UID={usr};PASSWORD={senha};";
         }
 
-        /// <summary>
-        /// Verifica se o email e senha são válidos.
-        /// </summary>
+        // Método novo (que você já vinha usando nos testes anteriores)
+        public bool Login(string email, string senha)
+        {
+            return ValidarLogin(email, senha);
+        }
+
+        // Compatibilidade com código antigo
         public bool ValidarLogin(string email, string senha)
         {
-            using (var conexao = new MySqlConnection(_connectionString))
-            {
-                conexao.Open();
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
 
-                string query = "SELECT COUNT(*) FROM usuario WHERE email = @Email AND senha = @Senha";
-                using (var comando = new MySqlCommand(query, conexao))
-                {
-                    comando.Parameters.AddWithValue("@Email", email);
-                    comando.Parameters.AddWithValue("@Senha", senha);
+            var cmd = new MySqlCommand(
+                "SELECT COUNT(*) FROM usuario WHERE email=@e AND senha=@s",
+                conn);
+            cmd.Parameters.AddWithValue("@e", email);
+            cmd.Parameters.AddWithValue("@s", senha);
+            var count = Convert.ToInt32(cmd.ExecuteScalar());
 
-                    int count = Convert.ToInt32(comando.ExecuteScalar());
-                    return count > 0;
-                }
-            }
+            return count > 0;
         }
 
-        /// <summary>
-        /// Retorna a permissão do usuário (adm, usr, ges) ou null se não existir.
-        /// </summary>
+        // Compatibilidade com código antigo
         public string ObterPermissao(string email, string senha)
         {
-            using (var conexao = new MySqlConnection(_connectionString))
-            {
-                conexao.Open();
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
 
-                string query = "SELECT permissao FROM usuario WHERE email = @Email AND senha = @Senha LIMIT 1";
-                using (var comando = new MySqlCommand(query, conexao))
-                {
-                    comando.Parameters.AddWithValue("@Email", email);
-                    comando.Parameters.AddWithValue("@Senha", senha);
+            var cmd = new MySqlCommand(
+                "SELECT permissao FROM usuario WHERE email=@e AND senha=@s LIMIT 1",
+                conn);
+            cmd.Parameters.AddWithValue("@e", email);
+            cmd.Parameters.AddWithValue("@s", senha);
 
-                    object result = comando.ExecuteScalar();
-                    return result?.ToString();
-                }
-            }
+            var result = cmd.ExecuteScalar();
+            return result == null || result == DBNull.Value ? string.Empty : Convert.ToString(result);
+        }
+
+        // Útil caso você queira só pelo email
+        public string ObterPermissaoPorEmail(string email)
+        {
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
+
+            var cmd = new MySqlCommand(
+                "SELECT permissao FROM usuario WHERE email=@e LIMIT 1",
+                conn);
+            cmd.Parameters.AddWithValue("@e", email);
+
+            var result = cmd.ExecuteScalar();
+            return result == null || result == DBNull.Value ? string.Empty : Convert.ToString(result);
         }
     }
 }
