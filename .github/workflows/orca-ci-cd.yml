@@ -13,8 +13,6 @@ jobs:
     env:
       # 🔹 String de conexão ao banco da nuvem
       ConnectionStrings__Default: "Server=srv1889.hstgr.io;Port=3306;Database=u202947255_orca;User ID=u202947255_root;Password=TCCorca123;SslMode=none;"
-      Solution_Name: ORCA.sln
-      Test_Project_Path: ORCA.Testes/ORCA.Testes.csproj
 
     steps:
     - name: Checkout código
@@ -26,10 +24,10 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Restaurar dependências
-      run: dotnet restore ${{ env.Solution_Name }}
+      run: dotnet restore ./ORCA.sln
 
     - name: Rodar apenas testes
-      run: dotnet test ${{ env.Test_Project_Path }} --logger "trx;LogFileName=test_results.trx" --results-directory TestResults
+      run: dotnet test ./ORCA.Testes/ORCA.Testes.csproj --logger "trx;LogFileName=test_results.trx" --results-directory TestResults
 
     - name: Publicar resultados dos testes
       uses: actions/upload-artifact@v4
