@@ -11,11 +11,10 @@ jobs:
     runs-on: windows-latest
 
     env:
-      # String de conexão para o banco da nuvem
+      # 🔹 String de conexão ao banco da nuvem
       ConnectionStrings__Default: "Server=srv1889.hstgr.io;Port=3306;Database=u202947255_orca;User ID=u202947255_root;Password=TCCorca123;SslMode=none;"
       Solution_Name: ORCA.sln
       Test_Project_Path: ORCA.Testes/ORCA.Testes.csproj
-
 
     steps:
     - name: Checkout código
@@ -26,15 +25,11 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    # ⚠️ IMPORTANTE:
-    # Agora NÃO criamos mais container MySQL nem populamos dados fake
-    # Pois o banco já está criado na nuvem e os testes usarão os dados reais
-
     - name: Restaurar dependências
-      run: dotnet restore $Solution_Name
+      run: dotnet restore ${{ env.Solution_Name }}
 
-    - name: Rodar testes
-      run: dotnet test $Test_Project_Path --logger "trx;LogFileName=test_results.trx" --results-directory TestResults
+    - name: Rodar apenas testes
+      run: dotnet test ${{ env.Test_Project_Path }} --logger "trx;LogFileName=test_results.trx" --results-directory TestResults
 
     - name: Publicar resultados dos testes
       uses: actions/upload-artifact@v4
