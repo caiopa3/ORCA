@@ -10,22 +10,9 @@ jobs:
   test:
     runs-on: windows-latest
 
-    services:
-      mysql:
-        image: mysql:8
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: banco
-        ports:
-          - 3306:3306
-        options: >-
-          --health-cmd="mysqladmin ping -h localhost -proot"
-          --health-interval=10s
-          --health-timeout=5s
-          --health-retries=5
-
     env:
-      ConnectionStrings__Default: "Server=127.0.0.1;Port=3306;Database=banco;User ID=root;Password=root;SslMode=none;"
+      # String de conexão para o banco da nuvem
+      ConnectionStrings__Default: "Server=srv1889.hstgr.io;Port=3306;Database=u202947255_orca;User ID=u202947255_root;Password=TCCorca123;SslMode=none;"
       Solution_Name: ORCA/ORCA.sln
       Test_Project_Path: ORCA.Testes/ORCA.Testes.csproj
 
@@ -38,25 +25,14 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Criar tabela usuario e inserir dados fake
-      run: |
-        docker exec $(docker ps -q -f ancestor=mysql:8) \
-        mysql -uroot -proot banco -e "
-        CREATE TABLE IF NOT EXISTS usuario (
-          id INT AUTO_INCREMENT PRIMARY KEY,
-          email TEXT,
-          senha VARCHAR(255),
-          permissao VARCHAR(3)
-        );
-        INSERT INTO usuario (email, senha, permissao) VALUES
-        ('yslan_adm@gmail.com', '123', 'adm'),
-        ('yslan_usr@gmail.com', '123', 'usr'),
-        ('yslan_ges@gmail.com', '123', 'ges');"
+    # ⚠️ IMPORTANTE:
+    # Agora NÃO criamos mais container MySQL nem populamos dados fake
+    # Pois o banco já está criado na nuvem e os testes usarão os dados reais
 
     - name: Restaurar dependências
       run: dotnet restore $Solution_Name
 
-    - name: Rodar apenas testes
+    - name: Rodar testes
       run: dotnet test $Test_Project_Path --logger "trx;LogFileName=test_results.trx" --results-directory TestResults
 
     - name: Publicar resultados dos testes
