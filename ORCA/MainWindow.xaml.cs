@@ -15,10 +15,10 @@ namespace ORCA
 
     public partial class MainWindow : Window
     {
-        public string servidor = "localhost";
-        public string bd = "banco";
-        public string usr = "root";
-        public string senha = "";
+        public string servidor = "srv1889.hstgr.io";
+        public string bd = "u202947255_orca";
+        public string usr = "u202947255_root";
+        public string senha = "TCCorca123";
         public string connectionString;
         public MainWindow()
         {
@@ -84,4 +84,5 @@ namespace ORCA
             this.Close();
         }
     }
+
 }
