@@ -24,7 +24,7 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Restaurar dependências
-      run: dotnet restore ./ORCA.sln
+      run: dotnet restore ./ORCA/ORCA.sln
 
     - name: Rodar apenas testes
       run: dotnet test ./ORCA.Testes/ORCA.Testes.csproj --logger "trx;LogFileName=test_results.trx" --results-directory TestResults
