@@ -1,0 +1,49 @@
+name: Build and Release ORCA MSIX
+
+# Dispara quando uma release é publicada
+on:
+  release:
+    types: [published]
+
+jobs:
+  build-msix:
+    runs-on: windows-latest
+
+    steps:
+    # Passo 1: fazer checkout do repositório
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Passo 2: configurar .NET
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: "8.0.x"
+
+    # Passo 3: restaurar dependências
+    - name: Restore dependencies
+      run: dotnet restore ORCA/ORCA.csproj
+
+    # Passo 4: build da solução
+    - name: Build solution
+      run: dotnet build ORCA/ORCA.csproj --configuration Release --no-restore
+
+    # Passo 5: publicar em Release
+    - name: Publish app
+      run: dotnet publish ORCA/ORCA.csproj -c Release -o out /p:Platform="AnyCPU"
+
+    # Passo 6: empacotar em MSIX usando makeappx
+    - name: Package MSIX
+      run: |
+        mkdir msix
+        $version=${GITHUB_REF##*/}       # pega a tag da release, ex: v1.1.0
+        $version=${version#v}            # remove o "v"
+        makeappx pack /d out /p msix/ORCA-$version.msix
+
+    # Passo 7: fazer upload do MSIX para a release
+    - name: Upload MSIX to GitHub Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: msix/*.msix
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
