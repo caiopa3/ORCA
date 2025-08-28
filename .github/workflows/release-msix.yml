@@ -1,6 +1,5 @@
 name: Build and Release ORCA MSIX
 
-# Dispara quando uma release é publicada
 on:
   release:
     types: [published]
@@ -10,37 +9,71 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    # Passo 1: fazer checkout do repositório
+    # 1️⃣ Checkout do código
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Passo 2: configurar .NET
+    # 2️⃣ Configurar .NET
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: "8.0.x"
 
-    # Passo 3: restaurar dependências
+    # 3️⃣ Restaurar dependências
     - name: Restore dependencies
       run: dotnet restore ORCA/ORCA.csproj
 
-    # Passo 4: build da solução
+    # 4️⃣ Build
     - name: Build solution
       run: dotnet build ORCA/ORCA.csproj --configuration Release --no-restore
 
-    # Passo 5: publicar em Release
+    # 5️⃣ Publish
     - name: Publish app
       run: dotnet publish ORCA/ORCA.csproj -c Release -o out /p:Platform="AnyCPU"
 
-    # Passo 6: empacotar em MSIX usando makeappx
-    - name: Package MSIX
+    # 6️⃣ Garantir makeappx.exe
+    - name: Ensure makeappx
+      shell: pwsh
+      run: |
+        $makeappx = Get-Command makeappx.exe -ErrorAction SilentlyContinue
+        if (-not $makeappx) {
+            Write-Host "makeappx not found, installing Windows SDK via choco..."
+            choco install windows-sdk-10.1 -y --ignore-checksums
+        }
+
+        # Localiza makeappx.exe
+        $makeappx = Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\bin" -Recurse -Filter "makeappx.exe" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+        echo "makeappx_path=$($makeappx.FullName)" >> $env:GITHUB_ENV
+
+    # 7️⃣ Criar ou reutilizar certificado de teste persistente
+    - name: Create or reuse persistent test certificate
+      shell: pwsh
+      run: |
+        $certPath = "$HOME\ORCA-TestCert.pfx"
+        $certPassword = "1234"
+        if (-not (Test-Path $certPath)) {
+            Write-Host "Generating new test certificate..."
+            $cert = New-SelfSignedCertificate -Type Custom -Subject "CN=ORCA Test Certificate" `
+                    -KeyUsage DigitalSignature -KeyAlgorithm RSA -FriendlyName "ORCA Test Cert" `
+                    -CertStoreLocation Cert:\CurrentUser\My
+            Export-PfxCertificate -Cert $cert -FilePath $certPath -Password (ConvertTo-SecureString -String $certPassword -Force -AsPlainText)
+        }
+        echo "certPath=$certPath" >> $env:GITHUB_ENV
+        echo "certPassword=$certPassword" >> $env:GITHUB_ENV
+
+    # 8️⃣ Empacotar e assinar MSIX
+    - name: Package and sign MSIX
+      shell: pwsh
       run: |
         mkdir msix
-        $version=${GITHUB_REF##*/}       # pega a tag da release, ex: v1.1.0
-        $version=${version#v}            # remove o "v"
-        makeappx pack /d out /p msix/ORCA-$version.msix
+        $version = "${GITHUB_REF##*/}"
+        $version = $version.TrimStart('v')
+        Write-Host "Packing MSIX version $version..."
+        & "$env:makeappx_path" pack /d out /p msix/ORCA-$version.msix
+        Write-Host "Signing MSIX..."
+        SignTool sign /fd SHA256 /f $env:certPath /p $env:certPassword msix/ORCA-$version.msix
 
-    # Passo 7: fazer upload do MSIX para a release
+    # 9️⃣ Upload MSIX para release
     - name: Upload MSIX to GitHub Release
       uses: softprops/action-gh-release@v2
       with:
