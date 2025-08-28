@@ -24,10 +24,10 @@ namespace ORCA
         public string senha = "";
         public string connectionString;
 
-        // Informações para verificação de versão
+        // Informações do GitHub
         private const string RepoOwner = "caiopa3";
         private const string RepoName = "ORCA";
-        private const string CurrentVersion = "1.0.0"; // Atualize a cada release
+        private const string CurrentVersion = "1.0.0"; // Atualize sempre que lançar uma nova versão
 
         public MainWindow()
         {
@@ -35,12 +35,11 @@ namespace ORCA
             connectionString = $"SERVER={servidor}; PORT=3306; DATABASE={bd}; UID={usr}; PASSWORD={senha};";
             MessageBox.Show(connectionString);
 
-            // Chama a verificação de versão (não bloqueia login)
-            _ = CheckForUpdateAsync();
+            // Chama verificação de atualização assinada
+            _ = CheckForSignedUpdateAsync();
         }
 
-        // Método para verificar atualização no GitHub
-        private async Task CheckForUpdateAsync()
+        private async Task CheckForSignedUpdateAsync()
         {
             try
             {
@@ -52,11 +51,24 @@ namespace ORCA
 
                 using var doc = JsonDocument.Parse(response);
                 var latestVersion = doc.RootElement.GetProperty("tag_name").GetString();
+                var assets = doc.RootElement.GetProperty("assets").EnumerateArray();
 
-                if (IsNewerVersion(latestVersion, CurrentVersion))
+                // Procura arquivo MSIX assinado no release
+                string msixUrl = null;
+                foreach (var asset in assets)
+                {
+                    var name = asset.GetProperty("name").GetString();
+                    if (name.EndsWith(".msix"))
+                    {
+                        msixUrl = asset.GetProperty("browser_download_url").GetString();
+                        break;
+                    }
+                }
+
+                if (IsNewerVersion(latestVersion, CurrentVersion) && msixUrl != null)
                 {
                     var result = MessageBox.Show(
-                        $"Uma nova versão ({latestVersion}) está disponível! Deseja baixar agora?",
+                        $"Uma nova versão assinada ({latestVersion}) está disponível! Deseja baixar agora?",
                         "Atualização disponível",
                         MessageBoxButton.YesNo,
                         MessageBoxImage.Information
@@ -64,10 +76,9 @@ namespace ORCA
 
                     if (result == MessageBoxResult.Yes)
                     {
-                        var htmlUrl = doc.RootElement.GetProperty("html_url").GetString();
                         Process.Start(new ProcessStartInfo
                         {
-                            FileName = htmlUrl,
+                            FileName = msixUrl,
                             UseShellExecute = true
                         });
                     }
@@ -75,11 +86,10 @@ namespace ORCA
             }
             catch
             {
-                // Falha na verificação não impede o login
+                // Falha na verificação não bloqueia login
             }
         }
 
-        // Compara versões (CurrentVersion x LatestVersion)
         private bool IsNewerVersion(string latest, string current)
         {
             if (string.IsNullOrEmpty(latest) || string.IsNullOrEmpty(current)) return false;
