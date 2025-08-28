@@ -13,13 +13,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # 2️⃣ Configurar .NET
+    # 2️⃣ Setup .NET
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: "8.0.x"
 
-    # 3️⃣ Restaurar dependências
+    # 3️⃣ Restore dependencies
     - name: Restore dependencies
       run: dotnet restore ORCA/ORCA.csproj
 
@@ -32,18 +32,30 @@ jobs:
       run: dotnet publish ORCA/ORCA.csproj -c Release -o out /p:Platform="AnyCPU"
 
     # 6️⃣ Garantir makeappx.exe
-    - name: Ensure makeappx
+    - name: Locate makeappx.exe
       shell: pwsh
       run: |
-        $makeappx = Get-Command makeappx.exe -ErrorAction SilentlyContinue
-        if (-not $makeappx) {
-            Write-Host "makeappx not found, installing Windows SDK via choco..."
-            choco install windows-sdk-10.1 -y --ignore-checksums
+        # Instala Windows SDK se não estiver presente
+        if (-not (Get-Command makeappx.exe -ErrorAction SilentlyContinue)) {
+          choco install windows-sdk-10.1 -y --ignore-checksums
         }
 
-        # Localiza makeappx.exe no SDK instalado
-        $makeappx = Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\bin" -Recurse -Filter "makeappx.exe" |
-                     Sort-Object LastWriteTime -Descending | Select-Object -First 1
+        # Busca makeappx.exe em todos os possíveis diretórios do SDK
+        $paths = @(
+          "C:\Program Files (x86)\Windows Kits\10\bin\10.0*\x64\makeappx.exe",
+          "C:\Program Files (x86)\Windows Kits\10\bin\10.0*\x86\makeappx.exe",
+          "C:\Program Files (x86)\Windows Kits\10\bin\10.0*\arm\makeappx.exe",
+          "C:\Program Files (x86)\Windows Kits\10\bin\10.0*\arm64\makeappx.exe"
+        )
+
+        $makeappx = $null
+        foreach ($p in $paths) {
+          $found = Get-ChildItem -Path $p -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+          if ($found) { $makeappx = $found; break }
+        }
+
+        if (-not $makeappx) { throw "makeappx.exe não encontrado no runner" }
+
         echo "makeappx_path=$($makeappx.FullName)" >> $env:GITHUB_ENV
 
     # 7️⃣ Criar ou reutilizar certificado de teste persistente
@@ -53,7 +65,6 @@ jobs:
         $certPath = "$HOME\ORCA-TestCert.pfx"
         $certPassword = "1234"
         if (-not (Test-Path $certPath)) {
-            Write-Host "Generating new test certificate..."
             $cert = New-SelfSignedCertificate -Type Custom -Subject "CN=ORCA Test Certificate" `
                     -KeyUsage DigitalSignature -KeyAlgorithm RSA -FriendlyName "ORCA Test Cert" `
                     -CertStoreLocation Cert:\CurrentUser\My
