@@ -2,10 +2,10 @@ name: Build ORCA Installer
 
 on:
   release:
-    types: [published]   # dispara quando você publica um release
+    types: [published]
 
 permissions:
-  contents: write        # necessário para anexar arquivo ao release
+  contents: write
 
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
           dotnet-version: 8.0.x
 
       - name: Build and publish .NET app
-        run: dotnet publish ORCA/ORCA.csproj -c Release -r win-x64 --self-contained true -o ORCA/bin/Release/net8.0-windows/win-x64/publish
+        run: dotnet publish ORCA/ORCA.csproj -c Release -r win-x64 --self-contained true -o publish
 
       - name: Setup Inno Setup
         run: choco install innosetup --no-progress -y
@@ -31,11 +31,13 @@ jobs:
         run: echo "version=${GITHUB_REF#refs/tags/}" >> $env:GITHUB_OUTPUT
 
       - name: Build installer
-        run: |
-          iscc setup.iss /dMyAppVersion=${{ steps.get_version.outputs.version }}
+        run: iscc setup.iss /dMyAppVersion=${{ steps.get_version.outputs.version }}
 
       - name: List dist folder (debug)
         run: dir dist
+
+      - name: List publish folder (debug)
+        run: dir publish
 
       - name: Upload installer to release
         uses: softprops/action-gh-release@v2
