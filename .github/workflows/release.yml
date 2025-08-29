@@ -2,37 +2,34 @@ name: Build ORCA Installer
 
 on:
   release:
-    types: [published]
+    types: [published]   # dispara quando você publica um release
+
+permissions:
+  contents: write   # necessário para anexar arquivo ao release
 
 jobs:
   build:
-    runs-on: windows-2022
+    runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 8.0.x
-
-      - name: Restore and Publish
-        run: dotnet publish ORCA/ORCA.csproj -c Release -r win-x64 --self-contained true -o ORCA/bin/Release/net8.0-windows/win-x64/publish
-
-      - name: Extract release tag
-        id: get_version
-        run: |
-          echo "version=${GITHUB_REF_NAME#v}" >> $env:GITHUB_OUTPUT
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Setup Inno Setup
-        uses: Minionguyjpro/Inno-Setup-Action@v1.2.0
-        with:
-          path: setup.iss
-          defines: |
-            MyAppVersion=${{ steps.get_version.outputs.version }}
+        run: choco install innosetup --no-progress -y
 
-      - name: Upload Installer to Release
+      - name: Get version from tag
+        id: get_version
+        run: |
+          echo "version=${GITHUB_REF#refs/tags/}" >> $env:GITHUB_OUTPUT
+
+      - name: Build installer
+        run: |
+          iscc setup.iss /dMyAppVersion=${{ steps.get_version.outputs.version }}
+
+      - name: Upload installer to release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist\ORCA_Installer_${{ steps.get_version.outputs.version }}.exe
+          files: dist\ORCA_Installer_*.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
