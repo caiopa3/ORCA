@@ -1,0 +1,62 @@
+name: Build ORCA Installer
+
+on:
+  release:
+    types: [published]   # dispara ao publicar um release
+
+permissions:
+  contents: write        # necessário para anexar arquivo no release
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore & Publish (win-x64)
+        shell: pwsh
+        run: >
+          dotnet publish ORCA/ORCA.csproj -c Release -r win-x64
+          -p:PublishSingleFile=false --self-contained false
+          -o "ORCA\bin\Release\net8.0-windows\win-x64\publish"
+
+      - name: Install Inno Setup
+        shell: pwsh
+        run: choco install innosetup --no-progress -y
+
+      - name: Get version from release tag
+        id: get_version
+        shell: pwsh
+        run: |
+          # Pega a tag do release (ex: v1.2.3 ou 1.2.3)
+          $tag = "${{ github.event.release.tag_name }}"
+          if (-not $tag) {
+            $ref = "${{ github.ref }}"
+            $tag = $ref -replace '^refs/tags/',''
+          }
+          # Remove um 'v' inicial só para o AppVersion do Inno
+          $numeric = $tag -replace '^v',''
+          "version_raw=$tag"    >> $env:GITHUB_OUTPUT
+          "version_num=$numeric" >> $env:GITHUB_OUTPUT
+          Write-Host "Tag bruta: $tag | Versão numérica: $numeric"
+
+      - name: Build installer with Inno Setup
+        shell: pwsh
+        run: |
+          iscc setup.iss /dMyAppVersion=${{ steps.get_version.outputs.version_num }}
+
+      - name: Upload installer to the same release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist\ORCA_Installer_*.exe
+          # Se quiser garantir que usa exatamente a tag do release atual:
+          tag_name: ${{ steps.get_version.outputs.version_raw }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
