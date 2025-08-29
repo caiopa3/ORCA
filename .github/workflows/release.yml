@@ -1,31 +1,38 @@
-name: Build ORCA Release
+name: Build ORCA Installer
 
 on:
-  push:
-    tags:
-      - 'v*'   # roda sempre que criar uma tag do tipo v1.0.0, v2.0.1 etc
+  release:
+    types: [published]
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-2022
 
     steps:
-      - name: Checkout código
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Instalar .NET
+      - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x' # ou a versão que seu projeto usa
+          dotnet-version: 8.0.x
 
-      - name: Restaurar dependências
-        run: dotnet restore ./ORCA/ORCA.csproj
+      - name: Restore and Publish
+        run: dotnet publish ORCA/ORCA.csproj -c Release -r win-x64 --self-contained true -o ORCA/bin/Release/net8.0-windows/win-x64/publish
 
-      - name: Build Release
-        run: dotnet publish ./ORCA/ORCA.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o out
+      - name: Extract release tag
+        id: get_version
+        run: |
+          echo "version=${GITHUB_REF_NAME#v}" >> $env:GITHUB_OUTPUT
 
-      - name: Upload artefato
-        uses: actions/upload-artifact@v4
+      - name: Setup Inno Setup
+        uses: Minionguyjpro/Inno-Setup-Action@v1.2.0
         with:
-          name: ORCA
-          path: out/
+          path: setup.iss
+          defines: |
+            MyAppVersion=${{ steps.get_version.outputs.version }}
+
+      - name: Upload Installer to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist\ORCA_Installer_${{ steps.get_version.outputs.version }}.exe
