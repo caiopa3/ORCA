@@ -1,9 +1,11 @@
-name: Build & Release ORCA (Artifact Only)
+name: Build & Release ORCA (Two Packages)
 
 on:
-  push:
-    tags:
-      - "v*"   # dispara quando você cria uma tag tipo v1.2.3
+  release:
+    types: [published]   # dispara quando você publica um release manualmente
+
+permissions:
+  contents: write
 
 jobs:
   build-and-release:
@@ -18,12 +20,7 @@ jobs:
         with:
           dotnet-version: 8.0.x
 
-      - name: Restore & Publish (WPF)
-        run: |
-          dotnet restore ORCA/ORCA.csproj
-          dotnet publish ORCA/ORCA.csproj -c Release -r win-x64 --self-contained false -o publish
-
-      - name: Get version from tag (strip leading v)
+      - name: Get version from release tag
         id: getver
         shell: pwsh
         run: |
@@ -31,21 +28,40 @@ jobs:
           if ($v.StartsWith("v")) { $v = $v.Substring(1) }
           echo "version=$v" >> $env:GITHUB_OUTPUT
 
-      - name: Zip published files
+      # --- Build Framework Dependent ---
+      - name: Publish (framework dependent)
         run: |
-          Compress-Archive -Path publish\* -DestinationPath ORCA-${{ steps.getver.outputs.version }}.zip
+          dotnet restore ORCA/ORCA.csproj
+          dotnet publish ORCA/ORCA.csproj -c Release -r win-x64 --self-contained false -o publish-fx
 
-      - name: Upload artifact (zip)
+      - name: Zip framework dependent build
+        run: |
+          Compress-Archive -Path publish-fx\* -DestinationPath ORCA-win-x64-${{ steps.getver.outputs.version }}.zip
+
+      # --- Build Self-Contained ---
+      - name: Publish (self-contained)
+        run: |
+          dotnet publish ORCA/ORCA.csproj -c Release -r win-x64 --self-contained true -o publish-sc
+
+      - name: Zip self-contained build
+        run: |
+          Compress-Archive -Path publish-sc\* -DestinationPath ORCA-win-x64-selfcontained-${{ steps.getver.outputs.version }}.zip
+
+      # --- Upload como artefatos ---
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ORCA-Binaries
-          path: ORCA-${{ steps.getver.outputs.version }}.zip
+          path: |
+            ORCA-win-x64-${{ steps.getver.outputs.version }}.zip
+            ORCA-win-x64-selfcontained-${{ steps.getver.outputs.version }}.zip
 
-      - name: Create GitHub Release and attach zip
+      # --- Anexar ao Release existente ---
+      - name: Attach zips to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          name: ORCA v${{ steps.getver.outputs.version }}
-          files: ORCA-${{ steps.getver.outputs.version }}.zip
-          generate_release_notes: true
+          files: |
+            ORCA-win-x64-${{ steps.getver.outputs.version }}.zip
+            ORCA-win-x64-selfcontained-${{ steps.getver.outputs.version }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
