@@ -1,54 +1,31 @@
-name: Build & Release ORCA (Inno Setup)
+name: Build ORCA Release
 
 on:
   push:
     tags:
-      - "v*"   # roda sempre que você criar uma tag que comece com v
+      - 'v*'   # roda sempre que criar uma tag do tipo v1.0.0, v2.0.1 etc
 
 jobs:
-  build-and-release:
+  build:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout código
         uses: actions/checkout@v4
 
-      - name: Setup .NET 8
+      - name: Instalar .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: '8.0.x' # ou a versão que seu projeto usa
 
-      - name: Restore & Publish (WPF)
-        run: |
-          dotnet restore ORCA/ORCA.csproj
-          dotnet publish ORCA/ORCA.csproj -c Release -r win-x64 --self-contained false -o publish
+      - name: Restaurar dependências
+        run: dotnet restore ./ORCA/ORCA.csproj
 
-      - name: Install Inno Setup
-        run: choco install innosetup -y
+      - name: Build Release
+        run: dotnet publish ./ORCA/ORCA.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o out
 
-      - name: Get version from tag (strip leading v)
-        id: getver
-        shell: pwsh
-        run: |
-          $v = "${{ github.ref_name }}"
-          if ($v.StartsWith("v")) { $v = $v.Substring(1) }
-          echo "version=$v" >> $env:GITHUB_OUTPUT
-
-      - name: Build installer (Inno Setup)
-        run: |
-          iscc /DMyAppVersion="${{ steps.getver.outputs.version }}" setup.iss
-
-      - name: Upload artifact (installer)
+      - name: Upload artefato
         uses: actions/upload-artifact@v4
         with:
-          name: ORCA-Installer
-          path: dist/*.exe
-
-      - name: Create GitHub Release and attach installer
-        uses: softprops/action-gh-release@v2
-        with:
-          name: ORCA v${{ steps.getver.outputs.version }}
-          files: dist/*.exe
-          generate_release_notes: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: ORCA
+          path: out/
