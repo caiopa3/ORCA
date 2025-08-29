@@ -24,9 +24,7 @@ jobs:
           dotnet publish ORCA/ORCA.csproj -c Release -r win-x64 --self-contained false -o publish
 
       - name: Install Inno Setup
-        uses: Minionguyjpro/InnoSetup-Action@v1.0.0
-        with:
-          innosetup-version: 6.2.2
+        run: choco install innosetup -y
 
       - name: Get version from tag (strip leading v)
         id: getver
@@ -37,7 +35,8 @@ jobs:
           echo "version=$v" >> $env:GITHUB_OUTPUT
 
       - name: Build installer (Inno Setup)
-        run: iscc /DMyAppVersion="${{ steps.getver.outputs.version }}" setup.iss
+        run: |
+          iscc /DMyAppVersion="${{ steps.getver.outputs.version }}" setup.iss
 
       - name: Upload artifact (installer)
         uses: actions/upload-artifact@v4
