@@ -1,35 +1,31 @@
-name: Build ORCA Installer
+name: Build ORCA Release
 
 on:
-  release:
-    types: [published]   # dispara quando você publica um release
-
-permissions:
-  contents: write   # necessário para anexar arquivo ao release
+  push:
+    tags:
+      - 'v*'   # roda sempre que criar uma tag do tipo v1.0.0, v2.0.1 etc
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout código
+        uses: actions/checkout@v4
 
-      - name: Setup Inno Setup
-        run: choco install innosetup --no-progress -y
-
-      - name: Get version from tag
-        id: get_version
-        run: |
-          echo "version=${GITHUB_REF#refs/tags/}" >> $env:GITHUB_OUTPUT
-
-      - name: Build installer
-        run: |
-          iscc setup.iss /dMyAppVersion=${{ steps.get_version.outputs.version }}
-
-      - name: Upload installer to release
-        uses: softprops/action-gh-release@v2
+      - name: Instalar .NET
+        uses: actions/setup-dotnet@v4
         with:
-          files: dist\ORCA_Installer_*.exe
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          dotnet-version: '8.0.x' # ou a versão que seu projeto usa
+
+      - name: Restaurar dependências
+        run: dotnet restore ./ORCA/ORCA.csproj
+
+      - name: Build Release
+        run: dotnet publish ./ORCA/ORCA.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o out
+
+      - name: Upload artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: ORCA
+          path: out/
