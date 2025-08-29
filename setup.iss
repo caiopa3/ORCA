@@ -1,9 +1,11 @@
 ; ------- Inno Setup script para ORCA -------
 #define MyAppName "ORCA"
+
 #ifndef MyAppVersion
   ; fallback caso não seja passado /dMyAppVersion=...
   #define MyAppVersion "0.0.0"
 #endif
+
 #define MyAppExeName "ORCA.exe"
 
 [Setup]
@@ -23,7 +25,7 @@ PrivilegesRequired=lowest
 DisableDirPage=no
 
 [Files]
-; Publica o build feito pelo workflow
+; Inclui os binários publicados pelo dotnet publish
 Source: "ORCA\bin\Release\net8.0-windows\win-x64\publish\*"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion
 
 [Icons]
