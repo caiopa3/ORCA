@@ -9,7 +9,6 @@
 #define MyAppExeName "ORCA.exe"
 
 [Setup]
-; Use um GUID próprio se quiser manter o mesmo AppId entre versões
 AppId={{8B7C4D6B-6E6E-4A1D-9D6E-ORCA-000000000001}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
@@ -25,8 +24,8 @@ PrivilegesRequired=lowest
 DisableDirPage=no
 
 [Files]
-; Inclui os binários publicados pelo dotnet publish
-Source: "ORCA\bin\Release\net8.0-windows\win-x64\publish\*"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion
+; Agora busca diretamente na pasta publish criada pelo workflow
+Source: "publish\*"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
