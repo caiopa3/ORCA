@@ -55,7 +55,6 @@ Empreendedores e gestores que buscam **economia de tempo e redução de erros ma
 bin/                 # Arquivos compilados
 obj/                 # Arquivos temporários
 packages/            # Dependências do projeto
-eventosbv.sql        # Script do banco de dados MySQL
 MainWindow.xaml      # Interface principal
 MainWindow.xaml.cs   # Lógica do sistema
 ```
