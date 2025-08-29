@@ -1,47 +1,51 @@
-name: Build ORCA Installer
+name: Build & Release ORCA (Artifact Only)
 
 on:
-  release:
-    types: [published]
-
-permissions:
-  contents: write
+  push:
+    tags:
+      - "v*"   # dispara quando você cria uma tag tipo v1.2.3
 
 jobs:
-  build:
+  build-and-release:
     runs-on: windows-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup .NET
+      - name: Setup .NET 8
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
 
-      - name: Build and publish .NET app
-        run: dotnet publish ORCA/ORCA.csproj -c Release -r win-x64 --self-contained true -o publish
+      - name: Restore & Publish (WPF)
+        run: |
+          dotnet restore ORCA/ORCA.csproj
+          dotnet publish ORCA/ORCA.csproj -c Release -r win-x64 --self-contained false -o publish
 
-      - name: Setup Inno Setup
-        run: choco install innosetup --no-progress -y
+      - name: Get version from tag (strip leading v)
+        id: getver
+        shell: pwsh
+        run: |
+          $v = "${{ github.ref_name }}"
+          if ($v.StartsWith("v")) { $v = $v.Substring(1) }
+          echo "version=$v" >> $env:GITHUB_OUTPUT
 
-      - name: Get version from tag
-        id: get_version
-        run: echo "version=${GITHUB_REF#refs/tags/}" >> $env:GITHUB_OUTPUT
+      - name: Zip published files
+        run: |
+          Compress-Archive -Path publish\* -DestinationPath ORCA-${{ steps.getver.outputs.version }}.zip
 
-      - name: Build installer
-        run: iscc setup.iss /dMyAppVersion=${{ steps.get_version.outputs.version }}
+      - name: Upload artifact (zip)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ORCA-Binaries
+          path: ORCA-${{ steps.getver.outputs.version }}.zip
 
-      - name: List dist folder (debug)
-        run: dir dist
-
-      - name: List publish folder (debug)
-        run: dir publish
-
-      - name: Upload installer to release
+      - name: Create GitHub Release and attach zip
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/ORCA_Installer_*.exe
+          name: ORCA v${{ steps.getver.outputs.version }}
+          files: ORCA-${{ steps.getver.outputs.version }}.zip
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
