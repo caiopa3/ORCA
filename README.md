@@ -1,55 +1,101 @@
-# Orçamentos rápidos, computadorizados e automatizados (ORCA)
-# Sistema de orçamentos automátizado (SOA)
+# 🔧 Orçamentos rápidos, computadorizados e automatizados (ORCA)
 
-#### 1 TECNOLOGIAS
+## Descrição do Projeto
 
-##### 1.1 **Lógica de Programação**
+O ORCA é um sistema desktop voltado para automatizar orçamentos manuais em pequenas e médias empresas. O objetivo é facilitar o processo de geração de orçamentos, tornando-o mais rápido, confiável e acessível, reduzindo erros humanos e aumentando a produtividade.
 
-##### 1.2 **Programação Web**
+O sistema é pensado para cidades como Mogi Guaçu e Mogi Mirim, mas possui potencial para expansão. Ele integra funcionalidades de cadastro de produtos, clientes e serviços, além de geração automática de orçamentos prontos para envio ou impressão.
 
-- 1.2.1 HTML
-- 1.2.2 CSS
+---
 
-##### 1.3 **Linguagem de Programação**
+## Funcionalidades Principais
 
-- 1.3.1 C#
-- 1.3.2 Paradigma Orientado a Objetos
+- Cadastro de produtos, serviços e clientes.
 
-##### 1.4 **Desenvolvimento Desktop**
+- Criação de orçamentos de forma automatizada.
 
-- 1.4.1 C#
-- 1.4.2 Visual Studio 2022
-- 1.4.3 Windows Forms
-- 1.4.4 WPF
-- 1.4.5 Padrão MVVM
+- Gestão de orçamentos emitidos, com histórico e status.
 
-##### 1.5 **Frameworks e Tecnologias Relacionadas**
+- Interface amigável e intuitiva, pronta para uso em desktop.
 
-- 1.5.1 .NET Framework
-- 1.5.2 .NET Core
-- 1.5.3 Bibliotecas e Pacotes (NuGet)
-- 1.5.4 MySQL Connector/NET
-- 1.5.5 iTextSharp (Geração de PDFs)
+- Controle de custos fixos e variáveis para análise de viabilidade.
 
-##### 1.6 **Servidor**
+- Possibilidade de expansão para diferentes tipos de empresas.
 
-- 1.6.1 Servidor Web
-- 1.6.2 Servidor Local (XAMPP)
+---
 
-##### 1.7 **Banco de Dados**
+## Público-Alvo
 
-- 1.7.1 Modelagem
-- 1.7.2 MySQL
-- 1.7.3 BRModelo
-- 1.7.4 Sintaxe Básica do SQL
-- 1.7.5 Relacionamentos (Chaves Primárias, Estrangeiras, Normalização)
+Pequenas e médias empresas que precisam **automatizar** a emissão de **orçamentos**.
 
-##### 1.8 **Arquitetura do Sistema**
+Empreendedores e gestores que buscam **economia de tempo e redução de erros manuais.**
 
-- 1.8.1 Padrão MVVM
-- 1.8.2 Comunicação entre Camadas
+---
 
-##### 1.9 **Consumo de APIs no C#**
+## 🛠️ Tecnologias Utilizadas
 
-- 1.9.1 JSON e XML
-- 1.9.2 Consumo de APIs RESTful
+- **Linguagem:** C#
+- **Interface:** WPF (Windows Presentation Foundation)
+- **Banco de Dados:** MySQL
+
+---
+
+## ⚙️ Funcionalidades
+
+- Cadastro de produtos, serviços e clientes.
+- Criação automática de orçamentos.
+- Atualização e exclusão de orçamentos.
+- Interface amigável em WPF para desktop.
+
+---
+
+### 📂 Estrutura do Projeto
+
+```
+bin/                 # Arquivos compilados
+obj/                 # Arquivos temporários
+packages/            # Dependências do projeto
+eventosbv.sql        # Script do banco de dados MySQL
+MainWindow.xaml      # Interface principal
+MainWindow.xaml.cs   # Lógica do sistema
+```
+### 💡 Diferenciais
+
+- Automatização completa do processo de orçamentos.
+- Armazenamento seguro e confiável no banco de dados MySQL.
+
+---
+
+## 📦 Downloads do ORCA:
+
+Na página de Releases você encontrará dois pacotes do ORCA:
+```
+🔹 ORCA-win-x64-versão.zip
+```
+Menor tamanho.
+**Requer** que o usuário tenha o .NET 8 Runtime instalado no Windows.
+Ideal para quem já possui outras aplicações .NET 8.
+**Baixar o runtime oficial (caso não tenha):**
+👉[Download .NET 8 Runtime (Microsoft)]([https://nodejs.org/](https://dotnet.microsoft.com/en-us/download/dotnet/8.0/runtime))
+
+```
+🔹 ORCA-win-x64-selfcontained-versão.zip
+```
+Maior tamanho (inclui o runtime).
+**Não precisa** instalar nada extra.
+Recomendado para a maioria dos usuários que só querem baixar e usar.
+
+## 🚀 Como usar:
+
+```
+- Baixe o arquivo .zip desejado.
+- Extraia o conteúdo em uma pasta no seu PC.
+- Execute o arquivo ORCA.exe para iniciar o aplicativo.
+- (Opcional) Crie um atalho na área de trabalho para acesso rápido.
+```
+
+---
+
+## 📚 Créditos Acadêmicos
+
+Projeto desenvolvido como **TCC** do curso **Técnico em Desenvolvimento de Sistemas**, orientado pelos professores **Maércio Girardi Bisco** e **Pedro Ramires da Silva Amalfi Costa**.
