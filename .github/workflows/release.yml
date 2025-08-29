@@ -1,54 +1,55 @@
-name: Release ORCA
+name: Build & Release ORCA (Inno Setup)
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - "v*"   # roda sempre que você criar uma tag que comece com v
 
 jobs:
-  build:
+  build-and-release:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout código
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup .NET
+      - name: Setup .NET 8
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
 
-      - name: Restaurar dependências
-        run: dotnet restore ORCA/ORCA.csproj
-
-      - name: Build projeto
-        run: dotnet build ORCA/ORCA.csproj -c Release --no-restore
-
-      - name: Publicar binários
-        run: dotnet publish ORCA/ORCA.csproj -c Release -o out
-
-      # Criação do pacote MSIX com MSIX Packaging Tool
-      - name: Instalar MSIX Packaging Tool
-        run: choco install microsoft.msixsdk -y
-
-      - name: Empacotar em MSIX
+      - name: Restore & Publish (WPF)
         run: |
-          mkdir package
-          MakeAppx pack /d out /p package/ORCA.msix /l
+          dotnet restore ORCA/ORCA.csproj
+          dotnet publish ORCA/ORCA.csproj -c Release -r win-x64 --self-contained false -o publish
 
-      # Assinar o pacote (precisa de certificado válido)
-      # Exemplo usando secrets
-      - name: Importar certificado
-        run: |
-          echo "${{ secrets.SIGN_CERT_PFX }}" | base64 -d > cert.pfx
-          certutil -f -p "${{ secrets.SIGN_CERT_PASS }}" -importpfx cert.pfx
-
-      - name: Assinar MSIX
-        run: |
-          signtool sign /fd SHA256 /a /f cert.pfx /p "${{ secrets.SIGN_CERT_PASS }}" package/ORCA.msix
-
-      - name: Upload para o Release
-        uses: softprops/action-gh-release@v1
+      - name: Install Inno Setup
+        uses: Minionguyjpro/InnoSetup-Action@v1.0.0
         with:
-          files: package/ORCA.msix
+          innosetup-version: 6.2.2
+
+      - name: Get version from tag (strip leading v)
+        id: getver
+        shell: pwsh
+        run: |
+          $v = "${{ github.ref_name }}"
+          if ($v.StartsWith("v")) { $v = $v.Substring(1) }
+          echo "version=$v" >> $env:GITHUB_OUTPUT
+
+      - name: Build installer (Inno Setup)
+        run: iscc /DMyAppVersion="${{ steps.getver.outputs.version }}" setup.iss
+
+      - name: Upload artifact (installer)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ORCA-Installer
+          path: dist/*.exe
+
+      - name: Create GitHub Release and attach installer
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ORCA v${{ steps.getver.outputs.version }}
+          files: dist/*.exe
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
