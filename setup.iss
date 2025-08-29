@@ -1,37 +1,18 @@
-#define MyAppName "ORCA"
-#ifndef MyAppVersion
-  #define MyAppVersion "0.0.0"
-#endif
-#define MyAppPublisher "ORCA Team"
-#define MyAppExeName "ORCA.exe"
+; Arquivo: setup.iss
 
 [Setup]
-AppId={{3B8B6A34-5EAC-4A7D-9C6C-0E9D5A1C8E77}
-AppName={#MyAppName}
+AppName=ORCA
 AppVersion={#MyAppVersion}
-AppPublisher={#MyAppPublisher}
-DefaultDirName={localappdata}\{#MyAppName}
-DefaultGroupName={#MyAppName}
+DefaultDirName={pf}\ORCA
+DefaultGroupName=ORCA
 OutputDir=dist
-OutputBaseFilename=ORCA-Setup-v{#MyAppVersion}
+OutputBaseFilename=ORCA_Installer_{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
-PrivilegesRequired=lowest
-WizardStyle=modern
-ArchitecturesInstallIn64BitMode=x64
-DisableDirPage=no
-DisableProgramGroupPage=no
 
 [Files]
-; Vamos empacotar tudo que o "dotnet publish" gerar
-Source: "publish\*"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion
-
-[Tasks]
-Name: "desktopicon"; Description: "Criar atalho na área de trabalho"; GroupDescription: "Atalhos:"; Flags: unchecked
+Source: "ORCA\bin\Release\net8.0-windows\win-x64\publish\*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Icons]
-Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
-Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
-
-[Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "Executar {#MyAppName} agora"; Flags: nowait postinstall skipifsilent
+Name: "{group}\ORCA"; Filename: "{app}\ORCA.exe"
+Name: "{commondesktop}\ORCA"; Filename: "{app}\ORCA.exe"
