@@ -520,7 +520,7 @@ C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWind
 C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.baml
 C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.baml
 C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.g.cs
-C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.baml
-C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.baml
-C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.g.cs
-C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.g.cs
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.g.cs
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.g.cs
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.baml

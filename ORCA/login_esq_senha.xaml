@@ -5,11 +5,214 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ORCA"
         mc:Ignorable="d"
-        Title="Redefinição de senha" Height="450" Width="800">
+        Title="Redefinição de senha"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#1C1C1C"
+        Height="500" Width="918">
+    
     <Grid>
-        <Button x:Name="btnEnviar" Content="Enviar" Margin="116,206,530,167" Click="btnEnviar_Click_1"/>
-        <TextBox x:Name="txtEmail" TextWrapping="Wrap" Text="TextBox" Margin="65,107,462,268"/>
-        <Label Content="Email" Margin="65,60,657,327"/>
+        
+        <Grid.RowDefinitions>
+            
+            <RowDefinition Height="145*"/>
+            <RowDefinition Height="97*"/>
+            
+        </Grid.RowDefinitions>
+        
+        <!-- Colunas principais -->
+        
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="3*"/>
+            
+        </Grid.ColumnDefinitions>
+
+        <!-- Imagem da orca ocupando a direita -->
+        <Image Source="pack://application:,,,/Resource/orca.png"
+               Stretch="Uniform"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Left"
+               Panel.ZIndex="0" Height="484" Width="1078" Grid.ColumnSpan="2" Margin="22,-10,0,0" Grid.RowSpan="2"/>
+
+        <Border Grid.Column="0"
+        Background="#0D1216"
+        CornerRadius="20,0,0,20"
+        Padding="30"
+        Panel.ZIndex="1" Grid.RowSpan="2">
+
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" MinHeight="137"/>
+                    <!-- Título e descrição -->
+                    <RowDefinition/>
+                    <!-- Espaço -->
+                    <RowDefinition Height="Auto" MinHeight="148.567"/>
+                    <!-- Campo + botão -->
+                </Grid.RowDefinitions>
+
+                <!-- Título e descrição -->
+                <StackPanel Grid.Row="0" Margin="0,23,0,20">
+
+                    <TextBlock Text="Redefinição de Senha"
+                       FontSize="35"
+                       FontWeight="Bold"
+                       Foreground="#fff8ef"
+                       FontFamily="Segoe UI"
+                       Height="50"/>
+
+                    <TextBlock Text="Informe um e-mail e enviaremos um código para a recuperação da sua senha"
+                       FontSize="12"
+                       Foreground="#fff8ef"
+                       TextWrapping="Wrap" Height="34"/>
+                    
+                </StackPanel>
+
+                <!-- Campo e botão -->
+                
+                <StackPanel Grid.Row="2" Margin="0,21,0,0">
+                    
+                    <!-- Campo de email -->
+                    
+                    <Border Background="#0D1216" CornerRadius="6" Height="38" Margin="0,0,0,10">
+                        
+                        <Grid>
+                            
+                            <Grid.ColumnDefinitions>
+                                
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="*"/>
+                                
+                            </Grid.ColumnDefinitions>
+                            
+                            <TextBlock Grid.Column="0" Text="✉" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#F6F2EF" FontSize="14"/>
+
+                            <!-- Aqui renomeei para manter igual ao seu primeiro código -->
+                            <TextBox x:Name="txtEmail" 
+                                Grid.Column="1"
+                                Background="#FFF8EF" BorderThickness="0"
+                                VerticalContentAlignment="Center" Padding="6,0"
+                                Foreground="#333" FontSize="14" HorizontalAlignment="Center" Width="317"/>
+
+                            <TextBlock 
+                                Grid.Column="1" 
+                                Text="e-mail" 
+                                Foreground="#9D9D9D"
+                                VerticalAlignment="Center" 
+                                Margin="6,0,0,0" 
+                                IsHitTestVisible="False">
+                                
+                                <TextBlock.Style>
+                                    
+                                    <Style TargetType="TextBlock">
+                                        
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        
+                                        <Style.Triggers>
+                                            
+                                            <DataTrigger Binding="{Binding Text, ElementName=txtEmail}" Value="">
+                                                
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                                
+                                            </DataTrigger>
+                                            
+                                        </Style.Triggers>
+                                        
+                                    </Style>
+                                    
+                                </TextBlock.Style>
+                                
+                            </TextBlock>
+                            
+                            <Border BorderBrush="#FFF8EF" BorderThickness="1" CornerRadius="6" Grid.ColumnSpan="2"/>
+                            
+                        </Grid>
+                        
+                    </Border>
+
+                    <!-- Botão Enviar -->
+                    
+                    <Button x:Name="btnEnviar"
+                    Content="Enviar"
+                    Height="59"
+                    Background="Transparent"
+                    Foreground="#fff8ef"
+                    FontSize="14"
+                    BorderBrush="#fff8ef"
+                    BorderThickness="1.5"
+                    Cursor="Hand"
+                    Click="btnEnviar_Click_1">
+                        
+                        <Button.Template>
+                            
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                
+                                <Border CornerRadius="10"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Background}"
+                                    SnapsToDevicePixels="True">
+                                    
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              RecognizesAccessKey="True"/>
+                                    
+                                </Border>
+                                
+                            </ControlTemplate>
+                            
+                        </Button.Template>
+                        
+                    </Button>
+                    
+                </StackPanel>
+                
+            </Grid>
+            
+        </Border>
+
+        <!-- Botão de fechar -->
+        
+        <Border Background="#fff8ef" CornerRadius="0,20,20,0" Grid.ColumnSpan="2" Margin="417,0,0,0" Grid.RowSpan="2">
+            
+            <Grid>
+                
+                <Image Source="pack://application:,,,/Resource/orca.png" Stretch="Uniform" VerticalAlignment="Center" Height="490" Margin="-310,0,-11,0" RenderTransformOrigin="0.5,0.5">
+                    
+                    <Image.RenderTransform>
+                        
+                        <TransformGroup>
+                            
+                            <ScaleTransform/>
+                            
+                            <SkewTransform/>
+                            
+                            <RotateTransform Angle="-1.999"/>
+                            
+                            <TranslateTransform/>
+                            
+                        </TransformGroup>
+                        
+                    </Image.RenderTransform>
+                    
+                </Image>
+                
+                <Button Content="✕"
+                Width="30" Height="30"
+                Background="Transparent"
+                Foreground="#0d1216"
+                BorderThickness="0"
+                FontSize="14"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Cursor="Hand" Click="Button_Click"/>
+                
+            </Grid>
+            
+        </Border>
 
     </Grid>
+    
 </Window>

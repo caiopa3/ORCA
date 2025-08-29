@@ -76,5 +76,12 @@ namespace ORCA
                 MessageBox.Show("Código incorreto ou expirado.");
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow telaInicial = new MainWindow();
+            telaInicial.Show();
+            this.Close();
+        }
     }
 }

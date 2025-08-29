@@ -194,29 +194,68 @@ namespace ORCA.Services
             return dt;
         }
 
-        public void SalvarDadosOrcamento(int orcamentoId, string jsonAtualizado)
+        public DataTable CarregarUsuarios()
+        {
+            using (MySqlConnection conn = new MySqlConnection(_connectionString)) // usa a connectionString vinda do construtor
+            {
+                conn.Open();
+
+                string query = "SELECT id, email, permissao FROM usuario WHERE permissao IN ('usr', 'ges')";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                return dt;
+            }
+        }
+
+        public List<string> ListarPermissoes()
+        {
+            var permissoes = new List<string>();
+
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
+
+            string sql = "SELECT DISTINCT permissao FROM usuario;";
+            using var cmd = new MySqlCommand(sql, conn);
+            using var reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                permissoes.Add(reader.GetString("permissao"));
+            }
+
+            return permissoes;
+        }
+
+        public void CadastrarUsuario(string email, string senha, string permissao)
         {
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            // 1) Descobre qual modelo está vinculado a este orçamento
-            var getModeloCmd = new MySqlCommand("SELECT modelo_id FROM orcamento WHERE id=@id", conn);
-            getModeloCmd.Parameters.AddWithValue("@id", orcamentoId);
-            var modeloIdObj = getModeloCmd.ExecuteScalar();
+            string sql = "INSERT INTO usuario (email, senha, permissao) VALUES (@Email, @Senha, @Permissao)";
+            using var cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Senha", senha);
+            cmd.Parameters.AddWithValue("@Permissao", permissao);
 
-            if (modeloIdObj == null || modeloIdObj == DBNull.Value)
-                throw new Exception("Este orçamento não está vinculado a nenhum modelo.");
-
-            int modeloId = Convert.ToInt32(modeloIdObj);
-
-            // 2) Atualiza o JSON dos dados do orçamento baseado no modelo
-            var updateCmd = new MySqlCommand(
-                "UPDATE modelo_orcamento_dados SET dados_json=@json WHERE modelo_id=@modeloId",
-                conn);
-            updateCmd.Parameters.AddWithValue("@json", jsonAtualizado);
-            updateCmd.Parameters.AddWithValue("@modeloId", modeloId);
-            updateCmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
         }
+
+        public class PermissaoItem
+        {
+            public string Valor { get; set; } // valor real que vai para o banco
+            public string Texto { get; set; } // o que aparece na ComboBox
+
+            public override string ToString()
+            {
+                return Texto; // é o que será exibido no ComboBox
+            }
+        }
+
+
 
 
     }

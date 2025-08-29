@@ -73,5 +73,12 @@ namespace ORCA
                 this.Close();
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow telaInicial = new MainWindow();
+            telaInicial.Show();
+            this.Close();
+        }
     }
 }

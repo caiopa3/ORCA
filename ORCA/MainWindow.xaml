@@ -5,14 +5,204 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ORCA"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800">
-    <Grid>
-        <Button Content="Entrar" HorizontalAlignment="Left" Margin="82,202,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <TextBox x:Name="textBoxEmail" HorizontalAlignment="Left" Margin="42,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBoxSenha" HorizontalAlignment="Left" Margin="42,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="42,32,0,0" VerticalAlignment="Top"/>
-        <Label Content="Senha" HorizontalAlignment="Left" Margin="42,124,0,0" VerticalAlignment="Top"/>
-        <Label Content="Esqueceu a senha?" HorizontalAlignment="Left" Margin="124,173,0,0" VerticalAlignment="Top" MouseDown="click"/>
+        Title="Login" Height="466" Width="792"
+        WindowStartupLocation="CenterScreen" Background="#161616">
 
-    </Grid>
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Container Central -->
+        
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="920" Height="420" Grid.Column="1">
+
+            <!-- Card Branco -->
+            
+            <Border x:Name="WhiteCard"
+                    Width="636" Height="380"
+                    CornerRadius="18"
+                    Background="#FFF"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Panel.ZIndex="0">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="24" ShadowDepth="8" Opacity="0.45"/>
+                </Border.Effect>
+                <Image Source="pack://application:,,,/Resource/orca.png" Stretch="UniformToFill" ClipToBounds="True" Margin="-54,0,-54,0" Height="370" VerticalAlignment="Bottom"/>
+            </Border>
+
+            <!-- Card Preto -->
+
+            <Border x:Name="BlackCard"
+                    Width="368" Height="380"
+                    CornerRadius="18"
+                    Background="#0B1113"
+                    HorizontalAlignment="Left" VerticalAlignment="Center"
+                    Panel.ZIndex="1" Padding="28" Margin="92,0,0,0">
+
+                <StackPanel>
+
+                    <!-- Título -->
+
+                    <Image Source="pack://application:,,,/Resource/login.png"
+                               Width="410" Height="119"
+                               Stretch="Uniform"
+                               HorizontalAlignment="Center"
+                               Margin="0,0,0,6"/>
+
+                    <TextBlock Text="Seja bem-vindo, acesse sua conta através do seu login"
+                               Foreground="#FFF8EF" FontSize="8" Margin="0,0,0,18" Height="17" TextAlignment="Center"/>
+
+                    <!-- Campo Email -->
+
+                    <Border Background="#0D1216" CornerRadius="6" Height="38" Margin="0,0,0,10">
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="✉" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#F6F2EF" FontSize="14"/>
+
+                            <TextBox x:Name="textBoxEmail" Grid.Column="1"
+                                     Background="#FFF8EF" BorderThickness="0"
+                                     VerticalContentAlignment="Center" Padding="6,0"
+                                     Foreground="#333" FontSize="14" HorizontalAlignment="Center" Width="272"/>
+
+                            <TextBlock Grid.Column="1" Text="e-mail" Foreground="#9D9D9D"
+                                    VerticalAlignment="Center" Margin="6,0,0,0" IsHitTestVisible="False">
+
+                                <TextBlock.Style>
+
+                                    <Style TargetType="TextBlock">
+
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+
+                                        <Style.Triggers>
+
+                                            <DataTrigger Binding="{Binding Text, ElementName=textBoxEmail}" Value="">
+
+                                                <Setter Property="Visibility" Value="Visible"/>
+
+                                            </DataTrigger>
+
+                                        </Style.Triggers>
+
+                                    </Style>
+
+                                </TextBlock.Style>
+
+                            </TextBlock>
+
+                            <Border BorderBrush="#FFF8EF" BorderThickness="1" CornerRadius="6" Grid.ColumnSpan="2"/>
+
+                        </Grid>
+
+                    </Border>
+
+                    <!-- Campo Senha -->
+
+                    <Border Background="#0D1216" CornerRadius="6" Height="38">
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="🔒" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Foreground="#FFF8EF"/>
+
+                            <PasswordBox x:Name="textBoxSenha" Grid.Column="1"
+                                Background="#FFF8EF" BorderThickness="0"
+                                VerticalContentAlignment="Center" Padding="6,0"
+                                PasswordChanged="textBoxSenha_PasswordChanged"/>
+
+                            <TextBlock x:Name="pwdWatermark" Grid.Column="1" Text="Senha"
+                                       Foreground="#9D9D9D" VerticalAlignment="Center" Margin="6,0,0,0"
+                                       IsHitTestVisible="False">
+
+                            </TextBlock>
+
+                            <Border BorderBrush="#FFF8EF" BorderThickness="1" CornerRadius="6" Grid.ColumnSpan="2"/>
+                        </Grid>
+
+                    </Border>
+
+                    <!-- Lembrar-me + Esqueceu a senha -->
+
+                    <Grid Margin="0,8,0,8" Width="299">
+
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+
+                            <CheckBox VerticalAlignment="Center" Margin="0,0,4,0">
+
+                                <CheckBox.LayoutTransform>
+
+                                    <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
+
+                                </CheckBox.LayoutTransform>
+
+                            </CheckBox>
+
+                            <TextBlock Text="Lembrar-me" Foreground="#E6E6E6" VerticalAlignment="Center" FontSize="6"/>
+
+                        </StackPanel>
+
+                        <TextBlock Grid.Column="2" Text="Esqueceu a senha?" Foreground="#B9B8B8"
+                                VerticalAlignment="Center" Cursor="Hand" Margin="18,0,0,0"
+                                MouseDown="click" FontSize="6"/>
+
+                    </Grid>
+
+                    <!-- Botão Entrar -->
+
+                    <Button Height="45"
+                            Background="Transparent" BorderBrush="#EDE8E4" BorderThickness="1"
+                            Foreground="#fff8ef" FontWeight="Bold" 
+                            Click="Button_Click_1">
+
+                        <Button.Template>
+
+                            <ControlTemplate TargetType="Button">
+
+                                <Border CornerRadius="10"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        Background="{TemplateBinding Background}">
+
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"/>
+
+                                </Border>
+
+                            </ControlTemplate>
+
+                        </Button.Template>
+                        Entrar
+
+                    </Button>
+
+                </StackPanel>
+
+            </Border>
+
+        </Grid>
+
+     </Grid>
+    
 </Window>

@@ -5,22 +5,124 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ORCA"
         mc:Ignorable="d"
-        Title="criar_orca" Height="450" Width="800">
+        Title="criar_orca"  
+        Height="500" 
+        Width="850"
+        Background="#0d1216"
+        WindowStartupLocation="CenterScreen">
     
     <Grid>
 
-        <StackPanel Margin="10,10,10,10">
+        <!-- Card principal -->
+        
+        <Border Background="#fff8ef" CornerRadius="15" Padding="20" Margin="20,62,20,20"
+                SnapsToDevicePixels="True">
+            
+            <StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <!-- Cabeçalho com botões -->
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,15">
+                    
+                    <!-- Botão Adicionar Coluna -->
 
-                <Button Content="Adicionar Coluna" Click="AdicionarColuna_Click" Width="120"/>
-                <Button Content="Salvar Modelo" Click="SalvarModelo_Click" Width="120" Margin="5,0"/>
+                    <!-- Botão Salvar Modelo -->
+                    
+                </StackPanel>
+
+                <!-- DataGrid estilizado -->
+                
+                <DataGrid x:Name="meuDataGrid" 
+                          AutoGenerateColumns="False" 
+                          CanUserAddRows="True"
+                          RowBackground="#2D2D30" 
+                          AlternatingRowBackground="#3E3E42"
+                          Foreground="White" 
+                          GridLinesVisibility="None"
+                          HorizontalGridLinesBrush="#3E3E42" 
+                          VerticalGridLinesBrush="#3E3E42"
+                          HeadersVisibility="Column" 
+                          BorderThickness="0"
+                          FontSize="14">
+                    
+                    <DataGrid.Resources>
+                        
+                        <Style TargetType="DataGridColumnHeader">
+                            
+                            <Setter Property="Background" Value="#007ACC"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                        
+                        </Style>
+                        
+                    </DataGrid.Resources>
+                    
+                </DataGrid>
 
             </StackPanel>
+            
+        </Border>
 
-            <DataGrid x:Name="meuDataGrid" AutoGenerateColumns="False" CanUserAddRows="True"/>
+        <!-- Botão Adicionar Coluna -->
 
-        </StackPanel>
+        <Button 
+            Click="AdicionarColuna_Click" 
+            Margin="520,39,190,429" 
+            Padding="5"
+            Background="#007ACC" 
+            Foreground="White" 
+            FontWeight="Bold" 
+            BorderThickness="0"
+            Cursor="Hand">
+            
+            <Button.Template>
+                
+                <ControlTemplate TargetType="{x:Type Button}">
+                    
+                    <Border Background="{TemplateBinding Background}" CornerRadius="8">
+                        
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    
+                    </Border>
+                    
+                </ControlTemplate>
+                
+            </Button.Template>
+            
+            <TextBlock Text="Adicionar Coluna" HorizontalAlignment="Center"/>
+            
+        </Button>
+
+        <!-- Botão Salvar Modelo -->
+
+        <Button 
+            Click="SalvarModelo_Click" 
+            Padding="5"
+            Background="#28A745" 
+            Foreground="White" 
+            FontWeight="Bold" 
+            BorderThickness="0"
+            Cursor="Hand" 
+            Margin="670,39,40,429">
+
+            <Button.Template>
+
+                <ControlTemplate TargetType="{x:Type Button}">
+
+                    <Border Background="{TemplateBinding Background}" CornerRadius="8">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                    </Border>
+
+                </ControlTemplate>
+
+            </Button.Template>
+
+            <TextBlock Text="Salvar Modelo" HorizontalAlignment="Center"/>
+
+        </Button>
 
     </Grid>
 </Window>

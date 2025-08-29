@@ -42,5 +42,12 @@ namespace ORCA
             criarOrcamento.Show();
             this.Close();
         }
+
+        private void btn_ger_func_Click(object sender, RoutedEventArgs e)
+        {
+            gereFunc_adm gereFunc_Adm = new gereFunc_adm(email, servidor, bd, usr, senha);
+            gereFunc_Adm.Show();
+            this.Close();
+        }
     }
 }

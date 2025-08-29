@@ -100,11 +100,25 @@ namespace ORCA
             return vLatest > vCurrent;
         }
 
-        // --- Código existente abaixo ---
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void click(object sender, MouseButtonEventArgs e)
+        {
+            login_esq_senha login_esq_senha = new login_esq_senha(servidor, bd, usr, senha);
+            login_esq_senha.Show();
+            this.Close();
+        }
+        private void textBoxSenha_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxSenha.Password))
+                pwdWatermark.Visibility = Visibility.Visible;
+            else
+                pwdWatermark.Visibility = Visibility.Collapsed;
+        }
+
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             string email = textBoxEmail.Text;
-            string password = textBoxSenha.Text;
+            string password = textBoxSenha.Password;
 
             var authService = new ORCA.Services.AuthService(servidor, bd, usr, senha);
 
@@ -148,13 +162,6 @@ namespace ORCA
             {
                 MessageBox.Show($"Erro ao conectar no banco de dados:\n{ex.Message}");
             }
-        }
-
-        private void click(object sender, MouseButtonEventArgs e)
-        {
-            login_esq_senha login_esq_senha = new login_esq_senha(servidor, bd, usr, senha);
-            login_esq_senha.Show();
-            this.Close();
         }
     }
 }

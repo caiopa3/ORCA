@@ -1,0 +1,18 @@
+﻿<Window x:Class="ORCA.gereFunc_adm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ORCA"
+        mc:Ignorable="d"
+        Title="gereFunc_adm" Height="466" Width="858">
+    <Grid Margin="0,0,10,-6">
+
+        <DataGrid  x:Name="dgUsuarios" Margin="10,10,165,112" AutoGenerateColumns="True" IsReadOnly="True"/>
+        <Button x:Name="btn_cad_func" Content="Cadastrar Funcionário" HorizontalAlignment="Left" Margin="716,268,0,0" VerticalAlignment="Top" Click="btn_cad_func_Click"/>
+        <Button x:Name="btn_fil_func" Content="Filtrar Funcionário" HorizontalAlignment="Left" Margin="726,86,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmb_camp_func" HorizontalAlignment="Left" Margin="716,123,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="716,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

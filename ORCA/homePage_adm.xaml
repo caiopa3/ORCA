@@ -8,6 +8,7 @@
         Title="homePage_adm" Height="450" Width="800">
     <Grid>
         <Button Content="Criar Orçamento" HorizontalAlignment="Left" Margin="101,116,0,0" VerticalAlignment="Top" Height="50" Width="109" Click="Button_Click"/>
+        <Button x:Name="btn_ger_func" Content="Gerenciar Funcionários" HorizontalAlignment="Left" Margin="534,116,0,0" VerticalAlignment="Top" Height="50" Width="109" Click="btn_ger_func_Click"/>
 
     </Grid>
 </Window>
