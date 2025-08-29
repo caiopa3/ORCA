@@ -1,10 +1,11 @@
-; Arquivo: setup.iss
+#define MyAppName "ORCA"
+#define MyAppVersion GetStringDef("MyAppVersion", "0.0.0")
+#define MyAppExeName "ORCA.exe"
 
 [Setup]
-AppName=ORCA
+AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-DefaultDirName={pf}\ORCA
-DefaultGroupName=ORCA
+DefaultDirName={autopf}\{#MyAppName}
 OutputDir=dist
 OutputBaseFilename=ORCA_Installer_{#MyAppVersion}
 Compression=lzma
@@ -14,5 +15,5 @@ SolidCompression=yes
 Source: "ORCA\bin\Release\net8.0-windows\win-x64\publish\*"; DestDir: "{app}"; Flags: recursesubdirs
 
 [Icons]
-Name: "{group}\ORCA"; Filename: "{app}\ORCA.exe"
-Name: "{commondesktop}\ORCA"; Filename: "{app}\ORCA.exe"
+Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
+Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
