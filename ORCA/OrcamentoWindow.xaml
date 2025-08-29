@@ -2,10 +2,25 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Orçamento" Height="500" Width="900">
-    <Grid>
+
+    <Grid Margin="10">
+        <!-- Define duas linhas: botão e DataGrid -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Botões -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <Button Content="Salvar" Click="BtnSalvar_Click" Width="120" Margin="5,0"/>
+        </StackPanel>
+
+        <!-- DataGrid -->
         <DataGrid x:Name="dataGridOrcamento"
-                  AutoGenerateColumns="True"
+                  AutoGenerateColumns="False"
                   CanUserAddRows="True"
-                  Margin="10"/>
+                  Grid.Row="1"
+                  Margin="0"
+                  IsReadOnly="False"/>
     </Grid>
 </Window>

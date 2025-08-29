@@ -194,5 +194,30 @@ namespace ORCA.Services
             return dt;
         }
 
+        public void SalvarDadosOrcamento(int orcamentoId, string jsonAtualizado)
+        {
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
+
+            // 1) Descobre qual modelo está vinculado a este orçamento
+            var getModeloCmd = new MySqlCommand("SELECT modelo_id FROM orcamento WHERE id=@id", conn);
+            getModeloCmd.Parameters.AddWithValue("@id", orcamentoId);
+            var modeloIdObj = getModeloCmd.ExecuteScalar();
+
+            if (modeloIdObj == null || modeloIdObj == DBNull.Value)
+                throw new Exception("Este orçamento não está vinculado a nenhum modelo.");
+
+            int modeloId = Convert.ToInt32(modeloIdObj);
+
+            // 2) Atualiza o JSON dos dados do orçamento baseado no modelo
+            var updateCmd = new MySqlCommand(
+                "UPDATE modelo_orcamento_dados SET dados_json=@json WHERE modelo_id=@modeloId",
+                conn);
+            updateCmd.Parameters.AddWithValue("@json", jsonAtualizado);
+            updateCmd.Parameters.AddWithValue("@modeloId", modeloId);
+            updateCmd.ExecuteNonQuery();
+        }
+
+
     }
 }
