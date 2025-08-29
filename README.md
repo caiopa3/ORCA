@@ -1,6 +1,6 @@
 # 🔧 Orçamentos rápidos, computadorizados e automatizados (ORCA)
 
-## Descrição do Projeto
+## 📌 Descrição do Projeto
 
 O ORCA é um sistema desktop voltado para automatizar orçamentos manuais em pequenas e médias empresas. O objetivo é facilitar o processo de geração de orçamentos, tornando-o mais rápido, confiável e acessível, reduzindo erros humanos e aumentando a produtividade.
 
@@ -8,7 +8,7 @@ O sistema é pensado para cidades como Mogi Guaçu e Mogi Mirim, mas possui pote
 
 ---
 
-## Funcionalidades Principais
+## ⚙️ Funcionalidades Principais
 
 - Cadastro de produtos, serviços e clientes.
 
@@ -24,7 +24,7 @@ O sistema é pensado para cidades como Mogi Guaçu e Mogi Mirim, mas possui pote
 
 ---
 
-## Público-Alvo
+## 👤 Público-Alvo
 
 Pequenas e médias empresas que precisam **automatizar** a emissão de **orçamentos**.
 
