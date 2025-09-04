@@ -10,9 +10,15 @@
 
         <DataGrid  x:Name="dgUsuarios" Margin="10,10,165,112" AutoGenerateColumns="True" IsReadOnly="True"/>
         <Button x:Name="btn_cad_func" Content="Cadastrar Funcionário" HorizontalAlignment="Left" Margin="716,268,0,0" VerticalAlignment="Top" Click="btn_cad_func_Click"/>
-        <Button x:Name="btn_fil_func" Content="Filtrar Funcionário" HorizontalAlignment="Left" Margin="726,86,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_fil_func" Content="Filtrar Funcionário" HorizontalAlignment="Left" Margin="726,86,0,0" VerticalAlignment="Top" Click="btn_fil_func_Click"/>
         <ComboBox x:Name="cmb_camp_func" HorizontalAlignment="Left" Margin="716,123,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="716,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtFiltro" 
+         HorizontalAlignment="Left" 
+         Margin="716,168,0,0" 
+         TextWrapping="Wrap" 
+         VerticalAlignment="Top" 
+         Width="120"
+         TextChanged="txtFiltro_TextChanged"/>
 
     </Grid>
 </Window>

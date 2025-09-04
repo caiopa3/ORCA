@@ -6,20 +6,38 @@
         Width="900"
         Background="#fff8ef"
         WindowStartupLocation="CenterScreen">
-    
-    <Grid>
 
-        <Grid.ColumnDefinitions>
-            
-            <ColumnDefinition Width="11*"/>
-            <ColumnDefinition Width="889*"/>
-            
-        </Grid.ColumnDefinitions>
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Linha para o botão -->
+            <RowDefinition Height="*"/>
+            <!-- Linha para o DataGrid -->
+        </Grid.RowDefinitions>
+
+        <!-- Botão de salvar -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <Button x:Name="btnSalvar"
+                    Content="💾 Salvar Orçamento"
+                    Padding="10,5"
+                    Background="#007ACC"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    BorderThickness="0"
+                    Width="160"
+                    Height="35"
+                    HorizontalAlignment="Left"
+                    Click="BtnSalvar_Click"/>
+        </StackPanel>
 
         <!-- Card para o DataGrid -->
-        
-        <Border Background="#0d1216" CornerRadius="15" Padding="15" Margin="10,10,10,10" Grid.ColumnSpan="2">
-            
+        <Border Grid.Row="1"
+                Background="#0d1216"
+                CornerRadius="15"
+                Padding="15"
+                Margin="0,0,0,0">
+
             <DataGrid x:Name="dataGridOrcamento"
                       AutoGenerateColumns="True"
                       CanUserAddRows="True"
@@ -36,24 +54,18 @@
                       SelectionMode="Single"
                       CanUserResizeColumns="True"
                       CanUserResizeRows="False">
-                
+
                 <DataGrid.Resources>
-                    
                     <Style TargetType="DataGridColumnHeader">
-                        
                         <Setter Property="Background" Value="#007ACC"/>
                         <Setter Property="Foreground" Value="#fff8ef"/>
                         <Setter Property="FontWeight" Value="Bold"/>
                         <Setter Property="BorderThickness" Value="0"/>
-                        
                     </Style>
-                    
                 </DataGrid.Resources>
-                
+
             </DataGrid>
-            
         </Border>
 
     </Grid>
-    
 </Window>

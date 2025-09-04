@@ -27,7 +27,7 @@ namespace ORCA
         // Informações do GitHub
         private const string RepoOwner = "caiopa3";
         private const string RepoName = "ORCA";
-        private const string CurrentVersion = "1.0.0"; // Atualize sempre que lançar uma nova versão
+        private const string CurrentVersion = "1.0.1"; // Atualize sempre que lançar uma nova versão
 
         public MainWindow()
         {

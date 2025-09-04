@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace ORCA.Services
 {
@@ -151,12 +152,11 @@ namespace ORCA.Services
             }
             catch
             {
-                // fallback se por acaso o JSON já estiver como array de linhas
                 var fallback = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(json);
                 if (fallback == null || fallback.Count == 0) return dt;
 
                 foreach (var col in fallback[0].Keys)
-                    dt.Columns.Add(col);
+                    dt.Columns.Add(RemoverTipo(col));
 
                 foreach (var row in fallback)
                     dt.Rows.Add(row.Values.ToArray());
@@ -164,25 +164,22 @@ namespace ORCA.Services
                 return dt;
             }
 
-            var colunas = obj["Colunas"]?.Select(c => c.ToString()).ToList() ?? new List<string>();
+            var colunas = obj["Colunas"]?.Select(c => RemoverTipo(c.ToString())).ToList() ?? new List<string>();
             var linhas = obj["Linhas"] as JArray ?? new JArray();
 
-            // Se não houver "Colunas", tenta inferir pelas chaves da primeira linha
             if (colunas.Count == 0 && linhas.Count > 0 && linhas[0] is JObject firstRow)
-                colunas = firstRow.Properties().Select(p => p.Name).ToList();
+                colunas = firstRow.Properties().Select(p => RemoverTipo(p.Name)).ToList();
 
-            // Cria as colunas no DataTable
             foreach (var col in colunas)
                 if (!dt.Columns.Contains(col))
                     dt.Columns.Add(col);
 
-            // Adiciona as linhas
             foreach (var item in linhas.OfType<JObject>())
             {
                 var row = dt.NewRow();
                 foreach (var prop in item.Properties())
                 {
-                    var colName = prop.Name;
+                    var colName = RemoverTipo(prop.Name);
                     if (!dt.Columns.Contains(colName))
                         dt.Columns.Add(colName);
 
@@ -192,6 +189,11 @@ namespace ORCA.Services
             }
 
             return dt;
+        }
+
+        private string RemoverTipo(string coluna)
+        {
+            return Regex.Replace(coluna, @"\s*\(.*?\)", ""); // remove "(Texto)", "(Número)" etc.
         }
 
         public DataTable CarregarUsuarios()
@@ -255,8 +257,75 @@ namespace ORCA.Services
             }
         }
 
+        public DataTable FiltrarUsuarios(string campo, string valor)
+        {
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
 
+            // monta a query de filtro
+            string query = $"SELECT id, email, permissao FROM usuario WHERE permissao IN ('usr','ges') AND {campo} LIKE @valor";
 
+            using var cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@valor", "%" + valor + "%");
+
+            var adapter = new MySqlDataAdapter(cmd);
+            var dt = new DataTable();
+            adapter.Fill(dt);
+
+            return dt;
+        }
+
+        public void SalvarDadosOrcamento(int orcamentoId, DataTable tabela)
+        {
+            // converte o DataTable em JSON no mesmo formato que você já usa
+            var colunas = tabela.Columns.Cast<DataColumn>().Select(c => c.ColumnName).ToList();
+
+            var linhas = new List<Dictionary<string, object>>();
+            foreach (DataRow dr in tabela.Rows)
+            {
+                var dict = new Dictionary<string, object>();
+                foreach (DataColumn col in tabela.Columns)
+                {
+                    dict[col.ColumnName] = dr[col];
+                }
+                linhas.Add(dict);
+            }
+
+            var obj = new
+            {
+                Colunas = colunas,
+                Linhas = linhas
+            };
+
+            string json = JsonConvert.SerializeObject(obj);
+
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
+
+            // verifica se já existe dado salvo para este orçamento
+            string checkSql = "SELECT id FROM orcamento_dados WHERE orcamento_id=@id";
+            using var checkCmd = new MySqlCommand(checkSql, conn);
+            checkCmd.Parameters.AddWithValue("@id", orcamentoId);
+
+            var existe = checkCmd.ExecuteScalar();
+
+            if (existe == null) // novo
+            {
+                string insertSql = "INSERT INTO orcamento_dados (orcamento_id, dados_json) VALUES (@id, @json)";
+                using var cmd = new MySqlCommand(insertSql, conn);
+                cmd.Parameters.AddWithValue("@id", orcamentoId);
+                cmd.Parameters.AddWithValue("@json", json);
+                cmd.ExecuteNonQuery();
+            }
+            else // atualizar
+            {
+                string updateSql = "UPDATE orcamento_dados SET dados_json=@json WHERE orcamento_id=@id";
+                using var cmd = new MySqlCommand(updateSql, conn);
+                cmd.Parameters.AddWithValue("@id", orcamentoId);
+                cmd.Parameters.AddWithValue("@json", json);
+                cmd.ExecuteNonQuery();
+            }
+        }
 
     }
 }

@@ -39,5 +39,26 @@ namespace ORCA
                 MessageBox.Show("Erro ao carregar orçamento: " + ex.Message);
             }
         }
+
+        private void BtnSalvar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (dataGridOrcamento.ItemsSource is DataView dv)
+                {
+                    DataTable tabela = dv.ToTable();
+                    _orcamentoService.SalvarDadosOrcamento(_orcamentoId, tabela);
+                    MessageBox.Show("Orçamento salvo com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Não há dados para salvar.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao salvar orçamento: " + ex.Message);
+            }
+        }
     }
 }

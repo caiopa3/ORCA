@@ -55,6 +55,7 @@ namespace ORCA
                     Valor = p,
                     Texto = p == "adm" ? "Administrador" :
                             p == "usr" ? "Usuário" :
+                            p == "ges" ? "Gestor" :
                             p // qualquer outro valor
                 }).ToList();
 

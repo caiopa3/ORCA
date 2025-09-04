@@ -6,17 +6,6 @@ O ORCA é um sistema desktop voltado para automatizar orçamentos manuais em peq
 
 O sistema é pensado para cidades como Mogi Guaçu e Mogi Mirim, mas possui potencial para expansão. Ele integra funcionalidades de cadastro de produtos, clientes e serviços, além de geração automática de orçamentos prontos para envio ou impressão.
 
-Realizado por: 
-
-```
-Bruno Vilela Alves
-Caio Raphael Rangel
-Giovani Depiéri Santos
-Guilherme Henrique Pelegrini Alves
-João Felipe Francisco Moreira
-Vitor Reis
-Yslan de Jesus Santos da Costa
-```
 ---
 
 ## ⚙️ Funcionalidades Principais

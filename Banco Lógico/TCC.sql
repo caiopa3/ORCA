@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29/08/2025 às 14:01
+-- Tempo de geração: 04/09/2025 às 16:18
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -38,7 +38,14 @@ CREATE TABLE `modelo_orcamento` (
 --
 
 INSERT INTO `modelo_orcamento` (`id`, `nome`, `usr_criador_id`) VALUES
-(13, 'Flores', 1);
+(1, 'teste', 1),
+(2, 'Teste', 1),
+(3, 'safas', 1),
+(4, 'Novo Modelo', 1),
+(5, 'Novo Modelo', 1),
+(6, 'Novo Modelo', 1),
+(7, 'Novo Modelo', 1),
+(8, 'dfsafsaf', 1);
 
 -- --------------------------------------------------------
 
@@ -57,7 +64,14 @@ CREATE TABLE `modelo_orcamento_dados` (
 --
 
 INSERT INTO `modelo_orcamento_dados` (`id`, `modelo_id`, `dados_json`) VALUES
-(13, 13, '{\"Colunas\":[\"Nome\",\"Quantidade\"],\"Linhas\":[{\"Nome\":\"Ortiga\",\"Quantidade\":\"3\"}]}');
+(1, 1, '{\"Colunas\":[\"a (Texto)\",\"b (Número)\",\"c (Data)\",\"d (Booleano)\"],\"Linhas\":[{\"a\":\"a\",\"b\":\"b\",\"c\":\"c\",\"d\":\"d\"},{\"d\":\"h\",\"c\":\"g\",\"b\":\"f\",\"a\":\"e\"}]}'),
+(2, 2, '{\"Colunas\":[\"fsafsa (Texto)\",\"fafasfsa (Texto)\"],\"Linhas\":[{\"fsafsa\":\"\",\"fafasfsa\":\"\"}]}'),
+(3, 3, '{\"Colunas\":[\"sfdafsa (Texto)\"],\"Linhas\":[{\"sfdafsa\":\"\"}]}'),
+(4, 4, '{\"Colunas\":[\"q (Texto)\",\"s (Número)\"],\"Linhas\":[{\"q\":\"\",\"s\":\"\"}]}'),
+(5, 5, '{\"Colunas\":[\"q (Texto)\",\"s (Texto)\"],\"Linhas\":[{\"q\":\"\",\"s\":\"\"}]}'),
+(6, 6, '{\"Colunas\":[\"q (Texto)\",\"s (Número)\"],\"Linhas\":[{\"q\":\"\",\"s\":\"\"}]}'),
+(7, 7, '{\"Colunas\":[\"q (Texto)\",\"s (Texto)\"],\"Linhas\":[{\"q\":\"\",\"s\":\"\"}]}'),
+(8, 8, '{\"Colunas\":[\"dqd\"],\"Linhas\":[{\"dqd\":\"\"}]}');
 
 -- --------------------------------------------------------
 
@@ -76,8 +90,10 @@ CREATE TABLE `modelo_orcamento_usuarios` (
 --
 
 INSERT INTO `modelo_orcamento_usuarios` (`id`, `modelo_id`, `usuario_id`) VALUES
-(7, 13, 1),
-(8, 13, 2);
+(1, 1, 2),
+(2, 2, 2),
+(3, 3, 2),
+(4, 8, 2);
 
 -- --------------------------------------------------------
 
@@ -97,7 +113,32 @@ CREATE TABLE `orcamento` (
 --
 
 INSERT INTO `orcamento` (`id`, `nome`, `usr_email`, `modelo_id`) VALUES
-(19, 'Flores', 'usr', 13);
+(10, 'a', 'yslan_usr@gmail.com', NULL),
+(11, 'a a', 'yslan_usr@gmail.com', NULL),
+(12, 'fsafasf', 'yslan_usr@gmail.com', 1),
+(13, 'Novsfaf', 'yslan_usr@gmail.com', NULL),
+(16, 'safsafsaxv', 'yslan_usr@gmail.com', 2),
+(17, 'testando', 'yslan_usr@gmail.com', 1),
+(18, 'quebec', 'yslan_usr@gmail.com', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `orcamento_dados`
+--
+
+CREATE TABLE `orcamento_dados` (
+  `id` int(11) NOT NULL,
+  `orcamento_id` int(11) NOT NULL,
+  `dados_json` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `orcamento_dados`
+--
+
+INSERT INTO `orcamento_dados` (`id`, `orcamento_id`, `dados_json`) VALUES
+(1, 18, '{\"Colunas\":[\"fsafsa\",\"fafasfsa\"],\"Linhas\":[{\"fsafsa\":\"safsafas\",\"fafasfsa\":\"fsafsafsa\"}]}');
 
 -- --------------------------------------------------------
 
@@ -117,8 +158,17 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `email`, `senha`, `permissao`) VALUES
-(1, 'adm', '123', 'adm'),
-(2, 'usr', '123', 'usr');
+(1, 'yslan_adm@gmail.com', '123', 'adm'),
+(2, 'yslan_usr@gmail.com', '123', 'usr'),
+(3, 'dsad@gmail.com', '123', 'adm'),
+(4, 'dsadsadsa@gmail.com', '123', 'usr'),
+(5, 'teste@gmail.com', '123', 'usr'),
+(6, 'testezinho@gmail.com', '123', 'usr'),
+(7, 'fsafasfsa@gmail.com', '2132132132', 'usr'),
+(8, 'fawqwqqfaasfs@gmail.com', '123', 'usr'),
+(9, 'fsafasfas@gmail.com', '123', 'usr'),
+(10, 'yslanzinho@gmail.com', '123', 'adm'),
+(11, 'yslan_ges@gmail.com', '123', 'ges');
 
 --
 -- Índices para tabelas despejadas
@@ -154,6 +204,13 @@ ALTER TABLE `orcamento`
   ADD KEY `fk_orcamento_modelo` (`modelo_id`);
 
 --
+-- Índices de tabela `orcamento_dados`
+--
+ALTER TABLE `orcamento_dados`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `orcamento_id` (`orcamento_id`);
+
+--
 -- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
@@ -167,31 +224,37 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `modelo_orcamento`
 --
 ALTER TABLE `modelo_orcamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `modelo_orcamento_dados`
 --
 ALTER TABLE `modelo_orcamento_dados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `modelo_orcamento_usuarios`
 --
 ALTER TABLE `modelo_orcamento_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `orcamento`
 --
 ALTER TABLE `orcamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT de tabela `orcamento_dados`
+--
+ALTER TABLE `orcamento_dados`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restrições para tabelas despejadas
@@ -221,6 +284,12 @@ ALTER TABLE `modelo_orcamento_usuarios`
 --
 ALTER TABLE `orcamento`
   ADD CONSTRAINT `fk_orcamento_modelo` FOREIGN KEY (`modelo_id`) REFERENCES `modelo_orcamento` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Restrições para tabelas `orcamento_dados`
+--
+ALTER TABLE `orcamento_dados`
+  ADD CONSTRAINT `orcamento_dados_ibfk_1` FOREIGN KEY (`orcamento_id`) REFERENCES `orcamento` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
