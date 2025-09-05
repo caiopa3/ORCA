@@ -180,7 +180,7 @@
                             <WrapPanel x:Name="wrapPanelOrcamentos" 
                                        Orientation="Horizontal" 
                                        ItemHeight="140" 
-                                       ItemWidth="160"
+                                       ItemWidth="200"
                                        Margin="6" 
                                        HorizontalAlignment="Left" 
                                        VerticalAlignment="Top" />

@@ -8,13 +8,14 @@ namespace ORCA
     {
         private readonly int _orcamentoId;
         private readonly OrcamentoService _orcamentoService;
+        private readonly string _email;
 
-        public OrcamentoWindow(int orcamentoId, OrcamentoService orcamentoService)
+        public OrcamentoWindow(int orcamentoId, OrcamentoService orcamentoService, string email)
         {
             InitializeComponent();
             _orcamentoId = orcamentoId;
             _orcamentoService = orcamentoService;
-
+            _email = email;
             Carregar();
         }
 
@@ -23,7 +24,7 @@ namespace ORCA
             try
             {
                 // 1) Busca o JSON do modelo associado a este orçamento
-                string json = _orcamentoService.CarregarModeloJsonPorOrcamentoId(_orcamentoId);
+                string json = _orcamentoService.CarregarModeloJsonPorOrcamentoId(_orcamentoId, _email);
                 if (string.IsNullOrWhiteSpace(json))
                 {
                     MessageBox.Show("Nenhum modelo encontrado para este orçamento.");
@@ -47,7 +48,9 @@ namespace ORCA
                 if (dataGridOrcamento.ItemsSource is DataView dv)
                 {
                     DataTable tabela = dv.ToTable();
-                    _orcamentoService.SalvarDadosOrcamento(_orcamentoId, tabela);
+                    int usuarioId = _orcamentoService.ObterUsuarioIdPorEmail(_email);
+
+                    _orcamentoService.SalvarDadosOrcamento(_orcamentoId, tabela, usuarioId);
                     MessageBox.Show("Orçamento salvo com sucesso!");
                 }
                 else
@@ -60,5 +63,6 @@ namespace ORCA
                 MessageBox.Show("Erro ao salvar orçamento: " + ex.Message);
             }
         }
+
     }
 }

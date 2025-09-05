@@ -1,26 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\",
+  "WorkspaceRootPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\orca\\services\\orcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:services\\orcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\orcamentowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:orcamentowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\orcamentowindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\orca\\orcamentowindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:orcamentowindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\services\\orcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:services\\orcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\orca\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\orca\\orcamentowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:orcamentowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\orca\\homepage_usr.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:homepage_usr.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\orca\\homepage_usr.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:homepage_usr.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\orca\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,81 +38,94 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAowKcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T14:19:38.421Z",
+              "WhenOpened": "2025-09-05T17:03:21.608Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-04T14:19:36.593Z",
+              "WhenOpened": "2025-09-05T17:03:19.747Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "OrcamentoService.cs",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\Services\\OrcamentoService.cs",
-              "RelativeDocumentMoniker": "Services\\OrcamentoService.cs",
-              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\Services\\OrcamentoService.cs",
-              "RelativeToolTip": "Services\\OrcamentoService.cs",
-              "ViewState": "AgIAAAEBAAAAAAAAAAAwwBsBAAAvAAAAAAAAAA==",
+              "Title": "homePage_usr.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\homePage_usr.xaml.cs",
+              "RelativeDocumentMoniker": "homePage_usr.xaml.cs",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\homePage_usr.xaml.cs",
+              "RelativeToolTip": "homePage_usr.xaml.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAgwKYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T13:55:47.712Z",
+              "WhenOpened": "2025-09-05T16:58:49.878Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrcamentoWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\OrcamentoWindow.xaml",
-              "RelativeDocumentMoniker": "OrcamentoWindow.xaml",
-              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\OrcamentoWindow.xaml",
-              "RelativeToolTip": "OrcamentoWindow.xaml",
+              "DocumentIndex": 5,
+              "Title": "homePage_usr.xaml",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\homePage_usr.xaml",
+              "RelativeDocumentMoniker": "homePage_usr.xaml",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\homePage_usr.xaml",
+              "RelativeToolTip": "homePage_usr.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-04T13:53:50.253Z",
+              "WhenOpened": "2025-09-05T16:58:48.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrcamentoService.cs",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\Services\\OrcamentoService.cs",
+              "RelativeDocumentMoniker": "Services\\OrcamentoService.cs",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\Services\\OrcamentoService.cs",
+              "RelativeToolTip": "Services\\OrcamentoService.cs",
+              "ViewState": "AgIAAB0BAAAAAAAAAAAQwCgBAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T16:56:20.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrcamentoWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\OrcamentoWindow.xaml.cs",
+              "RelativeDocumentMoniker": "OrcamentoWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\OrcamentoWindow.xaml.cs",
+              "RelativeToolTip": "OrcamentoWindow.xaml.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwDYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T16:47:25.418Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "OrcamentoWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\OrcamentoWindow.xaml.cs",
-              "RelativeDocumentMoniker": "OrcamentoWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\OrcamentoWindow.xaml.cs",
-              "RelativeToolTip": "OrcamentoWindow.xaml.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAIwDwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T13:53:22.332Z",
+              "Title": "OrcamentoWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\OrcamentoWindow.xaml",
+              "RelativeDocumentMoniker": "OrcamentoWindow.xaml",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\OrcamentoWindow.xaml",
+              "RelativeToolTip": "OrcamentoWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-05T16:47:21.703Z",
               "EditorCaption": ""
             }
           ]

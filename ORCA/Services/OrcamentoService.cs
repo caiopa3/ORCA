@@ -120,23 +120,49 @@ namespace ORCA.Services
             }
         }
 
-        public string CarregarModeloJsonPorOrcamentoId(int orcamentoId)
+        public string CarregarModeloJsonPorOrcamentoId(int orcamentoId, string email)
         {
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            const string sql = @"
+            // 1) Primeiro tenta carregar os dados específicos do orçamento (orcamento_dados)
+            string sqlOrc = @"
+                SELECT dados_json
+                FROM orcamento_dados od
+                INNER JOIN orcamento o ON od.orcamento_id = o.id
+                WHERE o.id = @id
+                  AND o.usr_email = @Email;
+            ";
+
+            using (var cmdOrc = new MySqlCommand(sqlOrc, conn))
+            {
+                cmdOrc.Parameters.AddWithValue("@id", orcamentoId);
+                cmdOrc.Parameters.AddWithValue("@Email", email);
+
+                var result = cmdOrc.ExecuteScalar();
+                if (result != null && result != DBNull.Value)
+                    return result.ToString();
+            }
+
+            // 2) Caso não exista em orcamento_dados, usa o JSON base do modelo
+            string sqlModelo = @"
                 SELECT mod_dados.dados_json
                 FROM orcamento o
                 INNER JOIN modelo_orcamento_dados mod_dados ON mod_dados.modelo_id = o.modelo_id
-                WHERE o.id = @id;";
+                WHERE o.id = @id
+                  AND o.usr_email = @Email;
+            ";
 
-            using var cmd = new MySqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@id", orcamentoId);
+            using (var cmdModelo = new MySqlCommand(sqlModelo, conn))
+            {
+                cmdModelo.Parameters.AddWithValue("@id", orcamentoId);
+                cmdModelo.Parameters.AddWithValue("@Email", email);
 
-            var result = cmd.ExecuteScalar();
-            return result?.ToString() ?? string.Empty;
+                var result = cmdModelo.ExecuteScalar();
+                return result?.ToString() ?? string.Empty;
+            }
         }
+
 
         public DataTable ModeloJsonParaDataTable(string json)
         {
@@ -275,9 +301,8 @@ namespace ORCA.Services
             return dt;
         }
 
-        public void SalvarDadosOrcamento(int orcamentoId, DataTable tabela)
+        public void SalvarDadosOrcamento(int orcamentoId, DataTable tabela, int usuarioId)
         {
-            // converte o DataTable em JSON no mesmo formato que você já usa
             var colunas = tabela.Columns.Cast<DataColumn>().Select(c => c.ColumnName).ToList();
 
             var linhas = new List<Dictionary<string, object>>();
@@ -285,47 +310,57 @@ namespace ORCA.Services
             {
                 var dict = new Dictionary<string, object>();
                 foreach (DataColumn col in tabela.Columns)
-                {
                     dict[col.ColumnName] = dr[col];
-                }
                 linhas.Add(dict);
             }
 
-            var obj = new
-            {
-                Colunas = colunas,
-                Linhas = linhas
-            };
-
+            var obj = new { Colunas = colunas, Linhas = linhas };
             string json = JsonConvert.SerializeObject(obj);
 
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            // verifica se já existe dado salvo para este orçamento
-            string checkSql = "SELECT id FROM orcamento_dados WHERE orcamento_id=@id";
+            string checkSql = "SELECT id FROM orcamento_dados WHERE orcamento_id=@id AND usuario_id=@uid";
             using var checkCmd = new MySqlCommand(checkSql, conn);
             checkCmd.Parameters.AddWithValue("@id", orcamentoId);
+            checkCmd.Parameters.AddWithValue("@uid", usuarioId);
 
             var existe = checkCmd.ExecuteScalar();
 
-            if (existe == null) // novo
+            if (existe == null)
             {
-                string insertSql = "INSERT INTO orcamento_dados (orcamento_id, dados_json) VALUES (@id, @json)";
+                string insertSql = "INSERT INTO orcamento_dados (orcamento_id, usuario_id, dados_json) VALUES (@id, @uid, @json)";
                 using var cmd = new MySqlCommand(insertSql, conn);
                 cmd.Parameters.AddWithValue("@id", orcamentoId);
+                cmd.Parameters.AddWithValue("@uid", usuarioId);
                 cmd.Parameters.AddWithValue("@json", json);
                 cmd.ExecuteNonQuery();
             }
-            else // atualizar
+            else
             {
-                string updateSql = "UPDATE orcamento_dados SET dados_json=@json WHERE orcamento_id=@id";
+                string updateSql = "UPDATE orcamento_dados SET dados_json=@json WHERE orcamento_id=@id AND usuario_id=@uid";
                 using var cmd = new MySqlCommand(updateSql, conn);
                 cmd.Parameters.AddWithValue("@id", orcamentoId);
+                cmd.Parameters.AddWithValue("@uid", usuarioId);
                 cmd.Parameters.AddWithValue("@json", json);
                 cmd.ExecuteNonQuery();
             }
         }
+
+
+        public int ObterUsuarioIdPorEmail(string email)
+        {
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
+
+            string sql = "SELECT id FROM usuario WHERE email=@e";
+            using var cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@e", email);
+
+            var result = cmd.ExecuteScalar();
+            return result == null ? 0 : Convert.ToInt32(result);
+        }
+
 
     }
 }
