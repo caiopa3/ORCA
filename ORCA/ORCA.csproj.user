@@ -40,6 +40,9 @@
     <Compile Update="OrcamentoWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="PerfilWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SelecionarModeloWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

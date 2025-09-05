@@ -101,14 +101,14 @@
                                              Margin="12,0" 
                                              FontSize="13" 
                                              Foreground="#222"
-                                             Text="" />
+                                             Text="" TextChanged="txtSearch_TextChanged" />
                                     
                                     <TextBlock Text="🔍" 
                                                FontSize="15" 
                                                HorizontalAlignment="Center" 
                                                VerticalAlignment="Center" 
                                                Background="Transparent" 
-                                               Grid.Column="1" />
+                                               Grid.Column="1" PreviewMouseDown="TextBlock_PreviewMouseDown" />
                                     
                                 </Grid>
                                 
@@ -158,7 +158,52 @@
                                 <TextBlock Text="criar" Foreground="#AEE0B4" FontWeight="Bold"/>
                                 
                             </Button>
-                            
+
+                            <!-- criar button -->
+                            <Button x:Name="btnPerfil" 
+                                Grid.Column="2" 
+                                Width="36" 
+                                Height="36"
+                                HorizontalAlignment="Right" 
+                                VerticalAlignment="Center" 
+                                Margin="110,0,100,0"
+                                Cursor="Hand"
+                                Click="BtnPerfil_Click">
+
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="bd" CornerRadius="18"
+                                            BorderThickness="1.6"
+                                            BorderBrush="#3CB86F"
+                                            Background="#0B1113"
+                                            Padding="4">
+
+                                            <TextBlock Text="👤" 
+                                               FontSize="18"
+                                               HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center" 
+                                               Foreground="#AEE0B4"/>
+
+                                        </Border>
+
+                                        <ControlTemplate.Triggers>
+
+                                            <Trigger Property="IsMouseOver" Value="True">
+
+                                                <Setter TargetName="bd" Property="Background" Value="#3CB86F"/>
+
+                                                <Setter Property="Foreground" Value="White"/>
+
+                                            </Trigger>
+
+                                        </ControlTemplate.Triggers>
+
+                                    </ControlTemplate>
+
+                                </Button.Template>
+
+                            </Button>
+
                         </Grid>
                         
                     </Border>

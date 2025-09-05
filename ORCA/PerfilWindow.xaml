@@ -1,0 +1,27 @@
+﻿<Window x:Class="ORCA.PerfilWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Meu Perfil"  
+        Height="300" Width="400"
+        WindowStartupLocation="CenterScreen"
+        Background="#171717">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Alterar Email:" Foreground="White" FontSize="14"/>
+        <TextBox x:Name="txtEmail" Grid.Row="0" Margin="0,20,0,0" Height="28"/>
+
+        <TextBlock Text="Alterar Senha:" Grid.Row="1" Margin="0,60,0,0" Foreground="White" FontSize="14"/>
+        <PasswordBox x:Name="txtSenha" Grid.Row="1" Margin="0,80,0,0" Height="28"/>
+
+        <Button x:Name="btnSalvar" Grid.Row="2" Content="Salvar Alterações"
+                Margin="0,30,0,0" Height="32" Width="150"
+                HorizontalAlignment="Center" Click="BtnSalvar_Click"/>
+    </Grid>
+</Window>

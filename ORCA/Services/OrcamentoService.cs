@@ -360,7 +360,18 @@ namespace ORCA.Services
             var result = cmd.ExecuteScalar();
             return result == null ? 0 : Convert.ToInt32(result);
         }
+        public void AtualizarUsuario(string emailAntigo, string novoEmail, string novaSenha)
+        {
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
 
+            string sql = "UPDATE usuario SET email=@NovoEmail, senha=@Senha WHERE email=@EmailAntigo";
+            using var cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@NovoEmail", novoEmail);
+            cmd.Parameters.AddWithValue("@Senha", novaSenha);
+            cmd.Parameters.AddWithValue("@EmailAntigo", emailAntigo);
 
+            cmd.ExecuteNonQuery();
+        }
     }
 }

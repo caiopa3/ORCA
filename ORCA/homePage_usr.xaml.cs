@@ -162,5 +162,75 @@ namespace ORCA
             inputWindow.Content = panel;
             inputWindow.ShowDialog();
         }
+
+        private void BtnPerfil_Click(object sender, RoutedEventArgs e)
+        {
+            var perfilWin = new PerfilWindow(_email, _orcamentoService);
+            if (perfilWin.ShowDialog() == true)
+            {
+                MessageBox.Show("Reinicie o sistema para aplicar as mudanças de login.");
+            }
+        }
+
+        private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            FiltrarOrcamentos();
+        }
+
+        private void FiltrarOrcamentos()
+        {
+            string filtro = txtSearch.Text.Trim();
+
+            wrapPanelOrcamentos.Children.Clear();
+
+            try
+            {
+                var itens = _orcamentoService.ListarPorEmail(_email);
+
+                if (!string.IsNullOrEmpty(filtro))
+                {
+                    itens = itens
+                        .Where(o => o.Nome.Contains(filtro, StringComparison.OrdinalIgnoreCase))
+                        .ToList();
+                }
+
+                foreach (var (id, nome) in itens)
+                {
+                    CriarOrcamentoVisual(id, nome);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao filtrar orçamentos: " + ex.Message);
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string filtro = txtSearch.Text.Trim();
+
+            wrapPanelOrcamentos.Children.Clear();
+
+            try
+            {
+                var itens = _orcamentoService.ListarPorEmail(_email);
+
+                if (!string.IsNullOrEmpty(filtro))
+                {
+                    itens = itens
+                        .Where(o => o.Nome.Contains(filtro, StringComparison.OrdinalIgnoreCase))
+                        .ToList();
+                }
+
+                foreach (var (id, nome) in itens)
+                {
+                    CriarOrcamentoVisual(id, nome);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao filtrar orçamentos: " + ex.Message);
+            }
+        }
     }
 }
