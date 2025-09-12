@@ -618,3 +618,5 @@ C:\Users\internet.info\Desktop\ORCA_NOVO\ORCA\ORCA\obj\Debug\net8.0-windows\refi
 C:\Users\internet.info\Desktop\ORCA_NOVO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.pdb
 C:\Users\internet.info\Desktop\ORCA_NOVO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.genruntimeconfig.cache
 C:\Users\internet.info\Desktop\ORCA_NOVO\ORCA\ORCA\obj\Debug\net8.0-windows\ref\ORCA.dll
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.g.cs

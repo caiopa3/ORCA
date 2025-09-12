@@ -8,7 +8,31 @@
         Title="gereFunc_adm" Height="466" Width="858">
     <Grid Margin="0,0,10,-6">
 
-        <DataGrid  x:Name="dgUsuarios" Margin="10,10,165,112" AutoGenerateColumns="True" IsReadOnly="True"/>
+        <DataGrid x:Name="dgUsuarios" Margin="10,10,165,112" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="50"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding email}" Width="*"/>
+                <DataGridTextColumn Header="Permissão" Binding="{Binding permissao}" Width="100"/>
+
+                <!-- Botão Alterar -->
+                <DataGridTemplateColumn Header="Alterar" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Alterar" Click="BtnAlterar_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Botão Excluir -->
+                <DataGridTemplateColumn Header="Excluir" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Excluir" Click="BtnExcluir_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="btn_cad_func" Content="Cadastrar Funcionário" HorizontalAlignment="Left" Margin="716,268,0,0" VerticalAlignment="Top" Click="btn_cad_func_Click"/>
         <Button x:Name="btn_fil_func" Content="Filtrar Funcionário" HorizontalAlignment="Left" Margin="726,86,0,0" VerticalAlignment="Top" Click="btn_fil_func_Click"/>
         <ComboBox x:Name="cmb_camp_func" HorizontalAlignment="Left" Margin="716,123,0,0" VerticalAlignment="Top" Width="120"/>

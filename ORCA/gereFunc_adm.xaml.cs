@@ -97,5 +97,52 @@ namespace ORCA
                 CarregarUsuariosNaTela();
             }
         }
+
+        private void BtnAlterar_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button btn && btn.DataContext is DataRowView row)
+            {
+                string emailFuncionario = row["email"].ToString();
+
+                PerfilWindow perfil = new PerfilWindow(emailFuncionario, service);
+                bool? resultado = perfil.ShowDialog();
+
+                if (resultado == true)
+                {
+                    // Recarrega os usuários após alteração
+                    CarregarUsuariosNaTela();
+                }
+            }
+        }
+
+        private void BtnExcluir_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button btn && btn.DataContext is DataRowView row)
+            {
+                string emailFuncionario = row["email"].ToString();
+
+                var confirm = MessageBox.Show($"Deseja realmente excluir o funcionário {emailFuncionario}?", "Confirmação", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (confirm == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        using var conn = new MySqlConnection($"SERVER={servidor};PORT=3306;DATABASE={bd};UID={usr};PASSWORD={senha};");
+                        conn.Open();
+
+                        string sql = "DELETE FROM usuario WHERE email=@Email";
+                        using var cmd = new MySqlCommand(sql, conn);
+                        cmd.Parameters.AddWithValue("@Email", emailFuncionario);
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Funcionário excluído com sucesso!");
+                        CarregarUsuariosNaTela();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro ao excluir funcionário: " + ex.Message);
+                    }
+                }
+            }
+        }
     }
 }
