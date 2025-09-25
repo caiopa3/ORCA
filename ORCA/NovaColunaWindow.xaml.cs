@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ORCA
 {
@@ -21,8 +11,7 @@ namespace ORCA
     {
         public string NomeColuna { get; private set; }
         public string TipoDado { get; private set; }
-        public string Operacao { get; private set; }
-        public string Relacionamento { get; private set; }
+        public string ValorFixo { get; private set; }
 
         public NovaColunaWindow()
         {
@@ -39,26 +28,19 @@ namespace ORCA
 
             NomeColuna = txtNomeColuna.Text.Trim();
             TipoDado = (cmbTipoDado.SelectedItem as ComboBoxItem)?.Content.ToString() ?? "Texto";
-            Operacao = txtOperacao.Text.Trim();
-            Relacionamento = txtRelacionamento.Text.Trim();
+            ValorFixo = chkValorFixo.IsChecked == true ? txtValorFixo.Text.Trim() : null;
             this.DialogResult = true;
             this.Close();
         }
 
-        private void cmbTipoDado_DropDownClosed(object sender, EventArgs e)
+        private void chkValorFixo_Checked(object sender, RoutedEventArgs e)
         {
-            if (cmbTipoDado.Text == "Número")
-            {
-                txtBlockOperacao.Visibility = Visibility.Visible;
-                txtBlockRelacionamento.Visibility = Visibility.Visible;
-                txtOperacao.Visibility = Visibility.Visible;
-                txtRelacionamento.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                txtOperacao.Visibility = Visibility.Collapsed;
-                txtRelacionamento.Visibility = Visibility.Collapsed;
-            }
+            borderValorFixo.Visibility = Visibility.Visible;
+        }
+
+        private void chkValorFixo_Unchecked(object sender, RoutedEventArgs e)
+        {
+            borderValorFixo.Visibility = Visibility.Collapsed;
         }
     }
 }

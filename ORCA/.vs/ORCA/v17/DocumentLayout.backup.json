@@ -1,14 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\",
+  "WorkspaceRootPath": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\gerefunc_adm.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:gerefunc_adm.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\gerefunc_adm.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:gerefunc_adm.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\caiopa3\\desktop\\orca\\orca\\orca\\novacolunawindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:novacolunawindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,43 +14,18 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "gereFunc_adm.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\gereFunc_adm.xaml.cs",
-              "RelativeDocumentMoniker": "gereFunc_adm.xaml.cs",
-              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\gereFunc_adm.xaml.cs*",
-              "RelativeToolTip": "gereFunc_adm.xaml.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG8AAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T13:32:05.483Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "gereFunc_adm.xaml",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\gereFunc_adm.xaml",
-              "RelativeDocumentMoniker": "gereFunc_adm.xaml",
-              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\gereFunc_adm.xaml*",
-              "RelativeToolTip": "gereFunc_adm.xaml*",
+              "Title": "NovaColunaWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\NovaColunaWindow.xaml",
+              "RelativeDocumentMoniker": "NovaColunaWindow.xaml",
+              "ToolTip": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\NovaColunaWindow.xaml",
+              "RelativeToolTip": "NovaColunaWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-12T13:31:31.57Z",
+              "WhenOpened": "2025-09-25T02:08:47.717Z",
               "EditorCaption": ""
             }
           ]

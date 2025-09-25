@@ -301,7 +301,7 @@ namespace ORCA.Services
             return dt;
         }
 
-        public void SalvarDadosOrcamento(int orcamentoId, DataTable tabela, int usuarioId)
+        public void SalvarDadosOrcamento(int orcamentoId, DataTable tabela, int usuarioId, Dictionary<string, string> formulas)
         {
             var colunas = tabela.Columns.Cast<DataColumn>().Select(c => c.ColumnName).ToList();
 
@@ -314,7 +314,7 @@ namespace ORCA.Services
                 linhas.Add(dict);
             }
 
-            var obj = new { Colunas = colunas, Linhas = linhas };
+            var obj = new { Colunas = colunas, Linhas = linhas, Formulas = formulas };
             string json = JsonConvert.SerializeObject(obj);
 
             using var conn = new MySqlConnection(_connectionString);

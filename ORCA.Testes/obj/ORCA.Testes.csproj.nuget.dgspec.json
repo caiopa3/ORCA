@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA.Testes\\ORCA.Testes.csproj": {}
+    "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA.Testes\\ORCA.Testes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA.Testes\\ORCA.Testes.csproj": {
+    "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA.Testes\\ORCA.Testes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA.Testes\\ORCA.Testes.csproj",
+        "projectUniqueName": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA.Testes\\ORCA.Testes.csproj",
         "projectName": "ORCA.Testes",
-        "projectPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA.Testes\\ORCA.Testes.csproj",
-        "packagesPath": "C:\\Users\\internet.info\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA.Testes\\obj\\",
+        "projectPath": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA.Testes\\ORCA.Testes.csproj",
+        "packagesPath": "C:\\Users\\Caiopa3\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA.Testes\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\internet.info\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Caiopa3\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj": {
-                "projectPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj"
+              "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA.csproj": {
+                "projectPath": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA.csproj"
               }
             }
           }
@@ -46,9 +46,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -79,24 +79,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj": {
+    "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj",
+        "projectUniqueName": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA.csproj",
         "projectName": "ORCA",
-        "projectPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj",
-        "packagesPath": "C:\\Users\\internet.info\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\obj\\",
+        "projectPath": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA.csproj",
+        "packagesPath": "C:\\Users\\Caiopa3\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\internet.info\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Caiopa3\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -121,9 +121,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -165,7 +165,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
