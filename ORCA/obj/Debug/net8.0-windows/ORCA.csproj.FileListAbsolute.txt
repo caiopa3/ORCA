@@ -641,3 +641,5 @@ C:\Users\Caiopa3\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_adm.ba
 C:\Users\Caiopa3\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_ges.baml
 C:\Users\Caiopa3\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.baml
 C:\Users\Caiopa3\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.g.cs

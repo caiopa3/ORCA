@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace ORCA
 {
@@ -60,24 +61,26 @@ namespace ORCA
 
                     var header = $"{nomeColuna} ({tipo})";
 
-                    // adiciona na lista de colunas (usamos o nome 'cru' como chave no dicionário)
+                    // adiciona na lista de colunas                     // adiciona na lista de colunas (usamos o nome 'cru' como chave no dicionário)
+(usamos o nome 'cru' como chave no dicionário)
                     if (!_colunas.Contains(nomeColuna))
-                        _colunas.Add(nomeColuna);
+                         // cria a coluna visualmente
+                   _colunas.Add(nomeColuna);
 
                     // cria a coluna visualmente
                     var novaColuna = new DataGridTextColumn
-                    {
+     System.Windows.Data.               {
                         Header = header,
-                        Binding = new System.Windows.Data.Binding(nomeColuna)
-                    };
-                    meuDataGrid.Columns.Add(novaColuna);
+                        Binding = new System.Windows.Data.Binding($"[{nomeColuna}]")
+                        {
+                                           }
+       };
+                  meuDataGrid.Columns.Add(novaColuna);
 
-                    // garante que todas as linhas tenham essa chave
-                    foreach (var linha in _linhas)
+                                   // garante que todas as linhas tenham essa chave
+     // garante que todas as linhas tenham essa chavforeach (var linha in _linhas)
                         if (!linha.ContainsKey(nomeColuna))
-                            linha[nomeColuna] = "";
-
-                    meuDataGrid.Items.Refresh();
+               linhms.Refresh();
                 }
             }
             catch (Exception ex)

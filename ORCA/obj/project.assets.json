@@ -2273,23 +2273,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Caiopa3\\.nuget\\packages\\": {},
+    "C:\\Users\\internet.info\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA.csproj",
+      "projectUniqueName": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA.csproj",
       "projectName": "ORCA",
-      "projectPath": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA.csproj",
-      "packagesPath": "C:\\Users\\Caiopa3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Caiopa3\\Desktop\\ORCA\\ORCA\\ORCA\\obj\\",
+      "projectPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\ORCA.csproj",
+      "packagesPath": "C:\\Users\\internet.info\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Caiopa3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\internet.info\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2314,7 +2314,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -2358,7 +2358,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
