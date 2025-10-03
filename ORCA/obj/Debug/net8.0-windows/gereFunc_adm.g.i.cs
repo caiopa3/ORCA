@@ -93,7 +93,7 @@ namespace ORCA {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ORCA;component/gerefunc_adm.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ORCA;V1.0.0.0;component/gerefunc_adm.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\gereFunc_adm.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

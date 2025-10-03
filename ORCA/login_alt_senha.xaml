@@ -5,8 +5,163 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ORCA"
         mc:Ignorable="d"
-        Title="login_alt_senha" Height="450" Width="800">
+        Title="login_alt_senha"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#1C1C1C"
+        Height="500" Width="918">
+
     <Grid>
-        
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="145*"/>
+            <RowDefinition Height="97*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Imagem -->
+        <Image Source="pack://application:,,,/Resource/orca.png"
+               Stretch="Uniform"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Left"
+               Panel.ZIndex="0" Height="484" Width="1078"
+               Grid.ColumnSpan="2" Margin="22,-10,0,0" Grid.RowSpan="2"/>
+
+        <!-- Área preta -->
+        <Border Grid.Column="0"
+                Background="#0D1216"
+                CornerRadius="20,0,0,20"
+                Padding="30"
+                Panel.ZIndex="1" Grid.RowSpan="2">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" MinHeight="137"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto" MinHeight="148.567"/>
+                </Grid.RowDefinitions>
+
+                <!-- Título -->
+                <StackPanel Grid.Row="0" Margin="0,23,0,20">
+                    <TextBlock Text="Alteração da senha"
+                               FontSize="35"
+                               FontWeight="Bold"
+                               Foreground="#fff8ef"
+                               FontFamily="Segoe UI"
+                               Height="50"/>
+                    <TextBlock Text="Digite abaixo a nova senha"
+                               FontSize="12"
+                               Foreground="#fff8ef"
+                               TextWrapping="Wrap" Height="34"/>
+                </StackPanel>
+
+                <!-- Campo e botão -->
+                <StackPanel Grid.Row="2" Margin="0,21,0,0">
+
+                    <!-- Campo de senha -->
+                    <Border Background="#0D1216" CornerRadius="6" Height="38" Margin="0,0,0,10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="🔑"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Foreground="#F6F2EF" FontSize="14"/>
+
+                            <!-- Aqui mudou para PasswordBox -->
+                            <PasswordBox x:Name="txtSenha" 
+                                         Grid.Column="1"
+                                         Background="#FFF8EF" 
+                                         BorderThickness="0"
+                                         VerticalContentAlignment="Center" 
+                                         Padding="6,0"
+                                         Foreground="#333" 
+                                         FontSize="14" 
+                                         HorizontalAlignment="Center" 
+                                         Width="317"/>
+
+                            <TextBlock Grid.Column="1" Text="Senha" 
+                                       Foreground="#9D9D9D"
+                                       VerticalAlignment="Center" 
+                                       Margin="6,0,0,0" 
+                                       IsHitTestVisible="False">
+
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Password, ElementName=txtSenha}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+
+                            <Border BorderBrush="#FFF8EF" BorderThickness="1" CornerRadius="6" Grid.ColumnSpan="2"/>
+                        </Grid>
+                    </Border>
+
+                    <!-- Botão -->
+                    <Button x:Name="btnVerificar"
+                            Content="Verificar"
+                            Height="59"
+                            Background="Transparent"
+                            Foreground="#fff8ef"
+                            FontSize="14"
+                            BorderBrush="#fff8ef"
+                            BorderThickness="1.5"
+                            Cursor="Hand"
+                            Click="btnVerificar_Click_1">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="10"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        Background="{TemplateBinding Background}"
+                                        SnapsToDevicePixels="True">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"
+                                                      RecognizesAccessKey="True"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Botão fechar -->
+        <Border Background="#fff8ef" CornerRadius="0,20,20,0"
+                Grid.ColumnSpan="2" Margin="417,0,0,0" Grid.RowSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="41*"/>
+                    <RowDefinition Height="201*"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="pack://application:,,,/Resource/orca.png"
+                       Stretch="Uniform" VerticalAlignment="Top"
+                       Height="490" Margin="-310,-3,-11,0"
+                       RenderTransformOrigin="0.5,0.5"
+                       Grid.RowSpan="2">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-1.999"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

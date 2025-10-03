@@ -53,7 +53,7 @@ namespace ORCA {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ORCA;component/homepage_ges.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ORCA;V1.0.0.0;component/homepage_ges.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\homePage_ges.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

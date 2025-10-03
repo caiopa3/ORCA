@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text.RegularExpressions;
+using System.Linq;
+using System.Globalization;
 
 namespace ORCA.Services
 {
@@ -22,7 +24,6 @@ namespace ORCA.Services
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            // seu schema usa usr_email
             var cmd = new MySqlCommand(
                 "INSERT INTO orcamento (nome, usr_email) VALUES (@n, @e); SELECT LAST_INSERT_ID();",
                 conn);
@@ -120,6 +121,10 @@ namespace ORCA.Services
             }
         }
 
+        /// <summary>
+        /// Carrega o JSON para este orçamento. Primeiro tenta orcamento_dados (dados já salvos pelo usuário),
+        /// se não encontrar, retorna o JSON base do modelo (modelo_orcamento_dados).
+        /// </summary>
         public string CarregarModeloJsonPorOrcamentoId(int orcamentoId, string email)
         {
             using var conn = new MySqlConnection(_connectionString);
@@ -127,11 +132,12 @@ namespace ORCA.Services
 
             // 1) Primeiro tenta carregar os dados específicos do orçamento (orcamento_dados)
             string sqlOrc = @"
-                SELECT dados_json
+                SELECT od.dados_json
                 FROM orcamento_dados od
                 INNER JOIN orcamento o ON od.orcamento_id = o.id
                 WHERE o.id = @id
-                  AND o.usr_email = @Email;
+                  AND o.usr_email = @Email
+                LIMIT 1;
             ";
 
             using (var cmdOrc = new MySqlCommand(sqlOrc, conn))
@@ -150,7 +156,8 @@ namespace ORCA.Services
                 FROM orcamento o
                 INNER JOIN modelo_orcamento_dados mod_dados ON mod_dados.modelo_id = o.modelo_id
                 WHERE o.id = @id
-                  AND o.usr_email = @Email;
+                  AND o.usr_email = @Email
+                LIMIT 1;
             ";
 
             using (var cmdModelo = new MySqlCommand(sqlModelo, conn))
@@ -164,6 +171,10 @@ namespace ORCA.Services
         }
 
 
+        /// <summary>
+        /// Converte o JSON do modelo (ou orcamento_dados) para DataTable.
+        /// Se o JSON incluir "FixedValues", aplica DataColumn.DefaultValue para cada coluna correspondente.
+        /// </summary>
         public DataTable ModeloJsonParaDataTable(string json)
         {
             var dt = new DataTable();
@@ -178,6 +189,7 @@ namespace ORCA.Services
             }
             catch
             {
+                // fallback se o JSON for um array de linhas
                 var fallback = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(json);
                 if (fallback == null || fallback.Count == 0) return dt;
 
@@ -185,21 +197,75 @@ namespace ORCA.Services
                     dt.Columns.Add(RemoverTipo(col));
 
                 foreach (var row in fallback)
-                    dt.Rows.Add(row.Values.ToArray());
+                {
+                    var r = dt.NewRow();
+                    int i = 0;
+                    foreach (var val in row.Values)
+                    {
+                        r[i++] = val ?? "";
+                    }
+                    dt.Rows.Add(r);
+                }
 
                 return dt;
             }
 
+            // Extrai colunas, linhas e fixed values do objeto
             var colunas = obj["Colunas"]?.Select(c => RemoverTipo(c.ToString())).ToList() ?? new List<string>();
             var linhas = obj["Linhas"] as JArray ?? new JArray();
 
+            // Se não houver "Colunas", tenta inferir pelas chaves da primeira linha
             if (colunas.Count == 0 && linhas.Count > 0 && linhas[0] is JObject firstRow)
                 colunas = firstRow.Properties().Select(p => RemoverTipo(p.Name)).ToList();
 
-            foreach (var col in colunas)
-                if (!dt.Columns.Contains(col))
-                    dt.Columns.Add(col);
+            // Lê FixedValues (se existir) em dicionário case-insensitive
+            var fixedValues = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
+            if (obj["FixedValues"] is JObject fvObj)
+            {
+                foreach (var prop in fvObj.Properties())
+                {
+                    var key = RemoverTipo(prop.Name);
+                    var token = prop.Value;
+                    // tenta parse numérico primeiro
+                    if (token != null && token.Type == JTokenType.Float || token.Type == JTokenType.Integer)
+                    {
+                        fixedValues[key] = token.ToObject<double>();
+                    }
+                    else
+                    {
+                        var s = token?.ToString();
+                        if (double.TryParse(s, NumberStyles.Any, CultureInfo.InvariantCulture, out double dInv))
+                            fixedValues[key] = dInv;
+                        else if (double.TryParse(s, NumberStyles.Any, CultureInfo.CurrentCulture, out double dCurr))
+                            fixedValues[key] = dCurr;
+                        else
+                            fixedValues[key] = s ?? "";
+                    }
+                }
+            }
 
+            // Cria as colunas no DataTable e já aplica DefaultValue quando existir fixedValues
+            foreach (var col in colunas)
+            {
+                var clean = RemoverTipo(col);
+                if (!dt.Columns.Contains(clean))
+                    dt.Columns.Add(clean);
+
+                if (fixedValues.TryGetValue(clean, out var fv))
+                {
+                    try
+                    {
+                        // se fv for número em double, use ele; caso contrário, mantenha string
+                        dt.Columns[clean].DefaultValue = fv ?? "";
+                    }
+                    catch
+                    {
+                        dt.Columns[clean].DefaultValue = fv?.ToString() ?? "";
+                    }
+                }
+            }
+
+            // Preenche as linhas
             foreach (var item in linhas.OfType<JObject>())
             {
                 var row = dt.NewRow();
@@ -211,6 +277,8 @@ namespace ORCA.Services
 
                     row[colName] = prop.Value?.ToString() ?? string.Empty;
                 }
+
+                // se alguma coluna faltou no JSON desta linha, o DefaultValue da coluna já cuidará
                 dt.Rows.Add(row);
             }
 
@@ -347,7 +415,6 @@ namespace ORCA.Services
             }
         }
 
-
         public int ObterUsuarioIdPorEmail(string email)
         {
             using var conn = new MySqlConnection(_connectionString);
@@ -360,6 +427,7 @@ namespace ORCA.Services
             var result = cmd.ExecuteScalar();
             return result == null ? 0 : Convert.ToInt32(result);
         }
+
         public void AtualizarUsuario(string emailAntigo, string novoEmail, string novaSenha)
         {
             using var conn = new MySqlConnection(_connectionString);

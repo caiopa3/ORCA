@@ -92,7 +92,7 @@ namespace ORCA {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ORCA;component/novacolunawindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ORCA;V1.0.0.0;component/novacolunawindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\NovaColunaWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

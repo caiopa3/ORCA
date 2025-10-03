@@ -31,14 +31,15 @@ namespace ORCA.Services
 
         /// <summary>
         /// Cria o modelo, salva o JSON em modelo_orcamento_dados e compartilha com os usuários informados.
-        /// Esse é o método-base que recebe as linhas como Dictionary&lt;string, object&gt;.
+        /// Agora inclui FixedValues no JSON para suportar "valor fixo" ao adicionar novas linhas.
         /// </summary>
         public int CriarModeloOrcamento(
             string nomeModelo,
             int usrCriadorId,
             List<string> colunas,
             List<Dictionary<string, object>> linhas,
-            List<int> usuariosCompartilhados)
+            List<int> usuariosCompartilhados,
+            Dictionary<string, object> valoresFixos = null)
         {
             if (string.IsNullOrWhiteSpace(nomeModelo))
                 throw new ArgumentException("nomeModelo é obrigatório.", nameof(nomeModelo));
@@ -61,11 +62,12 @@ namespace ORCA.Services
                     cmdModelo.ExecuteNonQuery();
                     int modeloId = (int)cmdModelo.LastInsertedId;
 
-                    // 2) JSON (colunas + linhas)
+                    // 2) JSON (colunas + linhas + fixed values)
                     var payload = new
                     {
                         Colunas = colunas ?? new List<string>(),
-                        Linhas = linhas ?? new List<Dictionary<string, object>>()
+                        Linhas = linhas ?? new List<Dictionary<string, object>>(),
+                        FixedValues = valoresFixos ?? new Dictionary<string, object>()
                     };
                     string json = JsonConvert.SerializeObject(payload);
 
@@ -107,21 +109,21 @@ namespace ORCA.Services
         }
 
         /// <summary>
-        /// Overload para testes e cenários onde as linhas são Dictionary&lt;string, string&gt;.
-        /// Converte para Dictionary&lt;string, object&gt; e delega para o método-base.
+        /// Overload compatível que aceita linhas como Dictionary<string,string>.
         /// </summary>
         public int CriarModeloOrcamento(
             string nomeModelo,
             int usrCriadorId,
             List<string> colunas,
             List<Dictionary<string, string>> linhas,
-            List<int> usuariosCompartilhados)
+            List<int> usuariosCompartilhados,
+            Dictionary<string, object> valoresFixos = null)
         {
             var linhasObj = (linhas ?? new List<Dictionary<string, string>>())
                 .Select(row => row.ToDictionary(kv => kv.Key, kv => (object)kv.Value))
                 .ToList();
 
-            return CriarModeloOrcamento(nomeModelo, usrCriadorId, colunas, linhasObj, usuariosCompartilhados);
+            return CriarModeloOrcamento(nomeModelo, usrCriadorId, colunas, linhasObj, usuariosCompartilhados, valoresFixos);
         }
 
         /// <summary>

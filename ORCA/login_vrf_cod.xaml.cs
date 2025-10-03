@@ -69,6 +69,8 @@ namespace ORCA
             {
                 MessageBox.Show("Código verificado com sucesso!");
                 // Aqui você pode prosseguir com o fluxo da aplicação
+                login_alt_senha login_alt_senha = new login_alt_senha(email, servidor, bd, usr, senha);
+                login_alt_senha.Show();
                 this.Close();
             }
             else
