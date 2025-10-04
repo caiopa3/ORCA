@@ -13,6 +13,9 @@
     <Compile Update="criar_orca.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="gerar_pdf.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="gereFunc_adm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,6 +43,9 @@
     <Compile Update="OrcamentoWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="PdfContentWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="PerfilWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -51,6 +57,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="gerar_pdf.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="homePage_usr.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -67,6 +76,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="NovaColunaWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PdfContentWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SelecionarUsuariosWindow.xaml">

@@ -247,5 +247,42 @@ namespace ORCA
                 MessageBox.Show("Erro ao salvar orçamento: " + ex.Message);
             }
         }
+
+        private void BtnExportar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // 🔹 Converter o DataGrid em um DataTable
+                var dt = new DataTable("Orcamento");
+
+                foreach (var col in dataGridOrcamento.Columns)
+                {
+                    dt.Columns.Add(col.Header.ToString());
+                }
+
+                foreach (var item in dataGridOrcamento.Items)
+                {
+                    if (item is System.Data.DataRowView rowView)
+                    {
+                        dt.Rows.Add(rowView.Row.ItemArray);
+                    }
+                    else if (item != null)
+                    {
+                        // caso o DataGrid esteja ligado a objetos
+                        var props = item.GetType().GetProperties();
+                        var values = props.Select(p => p.GetValue(item, null)).ToArray();
+                        dt.Rows.Add(values);
+                    }
+                }
+
+                // 🔹 Abrir a tela de edição do PDF (PdfContentWindow)
+                var pdfWin = new gerar_pdf(dt);
+                pdfWin.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao exportar PDF: " + ex.Message);
+            }
+        }
     }
 }

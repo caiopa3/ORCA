@@ -29,6 +29,19 @@
                     Height="35"
                     HorizontalAlignment="Left"
                     Click="BtnSalvar_Click"/>
+
+            <Button x:Name="btnExportar"
+                    Content="📄 Exportar PDF"
+                    Padding="10,5"
+                    Background="#3CB86F"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    BorderThickness="0"
+                    Width="160"
+                    Height="35"
+                    Margin="10,0,0,0"
+                    HorizontalAlignment="Left"
+                    Click="BtnExportar_Click"/>
         </StackPanel>
 
         <!-- Card para o DataGrid -->
