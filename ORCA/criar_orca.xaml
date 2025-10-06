@@ -6,32 +6,32 @@
         xmlns:local="clr-namespace:ORCA"
         mc:Ignorable="d"
         Title="criar_orca"  
-        Height="500" 
-        Width="850"
+        Height="520" 
+        Width="870"
         Background="#0d1216"
         WindowStartupLocation="CenterScreen">
-    
+
     <Grid>
 
         <!-- Card principal -->
-        
+
         <Border Background="#fff8ef" CornerRadius="15" Padding="20" Margin="20,62,20,20"
                 SnapsToDevicePixels="True">
-            
+
             <StackPanel>
 
                 <!-- Cabeçalho com botões -->
-                
+
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,15">
-                    
+
                     <!-- Botão Adicionar Coluna -->
 
                     <!-- Botão Salvar Modelo -->
-                    
+
                 </StackPanel>
 
                 <!-- DataGrid estilizado -->
-                
+
                 <DataGrid x:Name="meuDataGrid" 
                           AutoGenerateColumns="False" 
                           CanUserAddRows="True"
@@ -44,85 +44,110 @@
                           HeadersVisibility="Column" 
                           BorderThickness="0"
                           FontSize="14">
-                    
+
                     <DataGrid.Resources>
-                        
+
                         <Style TargetType="DataGridColumnHeader">
-                            
+
                             <Setter Property="Background" Value="#007ACC"/>
                             <Setter Property="Foreground" Value="White"/>
                             <Setter Property="FontWeight" Value="Bold"/>
                             <Setter Property="BorderThickness" Value="0"/>
-                        
+
                         </Style>
-                        
+
                     </DataGrid.Resources>
-                    
+
                 </DataGrid>
 
             </StackPanel>
-            
+
         </Border>
 
-        <!-- Botão Adicionar Coluna -->
 
+        <!-- Botão Adicionar Coluna (Azul) -->
         <Button 
-            Click="AdicionarColuna_Click" 
-            Margin="520,39,190,429" 
-            Padding="5"
-            Background="#007ACC" 
-            Foreground="White" 
-            FontWeight="Bold" 
-            BorderThickness="0"
-            Cursor="Hand">
-            
+    Click="AdicionarColuna_Click" 
+    Width="150"
+    Background="Transparent" 
+    Foreground="White" 
+    FontWeight="Bold" 
+    BorderBrush="#007ACC"
+    BorderThickness="2"
+    Cursor="Hand"
+    Margin="512,30,188,430">
+
             <Button.Template>
-                
                 <ControlTemplate TargetType="{x:Type Button}">
-                    
-                    <Border Background="{TemplateBinding Background}" CornerRadius="8">
-                        
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    
+                    <Border x:Name="border"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="8"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
                     </Border>
-                    
+
+                    <ControlTemplate.Triggers>
+                        <!-- Hover -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#007ACC"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+
+                        <!-- Pressionado -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#005A9E"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
-                
             </Button.Template>
-            
+
             <TextBlock Text="Adicionar Coluna" HorizontalAlignment="Center"/>
-            
         </Button>
 
-        <!-- Botão Salvar Modelo -->
 
+        <!-- Botão Salvar Modelo (Verde) -->
         <Button 
-            Click="SalvarModelo_Click" 
-            Padding="5"
-            Background="#28A745" 
-            Foreground="White" 
-            FontWeight="Bold" 
-            BorderThickness="0"
-            Cursor="Hand" 
-            Margin="670,39,40,429">
+    Click="SalvarModelo_Click" 
+    Width="150"
+    Background="Transparent" 
+    Foreground="White" 
+    FontWeight="Bold" 
+    BorderBrush="#28A745"
+    BorderThickness="2"
+    Cursor="Hand" 
+    Margin="671,30,29,430">
 
             <Button.Template>
-
                 <ControlTemplate TargetType="{x:Type Button}">
-
-                    <Border Background="{TemplateBinding Background}" CornerRadius="8">
-
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+                    <Border x:Name="border"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="8"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
                     </Border>
 
-                </ControlTemplate>
+                    <ControlTemplate.Triggers>
+                        <!-- Hover -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#28A745"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
 
+                        <!-- Pressionado -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#1E7E34"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
             </Button.Template>
 
             <TextBlock Text="Salvar Modelo" HorizontalAlignment="Center"/>
-
         </Button>
-
     </Grid>
 </Window>

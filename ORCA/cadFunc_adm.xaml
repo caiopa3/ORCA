@@ -5,14 +5,164 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ORCA"
         mc:Ignorable="d"
-        Title="cadFunc_adm" Height="450" Width="800">
-    <Grid>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="327,109,0,0" VerticalAlignment="Top" Width="200" />
-        <TextBox x:Name="txtSenha" HorizontalAlignment="Left" Margin="327,152,0,0" VerticalAlignment="Top" Width="200" />
+        Background="#0d1216"
+        Title="cadFunc_adm"     
+        Height="440" 
+    Width="470">
 
-        <ComboBox x:Name="cmbPermissao" HorizontalAlignment="Left" Margin="327,201,0,0" VerticalAlignment="Top" Width="200"></ComboBox>
-        
-        <Button x:Name="btn_cad_func" Content="Cadastrar Funcionário" HorizontalAlignment="Left" Margin="327,267,0,0" VerticalAlignment="Top" Width="200" Click="btn_cad_func_Click"/>
+    <Grid Margin="0,0,0,8">
+
+
+
+
+
+        <Border CornerRadius="5" Background="#fff8ef" Margin="29,66,26,303"></Border>
+        <Border CornerRadius="5" Background="#fff8ef" Margin="29,140,26,227"></Border>
+
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top" Width="396" Background="Transparent" 
+                Foreground="Black" 
+                BorderThickness="0" 
+                Padding="8" Text="" Height="47" />
+
+        <TextBox x:Name="txtSenha" HorizontalAlignment="Center" Margin="0,140,0,0" VerticalAlignment="Top" Width="396"  Background="Transparent" 
+                Foreground="Black" 
+                BorderThickness="0" 
+                Padding="8" Text="" Height="49" />
+
+        <ComboBox x:Name="cmbPermissao"                             
+                            Background="#fff8ef" 
+                            Foreground="Black" 
+                            BorderThickness="0" 
+                            Padding="8" 
+                            Margin="28,216,28,145">
+            <!-- DropDownClosed="cmbTipoDado_DropDownClosed"-->
+
+            <ComboBox.Template>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <!-- Caixa principal -->
+                        <Border x:Name="Border"
+                            CornerRadius="8"
+                            Background="#fff8ef"
+                            BorderBrush="#0d1216"
+                            BorderThickness="0" Margin="0,0,0,1">
+                            <DockPanel>
+                                <ContentPresenter Margin="5"
+                  VerticalAlignment="Center"
+                  HorizontalAlignment="Left"
+                  Content="{TemplateBinding SelectionBoxItem}"
+                  ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"/>
+                                <!-- Botão da setinha -->
+                                <ToggleButton DockPanel.Dock="Right"
+              Background="Transparent"
+              BorderThickness="0"
+              Focusable="False"
+              IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            </DockPanel>
+                        </Border>
+
+                        <!-- Lista suspensa -->
+                        <Popup x:Name="PART_Popup"
+                                         Placement="Bottom"
+                                         IsOpen="{TemplateBinding IsDropDownOpen}"
+                                         AllowsTransparency="True"
+                                         Focusable="False">
+                            <Border Background="#fff8ef"
+                                              BorderBrush="#0d1216"
+                                              BorderThickness="1"
+                                              CornerRadius="8"
+                                              Padding="2">
+
+                                <ScrollViewer>
+                                    <ItemsPresenter/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                        <Path x:Name="Arrow"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Data="M 0 0 L 4 4 L 8 0 Z"
+                                        Fill="#0d1216" Margin="383,0,0,0" Height="6" Stretch="Fill" Width="10"/>
+                    </Grid>
+                </ControlTemplate>
+            </ComboBox.Template>
+
+        </ComboBox>
+
+        <Button x:Name="btn_cad_func" Content="Cadastrar Funcionário" HorizontalAlignment="Center" Margin="0,318,0,0" VerticalAlignment="Top" Width="418" Click="btn_cad_func_Click" Height="59" FontWeight="Bold" >
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+
+                    <Border x:Name="border"
+                Background="#0d1216"
+                CornerRadius="10"
+                BorderThickness="2"
+                BorderBrush="#fff8ef" Margin="2,-5,2,0">
+                        <ContentPresenter x:Name="content"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              TextBlock.Foreground="#fff8ef"
+                                     />
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <!-- Hover -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <!-- Fundo escuro → branco -->
+                                        <ColorAnimation Storyboard.TargetName="border"
+                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                    To="#fff8ef"
+                    Duration="0:0:0.3"/>
+                                        <!-- Texto claro → escuro -->
+                                        <ColorAnimation Storyboard.TargetName="content"
+                    Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                    To="#0d1216"
+                    Duration="0:0:0.3"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <!-- Volta para fundo escuro -->
+                                        <ColorAnimation Storyboard.TargetName="border"
+                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                    To="#0d1216"
+                    Duration="0:0:0.3"/>
+                                        <!-- Texto volta para claro -->
+                                        <ColorAnimation Storyboard.TargetName="content"
+                    Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                    To="#fff8ef"
+                    Duration="0:0:0.3"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+
+                        <!-- Pressionado -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#e0e0e0"/>
+                            <!-- mais claro para efeito de clique -->
+
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <TextBlock 
+            Foreground="White" 
+            FontWeight="Bold" 
+                           Margin="34,46,46,350" Text="Email:"/>
+        <TextBlock 
+            Foreground="White" 
+            FontWeight="Bold" 
+                           Margin="34,121,46,276"><Run Language="pt-br" Text="Senha:"/></TextBlock>
 
     </Grid>
 </Window>

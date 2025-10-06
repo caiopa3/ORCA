@@ -8,8 +8,8 @@
         WindowStartupLocation="CenterScreen">
 
     <Border CornerRadius="10" Background="#0d1216" Padding="15" Margin="0,0,0,-37">
-        
-        <StackPanel>
+
+        <StackPanel Margin="0,0,0,-15">
 
             <!-- Título -->
             <TextBlock Text="Selecione um modelo de orçamento:"
@@ -18,32 +18,96 @@
                        Foreground="#fff8ef"
                        Margin="0,0,0,12"/>
 
-            <!-- Lista de modelos -->
-            
-            <ListBox x:Name="listModelos"
+            <Border  Background="#fff8ef" CornerRadius="15" Height="172">
+                <ListBox x:Name="listModelos"
                      DisplayMemberPath="Nome"
                      Background="#fff8ef"
                      BorderBrush="#0d1216"
-                     BorderThickness="1"
+                     BorderThickness="0"
                      Height="140"
                      Padding="5"
                      />
+            </Border>
+
+            <!-- Lista de modelos -->
+
 
             <!-- Botão de confirmar -->
-            
+
             <Button Content="Confirmar"
-                    Width="120"
-                    Height="35"
-                    Background="#fff8ef"
-                    Foreground="#0d1216"
-                    FontWeight="Bold"
-                    HorizontalAlignment="Right"
-                    Margin="0,15,0,0"
-                    Click="BtnConfirmar_Click"
-                    />
+        Width="369"
+        Height="30"
+        FontWeight="Bold"
+        HorizontalAlignment="Right"
+        Margin="0,15,0,0"
+        Cursor="Hand"
+        Click="BtnConfirmar_Click">
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+
+                        <Border x:Name="border"
+                    Background="#0d1216"
+                    CornerRadius="10"
+                    BorderThickness="2"
+                    BorderBrush="#fff8ef">
+                            <ContentPresenter x:Name="content"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  TextBlock.Foreground="#fff8ef"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <!-- Hover -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <!-- Fundo escuro → branco -->
+                                            <ColorAnimation Storyboard.TargetName="border"
+                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                To="#fff8ef"
+                                                Duration="0:0:0.3"/>
+                                            <!-- Texto claro → escuro -->
+                                            <ColorAnimation Storyboard.TargetName="content"
+                                                Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                To="#0d1216"
+                                                Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <!-- Volta para fundo escuro -->
+                                            <ColorAnimation Storyboard.TargetName="border"
+                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                To="#0d1216"
+                                                Duration="0:0:0.3"/>
+                                            <!-- Texto volta para claro -->
+                                            <ColorAnimation Storyboard.TargetName="content"
+                                                Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                To="#fff8ef"
+                                                Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+
+                            <!-- Pressionado -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#e0e0e0"/>
+                                <!-- mais claro para efeito de clique -->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
 
         </StackPanel>
-        
+
     </Border>
 
 </Window>

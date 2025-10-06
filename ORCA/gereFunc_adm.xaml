@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ORCA"
         mc:Ignorable="d"
-        Title="gereFunc_adm" Height="466" Width="858">
+        Background="#0d1216"
+        Title="gereFunc_adm" Height="466" Width="918">
     <Grid Margin="0,0,10,-6">
 
-        <DataGrid x:Name="dgUsuarios" Margin="10,10,165,112" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+        <DataGrid x:Name="dgUsuarios" Margin="10,10,226,44" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Background="#fff8ef">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="50"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding email}" Width="*"/>
@@ -33,16 +34,92 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btn_cad_func" Content="Cadastrar Funcionário" HorizontalAlignment="Left" Margin="716,268,0,0" VerticalAlignment="Top" Click="btn_cad_func_Click"/>
-        <Button x:Name="btn_fil_func" Content="Filtrar Funcionário" HorizontalAlignment="Left" Margin="726,86,0,0" VerticalAlignment="Top" Click="btn_fil_func_Click"/>
-        <ComboBox x:Name="cmb_camp_func" HorizontalAlignment="Left" Margin="716,123,0,0" VerticalAlignment="Top" Width="120"/>
+        <!-- Botão Cadastrar -->
+        <Button x:Name="btn_cad_func" 
+         Content="Cadastrar Funcionário" 
+                FontWeight="Bold"
+         HorizontalAlignment="Left" 
+         Margin="703,369,0,0" 
+         VerticalAlignment="Top" 
+         Width="195"
+         Height="43"
+         Click="btn_cad_func_Click">
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="#0d1216"
+                     CornerRadius="10"
+                     BorderBrush="#fff8ef"
+                     BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   RecognizesAccessKey="True"
+                                   TextBlock.Foreground="#fff8ef"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!-- Hover -->
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                        <!-- Pressionado -->
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#007ACC"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- Botão Filtrar -->
+        <Button x:Name="btn_fil_func" 
+                FontWeight="Bold"
+         Content="Filtrar Funcionário" 
+         HorizontalAlignment="Left" 
+         Margin="702,39,0,0" 
+         VerticalAlignment="Top" 
+         Width="196"
+         Height="42"
+         Click="btn_fil_func_Click"
+         >
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="#0d1216"
+                     CornerRadius="10"
+                     BorderBrush="#fff8ef"
+                     BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   RecognizesAccessKey="True"
+                                   TextBlock.Foreground="#fff8ef"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#2d2d2d"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#007ACC"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <ComboBox x:Name="cmb_camp_func" HorizontalAlignment="Left" Margin="703,106,0,0" VerticalAlignment="Top" Width="195"/>
+
+        <Border CornerRadius="5" Background="#fff8ef" Margin="703,164,10,259"></Border>
+
         <TextBox x:Name="txtFiltro" 
          HorizontalAlignment="Left" 
-         Margin="716,168,0,0" 
+         Margin="709,164,0,0" 
          TextWrapping="Wrap" 
+         Background="Transparent"
+         BorderThickness="0"
          VerticalAlignment="Top" 
-         Width="120"
-         TextChanged="txtFiltro_TextChanged"/>
+         Width="182"
+         TextChanged="txtFiltro_TextChanged" Height="33"/>
 
     </Grid>
 </Window>

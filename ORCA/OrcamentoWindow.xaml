@@ -4,81 +4,184 @@
         Title="Orçamento" 
         Height="500" 
         Width="900"
-        Background="#fff8ef"
+        Background="#0d1216"
         WindowStartupLocation="CenterScreen">
 
     <Grid Margin="10">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Linha para o botão -->
-            <RowDefinition Height="*"/>
-            <!-- Linha para o DataGrid -->
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="169*"/>
+            <RowDefinition Height="250*"/>
         </Grid.RowDefinitions>
 
-        <!-- Botão de salvar -->
-        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-            <Button x:Name="btnSalvar"
-                    Content="💾 Salvar Orçamento"
-                    Padding="10,5"
-                    Background="#007ACC"
-                    Foreground="White"
-                    FontWeight="Bold"
-                    BorderThickness="0"
-                    Width="160"
-                    Height="35"
-                    HorizontalAlignment="Left"
-                    Click="BtnSalvar_Click"/>
+        <!-- Painel de botões -->
+        <StackPanel Orientation="Horizontal" 
+                    HorizontalAlignment="Right" 
+                    Margin="0,20,28,5">
 
-            <Button x:Name="btnExportar"
-                    Content="📄 Exportar PDF"
-                    Padding="10,5"
-                    Background="#3CB86F"
-                    Foreground="White"
+            <!-- Botão Salvar -->
+            <Button x:Name="btnSalvar"
+                    Content="Salvar Orçamento"
                     FontWeight="Bold"
-                    BorderThickness="0"
-                    Width="160"
-                    Height="35"
-                    Margin="10,0,0,0"
-                    HorizontalAlignment="Left"
-                    Click="BtnExportar_Click"/>
+                    Cursor="Hand"
+                    Click="BtnSalvar_Click"
+                    Margin="0,0,10,0"
+                    Width="140"
+                    Height="35">
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="Transparent"
+                                CornerRadius="8"
+                                BorderThickness="2"
+                                BorderBrush="#007ACC">
+                            <ContentPresenter x:Name="content"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              TextBlock.Foreground="#007ACC"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Hover -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="border"
+                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                            To="#007ACC"
+                                                            Duration="0:0:0.3"/>
+                                            <ColorAnimation Storyboard.TargetName="content"
+                                                            Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                            To="White"
+                                                            Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="border"
+                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                            To="Transparent"
+                                                            Duration="0:0:0.3"/>
+                                            <ColorAnimation Storyboard.TargetName="content"
+                                                            Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                            To="#007ACC"
+                                                            Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+
+                            <!-- Pressionado -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#005f99"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!-- Botão Exportar -->
+            <Button x:Name="btnExportar"
+                    Content="Exportar PDF"
+                    FontWeight="Bold"
+                    Cursor="Hand"
+                    Click="BtnExportar_Click"
+                    Width="140"
+                    Height="35">
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="Transparent"
+                                CornerRadius="8"
+                                BorderThickness="2"
+                                BorderBrush="#00B050">
+                            <ContentPresenter x:Name="content"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              TextBlock.Foreground="#00B050"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Hover -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="border"
+                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                            To="#00B050"
+                                                            Duration="0:0:0.3"/>
+                                            <ColorAnimation Storyboard.TargetName="content"
+                                                            Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                            To="White"
+                                                            Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="border"
+                                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                            To="Transparent"
+                                                            Duration="0:0:0.3"/>
+                                            <ColorAnimation Storyboard.TargetName="content"
+                                                            Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                            To="#00B050"
+                                                            Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+
+                            <!-- Pressionado -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#007A3D"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
         </StackPanel>
 
-        <!-- Card para o DataGrid -->
-        <Border Grid.Row="1"
-                Background="#0d1216"
+        <!-- Fundo do DataGrid -->
+        <Border Background="#fff8ef"
                 CornerRadius="15"
-                Padding="15"
-                Margin="0,0,0,0">
+                Padding="15" 
+                Margin="21,0,21,11" 
+                Grid.RowSpan="3" 
+                Grid.Row="1"/>
 
-            <DataGrid x:Name="dataGridOrcamento"
-                      AutoGenerateColumns="True"
-                      CanUserAddRows="True"
-                      Background="#fff8ef"
-                      RowBackground="#2D2D30"
-                      AlternatingRowBackground="#3E3E42"
-                      Foreground="#fff8ef"
-                      GridLinesVisibility="None"
-                      HorizontalGridLinesBrush="#3E3E42"
-                      VerticalGridLinesBrush="#3E3E42"
-                      HeadersVisibility="Column"
-                      BorderThickness="0"
-                      FontSize="14"
-                      SelectionMode="Single"
-                      CanUserResizeColumns="True"
-                      CanUserResizeRows="False">
+        <!-- DataGrid -->
+        <DataGrid x:Name="dataGridOrcamento"
+                  AutoGenerateColumns="True"
+                  CanUserAddRows="True"
+                  Background="#fff8ef"
+                  Foreground="#000000"
+                  GridLinesVisibility="None"
+                  FontSize="14"
+                  SelectionMode="Single"
+                  CanUserResizeColumns="True"
+                  CanUserResizeRows="False"
+                  Margin="25,6,25,23"
+                  Grid.Row="2"
+                  Grid.RowSpan="2">
 
-                <DataGrid.Resources>
-                    <Style TargetType="DataGridColumnHeader">
-                        <Setter Property="Background" Value="#007ACC"/>
-                        <Setter Property="Foreground" Value="#fff8ef"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
-                        <Setter Property="BorderThickness" Value="0"/>
-                    </Style>
-                </DataGrid.Resources>
-
-            </DataGrid>
-        </Border>
+            <DataGrid.Resources>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#007ACC"/>
+                    <Setter Property="Foreground" Value="#fff8ef"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </DataGrid.Resources>
+        </DataGrid>
 
     </Grid>
 </Window>
