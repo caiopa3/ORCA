@@ -441,5 +441,18 @@ namespace ORCA.Services
 
             cmd.ExecuteNonQuery();
         }
+        public bool VerificarSenhaAtual(string email, string senha)
+        {
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
+
+            string sql = "SELECT COUNT(*) FROM usuario WHERE email=@Email AND senha=@Senha";
+            using var cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Senha", senha);
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            return count > 0;
+        }
     }
 }

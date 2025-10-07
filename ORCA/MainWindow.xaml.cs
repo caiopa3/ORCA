@@ -35,7 +35,6 @@ namespace ORCA
         {
             InitializeComponent();
             connectionString = $"SERVER={servidor}; PORT=3306; DATABASE={bd}; UID={usr}; PASSWORD={senha};";
-            MessageBox.Show(connectionString);
 
             // Carregar credenciais salvas
             if (Properties.Settings.Default.Lembrar)

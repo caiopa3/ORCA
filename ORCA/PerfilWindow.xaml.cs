@@ -35,16 +35,45 @@ namespace ORCA
         {
             try
             {
-                string novoEmail = txtEmail.Text.Trim();
-                string novaSenha = txtSenha.Password.Trim();
+                string email = txtEmail.Text.Trim();
+                string confirmarEmail = txtConfirmarEmail.Text.Trim();
+                string senhaAtual = txtSenhaAtual.Password.Trim();
+                string novaSenha = txtNovaSenha.Password.Trim();
+                string confirmarSenha = txtConfirmarSenha.Password.Trim();
 
-                if (string.IsNullOrWhiteSpace(novoEmail) || string.IsNullOrWhiteSpace(novaSenha))
+                // Validações
+                if (string.IsNullOrWhiteSpace(email) ||
+                    string.IsNullOrWhiteSpace(confirmarEmail) ||
+                    string.IsNullOrWhiteSpace(senhaAtual) ||
+                    string.IsNullOrWhiteSpace(novaSenha) ||
+                    string.IsNullOrWhiteSpace(confirmarSenha))
                 {
                     MessageBox.Show("Preencha todos os campos.");
                     return;
                 }
 
-                _orcamentoService.AtualizarUsuario(_emailAtual, novoEmail, novaSenha);
+                if (email != confirmarEmail)
+                {
+                    MessageBox.Show("Os e-mails não coincidem.");
+                    return;
+                }
+
+                if (novaSenha != confirmarSenha)
+                {
+                    MessageBox.Show("As senhas novas não coincidem.");
+                    return;
+                }
+
+                // Verifica senha atual no banco
+                bool senhaCorreta = _orcamentoService.VerificarSenhaAtual(_emailAtual, senhaAtual);
+                if (!senhaCorreta)
+                {
+                    MessageBox.Show("A senha atual está incorreta.");
+                    return;
+                }
+
+                // Atualiza
+                _orcamentoService.AtualizarUsuario(_emailAtual, email, novaSenha);
 
                 MessageBox.Show("Dados atualizados com sucesso!");
                 this.DialogResult = true;

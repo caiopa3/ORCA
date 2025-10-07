@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
       "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
     },
     {
@@ -101,8 +101,7 @@
               "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\Properties\\Settings.settings",
               "RelativeToolTip": "Properties\\Settings.settings",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
-              "WhenOpened": "2025-10-07T17:34:17.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-07T17:34:17.612Z"
             },
             {
               "$type": "Document",
@@ -113,8 +112,7 @@
               "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj",
               "RelativeToolTip": "ORCA.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-07T17:34:03.892Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-07T17:34:03.892Z"
             },
             {
               "$type": "Document",
@@ -122,9 +120,9 @@
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAANkAAAAAAAAAAAAYwLoAAABPAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\MainWindow.xaml.cs*",
+              "RelativeToolTip": "MainWindow.xaml.cs*",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACQAAABsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-07T17:32:35.092Z",
               "EditorCaption": ""
@@ -138,8 +136,7 @@
               "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-07T17:31:30.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-07T17:31:30.816Z"
             },
             {
               "$type": "Document",
@@ -173,8 +170,7 @@
               "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\OrcamentoWindow.xaml",
               "RelativeToolTip": "OrcamentoWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-06T17:27:06.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-06T17:27:06.899Z"
             },
             {
               "$type": "Document",

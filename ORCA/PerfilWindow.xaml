@@ -2,108 +2,107 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Meu Perfil"  
-        Height="370" Width="430"
+        Height="480" Width="430"
         WindowStartupLocation="CenterScreen"
         Background="#0d1216">
 
     <Grid>
 
-        <TextBlock Text="Alterar Email:" Foreground="#fff8ef" FontSize="14"  FontWeight="Bold" Height="28" VerticalAlignment="Top" Margin="20,24,20,0"/>
+        <!-- EMAIL ATUAL -->
+        <TextBlock Text="Email atual:" Foreground="#fff8ef" FontSize="14" FontWeight="Bold" Margin="20,20,20,0" VerticalAlignment="Top"/>
+        <Border CornerRadius="8" Background="#fff8ef" Margin="20,44,20,0" Height="30" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtEmail" 
+                 Background="Transparent" 
+                 Foreground="Black" 
+                 BorderThickness="0" 
+                 Padding="8" 
+                 Margin="20,44,20,0"
+                 VerticalAlignment="Top"/>
 
+        <!-- CONFIRMAR EMAIL -->
+        <TextBlock Text="Confirmar Email:" Foreground="#fff8ef" FontSize="14" FontWeight="Bold" Margin="20,84,20,0" VerticalAlignment="Top"/>
+        <Border CornerRadius="8" Background="#fff8ef" Margin="20,108,20,0" Height="30" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtConfirmarEmail"
+                 Background="Transparent"
+                 Foreground="Black"
+                 BorderThickness="0"
+                 Padding="8"
+                 Margin="20,108,20,0"
+                 VerticalAlignment="Top"/>
 
-        <Border CornerRadius="8" Background="#fff8ef" Margin="20,46,20,247"/>
+        <!-- SENHA ATUAL -->
+        <TextBlock Text="Senha atual:" Foreground="#fff8ef" FontSize="14" FontWeight="Bold" Margin="20,148,20,0" VerticalAlignment="Top"/>
+        <Border CornerRadius="8" Background="#fff8ef" Margin="20,172,20,0" Height="30" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtSenhaAtual" Background="Transparent" BorderThickness="0" Margin="25,172,20,0" VerticalAlignment="Top"/>
 
-        <TextBlock Text="Alterar Senha:"  Margin="20,101,20,209" Foreground="#fff8ef" FontSize="14"  FontWeight="Bold"  />
+        <!-- NOVA SENHA -->
+        <TextBlock Text="Nova senha:" Foreground="#fff8ef" FontSize="14" FontWeight="Bold" Margin="20,212,20,0" VerticalAlignment="Top"/>
+        <Border CornerRadius="8" Background="#fff8ef" Margin="20,236,20,0" Height="30" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtNovaSenha" Background="Transparent" BorderThickness="0" Margin="25,236,20,0" VerticalAlignment="Top"/>
 
-        <Border CornerRadius="8" Background="#fff8ef" Margin="20,125,20,166" RenderTransformOrigin="0.5,0.5">
-            <Border.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
+        <!-- CONFIRMAR NOVA SENHA -->
+        <TextBlock Text="Confirmar nova senha:" Foreground="#fff8ef" FontSize="14" FontWeight="Bold" Margin="20,276,20,0" VerticalAlignment="Top"/>
+        <Border CornerRadius="8" Background="#fff8ef" Margin="20,300,20,0" Height="30" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtConfirmarSenha" Background="Transparent" BorderThickness="0" Margin="25,300,20,0" VerticalAlignment="Top"/>
 
-
+        <!-- BOTÃO SALVAR -->
         <Button Content="Salvar Alterações"
-        Width="390"
-        FontWeight="Bold"
-        HorizontalAlignment="Center"
-        Margin="0,249,0,30"
-        Cursor="Hand"
-        Click="BtnSalvar_Click">
-
+                Width="390"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                Margin="0,360,0,20"
+                Cursor="Hand"
+                Click="BtnSalvar_Click">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
-
                     <Border x:Name="border"
-                    Background="#0d1216"
-                    CornerRadius="10"
-                    BorderThickness="2"
-                    BorderBrush="#fff8ef">
+                            Background="#0d1216"
+                            CornerRadius="10"
+                            BorderThickness="2"
+                            BorderBrush="#fff8ef">
                         <ContentPresenter x:Name="content"
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"
-                                  TextBlock.Foreground="#fff8ef"/>
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextBlock.Foreground="#fff8ef"/>
                     </Border>
 
                     <ControlTemplate.Triggers>
-                        <!-- Hover -->
                         <Trigger Property="IsMouseOver" Value="True">
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <!-- Fundo escuro -> claro -->
                                         <ColorAnimation Storyboard.TargetName="border"
-                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                                                To="#fff8ef"
-                                                Duration="0:0:0.3"/>
-                                        <!-- Texto claro -> escuro -->
+                                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                        To="#fff8ef"
+                                                        Duration="0:0:0.3"/>
                                         <ColorAnimation Storyboard.TargetName="content"
-                                                Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
-                                                To="#0d1216"
-                                                Duration="0:0:0.3"/>
+                                                        Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                        To="#0d1216"
+                                                        Duration="0:0:0.3"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
-
                             <Trigger.ExitActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <!-- Volta para fundo escuro -->
                                         <ColorAnimation Storyboard.TargetName="border"
-                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                                                To="#0d1216"
-                                                Duration="0:0:0.3"/>
-                                        <!-- Volta para texto claro -->
+                                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                        To="#0d1216"
+                                                        Duration="0:0:0.3"/>
                                         <ColorAnimation Storyboard.TargetName="content"
-                                                Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
-                                                To="#fff8ef"
-                                                Duration="0:0:0.3"/>
+                                                        Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                        To="#fff8ef"
+                                                        Duration="0:0:0.3"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
                         </Trigger>
-
-                        <!-- Pressionado -->
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="border" Property="Background" Value="#1a1f23"/>
-                            <!-- tom intermediário -->
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <PasswordBox x:Name="txtSenha"  Background="Transparent" Margin="25,131,20,172" BorderThickness="0"/>
-
-        <TextBox x:Name="txtEmail" 
-              Background="Transparent" 
-              Foreground="Black" 
-              BorderThickness="0" 
-              Padding="8" Text="" Margin="20,46,-20,247"/>
-
-
     </Grid>
 </Window>
