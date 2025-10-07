@@ -13,6 +13,8 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Security.Cryptography;
+
 
 namespace ORCA
 {
@@ -35,8 +37,47 @@ namespace ORCA
             connectionString = $"SERVER={servidor}; PORT=3306; DATABASE={bd}; UID={usr}; PASSWORD={senha};";
             MessageBox.Show(connectionString);
 
+            // Carregar credenciais salvas
+            if (Properties.Settings.Default.Lembrar)
+            {
+                textBoxEmail.Text = Properties.Settings.Default.Email;
+
+                try
+                {
+                    textBoxSenha.Password = Decrypt(Properties.Settings.Default.Senha);
+                    checkBoxRememberMe.IsChecked = true;
+                }
+                catch
+                {
+                    // Se falhar a descriptografia (mudança de usuário do Windows, por exemplo)
+                    Properties.Settings.Default.Lembrar = false;
+                    Properties.Settings.Default.Senha = "";
+                    Properties.Settings.Default.Save();
+                }
+            }
+
             // Chama verificação de atualização assinada
             _ = CheckForSignedUpdateAsync();
+        }
+
+        private string Encrypt(string plainText)
+        {
+            if (string.IsNullOrEmpty(plainText))
+                return "";
+
+            var bytes = Encoding.UTF8.GetBytes(plainText);
+            var protectedBytes = ProtectedData.Protect(bytes, null, DataProtectionScope.CurrentUser);
+            return Convert.ToBase64String(protectedBytes);
+        }
+
+        private string Decrypt(string encryptedText)
+        {
+            if (string.IsNullOrEmpty(encryptedText))
+                return "";
+
+            var bytes = Convert.FromBase64String(encryptedText);
+            var unprotectedBytes = ProtectedData.Unprotect(bytes, null, DataProtectionScope.CurrentUser);
+            return Encoding.UTF8.GetString(unprotectedBytes);
         }
 
         private async Task CheckForSignedUpdateAsync()
@@ -127,6 +168,21 @@ namespace ORCA
                 if (authService.ValidarLogin(email, password))
                 {
                     MessageBox.Show("Login realizado com sucesso!");
+
+                    // Salvar se "Lembrar-me" estiver marcado
+                    if (checkBoxRememberMe.IsChecked == true)
+                    {
+                        Properties.Settings.Default.Email = email;
+                        Properties.Settings.Default.Senha = Encrypt(password);
+                        Properties.Settings.Default.Lembrar = true;
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.Email = "";
+                        Properties.Settings.Default.Senha = "";
+                        Properties.Settings.Default.Lembrar = false;
+                    }
+                    Properties.Settings.Default.Save();
 
                     string permissao = authService.ObterPermissao(email, password);
 

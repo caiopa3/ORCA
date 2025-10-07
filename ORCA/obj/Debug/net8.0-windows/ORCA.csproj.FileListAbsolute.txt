@@ -823,3 +823,4 @@ C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\gerar_pdf.g.cs
 C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.g.cs
 C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\gerar_pdf.baml
 C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.baml
+C:\Users\internet.info\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.dll.config

@@ -149,14 +149,14 @@
 
                         <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
 
-                            <CheckBox VerticalAlignment="Center" Margin="0,0,4,0">
-
+                            <CheckBox x:Name="checkBoxRememberMe" VerticalAlignment="Center" Margin="0,0,4,0">
+                                
                                 <CheckBox.LayoutTransform>
-
+                                    
                                     <ScaleTransform ScaleX="0.7" ScaleY="0.7"/>
-
+                                    
                                 </CheckBox.LayoutTransform>
-
+                                
                             </CheckBox>
 
                             <TextBlock Text="Lembrar-me" Foreground="#E6E6E6" VerticalAlignment="Center" FontSize="6"/>
