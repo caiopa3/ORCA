@@ -203,7 +203,7 @@ namespace ORCA
                     usuariosCompartilhados,
                     _valoresFixos);
 
-                MessageBox.Show($"Modelo salvo com sucesso! ID = {modeloId}");
+                MessageBox.Show($"Modelo salvo com sucesso!");
             }
             catch (Exception ex)
             {

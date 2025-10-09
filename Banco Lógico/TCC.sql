@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/09/2025 às 19:32
+-- Tempo de geração: 09/10/2025 às 03:34
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -39,7 +39,8 @@ CREATE TABLE `modelo_orcamento` (
 
 INSERT INTO `modelo_orcamento` (`id`, `nome`, `usr_criador_id`) VALUES
 (11, 'Flores', 1),
-(12, 'Carro', 13);
+(12, 'Carro', 13),
+(13, 'fsafsafsa', 1);
 
 -- --------------------------------------------------------
 
@@ -59,7 +60,8 @@ CREATE TABLE `modelo_orcamento_dados` (
 
 INSERT INTO `modelo_orcamento_dados` (`id`, `modelo_id`, `dados_json`) VALUES
 (11, 11, '{\"Colunas\":[\"Nome\",\"Valor\"],\"Linhas\":[{\"Nome\":\"\",\"Valor\":\"\"}]}'),
-(12, 12, '{\"Colunas\":[\"Nome\",\"Valor\"],\"Linhas\":[{\"Nome\":\"\",\"Valor\":\"\"}]}');
+(12, 12, '{\"Colunas\":[\"Nome\",\"Valor\"],\"Linhas\":[{\"Nome\":\"\",\"Valor\":\"\"}]}'),
+(13, 13, '{\"Colunas\":[\"dsadsa\",\"fsafsa\"],\"Linhas\":[{\"dsadsa\":\"12\",\"fsafsa\":52.0}],\"FixedValues\":{\"dsadsa\":\"12\",\"fsafsa\":52.0}}');
 
 -- --------------------------------------------------------
 
@@ -79,8 +81,10 @@ CREATE TABLE `modelo_orcamento_usuarios` (
 
 INSERT INTO `modelo_orcamento_usuarios` (`id`, `modelo_id`, `usuario_id`) VALUES
 (6, 11, 2),
-(7, 12, 12),
-(8, 12, 2);
+(8, 12, 2),
+(9, 13, 2),
+(10, 13, 1),
+(12, 13, 13);
 
 -- --------------------------------------------------------
 
@@ -102,7 +106,8 @@ CREATE TABLE `orcamento` (
 INSERT INTO `orcamento` (`id`, `nome`, `usr_email`, `modelo_id`) VALUES
 (21, 'Flores', 'yslan_usr@gmail.com', 11),
 (22, 'Carro 1', 'caio_usr@gmail.com', 12),
-(23, 'Carro 1', 'yslan_usr@gmail.com', 12);
+(23, 'Carro 1', 'yslan_usr@gmail.com', 12),
+(24, 'Novo Orçamento', 'yslan_usr@gmail.com', 11);
 
 -- --------------------------------------------------------
 
@@ -123,8 +128,8 @@ CREATE TABLE `orcamento_dados` (
 
 INSERT INTO `orcamento_dados` (`id`, `orcamento_id`, `usuario_id`, `dados_json`) VALUES
 (1, 21, 2, '{\"Colunas\":[\"Nome\",\"Valor\"],\"Linhas\":[{\"Nome\":\"Ortiga\",\"Valor\":\"123\"}]}'),
-(2, 22, 12, '{\"Colunas\":[\"Nome\",\"Valor\"],\"Linhas\":[{\"Nome\":\"BYD\",\"Valor\":\"130000\"},{\"Nome\":\"Civic\",\"Valor\":\"100000\"}]}'),
-(3, 23, 2, '{\"Colunas\":[\"Nome\",\"Valor\"],\"Linhas\":[{\"Nome\":\"Toyota\",\"Valor\":\"130000\"}]}');
+(3, 23, 2, '{\"Colunas\":[\"Nome\",\"Valor\"],\"Linhas\":[{\"Nome\":\"Toyota\",\"Valor\":\"130000\"}]}'),
+(4, 24, 2, '{\"Colunas\":[\"Nome\",\"Valor\"],\"Linhas\":[{\"Nome\":\"fsafsa\",\"Valor\":\"fsafsa\"},{\"Nome\":\"fsafsa\",\"Valor\":\"fsafsaaffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffD\"}],\"Formulas\":{}}');
 
 -- --------------------------------------------------------
 
@@ -134,20 +139,49 @@ INSERT INTO `orcamento_dados` (`id`, `orcamento_id`, `usuario_id`, `dados_json`)
 
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
+  `nome_completo` varchar(255) DEFAULT NULL,
+  `nome_social` varchar(255) DEFAULT NULL,
+  `data_nascimento` date DEFAULT NULL,
   `email` text DEFAULT NULL,
+  `telefone_celular` varchar(20) DEFAULT NULL,
+  `telefone_fixo` varchar(20) DEFAULT NULL,
+  `logradouro` varchar(255) DEFAULT NULL,
+  `numero` varchar(10) DEFAULT NULL,
+  `complemento` varchar(100) DEFAULT NULL,
+  `bairro` varchar(100) DEFAULT NULL,
+  `cidade` varchar(100) DEFAULT NULL,
+  `uf` char(2) DEFAULT NULL,
+  `cep` varchar(10) DEFAULT NULL,
   `senha` varchar(255) DEFAULT NULL,
-  `permissao` varchar(3) DEFAULT NULL
+  `permissao` varchar(3) DEFAULT NULL,
+  `cargo` varchar(100) DEFAULT NULL,
+  `departamento` varchar(100) DEFAULT NULL,
+  `data_admissao` date DEFAULT NULL,
+  `tipo_contrato` varchar(50) DEFAULT NULL,
+  `regime_jornada` varchar(50) DEFAULT NULL,
+  `salario_base` decimal(10,2) DEFAULT NULL,
+  `cpf` varchar(14) DEFAULT NULL,
+  `rg` varchar(20) DEFAULT NULL,
+  `orgao_expedidor` varchar(20) DEFAULT NULL,
+  `data_expedicao` date DEFAULT NULL,
+  `banco` varchar(100) DEFAULT NULL,
+  `agencia` varchar(20) DEFAULT NULL,
+  `conta` varchar(30) DEFAULT NULL,
+  `info_medicas` text DEFAULT NULL,
+  `contato_emergencia_nome` varchar(255) DEFAULT NULL,
+  `contato_emergencia_telefone` varchar(20) DEFAULT NULL,
+  `relacao_com_contato` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `email`, `senha`, `permissao`) VALUES
-(1, 'yslan_adm@gmail.com', '123', 'adm'),
-(2, 'yslan_usr@gmail.com', '123', 'usr'),
-(12, 'caio_usr@gmail.com', '123', 'usr'),
-(13, 'caio_adm@gmail.com', '123', 'adm');
+INSERT INTO `usuario` (`id`, `nome_completo`, `nome_social`, `data_nascimento`, `email`, `telefone_celular`, `telefone_fixo`, `logradouro`, `numero`, `complemento`, `bairro`, `cidade`, `uf`, `cep`, `senha`, `permissao`, `cargo`, `departamento`, `data_admissao`, `tipo_contrato`, `regime_jornada`, `salario_base`, `cpf`, `rg`, `orgao_expedidor`, `data_expedicao`, `banco`, `agencia`, `conta`, `info_medicas`, `contato_emergencia_nome`, `contato_emergencia_telefone`, `relacao_com_contato`) VALUES
+(1, NULL, NULL, NULL, 'yslan_adm@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '123', 'adm', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, NULL, NULL, NULL, 'yslan_usr@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '123', 'usr', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(13, NULL, NULL, NULL, 'caio_adm@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '123', 'adm', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(14, 'fsaf', 'fsafasfas', '0000-00-00', 'ffasfsa@gmail.com', '(12) 32312-3564', '(12) 3123-2345', 'Teste', '123', 'Casa', 'fdsafsafa', 'fasfsafafsa', 'SP', '12356-464', '123', 'usr', 'fsafasfsa', 'fsafsasfa', '0000-00-00', 'CLT', 'Horas Flex', 0.00, '123,156,464-76', '15,641,564-4', 'SSP-SP', '0000-00-00', '2312', '1231-2', '121321-2', 'Sfdsafsafa', 'fssfafas', '(12) 31231-3112', 'fsafasfsa');
 
 --
 -- Índices para tabelas despejadas
@@ -204,37 +238,37 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `modelo_orcamento`
 --
 ALTER TABLE `modelo_orcamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `modelo_orcamento_dados`
 --
 ALTER TABLE `modelo_orcamento_dados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `modelo_orcamento_usuarios`
 --
 ALTER TABLE `modelo_orcamento_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `orcamento`
 --
 ALTER TABLE `orcamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de tabela `orcamento_dados`
 --
 ALTER TABLE `orcamento_dados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restrições para tabelas despejadas

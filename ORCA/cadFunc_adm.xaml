@@ -3,166 +3,271 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:ORCA"
         mc:Ignorable="d"
         Background="#0d1216"
-        Title="cadFunc_adm"     
-        Height="440" 
-    Width="470">
+        Title="Cadastrar Funcionário"     
+        Height="640" 
+        Width="720"
+        WindowStartupLocation="CenterScreen">
 
-    <Grid Margin="0,0,0,8">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="16" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
+            <!-- Titulos -->
+            <TextBlock Grid.ColumnSpan="2" Text="Cadastrar Funcionário" Foreground="White" FontSize="18" FontWeight="Bold" Margin="4"/>
 
+            <!-- Nome Completo -->
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Nome completo:" Foreground="White" Margin="4"/>
+            <TextBox x:Name="txtNomeCompleto" Grid.Row="1" Grid.Column="1" Margin="4" Height="26" />
 
+            <!-- Nome social / apelido -->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Nome social / Apelido (opcional):" Foreground="White" Margin="4"/>
+            <TextBox x:Name="txtNomeSocial" Grid.Row="2" Grid.Column="1" Margin="4" Height="26" />
 
-        <Border CornerRadius="5" Background="#fff8ef" Margin="29,66,26,303"></Border>
-        <Border CornerRadius="5" Background="#fff8ef" Margin="29,140,26,227"></Border>
+            <!-- Data de nascimento -->
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Data de nascimento:" Foreground="White" Margin="4"/>
+            <xctk:MaskedTextBox x:Name="dpDataNascimento" Grid.Row="3" Grid.Column="1"
+                    Mask="00/00/0000" PromptChar="_" Margin="4" />
 
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top" Width="396" Background="Transparent" 
-                Foreground="Black" 
-                BorderThickness="0" 
-                Padding="8" Text="" Height="47" />
+            <!-- Email (login) -->
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Email (login):" Foreground="White" Margin="4"/>
+            <TextBox x:Name="txtEmail" Grid.Row="4" Grid.Column="1" Margin="4" Height="26" />
 
-        <TextBox x:Name="txtSenha" HorizontalAlignment="Center" Margin="0,140,0,0" VerticalAlignment="Top" Width="396"  Background="Transparent" 
-                Foreground="Black" 
-                BorderThickness="0" 
-                Padding="8" Text="" Height="49" />
+            <!-- Senha -->
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Senha:" Foreground="White" Margin="4"/>
+            <PasswordBox x:Name="txtSenha" Grid.Row="5" Grid.Column="1" Margin="4" Height="26" />
 
-        <ComboBox x:Name="cmbPermissao"                             
-                            Background="#fff8ef" 
-                            Foreground="Black" 
-                            BorderThickness="0" 
-                            Padding="8" 
-                            Margin="28,216,28,145">
-            <!-- DropDownClosed="cmbTipoDado_DropDownClosed"-->
+            <!-- Telefones -->
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Telefone celular:" Foreground="White" Margin="4"/>
+            <xctk:MaskedTextBox x:Name="txtTelCelular" Grid.Row="6" Grid.Column="1"
+                    Mask="(00) 00000-0000" PromptChar="_" Margin="4" />
 
-            <ComboBox.Template>
-                <ControlTemplate TargetType="ComboBox">
-                    <Grid>
-                        <!-- Caixa principal -->
-                        <Border x:Name="Border"
-                            CornerRadius="8"
-                            Background="#fff8ef"
-                            BorderBrush="#0d1216"
-                            BorderThickness="0" Margin="0,0,0,1">
-                            <DockPanel>
-                                <ContentPresenter Margin="5"
-                  VerticalAlignment="Center"
-                  HorizontalAlignment="Left"
-                  Content="{TemplateBinding SelectionBoxItem}"
-                  ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"/>
-                                <!-- Botão da setinha -->
-                                <ToggleButton DockPanel.Dock="Right"
-              Background="Transparent"
-              BorderThickness="0"
-              Focusable="False"
-              IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
-                            </DockPanel>
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Telefone fixo (opcional):" Foreground="White" Margin="4"/>
+            <xctk:MaskedTextBox x:Name="txtTelFixo" Grid.Row="7" Grid.Column="1"
+                    Mask="(00) 0000-0000" PromptChar="_" Margin="4" />
+
+            <!-- Endereço - ocupará ambas colunas -->
+            <GroupBox Header="Endereço" Grid.Row="8" Grid.ColumnSpan="2" Margin="4" Foreground="White" Background="#0d1216" BorderBrush="#fff8ef">
+                <Grid Margin="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <!-- Coluna dos rótulos -->
+                        <ColumnDefinition Width="*"/>
+                        <!-- Coluna das caixas de texto -->
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Logradouro -->
+                    <TextBlock Text="Logradouro:" Foreground="White" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,5,5"/>
+                    <TextBox x:Name="txtLogradouro" Grid.Row="0" Grid.Column="1" Margin="0,0,0,5"/>
+
+                    <!-- Número / Complemento -->
+                    <TextBlock Text="Número / Complemento:" Foreground="White" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,5,5"/>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="0,0,0,5" HorizontalAlignment="Left" >
+                        <TextBox x:Name="txtNumero" Width="80" Margin="0,0,8,0"/>
+                        <TextBox x:Name="txtComplemento" Width="150"/>
+                    </StackPanel>
+
+                    <!-- Bairro / Cidade / UF / CEP -->
+                    <TextBlock Text="Bairro / Cidade / UF / CEP:" Foreground="White" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left">
+                        <TextBox x:Name="txtBairro" Width="150" Margin="0,0,8,0"/>
+                        <TextBox x:Name="txtCidade" Width="150" Margin="0,0,8,0"/>
+                        <ComboBox x:Name="cmbUF" Width="60" Margin="0,0,8,0">
+                            <ComboBoxItem>AC</ComboBoxItem>
+                            <ComboBoxItem>AL</ComboBoxItem>
+                            <ComboBoxItem>AP</ComboBoxItem>
+                            <ComboBoxItem>AM</ComboBoxItem>
+                            <ComboBoxItem>BA</ComboBoxItem>
+                            <ComboBoxItem>CE</ComboBoxItem>
+                            <ComboBoxItem>DF</ComboBoxItem>
+                            <ComboBoxItem>ES</ComboBoxItem>
+                            <ComboBoxItem>GO</ComboBoxItem>
+                            <ComboBoxItem>MA</ComboBoxItem>
+                            <ComboBoxItem>MT</ComboBoxItem>
+                            <ComboBoxItem>MS</ComboBoxItem>
+                            <ComboBoxItem>MG</ComboBoxItem>
+                            <ComboBoxItem>PA</ComboBoxItem>
+                            <ComboBoxItem>PB</ComboBoxItem>
+                            <ComboBoxItem>PR</ComboBoxItem>
+                            <ComboBoxItem>PE</ComboBoxItem>
+                            <ComboBoxItem>PI</ComboBoxItem>
+                            <ComboBoxItem>RJ</ComboBoxItem>
+                            <ComboBoxItem>RN</ComboBoxItem>
+                            <ComboBoxItem>RS</ComboBoxItem>
+                            <ComboBoxItem>RO</ComboBoxItem>
+                            <ComboBoxItem>RR</ComboBoxItem>
+                            <ComboBoxItem>SC</ComboBoxItem>
+                            <ComboBoxItem>SP</ComboBoxItem>
+                            <ComboBoxItem>SE</ComboBoxItem>
+                            <ComboBoxItem>TO</ComboBoxItem>
+                        </ComboBox>
+                        <xctk:MaskedTextBox x:Name="txtCEP" Width="100" Mask="00000-000" PromptChar="_"/>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+
+            <!-- Permissões / Cargo / Departamento -->
+            <TextBlock Grid.Row="9" Grid.Column="0" Text="Permissão:" Foreground="White" Margin="4"/>
+            <ComboBox x:Name="cmbPermissao" Grid.Row="9" Grid.Column="1" Margin="4" Height="26"/>
+
+            <TextBlock Grid.Row="10" Grid.Column="0" Text="Cargo:" Foreground="White" Margin="4"/>
+            <TextBox x:Name="txtCargo" Grid.Row="10" Grid.Column="1" Margin="4" Height="26"/>
+
+            <TextBlock Grid.Row="11" Grid.Column="0" Text="Departamento:" Foreground="White" Margin="4"/>
+            <TextBox x:Name="txtDepartamento" Grid.Row="11" Grid.Column="1" Margin="4" Height="26"/>
+
+            <!-- Admissao / Contrato / Regime / Salario -->
+            <TextBlock Grid.Row="12" Grid.Column="0" Text="Data de admissão:" Foreground="White" Margin="4"/>
+            <xctk:MaskedTextBox x:Name="dpDataAdmissao" Grid.Row="12" Grid.Column="1" Mask="00/00/0000" PromptChar="_" Margin="4"/>
+
+            <TextBlock Grid.Row="13" Grid.Column="0" Text="Tipo de contrato:" Foreground="White" Margin="4"/>
+            <ComboBox x:Name="cmbTipoContrato" Grid.Row="13" Grid.Column="1" Margin="4">
+                <ComboBoxItem>CLT</ComboBoxItem>
+                <ComboBoxItem>PJ</ComboBoxItem>
+                <ComboBoxItem>Estágio</ComboBoxItem>
+                <ComboBoxItem>Temporário</ComboBoxItem>
+                <ComboBoxItem>Outro</ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock Grid.Row="14" Grid.Column="0" Text="Regime de jornada:" Foreground="White" Margin="4"/>
+            <ComboBox x:Name="cmbRegimeJornada" Grid.Row="14" Grid.Column="1" Margin="4">
+                <ComboBoxItem>Horas</ComboBoxItem>
+                <ComboBoxItem>Turnos</ComboBoxItem>
+                <ComboBoxItem>Horas Flex</ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock Grid.Row="15" Grid.Column="0" Text="Salário base (referência):" Foreground="White" Margin="4"/>
+            <TextBox x:Name="txtSalarioBase" Grid.Row="15" Grid.Column="1" Margin="4" Height="26"/>
+
+            <!-- Documentos -->
+            <GroupBox Header="Documentos" Grid.Row="16" Grid.ColumnSpan="2" Margin="4" Foreground="White" Background="#0d1216" BorderBrush="#fff8ef">
+                <StackPanel Margin="6">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="CPF:" Foreground="White" Width="60"/>
+                        <xctk:MaskedTextBox x:Name="txtCPF" Width="180" Mask="000.000.000-00" PromptChar="_" Margin="4"/>
+                        <TextBlock Text="RG:" Foreground="White" Width="40" Margin="12,0,0,0"/>
+                        <xctk:MaskedTextBox x:Name="txtRG" Width="160" Mask="00.000.000-0" PromptChar="_" Margin="4"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                        <TextBlock Text="Orgão expedidor:" Foreground="White" Width="120"/>
+                        <TextBox x:Name="txtOrgaoExpedidor" Width="160" Margin="4"/>
+                        <TextBlock Text="Data expedição:" Foreground="White" Margin="12,0,0,0"/>
+                        <xctk:MaskedTextBox x:Name="dpDataExpedicao" Width="160" Mask="00/00/0000" PromptChar="_" Margin="4"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Pagamento / Fiscal" Grid.Row="17" Grid.ColumnSpan="2" Margin="4" Foreground="White" Background="#0d1216" BorderBrush="#fff8ef">
+                <Grid Margin="6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Linha 1: Banco e Agência -->
+                    <TextBlock Text="Banco:" Grid.Row="0" Grid.Column="0" Foreground="White" VerticalAlignment="Center" Margin="0,0,5,5"/>
+                    <xctk:MaskedTextBox x:Name="txtBanco" Grid.Row="0" Grid.Column="1" Mask="0000" PromptChar="_" Margin="0,0,10,5"/>
+
+                    <TextBlock Text="Agência:" Grid.Row="0" Grid.Column="2" Foreground="White" VerticalAlignment="Center" Margin="0,0,5,5"/>
+                    <xctk:MaskedTextBox x:Name="txtAgencia" Grid.Row="0" Grid.Column="3" Mask="0000-0" PromptChar="_" Margin="0,0,0,5"/>
+
+                    <!-- Linha 2: Conta -->
+                    <TextBlock Text="Conta:" Grid.Row="1" Grid.Column="0" Foreground="White" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <xctk:MaskedTextBox x:Name="txtConta" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Mask="000000-0" PromptChar="_" Margin="0,0,0,0"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Saúde / Emergência" Grid.Row="18" Grid.ColumnSpan="2" Margin="4" Foreground="White" Background="#0d1216" BorderBrush="#fff8ef">
+                <Grid Margin="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Informações médicas relevantes (apto/inapto, restrições):" Grid.Row="0" Grid.Column="0" Foreground="White" Margin="0,0,5,5"/>
+                    <TextBox x:Name="txtInfoMedicas" Grid.Row="0" Grid.Column="1" Height="60" AcceptsReturn="True" TextWrapping="Wrap" Margin="0,0,0,5"/>
+
+                    <TextBlock Text="Contato emergência - nome:" Grid.Row="1" Grid.Column="0" Foreground="White" Margin="0,8,5,5"/>
+                    <TextBox x:Name="txtContatoEmergNome" Grid.Row="1" Grid.Column="1" Margin="0,8,0,5"/>
+
+                    <TextBlock Text="Contato emergência - telefone:" Grid.Row="2" Grid.Column="0" Foreground="White" Margin="0,8,5,5"/>
+                    <xctk:MaskedTextBox x:Name="txtContatoEmergTel" Grid.Row="2" Grid.Column="1"
+                    Mask="(00) 00000-0000" PromptChar="_" Margin="0,8,0,5"/>
+                    <TextBlock Text="Relação com contato:" Grid.Row="3" Grid.Column="0" Foreground="White" Margin="0,8,5,0"/>
+                    <TextBox x:Name="txtRelacaoContato" Grid.Row="3" Grid.Column="1" Margin="0,8,0,0"/>
+                </Grid>
+            </GroupBox>
+
+            <!-- Botão -->
+            <Button x:Name="btn_cad_func" Content="Cadastrar Funcionário" Grid.Row="19" Grid.ColumnSpan="2" Margin="4" Height="44" Click="btn_cad_func_Click" FontWeight="Bold">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                                Background="#0d1216"
+                                CornerRadius="10"
+                                BorderThickness="2"
+                                BorderBrush="#fff8ef" Margin="2">
+                            <ContentPresenter x:Name="content"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              TextBlock.Foreground="#fff8ef"/>
                         </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#fff8ef"/>
+                                <Setter TargetName="content" Property="TextBlock.Foreground" Value="#0d1216"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
 
-                        <!-- Lista suspensa -->
-                        <Popup x:Name="PART_Popup"
-                                         Placement="Bottom"
-                                         IsOpen="{TemplateBinding IsDropDownOpen}"
-                                         AllowsTransparency="True"
-                                         Focusable="False">
-                            <Border Background="#fff8ef"
-                                              BorderBrush="#0d1216"
-                                              BorderThickness="1"
-                                              CornerRadius="8"
-                                              Padding="2">
-
-                                <ScrollViewer>
-                                    <ItemsPresenter/>
-                                </ScrollViewer>
-                            </Border>
-                        </Popup>
-                        <Path x:Name="Arrow"
-                                        HorizontalAlignment="Left"
-                                        VerticalAlignment="Center"
-                                        Data="M 0 0 L 4 4 L 8 0 Z"
-                                        Fill="#0d1216" Margin="383,0,0,0" Height="6" Stretch="Fill" Width="10"/>
-                    </Grid>
-                </ControlTemplate>
-            </ComboBox.Template>
-
-        </ComboBox>
-
-        <Button x:Name="btn_cad_func" Content="Cadastrar Funcionário" HorizontalAlignment="Center" Margin="0,318,0,0" VerticalAlignment="Top" Width="418" Click="btn_cad_func_Click" Height="59" FontWeight="Bold" >
-
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-
-                    <Border x:Name="border"
-                Background="#0d1216"
-                CornerRadius="10"
-                BorderThickness="2"
-                BorderBrush="#fff8ef" Margin="2,-5,2,0">
-                        <ContentPresenter x:Name="content"
-                              HorizontalAlignment="Center"
-                              VerticalAlignment="Center"
-                              TextBlock.Foreground="#fff8ef"
-                                     />
-                    </Border>
-
-                    <ControlTemplate.Triggers>
-                        <!-- Hover -->
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <!-- Fundo escuro → branco -->
-                                        <ColorAnimation Storyboard.TargetName="border"
-                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                    To="#fff8ef"
-                    Duration="0:0:0.3"/>
-                                        <!-- Texto claro → escuro -->
-                                        <ColorAnimation Storyboard.TargetName="content"
-                    Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
-                    To="#0d1216"
-                    Duration="0:0:0.3"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-
-                            <Trigger.ExitActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <!-- Volta para fundo escuro -->
-                                        <ColorAnimation Storyboard.TargetName="border"
-                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                    To="#0d1216"
-                    Duration="0:0:0.3"/>
-                                        <!-- Texto volta para claro -->
-                                        <ColorAnimation Storyboard.TargetName="content"
-                    Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
-                    To="#fff8ef"
-                    Duration="0:0:0.3"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.ExitActions>
-                        </Trigger>
-
-                        <!-- Pressionado -->
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#e0e0e0"/>
-                            <!-- mais claro para efeito de clique -->
-
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Button.Template>
-
-        </Button>
-        <TextBlock 
-            Foreground="White" 
-            FontWeight="Bold" 
-                           Margin="34,46,46,350" Text="Email:"/>
-        <TextBlock 
-            Foreground="White" 
-            FontWeight="Bold" 
-                           Margin="34,121,46,276"><Run Language="pt-br" Text="Senha:"/></TextBlock>
-
-    </Grid>
+        </Grid>
+    </ScrollViewer>
 </Window>

@@ -8,6 +8,10 @@
         WindowStartupLocation="CenterScreen">
 
     <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="573*"/>
+            <ColumnDefinition Width="307*"/>
+        </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -19,7 +23,7 @@
         <!-- Painel de botões -->
         <StackPanel Orientation="Horizontal" 
                     HorizontalAlignment="Right" 
-                    Margin="0,20,28,5">
+                    Margin="0,20,28,5" Grid.ColumnSpan="2">
 
             <!-- Botão Salvar -->
             <Button x:Name="btnSalvar"
@@ -156,7 +160,7 @@
                 Padding="15" 
                 Margin="21,0,21,11" 
                 Grid.RowSpan="3" 
-                Grid.Row="1"/>
+                Grid.Row="1" Grid.ColumnSpan="2"/>
 
         <!-- DataGrid -->
         <DataGrid x:Name="dataGridOrcamento"
@@ -171,14 +175,32 @@
                   CanUserResizeRows="False"
                   Margin="25,6,25,23"
                   Grid.Row="2"
-                  Grid.RowSpan="2">
+                  Grid.RowSpan="2" Grid.ColumnSpan="2">
 
             <DataGrid.Resources>
+                <!-- Cabeçalhos -->
                 <Style TargetType="DataGridColumnHeader">
                     <Setter Property="Background" Value="#007ACC"/>
                     <Setter Property="Foreground" Value="#fff8ef"/>
                     <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+
+                <!-- Estilo para células com quebra de linha e limite de largura -->
+                <Style TargetType="TextBlock">
+                    <Setter Property="TextWrapping" Value="Wrap" />
+                    <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+                    <Setter Property="MaxWidth" Value="250"/>
+                    <!-- largura máxima antes de quebrar -->
+                </Style>
+
+                <!-- Estilo aplicado às células -->
+                <Style TargetType="DataGridCell">
+                    <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                    <Setter Property="TextBlock.TextTrimming" Value="CharacterEllipsis"/>
+                    <Setter Property="TextBlock.MaxWidth" Value="250"/>
+                    <!-- ajuste conforme desejado -->
+                    <Setter Property="VerticalAlignment" Value="Top" />
                 </Style>
             </DataGrid.Resources>
         </DataGrid>

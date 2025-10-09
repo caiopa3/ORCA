@@ -15,6 +15,61 @@
           }
         }
       },
+      "Extended.Wpf.Toolkit/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Xceed.Wpf.AvalonDock.Themes.Aero.dll": {},
+          "lib/net5.0/Xceed.Wpf.AvalonDock.Themes.Metro.dll": {},
+          "lib/net5.0/Xceed.Wpf.AvalonDock.Themes.VS2010.dll": {},
+          "lib/net5.0/Xceed.Wpf.AvalonDock.dll": {},
+          "lib/net5.0/Xceed.Wpf.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Xceed.Wpf.AvalonDock.Themes.Aero.dll": {},
+          "lib/net5.0/Xceed.Wpf.AvalonDock.Themes.Metro.dll": {},
+          "lib/net5.0/Xceed.Wpf.AvalonDock.Themes.VS2010.dll": {},
+          "lib/net5.0/Xceed.Wpf.AvalonDock.dll": {},
+          "lib/net5.0/Xceed.Wpf.Toolkit.dll": {}
+        },
+        "resource": {
+          "lib/net5.0/cs-CZ/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "cs-CZ"
+          },
+          "lib/net5.0/de/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net5.0/es/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net5.0/fr/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net5.0/hu/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "hu"
+          },
+          "lib/net5.0/it/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net5.0/ja-JP/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net5.0/pt-BR/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net5.0/ro/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "ro"
+          },
+          "lib/net5.0/ru/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net5.0/sv/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/net5.0/zh-Hans/Xceed.Wpf.AvalonDock.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
       "Google.Protobuf/3.30.0": {
         "type": "package",
         "compile": {
@@ -725,6 +780,56 @@
         "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
         "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
         "packageIcon.png"
+      ]
+    },
+    "Extended.Wpf.Toolkit/5.0.0": {
+      "sha512": "8QStq5cQd+anGBbA5XXSlb/BxEk457xRQ/vraLXNvf5fHG1b4Bu4DOkvSqvvu9MLRUf+q29ceWsLRGtAw3CzDg==",
+      "type": "package",
+      "path": "extended.wpf.toolkit/5.0.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "Xceed_Logo_Retina-400x400.png",
+        "extended.wpf.toolkit.5.0.0.nupkg.sha512",
+        "extended.wpf.toolkit.nuspec",
+        "lib/net40/Xceed.Wpf.AvalonDock.Themes.Aero.dll",
+        "lib/net40/Xceed.Wpf.AvalonDock.Themes.Metro.dll",
+        "lib/net40/Xceed.Wpf.AvalonDock.Themes.VS2010.dll",
+        "lib/net40/Xceed.Wpf.AvalonDock.dll",
+        "lib/net40/Xceed.Wpf.Toolkit.dll",
+        "lib/net40/cs-CZ/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/de/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/es/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/fr/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/hu/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/it/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/ja-JP/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/nl-BE/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/pt-BR/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/ro/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/ru/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/sv/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net40/zh-Hans/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net5.0/Xceed.Wpf.AvalonDock.Themes.Aero.dll",
+        "lib/net5.0/Xceed.Wpf.AvalonDock.Themes.Metro.dll",
+        "lib/net5.0/Xceed.Wpf.AvalonDock.Themes.VS2010.dll",
+        "lib/net5.0/Xceed.Wpf.AvalonDock.dll",
+        "lib/net5.0/Xceed.Wpf.Toolkit.dll",
+        "lib/net5.0/cs-CZ/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net5.0/de/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net5.0/es/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net5.0/fr/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net5.0/hu/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net5.0/it/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net5.0/ja-JP/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net5.0/pt-BR/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net5.0/ro/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net5.0/ru/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net5.0/sv/Xceed.Wpf.AvalonDock.resources.dll",
+        "lib/net5.0/zh-Hans/Xceed.Wpf.AvalonDock.resources.dll",
+        "tools/install.ps1"
       ]
     },
     "Google.Protobuf/3.30.0": {
@@ -2266,6 +2371,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
+      "Extended.Wpf.Toolkit >= 5.0.0",
       "MySql.Data >= 9.3.0",
       "MySqlConnector >= 2.4.0",
       "Newtonsoft.Json >= 13.0.3",
@@ -2273,24 +2379,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\internet.info\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Familia Costa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj",
+      "projectUniqueName": "C:\\Users\\Familia Costa\\Desktop\\ORCA\\ORCA\\ORCA.csproj",
       "projectName": "ORCA",
-      "projectPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj",
-      "packagesPath": "C:\\Users\\internet.info\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\obj\\",
+      "projectPath": "C:\\Users\\Familia Costa\\Desktop\\ORCA\\ORCA\\ORCA.csproj",
+      "packagesPath": "C:\\Users\\Familia Costa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Familia Costa\\Desktop\\ORCA\\ORCA\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\internet.info\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Familia Costa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2315,13 +2416,16 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0-windows7.0": {
         "targetAlias": "net8.0-windows",
         "dependencies": {
+          "Extended.Wpf.Toolkit": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          },
           "MySql.Data": {
             "target": "Package",
             "version": "[9.3.0, )"
@@ -2358,7 +2462,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

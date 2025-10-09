@@ -26,10 +26,14 @@ namespace ORCA
         private string headerPath;
         private string footerPath;
         private readonly DataTable _data;
-        public gerar_pdf(DataTable data)
+        public string tituloJanela;
+
+        public gerar_pdf(DataTable data, string nome)
         {
             InitializeComponent();
             _data = data;
+            tituloJanela = nome;
+            this.Title = $"Exportar para PDF - {tituloJanela}";
 
             // Permite usar as fontes do Windows automaticamente
             PdfSharp.Fonts.GlobalFontSettings.UseWindowsFontsUnderWindows = true;
@@ -37,7 +41,7 @@ namespace ORCA
 
         private void BtnExportPdf_Click(object sender, RoutedEventArgs e)
         {
-            var contentWindow = new PdfContentWindow();
+            var contentWindow = new PdfContentWindow(tituloJanela);
             if (contentWindow.ShowDialog() != true)
                 return;
 

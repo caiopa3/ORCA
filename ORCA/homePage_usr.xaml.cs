@@ -121,7 +121,7 @@ namespace ORCA
             {
                 if ((s as Button)?.Tag is int orcamentoId)
                 {
-                    var win = new OrcamentoWindow(orcamentoId, _orcamentoService, _email);
+                    var win = new OrcamentoWindow(orcamentoId, _orcamentoService, _email, nome);
                     win.Show(); // ou ShowDialog()
                 }
             };

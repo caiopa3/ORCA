@@ -8,7 +8,7 @@
         Title="PdfContentWindow" Height="450" Width="800">
     <Grid Margin="10">
         <TextBox Name="TxtPdfContent" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
-             TextWrapping="Wrap" AcceptsReturn="True" FontSize="14"/>
+             TextWrapping="Wrap" AcceptsReturn="True" FontSize="14" Text="Digite aqui o conteúdo..."/>
         <Button Name="BtnGeneratePdf" Content="Gerar PDF" Width="120" Height="30"
             HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Click="BtnGeneratePdf_Click"/>
     </Grid>

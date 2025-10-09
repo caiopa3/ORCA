@@ -21,13 +21,16 @@ namespace ORCA
         private readonly int _orcamentoId;
         private readonly OrcamentoService _orcamentoService;
         private readonly string _email;
+        public string tituloJanela;
 
-        public OrcamentoWindow(int orcamentoId, OrcamentoService orcamentoService, string email)
+        public OrcamentoWindow(int orcamentoId, OrcamentoService orcamentoService, string email, string nome)
         {
             InitializeComponent();
             _orcamentoId = orcamentoId;
             _orcamentoService = orcamentoService;
             _email = email;
+            tituloJanela = nome;
+            this.Title = $"Orçamento - {tituloJanela}";
 
             Carregar();
 
@@ -276,7 +279,7 @@ namespace ORCA
                 }
 
                 // 🔹 Abrir a tela de edição do PDF (PdfContentWindow)
-                var pdfWin = new gerar_pdf(dt);
+                var pdfWin = new gerar_pdf(dt, tituloJanela);
                 pdfWin.ShowDialog();
             }
             catch (Exception ex)

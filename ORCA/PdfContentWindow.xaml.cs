@@ -29,10 +29,13 @@ namespace ORCA
     public partial class PdfContentWindow : Window
     {
         public string PdfContent { get; private set; }
+        public string tituloJanela;
 
-        public PdfContentWindow()
+        public PdfContentWindow(string nome)
         {
             InitializeComponent();
+            tituloJanela = nome;
+            this.Title = $"Conteúdo do PDF - {tituloJanela}";
         }
 
         private void BtnGeneratePdf_Click(object sender, RoutedEventArgs e)

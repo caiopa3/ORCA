@@ -71,21 +71,107 @@ namespace ORCA
         {
             try
             {
-                string email = txtEmail.Text.Trim();
-                string senha = txtSenha.Text.Trim();
-                string permissao = (cmbPermissao.SelectedItem as PermissaoItem)?.Valor;
+                // Coleta campos
+                var nomeCompleto = txtNomeCompleto.Text.Trim();
+                var nomeSocial = txtNomeSocial.Text.Trim();
+                var dataNascimento = dpDataNascimento.Text;
+                var email = txtEmail.Text.Trim();
+                var senhaPlain = txtSenha.Password;
+                var telCelular = txtTelCelular.Text.Trim();
+                var telFixo = txtTelFixo.Text.Trim();
 
-                if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senha) || string.IsNullOrWhiteSpace(permissao))
+                var logradouro = txtLogradouro.Text.Trim();
+                var numero = txtNumero.Text.Trim();
+                var complemento = txtComplemento.Text.Trim();
+                var bairro = txtBairro.Text.Trim();
+                var cidade = txtCidade.Text.Trim();
+                var uf = (cmbUF.SelectedItem as ComboBoxItem)?.Content?.ToString() ?? (cmbUF.SelectedItem?.ToString() ?? "");
+                var cep = txtCEP.Text.Trim();
+
+                var permissao = (cmbPermissao.SelectedItem as OrcamentoService.PermissaoItem)?.Valor;
+                var cargo = txtCargo.Text.Trim();
+                var departamento = txtDepartamento.Text.Trim();
+                var dataAdmissao = dpDataAdmissao.Text;
+                var tipoContrato = (cmbTipoContrato.SelectedItem as ComboBoxItem)?.Content?.ToString() ?? "";
+                var regimeJornada = (cmbRegimeJornada.SelectedItem as ComboBoxItem)?.Content?.ToString() ?? "";
+                var salarioBase = txtSalarioBase.Text.Trim();
+
+                var cpf = txtCPF.Text.Trim();
+                var rg = txtRG.Text.Trim();
+                var orgaoExpedidor = txtOrgaoExpedidor.Text.Trim();
+                var dataExpedicao = dpDataExpedicao.Text;
+
+                var banco = txtBanco.Text.Trim();
+                var agencia = txtAgencia.Text.Trim();
+                var conta = txtConta.Text.Trim();
+
+                var infoMedicas = txtInfoMedicas.Text.Trim();
+                var contatoEmergNome = txtContatoEmergNome.Text.Trim();
+                var contatoEmergTel = txtContatoEmergTel.Text.Trim();
+                var relacaoContato = txtRelacaoContato.Text.Trim();
+
+                // validações básicas
+                if (string.IsNullOrWhiteSpace(nomeCompleto) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senhaPlain) || string.IsNullOrWhiteSpace(permissao))
                 {
-                    MessageBox.Show("Preencha todos os campos!", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("Preencha pelo menos: nome completo, email, senha e permissões.", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
-                service.CadastrarUsuario(email, senha, permissao);
+                // Hash da senha (recomendado)
+                string senhaParaSalvar;
+                try
+                {
+                    // Recomendado: instalar BCrypt.Net-Next via NuGet e descomentar abaixo:
+                    // senhaParaSalvar = BCrypt.Net.BCrypt.HashPassword(senhaPlain);
+
+                    // Se não usar BCrypt, você deve substituir por sua rotina segura.
+                    senhaParaSalvar = senhaPlain; // ATENÇÃO: se manter, será salvo em texto plano — não usar em produção.
+                }
+                catch
+                {
+                    senhaParaSalvar = senhaPlain;
+                }
+
+                // Chama service
+                service.CadastrarUsuarioCompleto(
+                    nomeCompleto,
+                    nomeSocial,
+                    dataNascimento,
+                    email,
+                    senhaParaSalvar,
+                    telCelular,
+                    telFixo,
+                    logradouro,
+                    numero,
+                    complemento,
+                    bairro,
+                    cidade,
+                    uf,
+                    cep,
+                    permissao,
+                    cargo,
+                    departamento,
+                    dataAdmissao,
+                    tipoContrato,
+                    regimeJornada,
+                    salarioBase,
+                    cpf,
+                    rg,
+                    orgaoExpedidor,
+                    dataExpedicao,
+                    banco,
+                    agencia,
+                    conta,
+                    infoMedicas,
+                    contatoEmergNome,
+                    contatoEmergTel,
+                    relacaoContato
+                );
 
                 MessageBox.Show("Usuário cadastrado com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                gereFunc_adm gereFunc_Adm = new gereFunc_adm(email_usuario, servidor, bd, usr, senha_usuario);
+                // volta para a tela de gerenciamento (se existir)
+                var gereFunc_Adm = new gereFunc_adm(email_usuario, servidor, bd, usr, senha_usuario);
                 gereFunc_Adm.Show();
                 this.Close();
             }
