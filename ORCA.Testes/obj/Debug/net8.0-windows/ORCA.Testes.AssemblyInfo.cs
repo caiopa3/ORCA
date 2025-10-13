@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ORCA.Testes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5c9c8f5913f24ec3d0e167cb321131de2681a3e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf462798458dc7355865f9e707c89fd2042b6886")]
 [assembly: System.Reflection.AssemblyProductAttribute("ORCA.Testes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ORCA.Testes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

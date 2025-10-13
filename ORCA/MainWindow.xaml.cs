@@ -14,6 +14,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using ORCA.Services;
 
 
 namespace ORCA
@@ -187,18 +188,36 @@ namespace ORCA
 
                     if (permissao == "usr")
                     {
+                        Sessao.Permissao = "usr";
+                        Sessao.servidor = servidor;
+                        Sessao.senha = senha;
+                        Sessao.bd = bd;
+                        Sessao.usr = usr;
+                        Sessao.email = email;
                         homePage_usr homePage_Usr = new homePage_usr(email, servidor, bd, usr, senha);
                         homePage_Usr.Show();
                         this.Close();
                     }
                     else if (permissao == "adm")
                     {
+                        Sessao.Permissao = "adm";
+                        Sessao.servidor = servidor;
+                        Sessao.senha = senha;
+                        Sessao.bd = bd;
+                        Sessao.usr = usr;
+                        Sessao.email = email;
                         homePage_adm homePage_Adm = new homePage_adm(email, servidor, bd, usr, senha);
                         homePage_Adm.Show();
                         this.Close();
                     }
                     else if (permissao == "ges")
                     {
+                        Sessao.Permissao = "ges";
+                        Sessao.servidor = servidor;
+                        Sessao.senha = senha;
+                        Sessao.bd = bd;
+                        Sessao.usr = usr;
+                        Sessao.email = email;
                         homePage_ges homePage_Ges = new homePage_ges(email, servidor, bd, usr, senha);
                         homePage_Ges.Show();
                         this.Close();

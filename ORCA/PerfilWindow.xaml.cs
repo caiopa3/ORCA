@@ -35,26 +35,20 @@ namespace ORCA
         {
             try
             {
-                string email = txtEmail.Text.Trim();
-                string confirmarEmail = txtConfirmarEmail.Text.Trim();
                 string senhaAtual = txtSenhaAtual.Password.Trim();
                 string novaSenha = txtNovaSenha.Password.Trim();
                 string confirmarSenha = txtConfirmarSenha.Password.Trim();
 
-                // Validações
-                if (string.IsNullOrWhiteSpace(email) ||
-                    string.IsNullOrWhiteSpace(confirmarEmail) ||
-                    string.IsNullOrWhiteSpace(senhaAtual) ||
+                bool atualizarEmail = chkAtualizarEmail.IsChecked == true;
+                string novoEmail = txtNovoEmail.Text.Trim();
+                string confirmarEmail = txtConfirmarEmail.Text.Trim();
+
+                // Validação básica
+                if (string.IsNullOrWhiteSpace(senhaAtual) ||
                     string.IsNullOrWhiteSpace(novaSenha) ||
                     string.IsNullOrWhiteSpace(confirmarSenha))
                 {
-                    MessageBox.Show("Preencha todos os campos.");
-                    return;
-                }
-
-                if (email != confirmarEmail)
-                {
-                    MessageBox.Show("Os e-mails não coincidem.");
+                    MessageBox.Show("Preencha todos os campos de senha.");
                     return;
                 }
 
@@ -64,7 +58,23 @@ namespace ORCA
                     return;
                 }
 
-                // Verifica senha atual no banco
+                // Se for atualizar e-mail
+                if (atualizarEmail)
+                {
+                    if (string.IsNullOrWhiteSpace(novoEmail) || string.IsNullOrWhiteSpace(confirmarEmail))
+                    {
+                        MessageBox.Show("Preencha os campos de e-mail.");
+                        return;
+                    }
+
+                    if (txtEmail.Text != confirmarEmail)
+                    {
+                        MessageBox.Show("Os e-mails não coincidem.");
+                        return;
+                    }
+                }
+
+                // Verifica senha atual
                 bool senhaCorreta = _orcamentoService.VerificarSenhaAtual(_emailAtual, senhaAtual);
                 if (!senhaCorreta)
                 {
@@ -72,12 +82,20 @@ namespace ORCA
                     return;
                 }
 
-                // Atualiza
-                _orcamentoService.AtualizarUsuario(_emailAtual, email, novaSenha);
+                // Atualiza dados no banco
+                if (atualizarEmail)
+                {
+                    _orcamentoService.AtualizarUsuario(_emailAtual, novoEmail, novaSenha);
+                    Sessao.email = novoEmail; // Atualiza na sessão
+                }
+                else
+                {
+                    _orcamentoService.AtualizarUsuario(_emailAtual, _emailAtual, novaSenha);
+                }
 
                 MessageBox.Show("Dados atualizados com sucesso!");
-                this.DialogResult = true;
-                this.Close();
+
+                this.DialogResult = true; // fecha janela com sucesso
             }
             catch (Exception ex)
             {
@@ -85,5 +103,21 @@ namespace ORCA
             }
         }
 
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+
+            this.DialogResult = false; // Apenas fecha a janela de perfil
+
+        }
+
+        private void chkAtualizarEmail_Checked(object sender, RoutedEventArgs e)
+        {
+            panelNovoEmail.Visibility = Visibility.Visible;
+        }
+
+        private void chkAtualizarEmail_Unchecked(object sender, RoutedEventArgs e)
+        {
+            panelNovoEmail.Visibility = Visibility.Collapsed;
+        }
     }
 }

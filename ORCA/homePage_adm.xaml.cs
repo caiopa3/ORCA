@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ORCA.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -26,6 +27,8 @@ namespace ORCA
         public string senha = "";
         public string email = "";
 
+        private readonly OrcamentoService _orcamentoService;
+
         public homePage_adm(string e, string s, string b, string u, string se)
         {
             InitializeComponent();
@@ -34,6 +37,8 @@ namespace ORCA
             bd = b;
             usr = u;
             senha = se;
+
+            _orcamentoService = new OrcamentoService(servidor, bd, usr, senha);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -47,7 +52,37 @@ namespace ORCA
         {
             gereFunc_adm gereFunc_Adm = new gereFunc_adm(email, servidor, bd, usr, senha);
             gereFunc_Adm.Show();
+
+        }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            // Fecha todas as janelas abertas, menos esta (para evitar erro de coleção modificada)
+            foreach (Window janela in Application.Current.Windows)
+            {
+                if (janela != this)
+                    janela.Close();
+            }
+
+            // Abre a tela inicial
+            MainWindow telaInicial = new MainWindow();
+            telaInicial.Show();
+
+            // Fecha a janela atual por último
             this.Close();
+        }
+
+        private void btnPerfil_Click(object sender, RoutedEventArgs e)
+        {
+            var perfilWin = new PerfilWindow(email, _orcamentoService);
+            bool? resultado = perfilWin.ShowDialog();
+
+            if (resultado == true)
+            {
+                MessageBox.Show("Perfil atualizado com sucesso! Reinicie o sistema para aplicar as mudanças de login (se alterou e-mail).");
+                email = Sessao.email; // Atualiza variável local também, se necessário
+
+            }
         }
     }
 }

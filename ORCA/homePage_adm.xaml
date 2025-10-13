@@ -5,12 +5,54 @@
         Height="720" 
         Width="1100"
         WindowStartupLocation="CenterScreen"
-        Background="#171717">
+        Background="#171717"
+        WindowState="Maximized"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+
+    <Window.Resources>
+        <Style x:Key="VoltarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#1e2a33"/>
+            <Setter Property="Foreground" Value="#fff8ef"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="6">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="4,0">
+                                <Path Data="M10,0 L0,10 L10,20" Stroke="{TemplateBinding Foreground}" StrokeThickness="2" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <ContentPresenter VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2c3a44"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 
     <Border Background="#0D1113" CornerRadius="14" Margin="24"
             Padding="14">
 
         <Grid>
+
+            <Button x:Name="btnVoltar"
+                Style="{StaticResource VoltarButtonStyle}"
+                Content="Página Inicial"
+                Click="btnVoltar_Click"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="6,6,0,0"
+                Width="120" Height="34"/>
 
             <!-- Container creme dentro do frame -->
             <Border Background="#fff8ef" 
@@ -124,7 +166,7 @@
                                 <Button x:Name="btnGerenciar" 
                                         Width="160" Height="32"
                                         Cursor="Hand"
-                                        Margin="0,0,15,0"
+                                        Margin="5,0,15,0"
                                         Click="btn_ger_func_Click">
                                     <Button.Template>
                                         <ControlTemplate TargetType="{x:Type Button}">
@@ -152,9 +194,10 @@
                                 <!-- Perfil -->
 
                             </StackPanel>
+                            
                             <Button x:Name="btnPerfil"
                                         Cursor="Hand"
-                                        Grid.Column="1" Margin="634,2,5,1" RenderTransformOrigin="0.5,0.5">
+                                        Grid.Column="1" Margin="634,2,5,1" RenderTransformOrigin="0.5,0.5" Click="btnPerfil_Click">
                                 <Button.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform ScaleX="-1"/>
@@ -187,37 +230,6 @@
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
-                            <Button x:Name="btn_ger_func" Click="btn_ger_func_Click" Cursor="Hand" Grid.Column="1" Margin="707,2,5,1">
-                                <Button.Template
-                                >
-                                    <ControlTemplate
-                                TargetType="{x:Type Button}">
-                                        <Border
-                                Padding="6,2" x:Name="bd" CornerRadius="16" BorderThickness="1.6" BorderBrush="#007ACC" Background="Transparent">
-                                            <ContentPresenter
-                                HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                        </Border>
-                                        <ControlTemplate.Triggers
-                                >
-                                            <Trigger
-                                Property="IsMouseOver" Value="True">
-                                                <Setter
-                                Property="Background" TargetName="bd" Value="#007ACC"/>
-                                                <Setter
-                                Property="Foreground" Value="White"/>
-                                            </Trigger>
-                                            <Trigger
-                                Property="IsPressed" Value="True">
-                                                <Setter
-                                Property="Background" TargetName="bd" Value="#005A99"/>
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Button.Template>
-                                <TextBlock
-                                Foreground="#A9C7E8" FontWeight="Bold" Text="Gerenciar Funcionários"/>
-                            </Button>
-
                         </Grid>
                     </Border>
 
