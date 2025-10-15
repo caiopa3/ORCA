@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/10/2025 às 03:34
+-- Tempo de geração: 15/10/2025 às 03:03
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -140,48 +140,24 @@ INSERT INTO `orcamento_dados` (`id`, `orcamento_id`, `usuario_id`, `dados_json`)
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `nome_completo` varchar(255) DEFAULT NULL,
-  `nome_social` varchar(255) DEFAULT NULL,
-  `data_nascimento` date DEFAULT NULL,
   `email` text DEFAULT NULL,
   `telefone_celular` varchar(20) DEFAULT NULL,
-  `telefone_fixo` varchar(20) DEFAULT NULL,
-  `logradouro` varchar(255) DEFAULT NULL,
-  `numero` varchar(10) DEFAULT NULL,
-  `complemento` varchar(100) DEFAULT NULL,
-  `bairro` varchar(100) DEFAULT NULL,
-  `cidade` varchar(100) DEFAULT NULL,
-  `uf` char(2) DEFAULT NULL,
-  `cep` varchar(10) DEFAULT NULL,
   `senha` varchar(255) DEFAULT NULL,
   `permissao` varchar(3) DEFAULT NULL,
-  `cargo` varchar(100) DEFAULT NULL,
-  `departamento` varchar(100) DEFAULT NULL,
-  `data_admissao` date DEFAULT NULL,
-  `tipo_contrato` varchar(50) DEFAULT NULL,
-  `regime_jornada` varchar(50) DEFAULT NULL,
-  `salario_base` decimal(10,2) DEFAULT NULL,
   `cpf` varchar(14) DEFAULT NULL,
-  `rg` varchar(20) DEFAULT NULL,
-  `orgao_expedidor` varchar(20) DEFAULT NULL,
-  `data_expedicao` date DEFAULT NULL,
-  `banco` varchar(100) DEFAULT NULL,
-  `agencia` varchar(20) DEFAULT NULL,
-  `conta` varchar(30) DEFAULT NULL,
-  `info_medicas` text DEFAULT NULL,
-  `contato_emergencia_nome` varchar(255) DEFAULT NULL,
-  `contato_emergencia_telefone` varchar(20) DEFAULT NULL,
-  `relacao_com_contato` varchar(50) DEFAULT NULL
+  `rg` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nome_completo`, `nome_social`, `data_nascimento`, `email`, `telefone_celular`, `telefone_fixo`, `logradouro`, `numero`, `complemento`, `bairro`, `cidade`, `uf`, `cep`, `senha`, `permissao`, `cargo`, `departamento`, `data_admissao`, `tipo_contrato`, `regime_jornada`, `salario_base`, `cpf`, `rg`, `orgao_expedidor`, `data_expedicao`, `banco`, `agencia`, `conta`, `info_medicas`, `contato_emergencia_nome`, `contato_emergencia_telefone`, `relacao_com_contato`) VALUES
-(1, NULL, NULL, NULL, 'yslan_adm@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '123', 'adm', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, NULL, NULL, NULL, 'yslan_usr@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '123', 'usr', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(13, NULL, NULL, NULL, 'caio_adm@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '123', 'adm', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(14, 'fsaf', 'fsafasfas', '0000-00-00', 'ffasfsa@gmail.com', '(12) 32312-3564', '(12) 3123-2345', 'Teste', '123', 'Casa', 'fdsafsafa', 'fasfsafafsa', 'SP', '12356-464', '123', 'usr', 'fsafasfsa', 'fsafsasfa', '0000-00-00', 'CLT', 'Horas Flex', 0.00, '123,156,464-76', '15,641,564-4', 'SSP-SP', '0000-00-00', '2312', '1231-2', '121321-2', 'Sfdsafsafa', 'fssfafas', '(12) 31231-3112', 'fsafasfsa');
+INSERT INTO `usuario` (`id`, `nome_completo`, `email`, `telefone_celular`, `senha`, `permissao`, `cpf`, `rg`) VALUES
+(1, NULL, 'yslan_adm2@gmail.com', NULL, '123', 'adm', NULL, NULL),
+(2, NULL, 'yslan_usr@gmail.com', NULL, '123', 'usr', NULL, NULL),
+(13, NULL, 'caio_adm@gmail.com', NULL, '123', 'adm', NULL, NULL),
+(14, 'fsaf', 'ffasfsa@gmail.com', '(12) 32312-3564', '123', 'usr', '123,156,464-76', '15,641,564-4'),
+(15, 'Yslan De Jesus Santos Da Costa', 'zezinho@gmail.com', '(11) 11111-1111', '1234', 'Adm', '111,111,111-11', '11,111,111-1');
 
 --
 -- Índices para tabelas despejadas
@@ -268,7 +244,7 @@ ALTER TABLE `orcamento_dados`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restrições para tabelas despejadas
