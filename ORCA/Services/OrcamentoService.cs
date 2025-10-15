@@ -327,38 +327,14 @@ namespace ORCA.Services
         }
 
         public void CadastrarUsuarioCompleto(
-            string nomeCompleto,
-            string nomeSocial,
-            string dataNascimento,
+            string nomeCompleto,    
             string email,
             string senha,
             string telefoneCelular,
-            string telefoneFixo,
-            string logradouro,
-            string numero,
-            string complemento,
-            string bairro,
-            string cidade,
-            string uf,
-            string cep,
             string permissao,
-            string cargo,
-            string departamento,
-            string dataAdmissao,
-            string tipoContrato,
-            string regimeJornada,
-            string salarioBase,
             string cpf,
-            string rg,
-            string orgaoExpedidor,
-            string dataExpedicao,
-            string banco,
-            string agencia,
-            string conta,
-            string informacoesMedicas,
-            string contatoEmergenciaNome,
-            string contatoEmergenciaTelefone,
-            string relacaoContato)
+            string rg
+            )
         {
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
@@ -366,55 +342,21 @@ namespace ORCA.Services
             // <IMPORTANTE> adapte os nomes das colunas conforme seu schema.
             string sql = @"
         INSERT INTO usuario
-        (nome_completo, nome_social, data_nascimento, email, senha, telefone_celular, telefone_fixo,
-         logradouro, numero, complemento, bairro, cidade, uf, cep,
-         permissao, cargo, departamento, data_admissao, tipo_contrato, regime_jornada, salario_base,
-         cpf, rg, orgao_expedidor, data_expedicao,
-         banco, agencia, conta,
-         info_medicas, contato_emergencia_nome, contato_emergencia_telefone, relacao_com_contato)
+        (nome_completo, email, senha, telefone_celular,
+         permissao, cpf, rg)
         VALUES
-        (@nome_completo, @nome_social, @data_nascimento, @Email, @Senha, @telefone_celular, @telefone_fixo,
-         @logradouro, @numero, @complemento, @bairro, @cidade, @uf, @cep,
-         @permissao, @cargo, @departamento, @data_admissao, @tipo_contrato, @regime_jornada, @salario_base,
-         @cpf, @rg, @orgao_expedidor, @data_expedicao,
-         @banco, @agencia, @conta,
-         @informacoes_medicas, @contato_emergencia_nome, @contato_emergencia_telefone, @relacao_contato);
+        (@nome_completo, @Email, @Senha, @telefone_celular,
+         @permissao, @cpf, @rg);
     ";
 
             using var cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@nome_completo", (object)nomeCompleto ?? "");
-            cmd.Parameters.AddWithValue("@nome_social", (object)nomeSocial ?? "");
-            cmd.Parameters.AddWithValue("@data_nascimento", (object)dataNascimento ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@Email", (object)email ?? "");
             cmd.Parameters.AddWithValue("@Senha", (object)senha ?? "");
             cmd.Parameters.AddWithValue("@telefone_celular", (object)telefoneCelular ?? "");
-            cmd.Parameters.AddWithValue("@telefone_fixo", (object)telefoneFixo ?? "");
-            cmd.Parameters.AddWithValue("@logradouro", (object)logradouro ?? "");
-            cmd.Parameters.AddWithValue("@numero", (object)numero ?? "");
-            cmd.Parameters.AddWithValue("@complemento", (object)complemento ?? "");
-            cmd.Parameters.AddWithValue("@bairro", (object)bairro ?? "");
-            cmd.Parameters.AddWithValue("@cidade", (object)cidade ?? "");
-            cmd.Parameters.AddWithValue("@uf", (object)uf ?? "");
-            cmd.Parameters.AddWithValue("@cep", (object)cep ?? "");
             cmd.Parameters.AddWithValue("@permissao", (object)permissao ?? "usr");
-            cmd.Parameters.AddWithValue("@cargo", (object)cargo ?? "");
-            cmd.Parameters.AddWithValue("@departamento", (object)departamento ?? "");
-            cmd.Parameters.AddWithValue("@data_admissao", (object)dataAdmissao ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@tipo_contrato", (object)tipoContrato ?? "");
-            cmd.Parameters.AddWithValue("@regime_jornada", (object)regimeJornada ?? "");
-            cmd.Parameters.AddWithValue("@salario_base", (object)salarioBase ?? "");
             cmd.Parameters.AddWithValue("@cpf", (object)cpf ?? "");
             cmd.Parameters.AddWithValue("@rg", (object)rg ?? "");
-            cmd.Parameters.AddWithValue("@orgao_expedidor", (object)orgaoExpedidor ?? "");
-            cmd.Parameters.AddWithValue("@data_expedicao", (object)dataExpedicao ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@banco", (object)banco ?? "");
-            cmd.Parameters.AddWithValue("@agencia", (object)agencia ?? "");
-            cmd.Parameters.AddWithValue("@conta", (object)conta ?? "");
-            cmd.Parameters.AddWithValue("@informacoes_medicas", (object)informacoesMedicas ?? "");
-            cmd.Parameters.AddWithValue("@contato_emergencia_nome", (object)contatoEmergenciaNome ?? "");
-            cmd.Parameters.AddWithValue("@contato_emergencia_telefone", (object)contatoEmergenciaTelefone ?? "");
-            cmd.Parameters.AddWithValue("@relacao_contato", (object)relacaoContato ?? "");
-
             cmd.ExecuteNonQuery();
         }
 
@@ -532,6 +474,40 @@ namespace ORCA.Services
 
             int count = Convert.ToInt32(cmd.ExecuteScalar());
             return count > 0;
+        }
+        public DataRow BuscarUsuarioPorEmail(string email)
+        {
+            string sql = "SELECT * FROM usuario WHERE email = @Email";
+            using var conn = new MySqlConnection(_connectionString);
+            using var cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@Email", email);
+            using var da = new MySqlDataAdapter(cmd);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt.Rows.Count > 0 ? dt.Rows[0] : null;
+        }
+
+        public void AtualizarUsuarioCompleto(string email, string nomeCompleto, string telefone, string cpf, string rg, string permissao)
+        {
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
+
+            string sql = @"
+        UPDATE usuario
+        SET nome_completo=@Nome, telefone_celular=@Telefone,
+            cpf=@CPF, rg=@RG, permissao=@Permissao
+        WHERE email=@Email
+    ";
+
+            using var cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@Nome", nomeCompleto);
+            cmd.Parameters.AddWithValue("@Telefone", telefone);
+            cmd.Parameters.AddWithValue("@CPF", cpf);
+            cmd.Parameters.AddWithValue("@RG", rg);
+            cmd.Parameters.AddWithValue("@Permissao", permissao);
+            cmd.Parameters.AddWithValue("@Email", email);
+
+            cmd.ExecuteNonQuery();
         }
     }
 }

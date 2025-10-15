@@ -104,12 +104,11 @@ namespace ORCA
             {
                 string emailFuncionario = row["email"].ToString();
 
-                PerfilWindow perfil = new PerfilWindow(emailFuncionario, service);
-                bool? resultado = perfil.ShowDialog();
+                altFunc_adm alterar = new altFunc_adm(emailFuncionario, service);
+                bool? resultado = alterar.ShowDialog();
 
                 if (resultado == true)
                 {
-                    // Recarrega os usuários após alteração
                     CarregarUsuariosNaTela();
                 }
             }

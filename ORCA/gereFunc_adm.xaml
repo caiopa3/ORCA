@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ORCA"
         mc:Ignorable="d"
         Background="#0d1216"
-        Title="gereFunc_adm" Height="466" Width="918">
+        Title="gereFunc_adm" Height="466" Width="918"
+        ResizeMode="NoResize">
     <Grid Margin="0,0,10,-6">
 
         <DataGrid x:Name="dgUsuarios" Margin="10,10,226,44" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Background="#fff8ef">

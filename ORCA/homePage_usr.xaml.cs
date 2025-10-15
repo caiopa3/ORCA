@@ -11,7 +11,7 @@ namespace ORCA
     public partial class homePage_usr : Window
     {
         private readonly OrcamentoService _orcamentoService;
-        private readonly string _email;
+        public string _email;
 
         public homePage_usr(string email, string servidor, string bd, string usr, string senha)
         {
@@ -166,9 +166,13 @@ namespace ORCA
         private void BtnPerfil_Click(object sender, RoutedEventArgs e)
         {
             var perfilWin = new PerfilWindow(_email, _orcamentoService);
-            if (perfilWin.ShowDialog() == true)
+            bool? resultado = perfilWin.ShowDialog();
+
+            if (resultado == true)
             {
-                MessageBox.Show("Reinicie o sistema para aplicar as mudanças de login.");
+                MessageBox.Show("Perfil atualizado com sucesso! Reinicie o sistema para aplicar as mudanças de login (se alterou e-mail).");
+                _email = Sessao.email; // Atualiza variável local também, se necessário
+
             }
         }
 

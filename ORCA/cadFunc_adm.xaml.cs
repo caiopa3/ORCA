@@ -73,47 +73,49 @@ namespace ORCA
             {
                 // Coleta campos
                 var nomeCompleto = txtNomeCompleto.Text.Trim();
-                var nomeSocial = txtNomeSocial.Text.Trim();
-                var dataNascimento = dpDataNascimento.Text;
+
                 var email = txtEmail.Text.Trim();
                 var senhaPlain = txtSenha.Password;
-                var telCelular = txtTelCelular.Text.Trim();
-                var telFixo = txtTelFixo.Text.Trim();
-
-                var logradouro = txtLogradouro.Text.Trim();
-                var numero = txtNumero.Text.Trim();
-                var complemento = txtComplemento.Text.Trim();
-                var bairro = txtBairro.Text.Trim();
-                var cidade = txtCidade.Text.Trim();
-                var uf = (cmbUF.SelectedItem as ComboBoxItem)?.Content?.ToString() ?? (cmbUF.SelectedItem?.ToString() ?? "");
-                var cep = txtCEP.Text.Trim();
-
+                var telCelular = txtTelefone.Text.Trim();
                 var permissao = (cmbPermissao.SelectedItem as OrcamentoService.PermissaoItem)?.Valor;
-                var cargo = txtCargo.Text.Trim();
-                var departamento = txtDepartamento.Text.Trim();
-                var dataAdmissao = dpDataAdmissao.Text;
-                var tipoContrato = (cmbTipoContrato.SelectedItem as ComboBoxItem)?.Content?.ToString() ?? "";
-                var regimeJornada = (cmbRegimeJornada.SelectedItem as ComboBoxItem)?.Content?.ToString() ?? "";
-                var salarioBase = txtSalarioBase.Text.Trim();
-
                 var cpf = txtCPF.Text.Trim();
                 var rg = txtRG.Text.Trim();
-                var orgaoExpedidor = txtOrgaoExpedidor.Text.Trim();
-                var dataExpedicao = dpDataExpedicao.Text;
 
-                var banco = txtBanco.Text.Trim();
-                var agencia = txtAgencia.Text.Trim();
-                var conta = txtConta.Text.Trim();
+                // Validação
 
-                var infoMedicas = txtInfoMedicas.Text.Trim();
-                var contatoEmergNome = txtContatoEmergNome.Text.Trim();
-                var contatoEmergTel = txtContatoEmergTel.Text.Trim();
-                var relacaoContato = txtRelacaoContato.Text.Trim();
-
-                // validações básicas
-                if (string.IsNullOrWhiteSpace(nomeCompleto) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senhaPlain) || string.IsNullOrWhiteSpace(permissao))
+                if (string.IsNullOrWhiteSpace(nomeCompleto))
                 {
-                    MessageBox.Show("Preencha pelo menos: nome completo, email, senha e permissões.", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("O nome completo é obrigatório.", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(email))
+                {
+                    MessageBox.Show("O e-mail é obrigatório.", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(senhaPlain))
+                {
+                    MessageBox.Show("A senha é obrigatória.", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(telCelular))
+                {
+                    MessageBox.Show("O telefone é obrigatório.", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(cpf))
+                {
+                    MessageBox.Show("O CPF é obrigatório.", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(rg))
+                {
+                    MessageBox.Show("O RG é obrigatório.", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                if (cmbPermissao.SelectedItem == null)
+                {
+                    MessageBox.Show("Selecione uma permissão.", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
@@ -135,37 +137,12 @@ namespace ORCA
                 // Chama service
                 service.CadastrarUsuarioCompleto(
                     nomeCompleto,
-                    nomeSocial,
-                    dataNascimento,
                     email,
                     senhaParaSalvar,
-                    telCelular,
-                    telFixo,
-                    logradouro,
-                    numero,
-                    complemento,
-                    bairro,
-                    cidade,
-                    uf,
-                    cep,
-                    permissao,
-                    cargo,
-                    departamento,
-                    dataAdmissao,
-                    tipoContrato,
-                    regimeJornada,
-                    salarioBase,
+                    telCelular,                   
+                    permissao, 
                     cpf,
-                    rg,
-                    orgaoExpedidor,
-                    dataExpedicao,
-                    banco,
-                    agencia,
-                    conta,
-                    infoMedicas,
-                    contatoEmergNome,
-                    contatoEmergTel,
-                    relacaoContato
+                    rg     
                 );
 
                 MessageBox.Show("Usuário cadastrado com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);

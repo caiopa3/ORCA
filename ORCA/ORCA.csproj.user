@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="altFunc_adm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="cadFunc_adm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -57,6 +60,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="altFunc_adm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="gerar_pdf.xaml">
       <SubType>Designer</SubType>
     </Page>

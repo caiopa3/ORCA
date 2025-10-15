@@ -859,3 +859,5 @@ C:\Users\internet.info\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\ro\Xceed.Wpf.A
 C:\Users\internet.info\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\internet.info\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\internet.info\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Familia Costa\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\altFunc_adm.baml
+C:\Users\Familia Costa\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\altFunc_adm.g.cs
