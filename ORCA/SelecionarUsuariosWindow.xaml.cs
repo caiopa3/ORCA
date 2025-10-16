@@ -61,7 +61,7 @@ namespace ORCA
                 using (var conn = new MySqlConnection("SERVER=localhost;DATABASE=banco;UID=root;PWD=;"))
                 {
                     conn.Open();
-                    var cmd = new MySqlCommand("SELECT id, email FROM usuario", conn);
+                    var cmd = new MySqlCommand("SELECT id, email FROM view_decripto", conn);
                     var reader = cmd.ExecuteReader();
 
                     var lista = new List<UsuarioInfo>();

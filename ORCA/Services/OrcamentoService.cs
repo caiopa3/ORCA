@@ -79,7 +79,7 @@ namespace ORCA.Services
             SELECT m.id, m.nome
             FROM modelo_orcamento m
             JOIN modelo_orcamento_usuarios um ON m.id = um.modelo_id
-            JOIN usuario u ON u.id = um.usuario_id
+            JOIN view_decripto u ON u.id = um.usuario_id
             WHERE u.email = @Email";
 
                 using (var cmd = new MySqlCommand(sql, conn))
@@ -296,7 +296,7 @@ namespace ORCA.Services
             {
                 conn.Open();
 
-                string query = "SELECT id, email, permissao FROM usuario WHERE permissao IN ('usr', 'ges')";
+                string query = "SELECT id, email, permissao FROM view_decripto WHERE permissao IN ('usr', 'ges')";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -378,7 +378,7 @@ namespace ORCA.Services
             conn.Open();
 
             // monta a query de filtro
-            string query = $"SELECT id, email, permissao FROM usuario WHERE permissao IN ('usr','ges') AND {campo} LIKE @valor";
+            string query = $"SELECT id, email, permissao FROM view_decripto WHERE permissao IN ('usr','ges') AND {campo} LIKE @valor";
 
             using var cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@valor", "%" + valor + "%");
@@ -441,7 +441,7 @@ namespace ORCA.Services
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            string sql = "SELECT id FROM usuario WHERE email=@e";
+            string sql = "SELECT id FROM view_decripto WHERE email=@e";
             using var cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@e", email);
 
@@ -454,7 +454,7 @@ namespace ORCA.Services
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            string sql = "UPDATE usuario SET email=@NovoEmail, senha=@Senha WHERE email=@EmailAntigo";
+            string sql = "UPDATE usuario SET email = @NovoEmail, senha = @Senha WHERE id = (SELECT id FROM view_decripto WHERE email = @EmailAntigo);";
             using var cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@NovoEmail", novoEmail);
             cmd.Parameters.AddWithValue("@Senha", novaSenha);
@@ -467,7 +467,7 @@ namespace ORCA.Services
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            string sql = "SELECT COUNT(*) FROM usuario WHERE email=@Email AND senha=@Senha";
+            string sql = "SELECT COUNT(*) FROM view_decripto WHERE email=@Email AND senha=@Senha";
             using var cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@Email", email);
             cmd.Parameters.AddWithValue("@Senha", senha);
@@ -477,7 +477,7 @@ namespace ORCA.Services
         }
         public DataRow BuscarUsuarioPorEmail(string email)
         {
-            string sql = "SELECT * FROM usuario WHERE email = @Email";
+            string sql = "SELECT * FROM view_decripto WHERE email = @Email";
             using var conn = new MySqlConnection(_connectionString);
             using var cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@Email", email);
@@ -492,21 +492,15 @@ namespace ORCA.Services
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            string sql = @"
-        UPDATE usuario
-        SET nome_completo=@Nome, telefone_celular=@Telefone,
-            cpf=@CPF, rg=@RG, permissao=@Permissao
-        WHERE email=@Email
-    ";
 
-            using var cmd = new MySqlCommand(sql, conn);
+
+            using var cmd = new MySqlCommand("CALL sp_atualizar_usuario_completo(@Email,@Nome,@Telefone,@CPF,@RG,@Permissao)", conn);
+            cmd.Parameters.AddWithValue("@Email", email);
             cmd.Parameters.AddWithValue("@Nome", nomeCompleto);
             cmd.Parameters.AddWithValue("@Telefone", telefone);
             cmd.Parameters.AddWithValue("@CPF", cpf);
             cmd.Parameters.AddWithValue("@RG", rg);
             cmd.Parameters.AddWithValue("@Permissao", permissao);
-            cmd.Parameters.AddWithValue("@Email", email);
-
             cmd.ExecuteNonQuery();
         }
     }

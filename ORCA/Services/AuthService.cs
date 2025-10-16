@@ -25,7 +25,7 @@ namespace ORCA.Services
             conn.Open();
 
             var cmd = new MySqlCommand(
-                "SELECT COUNT(*) FROM usuario WHERE email=@e AND senha=@s",
+                "SELECT COUNT(*) FROM view_decripto WHERE email=@e AND senha=@s",
                 conn);
             cmd.Parameters.AddWithValue("@e", email);
             cmd.Parameters.AddWithValue("@s", senha);
@@ -41,7 +41,7 @@ namespace ORCA.Services
             conn.Open();
 
             var cmd = new MySqlCommand(
-                "SELECT permissao FROM usuario WHERE email=@e AND senha=@s LIMIT 1",
+                "SELECT permissao FROM view_decripto WHERE email=@e AND senha=@s LIMIT 1",
                 conn);
             cmd.Parameters.AddWithValue("@e", email);
             cmd.Parameters.AddWithValue("@s", senha);
@@ -57,7 +57,7 @@ namespace ORCA.Services
             conn.Open();
 
             var cmd = new MySqlCommand(
-                "SELECT permissao FROM usuario WHERE email=@e LIMIT 1",
+                "SELECT permissao FROM view_decripto WHERE email=@e LIMIT 1",
                 conn);
             cmd.Parameters.AddWithValue("@e", email);
 

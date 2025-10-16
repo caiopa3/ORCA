@@ -157,5 +157,12 @@ namespace ORCA
                 MessageBox.Show("Erro ao cadastrar usuário: " + ex.Message);
             }
         }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            gereFunc_adm gereFunc_Adm = new gereFunc_adm(email_usuario, servidor, bd, usr, senha_usuario);
+            gereFunc_Adm.Show();
+            this.Close();
+        }
     }
 }

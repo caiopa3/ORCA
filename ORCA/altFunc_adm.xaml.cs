@@ -93,5 +93,9 @@ namespace ORCA
             this.Close();
         }
 
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

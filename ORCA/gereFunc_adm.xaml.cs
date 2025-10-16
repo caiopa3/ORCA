@@ -128,7 +128,7 @@ namespace ORCA
                         using var conn = new MySqlConnection($"SERVER={servidor};PORT=3306;DATABASE={bd};UID={usr};PASSWORD={senha};");
                         conn.Open();
 
-                        string sql = "DELETE FROM usuario WHERE email=@Email";
+                        string sql = "DELETE FROM view_decripto WHERE email=@Email";
                         using var cmd = new MySqlCommand(sql, conn);
                         cmd.Parameters.AddWithValue("@Email", emailFuncionario);
                         cmd.ExecuteNonQuery();
@@ -142,6 +142,13 @@ namespace ORCA
                     }
                 }
             }
+        }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            homePage_adm homePage_Adm = new homePage_adm(email, servidor, bd, usr, senha);
+            homePage_Adm.Show();
+            this.Close();
         }
     }
 }
