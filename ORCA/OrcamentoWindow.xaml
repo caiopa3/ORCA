@@ -33,7 +33,7 @@
                     Click="BtnSalvar_Click"
                     Margin="0,0,10,0"
                     Width="140"
-                    Height="35">
+                    Height="31">
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -45,7 +45,7 @@
                             <ContentPresenter x:Name="content"
                                               HorizontalAlignment="Center"
                                               VerticalAlignment="Center"
-                                              TextBlock.Foreground="#007ACC"/>
+                                              TextBlock.Foreground="#fff8ef"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <!-- Hover -->
@@ -96,7 +96,7 @@
                     Cursor="Hand"
                     Click="BtnExportar_Click"
                     Width="140"
-                    Height="35">
+                    Height="31">
 
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -108,7 +108,7 @@
                             <ContentPresenter x:Name="content"
                                               HorizontalAlignment="Center"
                                               VerticalAlignment="Center"
-                                              TextBlock.Foreground="#00B050"/>
+                                              TextBlock.Foreground="#fff8ef"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <!-- Hover -->

@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:ORCA"
         mc:Ignorable="d"
         Background="#0d1216"
-        Title="gereFunc_adm" Height="466" Width="918"
+        Title="gereFunc_adm" Height="436" Width="918"
         ResizeMode="NoResize">
-    <Grid Margin="0,0,10,-6">
+    <Grid Margin="0,0,0,28">
 
-        <DataGrid x:Name="dgUsuarios" Margin="10,10,226,44" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Background="#fff8ef">
+        <DataGrid x:Name="dgUsuarios" Margin="10,10,226,2" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Background="#fff8ef">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="50"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding email}" Width="*"/>
@@ -40,9 +40,9 @@
          Content="Cadastrar Funcionário" 
                 FontWeight="Bold"
          HorizontalAlignment="Left" 
-         Margin="703,369,0,0" 
+         Margin="706,349,0,0" 
          VerticalAlignment="Top" 
-         Width="195"
+         Width="196"
          Height="43"
          Click="btn_cad_func_Click">
 
@@ -77,10 +77,10 @@
                 FontWeight="Bold"
          Content="Filtrar Funcionário" 
          HorizontalAlignment="Left" 
-         Margin="702,39,0,0" 
+         Margin="706,104,0,0" 
          VerticalAlignment="Top" 
          Width="196"
-         Height="42"
+         Height="43"
          Click="btn_fil_func_Click"
          >
 
@@ -108,13 +108,13 @@
             </Button.Template>
         </Button>
 
-        <ComboBox x:Name="cmb_camp_func" HorizontalAlignment="Left" Margin="703,106,0,0" VerticalAlignment="Top" Width="195"/>
+        <ComboBox x:Name="cmb_camp_func" HorizontalAlignment="Left" Margin="706,159,0,0" VerticalAlignment="Top" Width="196" Height="33"/>
 
-        <Border CornerRadius="5" Background="#fff8ef" Margin="703,164,10,259"></Border>
+        <Border CornerRadius="5" Background="#fff8ef" Margin="706,202,16,157"></Border>
 
         <TextBox x:Name="txtFiltro" 
          HorizontalAlignment="Left" 
-         Margin="709,164,0,0" 
+         Margin="713,202,0,0" 
          TextWrapping="Wrap" 
          Background="Transparent"
          BorderThickness="0"
