@@ -88,5 +88,10 @@ namespace ORCA
             public int Id { get; set; }
             public string Email { get; set; }
         }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

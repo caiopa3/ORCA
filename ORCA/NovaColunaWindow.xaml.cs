@@ -42,5 +42,10 @@ namespace ORCA
         {
             borderValorFixo.Visibility = Visibility.Collapsed;
         }
+
+        private void BtnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

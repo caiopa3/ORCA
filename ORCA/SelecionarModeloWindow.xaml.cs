@@ -30,5 +30,10 @@ namespace ORCA
             DialogResult = true;
             Close();
         }
+
+        private void BtnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

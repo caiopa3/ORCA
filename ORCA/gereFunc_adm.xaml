@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ORCA"
         mc:Ignorable="d"
         Background="#0d1216"
-        Title="gereFunc_adm" Height="436" Width="918"
+        Title="gereFunc_adm" Height="479" Width="972"
         ResizeMode="NoResize">
 
     <Window.Resources>
@@ -27,9 +27,9 @@
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="24" Margin="0,4,0,3">
                                 <ContentPresenter VerticalAlignment="Center"/>
                                 <Path Data="M10,0 L0,10 L10,20"
-                                  Margin="4.5,0,0,0"
-                                  StrokeThickness="2"
-                                  Stretch="Fill" Width="14" Height="14" Stroke="#FF0D1216"/>
+                              Margin="4.5,0,0,0"
+                              StrokeThickness="2"
+                              Stretch="Fill" Width="14" Height="14" Stroke="#FF0D1216"/>
                             </StackPanel>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -45,16 +45,16 @@
 
     <Grid Margin="0,0,0,28">
 
-        <Button x:Name="btnVoltar"
-                Style="{StaticResource VoltarButtonStyle}"
-                Content=""
-                Click="btnVoltar_Click"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Margin="10,10,15,0"
-                Width="40" Height="34"/>
-
-        <DataGrid x:Name="dgUsuarios" Margin="10,10,226,2" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Background="#fff8ef">
+        <DataGrid x:Name="dgUsuarios"
+                  Width="680"
+                  Height="400"
+                  Margin="10,10,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserAddRows="False"
+                  Background="#fff8ef">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="50"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding email}" Width="*"/>
@@ -82,7 +82,7 @@
         <!-- Botão Cadastrar -->
         <Button x:Name="btn_cad_func" 
          Content="Cadastrar Funcionário" 
-         FontWeight="Bold"
+                FontWeight="Bold"
          HorizontalAlignment="Left" 
          Margin="706,349,0,0" 
          VerticalAlignment="Top" 
@@ -121,7 +121,7 @@
                 FontWeight="Bold"
          Content="Filtrar Funcionário" 
          HorizontalAlignment="Left" 
-         Margin="706,104,0,0" 
+         Margin="706,218,0,0" 
          VerticalAlignment="Top" 
          Width="196"
          Height="43"
@@ -152,19 +152,73 @@
             </Button.Template>
         </Button>
 
-        <ComboBox x:Name="cmb_camp_func" HorizontalAlignment="Left" Margin="706,159,0,0" VerticalAlignment="Top" Width="196" Height="33"/>
+        <ComboBox x:Name="cmb_camp_func" HorizontalAlignment="Left" Margin="706,68,0,0" VerticalAlignment="Top" Width="196" Height="33"/>
 
-        <Border CornerRadius="5" Background="#fff8ef" Margin="706,202,16,157"></Border>
+        <Border 
+        CornerRadius="5" 
+        Background="#fff8ef" 
+        Margin="706,148,0,0"
+        Width="196"
+        Height="43"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"/>
+
 
         <TextBox x:Name="txtFiltro" 
          HorizontalAlignment="Left" 
-         Margin="713,202,0,0" 
+         Margin="715,153,0,0" 
          TextWrapping="Wrap" 
          Background="Transparent"
          BorderThickness="0"
          VerticalAlignment="Top" 
-         Width="182"
+         Width="178"
          TextChanged="txtFiltro_TextChanged" Height="33"/>
+
+        <!-- Texto explicativo 1 -->
+        <TextBox 
+        HorizontalAlignment="Left"
+        Height="23"
+        Margin="730,40,0,0"
+        Width="148"
+        Background="Transparent"
+        BorderThickness="0"
+        IsReadOnly="True"
+        IsHitTestVisible="False"
+        Text="Insira o campo desejado:"
+        TextWrapping="Wrap"
+        VerticalAlignment="Top"
+        Foreground="#fff8ef"
+        FontWeight="Bold">
+
+        </TextBox>
+
+        <!-- Texto explicativo 2 -->
+        <TextBox 
+        HorizontalAlignment="Left"
+        Height="23"
+        Margin="722,123,0,0"
+        Width="164"
+        Background="Transparent"
+        BorderThickness="0"
+        IsReadOnly="True"
+        IsHitTestVisible="False"
+        Text="Digite o valor a ser filtrado:"
+        TextWrapping="Wrap"
+        VerticalAlignment="Top"
+        Foreground="#fff8ef"
+        FontWeight="Bold" TextChanged="TextBox_TextChanged_1" RenderTransformOrigin="0.501,0.51">
+
+        </TextBox>
+
+        <Button x:Name="btnVoltar"
+        Style="{StaticResource VoltarButtonStyle}"
+        Content=""
+        Click="btnVoltar_Click"
+        HorizontalAlignment="Right"
+        VerticalAlignment="Top"
+        Margin="0,10,10,0"
+        Width="40" Height="34"/>
+
 
     </Grid>
 </Window>

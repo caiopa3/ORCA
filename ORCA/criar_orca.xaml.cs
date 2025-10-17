@@ -6,6 +6,8 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Input;
+using System.Windows.Media;
 
 namespace ORCA
 {
@@ -13,6 +15,11 @@ namespace ORCA
     {
         private readonly ModeloOrcamentoService _modeloService;
         private readonly string _email;
+        
+        private readonly string _servidor;
+        private readonly string _bd;
+        private readonly string _usr;
+        private readonly string _senha;
 
         // dados em memória
         private readonly List<string> _colunas = new();
@@ -25,7 +32,12 @@ namespace ORCA
         {
             InitializeComponent();
 
+            // armazenando os parâmetros recebidos
             _email = email;
+            _servidor = servidor;
+            _bd = bd;
+            _usr = usr;
+            _senha = senha;
             _modeloService = new ModeloOrcamentoService(servidor, bd, usr, senha);
 
             // uma linha inicial vazia
@@ -153,20 +165,138 @@ namespace ORCA
         {
             try
             {
-                // força commit de edições pendentes
+               
                 meuDataGrid.CommitEdit(DataGridEditingUnit.Cell, true);
                 meuDataGrid.CommitEdit(DataGridEditingUnit.Row, true);
 
-                string nomeModelo = Microsoft.VisualBasic.Interaction.InputBox(
-                    "Digite o nome do modelo:",
-                    "Salvar Modelo",
-                    "Novo Modelo");
-
-                if (string.IsNullOrWhiteSpace(nomeModelo))
+                
+                Window inputWindow = new Window
                 {
-                    MessageBox.Show("Nome do modelo é obrigatório.");
+                    Title = "Salvar Modelo",
+                    Width = 400,
+                    Height = 180,
+                    Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#0d1216")),
+                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                    ResizeMode = ResizeMode.NoResize,
+                    Owner = Application.Current.MainWindow,
+                    WindowStyle = WindowStyle.None,
+                    AllowsTransparency = true
+                    
+                };
+
+                Border container = new Border
+                {
+                    Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#fff8ef")),
+                    CornerRadius = new CornerRadius(10),
+                    Padding = new Thickness(15),
+                    Margin = new Thickness(10)
+                };
+
+                StackPanel stack = new StackPanel();
+
+                TextBlock lbl = new TextBlock
+                {
+                    Text = "Digite o nome do modelo:",
+                    Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#0d1216")),
+                    FontWeight = FontWeights.Bold,
+                    Margin = new Thickness(0, 0, 0, 10)
+                };
+
+                TextBox txtNome = new TextBox
+                {
+                    Height = 30,
+                    Background = Brushes.White,
+                    Foreground = Brushes.Black,
+                    Padding = new Thickness(5)
+                };
+
+                StackPanel btnPanel = new StackPanel
+                {
+                    Orientation = Orientation.Horizontal,
+                    HorizontalAlignment = HorizontalAlignment.Right,
+                    Margin = new Thickness(0, 15, 0, 0)
+                };
+
+                // Botão Confirmar
+                Button btnConfirmar = new Button
+                {
+                    Content = "Confirmar",
+                    Width = 90,
+                    Height = 30,
+                    Margin = new Thickness(0, 0, 10, 0),
+                    Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#0d1216")),
+                    Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#fff8ef")),
+                    FontWeight = FontWeights.Bold,
+                    Cursor = Cursors.Hand
+                };
+                btnConfirmar.MouseEnter += (s, e) =>
+                {
+                    btnConfirmar.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#fff8ef"));
+                    btnConfirmar.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#0d1216"));
+                };
+                btnConfirmar.MouseLeave += (s, e) =>
+                {
+                    btnConfirmar.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#0d1216"));
+                    btnConfirmar.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#fff8ef"));
+                };
+
+                // Botão Cancelar
+                Button btnCancelar = new Button
+                {
+                    Content = "Cancelar",
+                    Width = 90,
+                    Height = 30,
+                    Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#0d1216")),
+                    Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#fff8ef")),
+                    FontWeight = FontWeights.Bold,
+                    Cursor = Cursors.Hand
+                };
+                btnCancelar.MouseEnter += (s, e) =>
+                {
+                    btnCancelar.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#fff8ef"));
+                    btnCancelar.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#0d1216"));
+                };
+                btnCancelar.MouseLeave += (s, e) =>
+                {
+                    btnCancelar.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#0d1216"));
+                    btnCancelar.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#fff8ef"));
+                };
+
+                btnPanel.Children.Add(btnConfirmar);
+                btnPanel.Children.Add(btnCancelar);
+
+                stack.Children.Add(lbl);
+                stack.Children.Add(txtNome);
+                stack.Children.Add(btnPanel);
+
+                container.Child = stack;
+                inputWindow.Content = container;
+
+                string nomeModelo = null;
+
+                btnConfirmar.Click += (s, eArgs) =>
+                {
+                    if (string.IsNullOrWhiteSpace(txtNome.Text))
+                    {
+                        MessageBox.Show("Nome do modelo é obrigatório.");
+                        return;
+                    }
+                    nomeModelo = txtNome.Text.Trim();
+                    inputWindow.DialogResult = true;
+                    inputWindow.Close();
+                };
+
+                btnCancelar.Click += (s, eArgs) =>
+                {
+                    inputWindow.DialogResult = false;
+                    inputWindow.Close();
+                };
+
+                // Exibe modal
+                bool? resultado = inputWindow.ShowDialog();
+
+                if (resultado != true)
                     return;
-                }
 
                 int usuarioCriadorId = _modeloService.ObterUsuarioIdPorEmail(_email);
                 if (usuarioCriadorId <= 0)
@@ -209,6 +339,14 @@ namespace ORCA
             {
                 MessageBox.Show("Erro ao salvar modelo: " + ex.Message);
             }
+        }
+
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            homePage_adm homePage_Adm = new homePage_adm(_email, _servidor, _bd, _usr, _senha);
+            homePage_Adm.Show();
+            this.Close();
         }
     }
 }

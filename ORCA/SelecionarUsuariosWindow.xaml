@@ -9,8 +9,41 @@
         Height="450"
         Width="300"
         Background="#0d1216"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
 
+    <Window.Resources>
+        <!-- Estilo de botão (padrão escuro com hover invertido) -->
+        <Style x:Key="DefaultButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="143"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                            Background="#0d1216"
+                            CornerRadius="8"
+                            BorderBrush="#fff8ef"
+                            BorderThickness="2">
+                            <ContentPresenter x:Name="content"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextBlock.Foreground="#fff8ef"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#fff8ef"/>
+                                <Setter TargetName="content" Property="TextBlock.Foreground" Value="#0d1216"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
     <Grid Margin="10">
         <!-- Elemento claro -->
         <Border Background="#fff8ef" CornerRadius="10" Padding="10">
@@ -97,5 +130,14 @@
 
             </StackPanel>
         </Border>
+        
+        <!-- Botão Voltar -->
+        <Button Name="btnVoltar"
+        Content="Voltar"
+        Style="{StaticResource DefaultButtonStyle}"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Top"
+        Margin="0,367,0,0"
+        Click="btnVoltar_Click" Width="260"/>
     </Grid>
 </Window>

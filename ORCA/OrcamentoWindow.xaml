@@ -5,7 +5,44 @@
         Height="500" 
         Width="900"
         Background="#0d1216"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+            ResizeMode="NoResize"
+    >
+
+    <Window.Resources>
+        <!-- Estilo do botão voltar -->
+        <Style x:Key="VoltarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#fff8ef"/>
+            <Setter Property="Foreground" Value="#0d1216"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="80" Margin="0,0,1,0">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="24" Margin="0,4,0,3">
+                                <ContentPresenter VerticalAlignment="Center"/>
+                                <Path Data="M10,0 L0,10 L10,20"
+                              Margin="4.5,0,0,0"
+                              StrokeThickness="2"
+                              Stretch="Fill" Width="14" Height="14" Stroke="#FF0D1216"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2c3a44"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
 
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
@@ -204,6 +241,13 @@
                 </Style>
             </DataGrid.Resources>
         </DataGrid>
+
+        <Button x:Name="btnVoltar"
+        Style="{StaticResource VoltarButtonStyle}"
+        Click="btnVoltar_Click"
+        VerticalAlignment="Top"
+        Margin="21,22,0,0"
+        Width="34" Height="30"/>
 
     </Grid>
 </Window>

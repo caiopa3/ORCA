@@ -222,5 +222,10 @@ namespace ORCA
                 ImgFooter.Source = new BitmapImage(new Uri(footerPath));
             }
         }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

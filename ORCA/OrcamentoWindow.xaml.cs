@@ -23,6 +23,7 @@ namespace ORCA
         private readonly string _email;
         public string tituloJanela;
 
+
         public OrcamentoWindow(int orcamentoId, OrcamentoService orcamentoService, string email, string nome)
         {
             InitializeComponent();
@@ -287,5 +288,12 @@ namespace ORCA
                 MessageBox.Show("Erro ao exportar PDF: " + ex.Message);
             }
         }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+
     }
 }

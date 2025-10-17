@@ -128,9 +128,8 @@
                 Style="{StaticResource VoltarButtonStyle}"
                 Content=""
                 Click="btnVoltar_Click"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="6,6,0,0"
+                VerticalAlignment="Center"
+                Margin="4,0,0,0"
                 Width="40" Height="34"/>
 
         <!-- Título -->

@@ -1,39 +1,84 @@
 ﻿<Window x:Class="ORCA.NovaColunaWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="NovaColunaWindow" 
-        Height="361" 
-        Width="450"
+        Title="Nova Coluna"
+        Height="420"
+        Width="526"
+        Background="#0d1216"
         WindowStartupLocation="CenterScreen"
-        Background="#1E1E1E">
+        ResizeMode="NoResize">
 
-    <Grid Margin="20">
-        <Border CornerRadius="12" Background="#0d1216" Padding="20">
-            <StackPanel>
+    <Window.Resources>
+        <!-- Estilo padrão dos botões (escuro com hover invertido) -->
+        <Style x:Key="DefaultButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="410"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="#0d1216"
+                                CornerRadius="10"
+                                BorderBrush="#fff8ef"
+                                BorderThickness="2">
+                            <ContentPresenter x:Name="content"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              TextBlock.Foreground="#fff8ef"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#fff8ef"/>
+                                <Setter TargetName="content" Property="TextBlock.Foreground" Value="#0d1216"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#e0e0e0"/>
+                                <Setter TargetName="content" Property="TextBlock.Foreground" Value="#0d1216"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="111*"/>
+            <RowDefinition Height="76*"/>
+        </Grid.RowDefinitions>
+        <!-- Container branco igual ao padrão -->
+        <Border Background="#fff8ef" CornerRadius="12" Padding="15" Grid.RowSpan="2">
+            <StackPanel VerticalAlignment="Top" Margin="-5,0,-5,0">
+
                 <!-- Nome da Coluna -->
                 <TextBlock Text="Nome da Coluna:" 
-                           Foreground="White" 
+                           Foreground="#0d1216" 
                            FontWeight="Bold" 
                            Margin="0,0,0,5"/>
-                <Border CornerRadius="8" Background="#fff8ef">
+                <Border CornerRadius="8" Background="#fff8ef" BorderBrush="#0d1216" BorderThickness="2">
                     <TextBox x:Name="txtNomeColuna" 
                              Background="Transparent" 
                              Foreground="Black" 
                              BorderThickness="0" 
-                             Padding="8"/>
+                             Padding="8" 
+                             Height="30"/>
                 </Border>
 
                 <!-- Tipo de Dado -->
                 <TextBlock Text="Tipo de Dado:" 
-                           Foreground="White" 
+                           Foreground="#0d1216" 
                            FontWeight="Bold" 
                            Margin="0,15,0,5"/>
-                <Border CornerRadius="8" Background="#0d1216">
+                <Border CornerRadius="8" Background="#fff8ef" BorderBrush="#0d1216" BorderThickness="2">
                     <ComboBox x:Name="cmbTipoDado" 
                               Background="#fff8ef" 
                               Foreground="Black" 
                               BorderThickness="0" 
-                              Padding="8">
+                              Padding="8"
+                              Height="30">
                         <ComboBoxItem Content="Texto"/>
                         <ComboBoxItem Content="Número"/>
                         <ComboBoxItem Content="Data"/>
@@ -44,40 +89,33 @@
                 <!-- Checkbox para valor fixo -->
                 <CheckBox x:Name="chkValorFixo"
                           Content="Definir valor fixo para esta coluna"
-                          Foreground="White"
+                          Foreground="#0d1216"
                           FontWeight="Bold"
                           Margin="0,15,0,5"
                           Checked="chkValorFixo_Checked"
                           Unchecked="chkValorFixo_Unchecked"/>
 
                 <!-- TextBox para valor fixo, inicialmente oculto -->
-                <Border x:Name="borderValorFixo" CornerRadius="8" Background="#fff8ef" Visibility="Collapsed">
+                <Border x:Name="borderValorFixo" CornerRadius="8" Background="#fff8ef" BorderBrush="#0d1216" BorderThickness="2" Visibility="Collapsed" Margin="0,0,0,0">
                     <TextBox x:Name="txtValorFixo" 
                              Background="Transparent" 
                              Foreground="Black" 
                              BorderThickness="0" 
                              Padding="8"
-                             />
+                             Height="30"/>
                 </Border>
 
-                <!-- Botão -->
+                <!-- Botão Confirmar -->
                 <Button Content="Confirmar" 
-                        Click="Confirmar_Click" 
-                        Background="#007ACC" 
-                        Foreground="White" 
-                        FontWeight="Bold" 
-                        BorderThickness="0" 
-                        Margin="0,20,0,0" 
-                        Padding="10"
-                        Cursor="Hand">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border CornerRadius="8" Background="{TemplateBinding Background}">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
+                        Style="{StaticResource DefaultButtonStyle}" 
+                        Margin="0,20,0,10"
+                        Click="Confirmar_Click" Width="470"/>
+
+                <!-- Botão Voltar -->
+                <Button Content="Voltar" 
+                        Style="{StaticResource DefaultButtonStyle}"
+                        Click="BtnVoltar_Click" Width="470"/>
+
             </StackPanel>
         </Border>
     </Grid>

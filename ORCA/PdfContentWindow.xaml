@@ -8,12 +8,47 @@
         Title="PdfContentWindow"
         Height="450" Width="800"
         Background="#0d1216"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
 
-    <Grid Margin="10">
+    <Window.Resources>
+        <!-- Estilo de botão (padrão escuro com hover invertido) -->
+        <Style x:Key="DefaultButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="143"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="#0d1216"
+                                CornerRadius="8"
+                                BorderBrush="#fff8ef"
+                                BorderThickness="2">
+                            <ContentPresenter x:Name="content"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              TextBlock.Foreground="#fff8ef"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#fff8ef"/>
+                                <Setter TargetName="content" Property="TextBlock.Foreground" Value="#0d1216"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 
-        <!-- TextBox com fundo claro e borda arredondada -->
-        <Border CornerRadius="8" Background="#fff8ef" Padding="4" Margin="0,0,0,50">
+    <Grid Margin="20">
+        <!-- Caixa de texto centralizada -->
+        <Border CornerRadius="8"
+                Background="#fff8ef"
+                Padding="4"
+                Margin="0,40,0,70">
             <TextBox Name="TxtPdfContent"
                      VerticalScrollBarVisibility="Auto"
                      HorizontalScrollBarVisibility="Auto"
@@ -26,37 +61,22 @@
                      Text="Digite aqui o conteúdo..."/>
         </Border>
 
-        <!-- Botão escuro com efeito hover -->
+        <!-- Botão Voltar -->
+        <Button Name="btnVoltar"
+                Content="Voltar"
+                Style="{StaticResource DefaultButtonStyle}"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Margin="0,0,0,15"
+                Click="btnVoltar_Click"/>
+
+        <!-- Botão Gerar PDF -->
         <Button Name="BtnGeneratePdf"
                 Content="Gerar PDF"
-                Width="143"
-                Height="35"
+                Style="{StaticResource DefaultButtonStyle}"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
-                Margin="0,0,0,4"
-                Click="BtnGeneratePdf_Click"
-                FontWeight="Bold">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="border"
-                            Background="#0d1216"
-                            CornerRadius="8"
-                            BorderBrush="#fff8ef"
-                            BorderThickness="2">
-                        <ContentPresenter x:Name="content"
-                                          HorizontalAlignment="Center"
-                                          VerticalAlignment="Center"
-                                          TextBlock.Foreground="#fff8ef"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#fff8ef"/>
-                            <Setter TargetName="content" Property="TextBlock.Foreground" Value="#0d1216"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
+                Margin="0,0,0,15"
+                Click="BtnGeneratePdf_Click"/>
     </Grid>
 </Window>

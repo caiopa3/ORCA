@@ -9,8 +9,52 @@
         Height="450" Width="800"
         Background="#0d1216"
         WindowStartupLocation="CenterScreen"
-        FontFamily="Segoe UI">
+        FontFamily="Segoe UI"
+        ResizeMode="NoResize">
 
+    <Window.Resources>
+        <!-- Estilo do botão voltar -->
+        <Style x:Key="VoltarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#0d1216"/>
+            <Setter Property="Foreground" Value="#fff8ef"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="34"/>
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="50"
+                                Padding="6">
+                            <Grid>
+                                <Path Data="M10,0 L0,10 L10,20"
+                                      StrokeThickness="2"
+                                      Stroke="{TemplateBinding Foreground}"
+                                      Stretch="Uniform"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      Width="10" Height="10"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Hover: escurece -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#d9d0c6"/>
+                            </Trigger>
+                            <!-- Pressionado: cor de destaque -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#c5b9ad"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 
     <Grid>
         <!-- === CARD CLARO CENTRAL === -->
@@ -20,8 +64,6 @@
                 Padding="20"
                 SnapsToDevicePixels="True">
 
-
-
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -29,7 +71,14 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-
+                <!-- === BOTÃO VOLTAR === -->
+                <Button x:Name="btnVoltar"
+                        Style="{StaticResource VoltarButtonStyle}"
+                        Click="btnVoltar_Click"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Margin="10,0,0,0"
+                        ToolTip="Voltar"/>
 
                 <!-- === BOTÕES SUPERIORES === -->
                 <StackPanel Orientation="Horizontal"
@@ -39,23 +88,22 @@
 
                     <!-- Botão: Carregar Cabeçalho -->
                     <Button x:Name="BtnLoadHeader"
-        Width="180" Height="45"
-        Margin="10"
-        Cursor="Hand"
-        FontWeight="Bold"
-        FontSize="14"
-        Click="BtnLoadHeader_Click">
-
+                            Width="180" Height="45"
+                            Margin="10"
+                            Cursor="Hand"
+                            FontWeight="Bold"
+                            FontSize="14"
+                            Click="BtnLoadHeader_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="border"
-                    Background="#0d1216"
-                    BorderBrush="#0d1216"
-                    BorderThickness="2"
-                    CornerRadius="10">
+                                        Background="#0d1216"
+                                        BorderBrush="#0d1216"
+                                        BorderThickness="2"
+                                        CornerRadius="10">
                                     <ContentPresenter HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"
-                                  TextBlock.Foreground="#fff8ef"/>
+                                                      VerticalAlignment="Center"
+                                                      TextBlock.Foreground="#fff8ef"/>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
@@ -69,30 +117,27 @@
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
                         </Button.Template>
-
                         <TextBlock Text="Carregar Cabeçalho" Foreground="#fff8ef" HorizontalAlignment="Center"/>
                     </Button>
 
-
                     <!-- Botão: Carregar Rodapé -->
                     <Button x:Name="BtnLoadFooter"
-        Width="180" Height="45"
-        Margin="10"
-        Cursor="Hand"
-        FontWeight="Bold"
-        FontSize="14"
-        Click="BtnLoadFooter_Click">
-
+                            Width="180" Height="45"
+                            Margin="10"
+                            Cursor="Hand"
+                            FontWeight="Bold"
+                            FontSize="14"
+                            Click="BtnLoadFooter_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="border"
-                    Background="#0d1216"
-                    BorderBrush="#0d1216"
-                    BorderThickness="2"
-                    CornerRadius="10">
+                                        Background="#0d1216"
+                                        BorderBrush="#0d1216"
+                                        BorderThickness="2"
+                                        CornerRadius="10">
                                     <ContentPresenter HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"
-                                  TextBlock.Foreground="#fff8ef"/>
+                                                      VerticalAlignment="Center"
+                                                      TextBlock.Foreground="#fff8ef"/>
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
@@ -106,10 +151,8 @@
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
                         </Button.Template>
-
                         <TextBlock Text="Carregar Rodapé" Foreground="#fff8ef" HorizontalAlignment="Center"/>
                     </Button>
-
                 </StackPanel>
 
                 <!-- === PRÉ-VISUALIZAÇÃO === -->
@@ -141,72 +184,65 @@
                     </GroupBox>
                 </Grid>
 
-                <!-- === BOTÃO EXPORTAR PDF (com animação verde) === -->
+                <!-- === BOTÃO EXPORTAR PDF === -->
                 <Button x:Name="BtnExportPdf"
-        Grid.Row="2"
-        Width="400" Height="45"
-        HorizontalAlignment="Center"
-        Margin="0,10,0,10"
-        FontWeight="Bold"
-        FontSize="14"
-        Cursor="Hand"
-        Background="Transparent"
-        BorderBrush="#2E7D32"
-        BorderThickness="2"
-        Click="BtnExportPdf_Click">
-
+                        Grid.Row="2"
+                        Width="400" Height="45"
+                        HorizontalAlignment="Center"
+                        Margin="0,10,0,10"
+                        FontWeight="Bold"
+                        FontSize="14"
+                        Cursor="Hand"
+                        Background="Transparent"
+                        BorderBrush="#2E7D32"
+                        BorderThickness="2"
+                        Click="BtnExportPdf_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border x:Name="border"
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="10">
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="10">
                                 <TextBlock x:Name="textBlock"
-                           Text="Exportar PDF"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           Foreground="#2E7D32"
-                           FontWeight="Bold"/>
+                                           Text="Exportar PDF"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Foreground="#2E7D32"
+                                           FontWeight="Bold"/>
                             </Border>
-
                             <ControlTemplate.Triggers>
                                 <!-- Hover -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Trigger.EnterActions>
                                         <BeginStoryboard>
                                             <Storyboard>
-                                                <!-- Fundo verde -->
                                                 <ColorAnimation Storyboard.TargetName="border"
-                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                                                To="#2E7D32"
-                                                Duration="0:0:0.2"/>
-                                                <!-- Texto branco -->
+                                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                                To="#2E7D32"
+                                                                Duration="0:0:0.2"/>
                                                 <ColorAnimation Storyboard.TargetName="textBlock"
-                                                Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
-                                                To="White"
-                                                Duration="0:0:0.2"/>
+                                                                Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                                To="White"
+                                                                Duration="0:0:0.2"/>
                                             </Storyboard>
                                         </BeginStoryboard>
                                     </Trigger.EnterActions>
                                     <Trigger.ExitActions>
                                         <BeginStoryboard>
                                             <Storyboard>
-                                                <!-- Volta para transparente -->
                                                 <ColorAnimation Storyboard.TargetName="border"
-                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                                                To="Transparent"
-                                                Duration="0:0:0.2"/>
-                                                <!-- Texto verde novamente -->
+                                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                                To="Transparent"
+                                                                Duration="0:0:0.2"/>
                                                 <ColorAnimation Storyboard.TargetName="textBlock"
-                                                Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
-                                                To="#2E7D32"
-                                                Duration="0:0:0.2"/>
+                                                                Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                                To="#2E7D32"
+                                                                Duration="0:0:0.2"/>
                                             </Storyboard>
                                         </BeginStoryboard>
                                     </Trigger.ExitActions>
                                 </Trigger>
-
                                 <!-- Pressionado -->
                                 <Trigger Property="IsPressed" Value="True">
                                     <Setter TargetName="border" Property="Background" Value="#1B5E20"/>

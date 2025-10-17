@@ -236,5 +236,22 @@ namespace ORCA
                 MessageBox.Show("Erro ao filtrar orçamentos: " + ex.Message);
             }
         }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            // Fecha todas as janelas abertas, menos esta (para evitar erro de coleção modificada)
+            foreach (Window janela in Application.Current.Windows)
+            {
+                if (janela != this)
+                    janela.Close();
+            }
+
+            // Abre a tela inicial
+            MainWindow telaInicial = new MainWindow();
+            telaInicial.Show();
+
+            // Fecha a janela atual por último
+            this.Close();
+        }
     }
 }

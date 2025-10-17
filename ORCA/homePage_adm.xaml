@@ -161,10 +161,6 @@
                                     </Button.Template>
                                     <TextBlock Text="Criar" Foreground="#AEE0B4" FontWeight="Bold"/>
                                 </Button>
-                                <!-- Perfil -->
-
-
-
 
                                 <!-- Gerenciar Funcionários -->
                                 <Button x:Name="btnGerenciar" 
@@ -195,45 +191,37 @@
                                     <TextBlock Text="Gerenciar Funcionários" Foreground="#A9C7E8" FontWeight="Bold"/>
                                 </Button>
 
-                                <!-- Perfil -->
-
-                            </StackPanel>
-                            
-                            <Button x:Name="btnPerfil"
+                                <!-- Botão Perfil dentro do StackPanel -->
+                                <Button x:Name="btnPerfil"
+                                        Width="36" Height="36"
                                         Cursor="Hand"
-                                        Grid.Column="1" Margin="634,2,5,1" RenderTransformOrigin="0.5,0.5" Click="btnPerfil_Click">
-                                <Button.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform ScaleX="-1"/>
-                                        <SkewTransform/>
-                                        <RotateTransform/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </Button.RenderTransform>
-                                <Button.Template>
-                                    <ControlTemplate TargetType="{x:Type Button}">
-                                        <Border x:Name="bd" CornerRadius="18"
+                                        Click="btnPerfil_Click">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border x:Name="bd" CornerRadius="18"
                                                     BorderThickness="1.6"
                                                     BorderBrush="#3CB86F"
                                                     Background="Transparent"
                                                     Padding="4">
-                                            <TextBlock Text="👤" 
+                                                <TextBlock Text="👤" 
                                                            FontSize="18"
                                                            HorizontalAlignment="Center" 
                                                            VerticalAlignment="Center" 
                                                            Foreground="#AEE0B4"/>
-                                        </Border>
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter TargetName="bd" Property="Background" Value="#3CB86F"/>
-                                            </Trigger>
-                                            <Trigger Property="IsPressed" Value="True">
-                                                <Setter TargetName="bd" Property="Background" Value="#2D8A56"/>
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="bd" Property="Background" Value="#3CB86F"/>
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="True">
+                                                    <Setter TargetName="bd" Property="Background" Value="#2D8A56"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+
+                            </StackPanel>
                         </Grid>
                     </Border>
 

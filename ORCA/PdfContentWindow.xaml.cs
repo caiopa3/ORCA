@@ -48,5 +48,10 @@ namespace ORCA
             }
             DialogResult = true; // Fecha a janela e retorna true
         }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
