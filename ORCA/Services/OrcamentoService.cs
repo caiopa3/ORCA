@@ -327,7 +327,7 @@ namespace ORCA.Services
         }
 
         public void CadastrarUsuarioCompleto(
-            string nomeCompleto,    
+            string nomeCompleto,
             string email,
             string senha,
             string telefoneCelular,

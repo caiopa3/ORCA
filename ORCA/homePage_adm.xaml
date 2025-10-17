@@ -233,13 +233,13 @@
                             Padding="12" 
                             Grid.ColumnSpan="3">
                         <ScrollViewer VerticalScrollBarVisibility="Auto">
-                            <WrapPanel x:Name="wrapPanelOrcamentos" 
-                                       Orientation="Horizontal" 
-                                       ItemHeight="140" 
-                                       ItemWidth="200"
-                                       Margin="6" 
-                                       HorizontalAlignment="Left" 
-                                       VerticalAlignment="Top" />
+                            <WrapPanel x:Name="panelModelos"
+                               Orientation="Horizontal"
+                               ItemHeight="140"
+                               ItemWidth="260"
+                               Margin="6"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top" />
                         </ScrollViewer>
                     </Border>
                 </Grid>
