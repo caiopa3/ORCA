@@ -1,29 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\internet.info\\Documents\\ORCA - GIT\\ORCA\\ORCA\\",
+  "WorkspaceRootPath": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\documents\\orca - git\\orca\\orca\\homepage_adm.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\orca.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:orca.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\homepage_adm.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:homepage_adm.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\documents\\orca - git\\orca\\orca\\homepage_adm.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\homepage_adm.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:homepage_adm.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\documents\\orca - git\\orca\\orca\\criar_orca.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\criar_orca.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:criar_orca.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\documents\\orca - git\\orca\\orca\\criar_orca.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\criar_orca.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:criar_orca.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\documents\\orca - git\\orca\\orca\\services\\orcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\services\\orcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:services\\orcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\documents\\orca - git\\orca\\orca\\services\\modeloorcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|c:\\users\\internet.info\\desktop\\orca\\orca\\services\\modeloorcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5D68471B-F00F-4A4C-BD4E-3CE062AB457E}|ORCA.csproj|solutionrelative:services\\modeloorcamentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,83 +38,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ORCA",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj",
+              "RelativeDocumentMoniker": "ORCA.csproj",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\ORCA.csproj",
+              "RelativeToolTip": "ORCA.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-24T13:19:50.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "homePage_adm.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Documents\\ORCA - GIT\\ORCA\\ORCA\\homePage_adm.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\homePage_adm.xaml.cs",
               "RelativeDocumentMoniker": "homePage_adm.xaml.cs",
-              "ToolTip": "C:\\Users\\internet.info\\Documents\\ORCA - GIT\\ORCA\\ORCA\\homePage_adm.xaml.cs",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\homePage_adm.xaml.cs",
               "RelativeToolTip": "homePage_adm.xaml.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAuwJcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAA8wJcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-17T14:16:22.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "homePage_adm.xaml",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Documents\\ORCA - GIT\\ORCA\\ORCA\\homePage_adm.xaml",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\homePage_adm.xaml",
               "RelativeDocumentMoniker": "homePage_adm.xaml",
-              "ToolTip": "C:\\Users\\internet.info\\Documents\\ORCA - GIT\\ORCA\\ORCA\\homePage_adm.xaml",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\homePage_adm.xaml",
               "RelativeToolTip": "homePage_adm.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-17T14:16:21.96Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "criar_orca.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Documents\\ORCA - GIT\\ORCA\\ORCA\\criar_orca.xaml.cs",
-              "RelativeDocumentMoniker": "criar_orca.xaml.cs",
-              "ToolTip": "C:\\Users\\internet.info\\Documents\\ORCA - GIT\\ORCA\\ORCA\\criar_orca.xaml.cs",
-              "RelativeToolTip": "criar_orca.xaml.cs",
-              "ViewState": "AgIAAPoBAAAAAAAAAAAAwCICAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T14:16:03.986Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-17T14:16:21.96Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "criar_orca.xaml",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Documents\\ORCA - GIT\\ORCA\\ORCA\\criar_orca.xaml",
-              "RelativeDocumentMoniker": "criar_orca.xaml",
-              "ToolTip": "C:\\Users\\internet.info\\Documents\\ORCA - GIT\\ORCA\\ORCA\\criar_orca.xaml",
-              "RelativeToolTip": "criar_orca.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-17T14:16:01.44Z",
-              "EditorCaption": ""
+              "Title": "criar_orca.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\criar_orca.xaml.cs",
+              "RelativeDocumentMoniker": "criar_orca.xaml.cs",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\criar_orca.xaml.cs",
+              "RelativeToolTip": "criar_orca.xaml.cs",
+              "ViewState": "AgIAAPoBAAAAAAAAAAAAwCICAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T14:16:03.986Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "OrcamentoService.cs",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Documents\\ORCA - GIT\\ORCA\\ORCA\\Services\\OrcamentoService.cs",
-              "RelativeDocumentMoniker": "Services\\OrcamentoService.cs",
-              "ToolTip": "C:\\Users\\internet.info\\Documents\\ORCA - GIT\\ORCA\\ORCA\\Services\\OrcamentoService.cs",
-              "RelativeToolTip": "Services\\OrcamentoService.cs",
-              "ViewState": "AgIAANMBAAAAAAAAAAAAwPsBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T14:15:46.268Z",
-              "EditorCaption": ""
+              "Title": "criar_orca.xaml",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\criar_orca.xaml",
+              "RelativeDocumentMoniker": "criar_orca.xaml",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\criar_orca.xaml",
+              "RelativeToolTip": "criar_orca.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-17T14:16:01.44Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "OrcamentoService.cs",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\Services\\OrcamentoService.cs",
+              "RelativeDocumentMoniker": "Services\\OrcamentoService.cs",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\Services\\OrcamentoService.cs",
+              "RelativeToolTip": "Services\\OrcamentoService.cs",
+              "ViewState": "AgIAANMBAAAAAAAAAAAAwPsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T14:15:46.268Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ModeloOrcamentoService.cs",
-              "DocumentMoniker": "C:\\Users\\internet.info\\Documents\\ORCA - GIT\\ORCA\\ORCA\\Services\\ModeloOrcamentoService.cs",
+              "DocumentMoniker": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\Services\\ModeloOrcamentoService.cs",
               "RelativeDocumentMoniker": "Services\\ModeloOrcamentoService.cs",
-              "ToolTip": "C:\\Users\\internet.info\\Documents\\ORCA - GIT\\ORCA\\ORCA\\Services\\ModeloOrcamentoService.cs",
+              "ToolTip": "C:\\Users\\internet.info\\Desktop\\ORCA\\ORCA\\Services\\ModeloOrcamentoService.cs",
               "RelativeToolTip": "Services\\ModeloOrcamentoService.cs",
               "ViewState": "AgIAABEBAAAAAAAAAAAAwDkBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-17T14:15:41.122Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-17T14:15:41.122Z"
             }
           ]
         }

@@ -6,11 +6,16 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resource\icone.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Resource\login.png" />
     <None Remove="Resource\orca.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resource\icone.ico" />
   </ItemGroup>
 
   <ItemGroup>

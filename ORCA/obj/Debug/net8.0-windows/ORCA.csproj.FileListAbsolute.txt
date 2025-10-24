@@ -547,3 +547,4 @@ C:\Users\internet.info\Documents\ORCA - GIT\ORCA\ORCA\obj\Debug\net8.0-windows\O
 C:\Users\internet.info\Documents\ORCA - GIT\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.Up2Date
 C:\Users\internet.info\Documents\ORCA - GIT\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.genruntimeconfig.cache
 C:\Users\internet.info\Documents\ORCA - GIT\ORCA\ORCA\obj\Debug\net8.0-windows\ref\ORCA.dll
+C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_Content.g.cs
