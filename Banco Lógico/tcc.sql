@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/10/2025 às 14:28
+-- Tempo de geração: 30/10/2025 às 15:07
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `tcc`
+-- Banco de dados: `banco`
 --
 
 -- --------------------------------------------------------
@@ -38,9 +38,7 @@ CREATE TABLE `modelo_orcamento` (
 --
 
 INSERT INTO `modelo_orcamento` (`id`, `nome`, `usr_criador_id`) VALUES
-(11, 'Flores', 1),
-(12, 'Carro', 13),
-(13, 'fsafsafsa', 1);
+(15, 'Teste 1', 22);
 
 -- --------------------------------------------------------
 
@@ -59,9 +57,7 @@ CREATE TABLE `modelo_orcamento_dados` (
 --
 
 INSERT INTO `modelo_orcamento_dados` (`id`, `modelo_id`, `dados_json`) VALUES
-(11, 11, '{\"Colunas\":[\"Nome\",\"Valor\"],\"Linhas\":[{\"Nome\":\"\",\"Valor\":\"\"}]}'),
-(12, 12, '{\"Colunas\":[\"Nome\",\"Valor\"],\"Linhas\":[{\"Nome\":\"\",\"Valor\":\"\"}]}'),
-(13, 13, '{\"Colunas\":[\"dsadsa\",\"fsafsa\"],\"Linhas\":[{\"dsadsa\":\"12\",\"fsafsa\":52.0}],\"FixedValues\":{\"dsadsa\":\"12\",\"fsafsa\":52.0}}');
+(15, 15, '{\"Colunas\":[\"Nome\",\"Valor Fixo\",\"Valor Variável\",\"Total\"],\"Linhas\":[{\"Nome\":\"\",\"Valor Fixo\":\"200\",\"Valor Variável\":\"\",\"Total\":\"= Valor FIxo + Valor Variável\"}],\"FixedValues\":{\"Valor Fixo\":200.0,\"Total\":\"= Valor FIxo + Valor Variável\"}}');
 
 -- --------------------------------------------------------
 
@@ -80,11 +76,7 @@ CREATE TABLE `modelo_orcamento_usuarios` (
 --
 
 INSERT INTO `modelo_orcamento_usuarios` (`id`, `modelo_id`, `usuario_id`) VALUES
-(6, 11, 2),
-(8, 12, 2),
-(9, 13, 2),
-(10, 13, 1),
-(12, 13, 13);
+(13, 15, 24);
 
 -- --------------------------------------------------------
 
@@ -104,10 +96,8 @@ CREATE TABLE `orcamento` (
 --
 
 INSERT INTO `orcamento` (`id`, `nome`, `usr_email`, `modelo_id`) VALUES
-(21, 'Flores', 'yslan_usr@gmail.com', 11),
-(22, 'Carro 1', 'caio_usr@gmail.com', 12),
-(23, 'Carro 1', 'yslan_usr@gmail.com', 12),
-(24, 'Novo Orçamento', 'yslan_usr@gmail.com', 11);
+(25, 'Novo Orçamento', 'usr@orcamento.com', 15),
+(26, 'Novo Orçamento 2', 'usr@orcamento.com', 15);
 
 -- --------------------------------------------------------
 
@@ -127,9 +117,7 @@ CREATE TABLE `orcamento_dados` (
 --
 
 INSERT INTO `orcamento_dados` (`id`, `orcamento_id`, `usuario_id`, `dados_json`) VALUES
-(1, 21, 2, '{\"Colunas\":[\"Nome\",\"Valor\"],\"Linhas\":[{\"Nome\":\"Ortiga\",\"Valor\":\"123\"}]}'),
-(3, 23, 2, '{\"Colunas\":[\"Nome\",\"Valor\"],\"Linhas\":[{\"Nome\":\"Toyota\",\"Valor\":\"130000\"}]}'),
-(4, 24, 2, '{\"Colunas\":[\"Nome\",\"Valor\"],\"Linhas\":[{\"Nome\":\"fsafsa\",\"Valor\":\"fsafsa\"},{\"Nome\":\"fsafsa\",\"Valor\":\"fsafsaaffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffD\"}],\"Formulas\":{}}');
+(5, 25, 24, '{\"Colunas\":[\"Nome\",\"Valor Fixo\",\"Valor Variável\",\"Total\"],\"Linhas\":[{\"Nome\":\"Urtigas\",\"Valor Fixo\":\"200\",\"Valor Variável\":\"5\",\"Total\":\"205\"},{\"Nome\":\"Rosas\",\"Valor Fixo\":\"200\",\"Valor Variável\":\"20\",\"Total\":\"220\"},{\"Nome\":\"Margaridas\",\"Valor Fixo\":\"200\",\"Valor Variável\":\"7\",\"Total\":\"207\"},{\"Nome\":\"Total\",\"Valor Fixo\":\"\",\"Valor Variável\":null,\"Total\":\"632\"}],\"Formulas\":{\"3:Total\":\"= [1]Total + [2]Total + [3]Total\",\"2:Total\":\"= Valor FIxo + Valor Variável\",\"1:Total\":\"= Valor FIxo + Valor Variável\",\"0:Total\":\"= Valor FIxo + Valor Variável\"}}');
 
 -- --------------------------------------------------------
 
@@ -153,12 +141,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nome_completo`, `email`, `telefone_celular`, `senha`, `permissao`, `cpf`, `rg`) VALUES
-(1, NULL, 0x79736c616e5f61646d3240676d61696c2e636f6d, NULL, 0x313233, 'adm', NULL, NULL),
-(2, NULL, 0x79736c616e5f75737240676d61696c2e636f6d, NULL, 0x313233, 'usr', NULL, NULL),
-(13, NULL, 0x6361696f5f61646d40676d61696c2e636f6d, NULL, 0x313233, 'adm', NULL, NULL),
-(14, 0x66736166, 0x6666617366736140676d61696c2e636f6d, 0x283132292033323331322d33353634, 0x313233, 'usr', 0x3132332c3135362c3436342d3736, 0x31352c3634312c3536342d34),
-(15, 0x59736c616e204465204a657375732053616e746f7320446120436f737461, 0x7a657a696e686f40676d61696c2e636f6d, 0x283131292031313131312d31313131, 0x31323334, 'Adm', 0x3131312c3131312c3131312d3131, 0x31312c3131312c3131312d31),
-(19, 0xa85db156ab53c52a2de5b88cb15ee36a, 0xf44db837763a9f0f644f1a50fd5b05f5, 0x72cef7d88d360a243fa7b7109cf1dfe5, 0x09d97527ba89ef9bd814e63bffc822e4, 'usr', 0x696b7c65b65a8dd88fac08a0f4749a19, 0x327fc1cc5f6fc5e1212e52c6b9533c2d);
+(22, 0x019e69786e145654dd9143a634fc7f4daae7d438cc23ee0445cf66f248024d9b, 0x6d944b3437da1cc3f147a6be15b43d67bae8c42f94c2ec35862df3f2521972c2, 0x13a9c55e4dd9315f7771c84c83e51f81, 0x34c58a79aba7badd6472cc2c53d583e8, 'adm', 0xfc3ed9f3fd493026fef72ce593b71c2f, 0xb5a23f7765344fd90c8216e5ff9181fb),
+(23, 0x0ebfef58b2d631320e52bcedb7368977, 0xbdcc74aaf1b204529c9c2167a12d6c9a5aea88f1978e4eb46a5945fc3d03c57f, 0x6b7af9393047fcd828ac04a235e1acf0, 0x34c58a79aba7badd6472cc2c53d583e8, 'adm', 0x7b1f227f4aef8a79500401d51b005620, 0xc4f0851f5cbd3ee9141ad67b24a5e868),
+(24, 0x00c1ad4b7e2a30d7916425e0003b00aa, 0x659b08564ed2b54a77adf33a98f24c73bae8c42f94c2ec35862df3f2521972c2, 0x13a9c55e4dd9315f7771c84c83e51f81, 0x34c58a79aba7badd6472cc2c53d583e8, 'usr', 0xfc3ed9f3fd493026fef72ce593b71c2f, 0xb5a23f7765344fd90c8216e5ff9181fb);
 
 --
 -- Acionadores `usuario`
@@ -309,37 +294,37 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `modelo_orcamento`
 --
 ALTER TABLE `modelo_orcamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `modelo_orcamento_dados`
 --
 ALTER TABLE `modelo_orcamento_dados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `modelo_orcamento_usuarios`
 --
 ALTER TABLE `modelo_orcamento_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `orcamento`
 --
 ALTER TABLE `orcamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `orcamento_dados`
 --
 ALTER TABLE `orcamento_dados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Restrições para tabelas despejadas

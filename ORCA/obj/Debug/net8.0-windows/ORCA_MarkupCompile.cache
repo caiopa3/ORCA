@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\internet.info\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\
+C:\Users\internet.info\Desktop\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\
 ORCA
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\internet.info\Desktop\ORCA\ORCA\App.xaml
+C:\Users\internet.info\Desktop\ORCA CERTO\ORCA\ORCA\App.xaml
 18293650494
 1-863719010
 26-578501782
-2281084203118
+228151649383
 altFunc_adm.xaml;cadFunc_adm.xaml;criar_orca.xaml;gerar_pdf.xaml;gereFunc_adm.xaml;homePage_adm.xaml;homePage_ges.xaml;homePage_usr.xaml;login_alt_senha.xaml;login_esq_senha.xaml;login_vrf_cod.xaml;MainWindow.xaml;NovaColunaWindow.xaml;OrcamentoWindow.xaml;PdfContentWindow.xaml;PerfilWindow.xaml;SelecionarModeloWindow.xaml;SelecionarUsuariosWindow.xaml;
 
 False
