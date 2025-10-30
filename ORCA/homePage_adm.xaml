@@ -10,27 +10,25 @@
         WindowStyle="None"
         ResizeMode="NoResize">
 
+
+    <!-- Estilo do botão voltar -->
     <Window.Resources>
-        <!-- Estilo do botão voltar -->
         <Style x:Key="VoltarButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="#fff8ef"/>
-            <Setter Property="Foreground" Value="#0d1216"/>
+            <Setter Property="Background" Value="#1e2a33"/>
+            <Setter Property="Foreground" Value="#fff8ef"/>
             <Setter Property="FontFamily" Value="Segoe UI"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Padding" Value="10,5"/>
             <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="80" Margin="0,0,1,0">
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="24" Margin="0,4,0,3">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="6">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="4,0">
+                                <Path Data="M10,0 L0,10 L10,20" Stroke="{TemplateBinding Foreground}" StrokeThickness="2" VerticalAlignment="Center" Margin="0,0,6,0"/>
                                 <ContentPresenter VerticalAlignment="Center"/>
-                                <Path Data="M10,0 L0,10 L10,20"
-                                  Margin="4.5,0,0,0"
-                                  StrokeThickness="2"
-                                  Stretch="Fill" Width="14" Height="14" Stroke="#FF0D1216"/>
                             </StackPanel>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -50,13 +48,11 @@
         <Grid>
 
             <Button x:Name="btnVoltar"
-                Style="{StaticResource VoltarButtonStyle}"
-                Content=""
-                Click="btnVoltar_Click"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="6,6,0,0"
-                Width="40" Height="34"/>
+            Style="{StaticResource VoltarButtonStyle}"
+            Content="Página Inicial"
+            Click="btnVoltar_Click"
+            VerticalAlignment="Top"
+            Width="126" Height="36" Margin="0,9,0,0"/>
 
             <!-- Container creme dentro do frame -->
             <Border Background="#fff8ef" 
@@ -225,25 +221,35 @@
                         </Grid>
                     </Border>
 
+
                     <!-- ===== main content area (escuro) ===== -->
                     <Border Grid.Row="1" 
-                            Background="#0D1214" 
-                            CornerRadius="10"
-                            Margin="8,18,8,8" 
-                            Padding="12" 
-                            Grid.ColumnSpan="3">
+                    Background="#0D1214" 
+                    CornerRadius="10"
+                    Margin="8,18,8,8" 
+                    Padding="12" 
+                    Grid.ColumnSpan="3">
+
                         <ScrollViewer VerticalScrollBarVisibility="Auto">
-                            <WrapPanel x:Name="panelModelos"
-                               Orientation="Horizontal"
-                               ItemHeight="140"
-                               ItemWidth="260"
-                               Margin="6"
-                               HorizontalAlignment="Left"
-                               VerticalAlignment="Top" />
+
+                            <!-- painel que conterá os cards -->
+
+                            <WrapPanel x:Name="panelModelos" 
+                           Orientation="Horizontal" 
+                           ItemHeight="140" 
+                           ItemWidth="200"
+                           Margin="6" 
+                           HorizontalAlignment="Left" 
+                           VerticalAlignment="Top" />
+
                         </ScrollViewer>
+
                     </Border>
+
                 </Grid>
+
             </Border>
+
         </Grid>
     </Border>
 </Window>

@@ -23,23 +23,6 @@ namespace ORCA
             CarregarOrcamentosExistentes();
         }
 
-        private void CarregarOrcamentosExistentes()
-        {
-            wrapPanelOrcamentos.Children.Clear();
-
-            try
-            {
-                var itens = _orcamentoService.ListarPorEmail(_email);
-                foreach (var (id, nome) in itens)
-                {
-                    CriarOrcamentoVisual(id, nome);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao carregar orçamentos: " + ex.Message);
-            }
-        }
 
         // CHAME este método num botão da sua tela (ex.: Click="BtnCriarOrcamento_Click")
         private void BtnCriarOrcamento_Click(object sender, RoutedEventArgs e)
@@ -87,34 +70,90 @@ namespace ORCA
             }
         }
 
+
+        private void CarregarOrcamentosExistentes()
+        {
+            wrapPanelOrcamentos.Children.Clear();
+
+            try
+            {
+                var itens = _orcamentoService.ListarPorEmail(_email);
+                foreach (var (id, nome) in itens)
+                {
+                    CriarOrcamentoVisual(id, nome);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar orçamentos: " + ex.Message);
+            }
+        }
+
         private void CriarOrcamentoVisual(int id, string nome)
         {
+
+            // ===== Card principal =====
             var border = new Border
             {
                 Width = 180,
-                Height = 80,
+                Height = 100,
                 Margin = new Thickness(10),
-                Background = Brushes.LightGray,
-                CornerRadius = new CornerRadius(5),
+                CornerRadius = new CornerRadius(12),
+                Background = (Brush)new BrushConverter().ConvertFrom("#0B1113"),
+                BorderBrush = (Brush)new BrushConverter().ConvertFrom("#3CB86F"),
+                BorderThickness = new Thickness(1.5),
                 Padding = new Thickness(10)
             };
 
-            var panel = new StackPanel();
+            // Efeito visual ao passar o mouse
+            border.MouseEnter += (s, e) =>
+            {
+                border.Background = (Brush)new BrushConverter().ConvertFrom("#10181C");
+            };
+            border.MouseLeave += (s, e) =>
+            {
+                border.Background = (Brush)new BrushConverter().ConvertFrom("#0B1113");
+            };
 
+            // ===== Conteúdo interno =====
+            var panel = new StackPanel
+            {
+                VerticalAlignment = VerticalAlignment.Center,
+                HorizontalAlignment = HorizontalAlignment.Center
+            };
+
+            // Nome do modelo
             var nomeText = new TextBlock
             {
                 Text = nome,
-                FontSize = 14,
                 FontWeight = FontWeights.Bold,
-                Cursor = Cursors.Hand,
-                Tag = id
+                FontSize = 14,
+                Foreground = (Brush)new BrushConverter().ConvertFrom("#AEE0B4"),
+                TextAlignment = TextAlignment.Center,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                Margin = new Thickness(0, 5, 0, 10)
             };
+            panel.Children.Add(nomeText);
 
+            // ===== Painel de botões =====
+            var btnPanel = new StackPanel
+            {
+                Orientation = Orientation.Horizontal,
+                HorizontalAlignment = HorizontalAlignment.Center
+            };
             var btnEntrar = new Button
             {
                 Content = "Entrar",
-                Margin = new Thickness(0, 5, 0, 0),
-                Tag = id // ✅ o botão carrega o ID do orçamento
+                Tag = id, // ✅ o botão carrega o ID do orçamento
+                Width = 70,
+                Height = 28,
+                Cursor = Cursors.Hand,
+                FontWeight = FontWeights.SemiBold,
+                Foreground = (Brush)new BrushConverter().ConvertFrom("#AEE0B4"),
+                Background = Brushes.Transparent,
+                BorderBrush = (Brush)new BrushConverter().ConvertFrom("#3CB86F"),
+                BorderThickness = new Thickness(1.4),
+                Margin = new Thickness(0, 0, 10, 0)
             };
 
             btnEntrar.Click += (s, e) =>
@@ -126,8 +165,9 @@ namespace ORCA
                 }
             };
 
-            panel.Children.Add(nomeText);
             panel.Children.Add(btnEntrar);
+
+            panel.Children.Add(btnPanel);
             border.Child = panel;
 
             wrapPanelOrcamentos.Children.Add(border);

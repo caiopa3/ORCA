@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace ORCA
@@ -40,7 +41,6 @@ namespace ORCA
 
         private void CarregarModelosCriados()
         {
-            // panelModelos deve existir no XAML (WrapPanel)
             panelModelos.Children.Clear();
 
             try
@@ -48,35 +48,118 @@ namespace ORCA
                 var modelos = _modeloService.ListarModelosPorCriadorId(_usuarioId);
                 foreach (var (id, nome) in modelos)
                 {
+                    // ===== Card principal =====
                     var border = new Border
                     {
-                        Width = 260,
-                        Height = 90,
+                        Width = 180,
+                        Height = 100,
                         Margin = new Thickness(10),
-                        Background = Brushes.White,
-                        CornerRadius = new CornerRadius(6),
+                        CornerRadius = new CornerRadius(12),
+                        Background = (Brush)new BrushConverter().ConvertFrom("#0B1113"),
+                        BorderBrush = (Brush)new BrushConverter().ConvertFrom("#3CB86F"),
+                        BorderThickness = new Thickness(1.5),
                         Padding = new Thickness(10)
                     };
 
-                    var stack = new StackPanel();
+                    // Efeito visual ao passar o mouse
+                    border.MouseEnter += (s, e) =>
+                    {
+                        border.Background = (Brush)new BrushConverter().ConvertFrom("#10181C");
+                    };
+                    border.MouseLeave += (s, e) =>
+                    {
+                        border.Background = (Brush)new BrushConverter().ConvertFrom("#0B1113");
+                    };
 
-                    var title = new TextBlock { Text = nome, FontWeight = FontWeights.Bold, FontSize = 14 };
+                    // ===== Conteúdo interno =====
+                    var stack = new StackPanel
+                    {
+                        VerticalAlignment = VerticalAlignment.Center,
+                        HorizontalAlignment = HorizontalAlignment.Center
+                    };
+
+                    // Nome do modelo
+                    var title = new TextBlock
+                    {
+                        Text = nome,
+                        FontWeight = FontWeights.Bold,
+                        FontSize = 14,
+                        Foreground = (Brush)new BrushConverter().ConvertFrom("#AEE0B4"),
+                        TextAlignment = TextAlignment.Center,
+                        HorizontalAlignment = HorizontalAlignment.Center,
+                        Margin = new Thickness(0, 5, 0, 10)
+                    };
                     stack.Children.Add(title);
 
-                    var btnPanel = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 8, 0, 0) };
+                    // ===== Painel de botões =====
+                    var btnPanel = new StackPanel
+                    {
+                        Orientation = Orientation.Horizontal,
+                        HorizontalAlignment = HorizontalAlignment.Center
+                    };
 
-                    var btnEditar = new Button { Content = "Editar", Margin = new Thickness(0, 0, 10, 0), Tag = id };
+                    // ==== Botão Editar ====
+                    var btnEditar = new Button
+                    {
+                        Content = "Editar",
+                        Tag = id,
+                        Width = 100,
+                        Height = 28,
+                        Cursor = Cursors.Hand,
+                        FontWeight = FontWeights.SemiBold,
+                        Foreground = (Brush)new BrushConverter().ConvertFrom("#AEE0B4"),
+                        Background = Brushes.Transparent,
+                        BorderBrush = (Brush)new BrushConverter().ConvertFrom("#3CB86F"),
+                        BorderThickness = new Thickness(1.4),
+                        Margin = new Thickness(0, 0, 10, 0)
+                    };
+
+                    btnEditar.MouseEnter += (s, e) =>
+                    {
+                        btnEditar.Background = (Brush)new BrushConverter().ConvertFrom("#3CB86F");
+                        btnEditar.Foreground = Brushes.White;
+                    };
+                    btnEditar.MouseLeave += (s, e) =>
+                    {
+                        btnEditar.Background = Brushes.Transparent;
+                        btnEditar.Foreground = (Brush)new BrushConverter().ConvertFrom("#AEE0B4");
+                    };
+
                     btnEditar.Click += (s, e) =>
                     {
                         int modeloId = (int)(s as Button).Tag;
-                        // Abre janela de edição. usar ShowDialog para poder recarregar após fechar.
                         var win = new criar_orca(email, servidor, bd, usr, senha, modeloId);
                         bool? ok = win.ShowDialog();
-                        // recarrega lista (independente do DialogResult, é seguro recarregar)
                         CarregarModelosCriados();
                     };
 
-                    var btnExcluir = new Button { Content = "Excluir", Tag = id };
+                    // ==== Botão Excluir ====
+                    var btnExcluir = new Button
+                    {
+                        Content = "Excluir",
+                        Tag = id,
+                        Width = 70,
+                        Height = 28,
+                        Cursor = Cursors.Hand,
+                        FontWeight = FontWeights.SemiBold,
+                        Foreground = (Brush)new BrushConverter().ConvertFrom("#A9C7E8"),
+                        Background = Brushes.Transparent,
+                        BorderBrush = (Brush)new BrushConverter().ConvertFrom("#007ACC"),
+                        BorderThickness = new Thickness(1.4)
+                        
+                    };
+
+                    btnExcluir.MouseEnter += (s, e) =>
+                    {
+                        btnExcluir.Background = (Brush)new BrushConverter().ConvertFrom("#007ACC");
+                        btnExcluir.Foreground = Brushes.White;
+                    };
+                    btnExcluir.MouseLeave += (s, e) =>
+                    {
+                        btnExcluir.Background = Brushes.Transparent;
+                        btnExcluir.Foreground = (Brush)new BrushConverter().ConvertFrom("#A9C7E8");
+                    };
+
                     btnExcluir.Click += (s, e) =>
                     {
                         if (MessageBox.Show("Deseja realmente excluir este modelo?", "Confirmar", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
@@ -94,11 +177,15 @@ namespace ORCA
                         }
                     };
 
+                    // adiciona botões ao painel
                     btnPanel.Children.Add(btnEditar);
                     btnPanel.Children.Add(btnExcluir);
 
+                    // adiciona ao card
                     stack.Children.Add(btnPanel);
                     border.Child = stack;
+
+                    // adiciona no painel
                     panelModelos.Children.Add(border);
                 }
             }
