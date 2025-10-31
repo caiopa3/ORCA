@@ -91,7 +91,6 @@ namespace ORCA
 
         private void CriarOrcamentoVisual(int id, string nome)
         {
-
             // ===== Card principal =====
             var border = new Border
             {
@@ -100,15 +99,15 @@ namespace ORCA
                 Margin = new Thickness(10),
                 CornerRadius = new CornerRadius(12),
                 Background = (Brush)new BrushConverter().ConvertFrom("#0B1113"),
-                BorderBrush = (Brush)new BrushConverter().ConvertFrom("#3CB86F"),
+                BorderBrush = (Brush)new BrushConverter().ConvertFrom("#fff8ef"),
                 BorderThickness = new Thickness(1.5),
                 Padding = new Thickness(10)
             };
 
-            // Efeito visual ao passar o mouse
+            // efeito ao passar o mouse (pode ajustar cores se quiser)
             border.MouseEnter += (s, e) =>
             {
-                border.Background = (Brush)new BrushConverter().ConvertFrom("#10181C");
+                border.Background = (Brush)new BrushConverter().ConvertFrom("#0D1214");
             };
             border.MouseLeave += (s, e) =>
             {
@@ -122,13 +121,13 @@ namespace ORCA
                 HorizontalAlignment = HorizontalAlignment.Center
             };
 
-            // Nome do modelo
+            // Nome do orçamento
             var nomeText = new TextBlock
             {
                 Text = nome,
                 FontWeight = FontWeights.Bold,
                 FontSize = 14,
-                Foreground = (Brush)new BrushConverter().ConvertFrom("#AEE0B4"),
+                Foreground = (Brush)new BrushConverter().ConvertFrom("#fff8ef"),
                 TextAlignment = TextAlignment.Center,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 Margin = new Thickness(0, 5, 0, 10)
@@ -141,17 +140,18 @@ namespace ORCA
                 Orientation = Orientation.Horizontal,
                 HorizontalAlignment = HorizontalAlignment.Center
             };
+
             var btnEntrar = new Button
             {
                 Content = "Entrar",
-                Tag = id, // ✅ o botão carrega o ID do orçamento
+                Tag = id, // o botão carrega o ID do orçamento
                 Width = 70,
                 Height = 28,
                 Cursor = Cursors.Hand,
                 FontWeight = FontWeights.SemiBold,
-                Foreground = (Brush)new BrushConverter().ConvertFrom("#AEE0B4"),
+                Foreground = (Brush)new BrushConverter().ConvertFrom("#fff8ef"),
                 Background = Brushes.Transparent,
-                BorderBrush = (Brush)new BrushConverter().ConvertFrom("#3CB86F"),
+                BorderBrush = (Brush)new BrushConverter().ConvertFrom("#fff8ef"),
                 BorderThickness = new Thickness(1.4),
                 Margin = new Thickness(0, 0, 10, 0)
             };
@@ -165,13 +165,68 @@ namespace ORCA
                 }
             };
 
-            panel.Children.Add(btnEntrar);
+            var btnExcluir = new Button
+            {
+                Content = "Excluir",
+                Tag = id,
+                Width = 70,
+                Height = 28,
+                Cursor = Cursors.Hand,
+                FontWeight = FontWeights.SemiBold,
+                Foreground = (Brush)new BrushConverter().ConvertFrom("#fff8ef"),
+                Background = Brushes.Transparent,
+                BorderBrush = (Brush)new BrushConverter().ConvertFrom("#fff8ef"),
+                BorderThickness = new Thickness(1.4),
+            };
 
+            btnExcluir.MouseEnter += (s, e) =>
+            {
+                btnExcluir.Background = (Brush)new BrushConverter().ConvertFrom("#007ACC");
+                btnExcluir.Foreground = Brushes.White;
+            };
+            btnExcluir.MouseLeave += (s, e) =>
+            {
+                btnExcluir.Background = Brushes.Transparent;
+                btnExcluir.Foreground = (Brush)new BrushConverter().ConvertFrom("#fff8ef");
+            };
+
+            btnExcluir.Click += (s, e) =>
+            {
+                if ((s as Button)?.Tag is int orcamentoId)
+                {
+                    // substitui MessageBox.Show por CustomMessageBox (estilizado)
+                    var result = MessageBox.Show("Deseja realmente excluir este orçamento?", "Confirmar", MessageBoxButton.YesNo);
+                    
+                    
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        try
+                        {
+                            // usa o serviço correto (_orcamentoService) para excluir pelo ID
+                            _orcamentoService.ExcluirOrcamento(orcamentoId);
+                            // atualiza visual
+                            CarregarOrcamentosExistentes();
+                            CustomMessageBox.Show("Sucesso", "Orçamento excluído com sucesso.");
+                        }
+                        catch (Exception ex)
+                        {
+                            CustomMessageBox.Show("Erro", "Falha ao excluir o orçamento:\n" + ex.Message);
+                        }
+                    }
+                }
+            };
+
+            // adiciona botões ao painel de botões
+            btnPanel.Children.Add(btnEntrar);
+            btnPanel.Children.Add(btnExcluir);
+
+            // adiciona o painel de botões ao card
             panel.Children.Add(btnPanel);
             border.Child = panel;
 
             wrapPanelOrcamentos.Children.Add(border);
         }
+
 
         private void InputBox(string title, string prompt, string defaultValue, Action<string> onConfirm)
         {
@@ -210,7 +265,7 @@ namespace ORCA
 
             if (resultado == true)
             {
-                MessageBox.Show("Perfil atualizado com sucesso! Reinicie o sistema para aplicar as mudanças de login (se alterou e-mail).");
+                CustomMessageBox.Show("Perfil atualizado com sucesso!"," Reinicie o sistema para aplicar as mudanças de login (se alterou e-mail).");
                 _email = Sessao.email; // Atualiza variável local também, se necessário
 
             }

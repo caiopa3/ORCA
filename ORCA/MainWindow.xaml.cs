@@ -167,7 +167,7 @@ namespace ORCA
             {
                 if (authService.ValidarLogin(email, password))
                 {
-                    MessageBox.Show("Login realizado com sucesso!");
+                    CustomMessageBox.Show("Sucesso", "Login realizado com sucesso!");
 
                     // Salvar se "Lembrar-me" estiver marcado
                     if (checkBoxRememberMe.IsChecked == true)
@@ -186,56 +186,54 @@ namespace ORCA
 
                     string permissao = authService.ObterPermissao(email, password);
 
+                    // Armazenar informações na sessão
+                    Sessao.servidor = servidor;
+                    Sessao.senha = senha;
+                    Sessao.bd = bd;
+                    Sessao.usr = usr;
+                    Sessao.email = email;
+
+                    // Direcionar conforme a permissão
                     if (permissao == "usr")
                     {
                         Sessao.Permissao = "usr";
-                        Sessao.servidor = servidor;
-                        Sessao.senha = senha;
-                        Sessao.bd = bd;
-                        Sessao.usr = usr;
-                        Sessao.email = email;
-                        homePage_usr homePage_Usr = new homePage_usr(email, servidor, bd, usr, senha);
-                        homePage_Usr.Show();
+                        var homePageUsr = new homePage_usr(email, servidor, bd, usr, senha);
+                        homePageUsr.Show();
                         this.Close();
                     }
                     else if (permissao == "adm")
                     {
                         Sessao.Permissao = "adm";
-                        Sessao.servidor = servidor;
-                        Sessao.senha = senha;
-                        Sessao.bd = bd;
-                        Sessao.usr = usr;
-                        Sessao.email = email;
-                        homePage_adm homePage_Adm = new homePage_adm(email, servidor, bd, usr, senha);
-                        homePage_Adm.Show();
+                        var homePageAdm = new homePage_adm(email, servidor, bd, usr, senha);
+                        homePageAdm.Show();
                         this.Close();
                     }
                     else if (permissao == "ges")
                     {
                         Sessao.Permissao = "ges";
-                        Sessao.servidor = servidor;
-                        Sessao.senha = senha;
-                        Sessao.bd = bd;
-                        Sessao.usr = usr;
-                        Sessao.email = email;
-                        homePage_ges homePage_Ges = new homePage_ges(email, servidor, bd, usr, senha);
-                        homePage_Ges.Show();
+                        var homePageGes = new homePage_ges(email, servidor, bd, usr, senha);
+                        homePageGes.Show();
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Permissão desconhecida.");
+                        CustomMessageBox.Show("Atenção", "Permissão desconhecida. Contate o administrador do sistema.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Usuário ou senha incorretos.");
+                    CustomMessageBox.Show("Erro de Login", "Usuário ou senha incorretos. Verifique suas credenciais e tente novamente.");
                 }
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show($"Erro ao conectar no banco de dados:\n{ex.Message}");
+                CustomMessageBox.Show("Erro de Conexão", $"Não foi possível conectar ao banco de dados:\n\n{ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                CustomMessageBox.Show("Erro Inesperado", $"Ocorreu um erro: {ex.Message}");
             }
         }
+
     }
 }

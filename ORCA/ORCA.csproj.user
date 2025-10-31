@@ -16,6 +16,9 @@
     <Compile Update="criar_orca.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CustomMessageBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="gerar_pdf.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -61,6 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="altFunc_adm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomMessageBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="gerar_pdf.xaml">
