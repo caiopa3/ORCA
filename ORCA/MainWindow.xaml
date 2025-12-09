@@ -125,7 +125,7 @@
                     </Grid>
 
                     <!-- Botão Entrar -->
-                    <Button Height="45"
+                    <Button x:Name="btnLogin" Height="45"
                             Background="Transparent" BorderBrush="#EDE8E4" BorderThickness="1"
                             Foreground="#fff8ef" FontWeight="Bold" 
                             Click="Button_Click_1">

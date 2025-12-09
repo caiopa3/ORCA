@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\internet.info\Desktop\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\
 ORCA
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\internet.info\Desktop\ORCA CERTO\ORCA\ORCA\App.xaml
-18293650494
+D:\Orca Apresentação\ORCA\App.xaml
+19-1992297890
 1-863719010
-28-1983215889
+29612191971
 228151649383
-altFunc_adm.xaml;cadFunc_adm.xaml;criar_orca.xaml;gerar_pdf.xaml;gereFunc_adm.xaml;homePage_adm.xaml;homePage_ges.xaml;homePage_usr.xaml;login_alt_senha.xaml;login_esq_senha.xaml;login_vrf_cod.xaml;MainWindow.xaml;NovaColunaWindow.xaml;OrcamentoWindow.xaml;PdfContentWindow.xaml;PerfilWindow.xaml;SelecionarModeloWindow.xaml;SelecionarUsuariosWindow.xaml;
+altFunc_adm.xaml;cadFunc_adm.xaml;criar_orca.xaml;CustomMessageBox.xaml;gerar_pdf.xaml;gereFunc_adm.xaml;homePage_adm.xaml;homePage_ges.xaml;homePage_usr.xaml;login_alt_senha.xaml;login_esq_senha.xaml;login_vrf_cod.xaml;MainWindow.xaml;NovaColunaWindow.xaml;OrcamentoWindow.xaml;PdfContentWindow.xaml;PerfilWindow.xaml;SelecionarModeloWindow.xaml;SelecionarUsuariosWindow.xaml;
 
 False
 

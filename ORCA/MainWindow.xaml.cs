@@ -1,13 +1,6 @@
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 using System.Net.Http;
 using System.Text.Json;
@@ -15,7 +8,8 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using ORCA.Services;
-
+using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace ORCA
 {
@@ -27,17 +21,32 @@ namespace ORCA
         public string senha = "";
         public string connectionString;
 
-        // Informações do GitHub
         private const string RepoOwner = "caiopa3";
         private const string RepoName = "ORCA";
-        private const string CurrentVersion = "1.0.2"; // Atualize sempre que lançar uma nova versão
+        private const string CurrentVersion = "1.0.2";
+
+        // 🔥 Tentativas (front-end)
+        int maxTentativas = 5;
+        int tentativasRestantes;
+
+        // 🔥 Tempo de bloqueio local
+        int tempoBloqueioSegundos = 60;
+        DispatcherTimer timerDesbloqueio;
+
 
         public MainWindow()
         {
             InitializeComponent();
             connectionString = $"SERVER={servidor}; PORT=3306; DATABASE={bd}; UID={usr}; PASSWORD={senha};";
 
-            // Carregar credenciais salvas
+            tentativasRestantes = maxTentativas;
+
+            // Timer para desbloqueio
+            timerDesbloqueio = new DispatcherTimer();
+            timerDesbloqueio.Interval = TimeSpan.FromSeconds(tempoBloqueioSegundos);
+            timerDesbloqueio.Tick += TimerDesbloqueio_Tick;
+
+            // Carregar credenciais
             if (Properties.Settings.Default.Lembrar)
             {
                 textBoxEmail.Text = Properties.Settings.Default.Email;
@@ -49,22 +58,30 @@ namespace ORCA
                 }
                 catch
                 {
-                    // Se falhar a descriptografia (mudança de usuário do Windows, por exemplo)
                     Properties.Settings.Default.Lembrar = false;
                     Properties.Settings.Default.Senha = "";
                     Properties.Settings.Default.Save();
                 }
             }
 
-            // Chama verificação de atualização assinada
             _ = CheckForSignedUpdateAsync();
         }
+
+        private void TimerDesbloqueio_Tick(object sender, EventArgs e)
+        {
+            timerDesbloqueio.Stop();
+            tentativasRestantes = maxTentativas;
+            btnLogin.IsEnabled = true;
+
+            CustomMessageBox.Show("Desbloqueado",
+                "Você pode tentar fazer login novamente.");
+        }
+
 
         private string Encrypt(string plainText)
         {
             if (string.IsNullOrEmpty(plainText))
                 return "";
-
             var bytes = Encoding.UTF8.GetBytes(plainText);
             var protectedBytes = ProtectedData.Protect(bytes, null, DataProtectionScope.CurrentUser);
             return Convert.ToBase64String(protectedBytes);
@@ -74,11 +91,11 @@ namespace ORCA
         {
             if (string.IsNullOrEmpty(encryptedText))
                 return "";
-
             var bytes = Convert.FromBase64String(encryptedText);
             var unprotectedBytes = ProtectedData.Unprotect(bytes, null, DataProtectionScope.CurrentUser);
             return Encoding.UTF8.GetString(unprotectedBytes);
         }
+
 
         private async Task CheckForSignedUpdateAsync()
         {
@@ -94,7 +111,6 @@ namespace ORCA
                 var latestVersion = doc.RootElement.GetProperty("tag_name").GetString();
                 var assets = doc.RootElement.GetProperty("assets").EnumerateArray();
 
-                // Procura arquivo MSIX assinado no release
                 string msixUrl = null;
                 foreach (var asset in assets)
                 {
@@ -109,11 +125,10 @@ namespace ORCA
                 if (IsNewerVersion(latestVersion, CurrentVersion) && msixUrl != null)
                 {
                     var result = MessageBox.Show(
-                        $"Uma nova versão assinada ({latestVersion}) está disponível! Deseja baixar agora?",
+                        $"Nova versão ({latestVersion}) disponível! Baixar agora?",
                         "Atualização disponível",
                         MessageBoxButton.YesNo,
-                        MessageBoxImage.Information
-                    );
+                        MessageBoxImage.Information);
 
                     if (result == MessageBoxResult.Yes)
                     {
@@ -125,10 +140,7 @@ namespace ORCA
                     }
                 }
             }
-            catch
-            {
-                // Falha na verificação não bloqueia login
-            }
+            catch { }
         }
 
         private bool IsNewerVersion(string latest, string current)
@@ -137,22 +149,22 @@ namespace ORCA
 
             Version vLatest = new Version(latest.TrimStart('v'));
             Version vCurrent = new Version(current.TrimStart('v'));
-
             return vLatest > vCurrent;
         }
 
         private void click(object sender, MouseButtonEventArgs e)
         {
-            login_esq_senha login_esq_senha = new login_esq_senha(servidor, bd, usr, senha);
-            login_esq_senha.Show();
+            login_esq_senha login = new login_esq_senha(servidor, bd, usr, senha);
+            login.Show();
             this.Close();
         }
+
+
         private void textBoxSenha_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxSenha.Password))
-                pwdWatermark.Visibility = Visibility.Visible;
-            else
-                pwdWatermark.Visibility = Visibility.Collapsed;
+            pwdWatermark.Visibility =
+                string.IsNullOrEmpty(textBoxSenha.Password) ?
+                Visibility.Visible : Visibility.Collapsed;
         }
 
 
@@ -161,15 +173,17 @@ namespace ORCA
             string email = textBoxEmail.Text;
             string password = textBoxSenha.Password;
 
-            var authService = new ORCA.Services.AuthService(servidor, bd, usr, senha);
+            var authService = new AuthService(servidor, bd, usr, senha);
 
             try
             {
-                if (authService.ValidarLogin(email, password))
+                if (authService.Login(email, password))
                 {
+                    // 🔥 Reset tentativas
+                    tentativasRestantes = maxTentativas;
+
                     CustomMessageBox.Show("Sucesso", "Login realizado com sucesso!");
 
-                    // Salvar se "Lembrar-me" estiver marcado
                     if (checkBoxRememberMe.IsChecked == true)
                     {
                         Properties.Settings.Default.Email = email;
@@ -186,54 +200,67 @@ namespace ORCA
 
                     string permissao = authService.ObterPermissao(email, password);
 
-                    // Armazenar informações na sessão
                     Sessao.servidor = servidor;
                     Sessao.senha = senha;
                     Sessao.bd = bd;
                     Sessao.usr = usr;
                     Sessao.email = email;
 
-                    // Direcionar conforme a permissão
                     if (permissao == "usr")
                     {
                         Sessao.Permissao = "usr";
-                        var homePageUsr = new homePage_usr(email, servidor, bd, usr, senha);
-                        homePageUsr.Show();
+                        new homePage_usr(email, servidor, bd, usr, senha).Show();
                         this.Close();
                     }
                     else if (permissao == "adm")
                     {
                         Sessao.Permissao = "adm";
-                        var homePageAdm = new homePage_adm(email, servidor, bd, usr, senha);
-                        homePageAdm.Show();
+                        new homePage_adm(email, servidor, bd, usr, senha).Show();
                         this.Close();
                     }
                     else if (permissao == "ges")
                     {
                         Sessao.Permissao = "ges";
-                        var homePageGes = new homePage_ges(email, servidor, bd, usr, senha);
-                        homePageGes.Show();
+                        new homePage_ges(email, servidor, bd, usr, senha).Show();
                         this.Close();
                     }
                     else
                     {
-                        CustomMessageBox.Show("Atenção", "Permissão desconhecida. Contate o administrador do sistema.");
+                        CustomMessageBox.Show("Atenção", "Permissão desconhecida.");
                     }
                 }
                 else
                 {
-                    CustomMessageBox.Show("Erro de Login", "Usuário ou senha incorretos. Verifique suas credenciais e tente novamente.");
+                    tentativasRestantes--;
+
+                    if (tentativasRestantes > 0)
+                    {
+                        CustomMessageBox.Show(
+                            "Erro de Login",
+                            $"Credenciais inválidas.\nTentativas restantes: {tentativasRestantes}");
+                    }
+                    else
+                    {
+                        CustomMessageBox.Show(
+                            "Bloqueado",
+                            $"Máximo de tentativas excedido.\nTente novamente em {tempoBloqueioSegundos} segundos.");
+
+                        btnLogin.IsEnabled = false;
+                        timerDesbloqueio.Start();
+                    }
+
+                    return;
                 }
             }
             catch (MySqlException ex)
             {
-                CustomMessageBox.Show("Erro de Conexão", $"Não foi possível conectar ao banco de dados:\n\n{ex.Message}");
+                CustomMessageBox.Show("Erro de Conexão", ex.Message);
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show("Erro Inesperado", $"Ocorreu um erro: {ex.Message}");
+                CustomMessageBox.Show("Erro Inesperado", ex.Message);
             }
         }
-
     }
 }
+

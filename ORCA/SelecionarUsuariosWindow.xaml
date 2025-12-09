@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:ORCA"
         mc:Ignorable="d"
         Title="Selecionar Usuários"
-        Height="500"
-        Width="318"
+        Height="560"
+        Width="330"
         Background="#fff8ef"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
@@ -71,7 +71,7 @@
 
                 <!-- Botão escuro com efeito hover -->
                 <Button Content="Confirmar"
-        Width="258"
+        Width="279"
         Height="35"
         HorizontalAlignment="Center"
         Margin="0,10,0,0"
@@ -142,6 +142,6 @@
         HorizontalAlignment="Center"
         VerticalAlignment="Top"
         Margin="0,355,0,0"
-        Click="btnVoltar_Click" Width="260"/>
+        Click="btnVoltar_Click" Width="279"/>
     </Grid>
 </Window>

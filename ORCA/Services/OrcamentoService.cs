@@ -14,34 +14,86 @@ namespace ORCA.Services
     {
         private readonly string _connectionString;
 
+        // opcional: quando setado, o serviço usa este email para validações de autorização
+        public string CurrentUserEmail { get; set; }
+
         public OrcamentoService(string servidor, string bd, string usr, string senha)
         {
             _connectionString = $"SERVER={servidor};PORT=3306;DATABASE={bd};UID={usr};PASSWORD={senha};";
         }
 
+        // -----------------------------
+        // Helpers de autorização
+        // -----------------------------
+        private bool UsuarioEhDonoOrcamento(int orcamentoId, string email)
+        {
+            if (string.IsNullOrWhiteSpace(email)) return false;
+
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
+            using var cmd = new MySqlCommand(
+                @"SELECT COUNT(*) FROM orcamento WHERE id = @id AND usr_email = @Email;",
+                conn);
+            cmd.Parameters.AddWithValue("@id", orcamentoId);
+            cmd.Parameters.AddWithValue("@Email", email);
+            var r = Convert.ToInt32(cmd.ExecuteScalar());
+            return r > 0;
+        }
+
+        private bool UsuarioTemAcessoAoModelo(int modeloId, string email)
+        {
+            if (string.IsNullOrWhiteSpace(email)) return false;
+
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
+
+            string sql = @"
+                SELECT COUNT(*) 
+                FROM modelo_orcamento m
+                LEFT JOIN modelo_orcamento_usuarios mu ON m.id = mu.modelo_id
+                LEFT JOIN view_decripto v ON v.email = @Email
+                WHERE m.id = @ModeloId
+                  AND (m.usr_criador_id = v.id OR mu.usuario_id = v.id);
+            ";
+
+            using var cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@ModeloId", modeloId);
+
+            var r = Convert.ToInt32(cmd.ExecuteScalar());
+            return r > 0;
+        }
+
+        // -----------------------------
+        // Inserção e operações básicas (assinaturas preservadas)
+        // -----------------------------
         public int InserirOrcamento(string nome, string emailUsuario)
         {
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            var cmd = new MySqlCommand(
+            using var cmd = new MySqlCommand(
                 "INSERT INTO orcamento (nome, usr_email) VALUES (@n, @e); SELECT LAST_INSERT_ID();",
                 conn);
-            cmd.Parameters.AddWithValue("@n", nome);
-            cmd.Parameters.AddWithValue("@e", emailUsuario);
+            cmd.Parameters.AddWithValue("@n", nome ?? "");
+            cmd.Parameters.AddWithValue("@e", emailUsuario ?? "");
 
             return Convert.ToInt32(cmd.ExecuteScalar());
         }
 
         public void AtualizarNome(int id, string novoNome)
         {
+            // se CurrentUserEmail estiver setado, exige propriedade; caso contrário, executa (compatibilidade)
+            if (!string.IsNullOrWhiteSpace(CurrentUserEmail) && !UsuarioEhDonoOrcamento(id, CurrentUserEmail))
+                throw new UnauthorizedAccessException("Usuário não autorizado a editar este orçamento.");
+
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            var cmd = new MySqlCommand(
+            using var cmd = new MySqlCommand(
                 "UPDATE orcamento SET nome=@n WHERE id=@id",
                 conn);
-            cmd.Parameters.AddWithValue("@n", novoNome);
+            cmd.Parameters.AddWithValue("@n", novoNome ?? "");
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
         }
@@ -53,10 +105,10 @@ namespace ORCA.Services
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            var cmd = new MySqlCommand(
+            using var cmd = new MySqlCommand(
                 "SELECT id, nome FROM orcamento WHERE usr_email=@e",
                 conn);
-            cmd.Parameters.AddWithValue("@e", emailUsuario);
+            cmd.Parameters.AddWithValue("@e", emailUsuario ?? "");
 
             using var r = cmd.ExecuteReader();
             while (r.Read())
@@ -67,7 +119,9 @@ namespace ORCA.Services
             return lista;
         }
 
-        // Retorna lista de modelos disponíveis para o usuário
+        // -----------------------------
+        // Listar modelos disponíveis (mantive verificação por email)
+        // -----------------------------
         public List<SelecionarModeloWindow.ModeloItem> ListarModelosDisponiveis(string email)
         {
             var modelos = new List<SelecionarModeloWindow.ModeloItem>();
@@ -76,15 +130,22 @@ namespace ORCA.Services
             {
                 conn.Open();
                 string sql = @"
-            SELECT m.id, m.nome
-            FROM modelo_orcamento m
-            JOIN modelo_orcamento_usuarios um ON m.id = um.modelo_id
-            JOIN view_decripto u ON u.id = um.usuario_id
-            WHERE u.email = @Email";
+                    SELECT DISTINCT m.id, m.nome
+                    FROM modelo_orcamento m
+                    JOIN modelo_orcamento_usuarios um ON m.id = um.modelo_id
+                    JOIN view_decripto u ON u.id = um.usuario_id
+                    WHERE u.email = @Email
+                    UNION
+                    SELECT m2.id, m2.nome
+                    FROM modelo_orcamento m2
+                    JOIN view_decripto v2 ON m2.usr_criador_id = v2.id
+                    WHERE v2.email = @Email
+                    ORDER BY nome;
+                ";
 
                 using (var cmd = new MySqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Email", email ?? "");
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -102,9 +163,12 @@ namespace ORCA.Services
             return modelos;
         }
 
-        // Insere orçamento já ligado ao modelo
         public int InserirOrcamentoComModelo(string nome, string email, int modeloId)
         {
+            // se CurrentUserEmail estiver setado, valida também que o usuário atual tem acesso ao modelo
+            if (!string.IsNullOrWhiteSpace(CurrentUserEmail) && !UsuarioTemAcessoAoModelo(modeloId, CurrentUserEmail))
+                throw new UnauthorizedAccessException("Usuário não tem acesso ao modelo selecionado.");
+
             using (var conn = new MySqlConnection(_connectionString))
             {
                 conn.Open();
@@ -112,8 +176,8 @@ namespace ORCA.Services
 
                 using (var cmd = new MySqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Nome", nome);
-                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Nome", nome ?? "");
+                    cmd.Parameters.AddWithValue("@Email", email ?? "");
                     cmd.Parameters.AddWithValue("@ModeloId", modeloId);
 
                     return Convert.ToInt32(cmd.ExecuteScalar());
@@ -121,16 +185,14 @@ namespace ORCA.Services
             }
         }
 
-        /// <summary>
-        /// Carrega o JSON para este orçamento. Primeiro tenta orcamento_dados (dados já salvos pelo usuário),
-        /// se não encontrar, retorna o JSON base do modelo (modelo_orcamento_dados).
-        /// </summary>
+        // -----------------------------
+        // Carregar JSON do orçamento (mantido, exige email)
+        // -----------------------------
         public string CarregarModeloJsonPorOrcamentoId(int orcamentoId, string email)
         {
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            // 1) Primeiro tenta carregar os dados específicos do orçamento (orcamento_dados)
             string sqlOrc = @"
                 SELECT od.dados_json
                 FROM orcamento_dados od
@@ -143,14 +205,13 @@ namespace ORCA.Services
             using (var cmdOrc = new MySqlCommand(sqlOrc, conn))
             {
                 cmdOrc.Parameters.AddWithValue("@id", orcamentoId);
-                cmdOrc.Parameters.AddWithValue("@Email", email);
+                cmdOrc.Parameters.AddWithValue("@Email", email ?? "");
 
                 var result = cmdOrc.ExecuteScalar();
                 if (result != null && result != DBNull.Value)
                     return result.ToString();
             }
 
-            // 2) Caso não exista em orcamento_dados, usa o JSON base do modelo
             string sqlModelo = @"
                 SELECT mod_dados.dados_json
                 FROM orcamento o
@@ -163,18 +224,16 @@ namespace ORCA.Services
             using (var cmdModelo = new MySqlCommand(sqlModelo, conn))
             {
                 cmdModelo.Parameters.AddWithValue("@id", orcamentoId);
-                cmdModelo.Parameters.AddWithValue("@Email", email);
+                cmdModelo.Parameters.AddWithValue("@Email", email ?? "");
 
                 var result = cmdModelo.ExecuteScalar();
                 return result?.ToString() ?? string.Empty;
             }
         }
 
-
-        /// <summary>
-        /// Converte o JSON do modelo (ou orcamento_dados) para DataTable.
-        /// Se o JSON incluir "FixedValues", aplica DataColumn.DefaultValue para cada coluna correspondente.
-        /// </summary>
+        // -----------------------------
+        // Conversão JSON -> DataTable (sem mudanças de API)
+        // -----------------------------
         public DataTable ModeloJsonParaDataTable(string json)
         {
             var dt = new DataTable();
@@ -189,7 +248,6 @@ namespace ORCA.Services
             }
             catch
             {
-                // fallback se o JSON for um array de linhas
                 var fallback = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(json);
                 if (fallback == null || fallback.Count == 0) return dt;
 
@@ -210,15 +268,12 @@ namespace ORCA.Services
                 return dt;
             }
 
-            // Extrai colunas, linhas e fixed values do objeto
             var colunas = obj["Colunas"]?.Select(c => RemoverTipo(c.ToString())).ToList() ?? new List<string>();
             var linhas = obj["Linhas"] as JArray ?? new JArray();
 
-            // Se não houver "Colunas", tenta inferir pelas chaves da primeira linha
             if (colunas.Count == 0 && linhas.Count > 0 && linhas[0] is JObject firstRow)
                 colunas = firstRow.Properties().Select(p => RemoverTipo(p.Name)).ToList();
 
-            // Lê FixedValues (se existir) em dicionário case-insensitive
             var fixedValues = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
             if (obj["FixedValues"] is JObject fvObj)
             {
@@ -226,8 +281,7 @@ namespace ORCA.Services
                 {
                     var key = RemoverTipo(prop.Name);
                     var token = prop.Value;
-                    // tenta parse numérico primeiro
-                    if (token != null && token.Type == JTokenType.Float || token.Type == JTokenType.Integer)
+                    if (token != null && (token.Type == JTokenType.Float || token.Type == JTokenType.Integer))
                     {
                         fixedValues[key] = token.ToObject<double>();
                     }
@@ -244,7 +298,6 @@ namespace ORCA.Services
                 }
             }
 
-            // Cria as colunas no DataTable e já aplica DefaultValue quando existir fixedValues
             foreach (var col in colunas)
             {
                 var clean = RemoverTipo(col);
@@ -255,7 +308,6 @@ namespace ORCA.Services
                 {
                     try
                     {
-                        // se fv for número em double, use ele; caso contrário, mantenha string
                         dt.Columns[clean].DefaultValue = fv ?? "";
                     }
                     catch
@@ -265,7 +317,6 @@ namespace ORCA.Services
                 }
             }
 
-            // Preenche as linhas
             foreach (var item in linhas.OfType<JObject>())
             {
                 var row = dt.NewRow();
@@ -278,7 +329,6 @@ namespace ORCA.Services
                     row[colName] = prop.Value?.ToString() ?? string.Empty;
                 }
 
-                // se alguma coluna faltou no JSON desta linha, o DefaultValue da coluna já cuidará
                 dt.Rows.Add(row);
             }
 
@@ -287,17 +337,20 @@ namespace ORCA.Services
 
         private string RemoverTipo(string coluna)
         {
-            return Regex.Replace(coluna, @"\s*\(.*?\)", ""); // remove "(Texto)", "(Número)" etc.
+            return Regex.Replace(coluna, @"\s*\(.*?\)", "");
         }
 
+        // -----------------------------
+        // Carregar usuários (permite apenas permissões específicas)
+        // -----------------------------
         public DataTable CarregarUsuarios()
         {
-            using (MySqlConnection conn = new MySqlConnection(_connectionString)) // usa a connectionString vinda do construtor
+            using (MySqlConnection conn = new MySqlConnection(_connectionString))
             {
                 conn.Open();
 
                 string query = "SELECT id, email, permissao FROM view_decripto WHERE permissao IN ('usr', 'ges')";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
+                using var cmd = new MySqlCommand(query, conn);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -326,6 +379,9 @@ namespace ORCA.Services
             return permissoes;
         }
 
+        // -----------------------------
+        // Cadastrar usuário (atenção a senha em plain-text no DB)
+        // -----------------------------
         public void CadastrarUsuarioCompleto(
             string nomeCompleto,
             string email,
@@ -339,15 +395,14 @@ namespace ORCA.Services
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            // <IMPORTANTE> adapte os nomes das colunas conforme seu schema.
             string sql = @"
-        INSERT INTO usuario
-        (nome_completo, email, senha, telefone_celular,
-         permissao, cpf, rg)
-        VALUES
-        (@nome_completo, @Email, @Senha, @telefone_celular,
-         @permissao, @cpf, @rg);
-    ";
+                INSERT INTO usuario
+                (nome_completo, email, senha, telefone_celular,
+                 permissao, cpf, rg)
+                VALUES
+                (@nome_completo, @Email, @Senha, @telefone_celular,
+                 @permissao, @cpf, @rg);
+            ";
 
             using var cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@nome_completo", (object)nomeCompleto ?? "");
@@ -360,28 +415,39 @@ namespace ORCA.Services
             cmd.ExecuteNonQuery();
         }
 
-
         public class PermissaoItem
         {
-            public string Valor { get; set; } // valor real que vai para o banco
-            public string Texto { get; set; } // o que aparece na ComboBox
-
-            public override string ToString()
-            {
-                return Texto; // é o que será exibido no ComboBox
-            }
+            public string Valor { get; set; }
+            public string Texto { get; set; }
+            public override string ToString() => Texto;
         }
 
+        // -----------------------------
+        // Filtrar usuários: valida nome da coluna para evitar SQL injection
+        // -----------------------------
         public DataTable FiltrarUsuarios(string campo, string valor)
         {
+            var camposPermitidos = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+            {
+                "id",
+                "email",
+                "permissao"
+            };
+
+            if (!camposPermitidos.Contains(campo))
+                throw new ArgumentException("Campo inválido para filtro.");
+
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-            // monta a query de filtro
-            string query = $"SELECT id, email, permissao FROM view_decripto WHERE permissao IN ('usr','ges') AND {campo} LIKE @valor";
+            string query = $@"
+                SELECT id, email, permissao
+                FROM view_decripto
+                WHERE permissao IN ('usr','ges') AND {campo} LIKE @valor;
+            ";
 
             using var cmd = new MySqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@valor", "%" + valor + "%");
+            cmd.Parameters.AddWithValue("@valor", $"%{valor}%");
 
             var adapter = new MySqlDataAdapter(cmd);
             var dt = new DataTable();
@@ -390,8 +456,27 @@ namespace ORCA.Services
             return dt;
         }
 
+        // -----------------------------
+        // Salvar dados do orçamento: exige que usuarioId pertença ao dono do orçamento
+        // -----------------------------
         public void SalvarDadosOrcamento(int orcamentoId, DataTable tabela, int usuarioId, Dictionary<string, string> formulas)
         {
+            using var connCheck = new MySqlConnection(_connectionString);
+            connCheck.Open();
+
+            string sqlCheck = @"
+                SELECT COUNT(*) FROM orcamento o
+                WHERE o.id = @id
+                  AND o.usr_email = (SELECT email FROM view_decripto WHERE id = @uid LIMIT 1);
+            ";
+            using var cmdCheck = new MySqlCommand(sqlCheck, connCheck);
+            cmdCheck.Parameters.AddWithValue("@id", orcamentoId);
+            cmdCheck.Parameters.AddWithValue("@uid", usuarioId);
+
+            var existe = Convert.ToInt32(cmdCheck.ExecuteScalar());
+            if (existe == 0)
+                throw new UnauthorizedAccessException("Usuário não autorizado a salvar dados para este orçamento.");
+
             var colunas = tabela.Columns.Cast<DataColumn>().Select(c => c.ColumnName).ToList();
 
             var linhas = new List<Dictionary<string, object>>();
@@ -414,9 +499,9 @@ namespace ORCA.Services
             checkCmd.Parameters.AddWithValue("@id", orcamentoId);
             checkCmd.Parameters.AddWithValue("@uid", usuarioId);
 
-            var existe = checkCmd.ExecuteScalar();
+            var found = checkCmd.ExecuteScalar();
 
-            if (existe == null)
+            if (found == null)
             {
                 string insertSql = "INSERT INTO orcamento_dados (orcamento_id, usuario_id, dados_json) VALUES (@id, @uid, @json)";
                 using var cmd = new MySqlCommand(insertSql, conn);
@@ -436,6 +521,9 @@ namespace ORCA.Services
             }
         }
 
+        // -----------------------------
+        // Obter usuário por email
+        // -----------------------------
         public int ObterUsuarioIdPorEmail(string email)
         {
             using var conn = new MySqlConnection(_connectionString);
@@ -443,12 +531,15 @@ namespace ORCA.Services
 
             string sql = "SELECT id FROM view_decripto WHERE email=@e";
             using var cmd = new MySqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@e", email);
+            cmd.Parameters.AddWithValue("@e", email ?? "");
 
             var result = cmd.ExecuteScalar();
             return result == null ? 0 : Convert.ToInt32(result);
         }
 
+        // -----------------------------
+        // Atualizar usuário (atenção: senha em plain-text no DB — recomendo hashing)
+        // -----------------------------
         public void AtualizarUsuario(string emailAntigo, string novoEmail, string novaSenha)
         {
             using var conn = new MySqlConnection(_connectionString);
@@ -456,12 +547,13 @@ namespace ORCA.Services
 
             string sql = "UPDATE usuario SET email = @NovoEmail, senha = @Senha WHERE id = (SELECT id FROM view_decripto WHERE email = @EmailAntigo);";
             using var cmd = new MySqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@NovoEmail", novoEmail);
-            cmd.Parameters.AddWithValue("@Senha", novaSenha);
-            cmd.Parameters.AddWithValue("@EmailAntigo", emailAntigo);
+            cmd.Parameters.AddWithValue("@NovoEmail", novoEmail ?? "");
+            cmd.Parameters.AddWithValue("@Senha", novaSenha ?? "");
+            cmd.Parameters.AddWithValue("@EmailAntigo", emailAntigo ?? "");
 
             cmd.ExecuteNonQuery();
         }
+
         public bool VerificarSenhaAtual(string email, string senha)
         {
             using var conn = new MySqlConnection(_connectionString);
@@ -469,18 +561,20 @@ namespace ORCA.Services
 
             string sql = "SELECT COUNT(*) FROM view_decripto WHERE email=@Email AND senha=@Senha";
             using var cmd = new MySqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@Email", email);
-            cmd.Parameters.AddWithValue("@Senha", senha);
+            cmd.Parameters.AddWithValue("@Email", email ?? "");
+            cmd.Parameters.AddWithValue("@Senha", senha ?? "");
 
             int count = Convert.ToInt32(cmd.ExecuteScalar());
             return count > 0;
         }
+
         public DataRow BuscarUsuarioPorEmail(string email)
         {
             string sql = "SELECT * FROM view_decripto WHERE email = @Email";
             using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
             using var cmd = new MySqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Email", email ?? "");
             using var da = new MySqlDataAdapter(cmd);
             var dt = new DataTable();
             da.Fill(dt);
@@ -492,16 +586,53 @@ namespace ORCA.Services
             using var conn = new MySqlConnection(_connectionString);
             conn.Open();
 
-
-
             using var cmd = new MySqlCommand("CALL sp_atualizar_usuario_completo(@Email,@Nome,@Telefone,@CPF,@RG,@Permissao)", conn);
-            cmd.Parameters.AddWithValue("@Email", email);
-            cmd.Parameters.AddWithValue("@Nome", nomeCompleto);
-            cmd.Parameters.AddWithValue("@Telefone", telefone);
-            cmd.Parameters.AddWithValue("@CPF", cpf);
-            cmd.Parameters.AddWithValue("@RG", rg);
-            cmd.Parameters.AddWithValue("@Permissao", permissao);
+            cmd.Parameters.AddWithValue("@Email", email ?? "");
+            cmd.Parameters.AddWithValue("@Nome", nomeCompleto ?? "");
+            cmd.Parameters.AddWithValue("@Telefone", telefone ?? "");
+            cmd.Parameters.AddWithValue("@CPF", cpf ?? "");
+            cmd.Parameters.AddWithValue("@RG", rg ?? "");
+            cmd.Parameters.AddWithValue("@Permissao", permissao ?? "");
             cmd.ExecuteNonQuery();
+        }
+
+        // -----------------------------
+        // Excluir orçamento (assinatura preservada)
+        // -----------------------------
+        public void ExcluirOrcamento(int orcamentoId)
+        {
+            // se CurrentUserEmail estiver setado, exige propriedade; caso contrário permite (compatibilidade)
+            if (!string.IsNullOrWhiteSpace(CurrentUserEmail) && !UsuarioEhDonoOrcamento(orcamentoId, CurrentUserEmail))
+                throw new UnauthorizedAccessException("Usuário não autorizado a excluir este orçamento.");
+
+            using var conn = new MySqlConnection(_connectionString);
+            conn.Open();
+
+            using var transaction = conn.BeginTransaction();
+
+            try
+            {
+                string sqlDeleteDados = "DELETE FROM orcamento_dados WHERE orcamento_id = @id";
+                using (var cmdDados = new MySqlCommand(sqlDeleteDados, conn, transaction))
+                {
+                    cmdDados.Parameters.AddWithValue("@id", orcamentoId);
+                    cmdDados.ExecuteNonQuery();
+                }
+
+                string sqlDeleteOrcamento = "DELETE FROM orcamento WHERE id = @id";
+                using (var cmdOrc = new MySqlCommand(sqlDeleteOrcamento, conn, transaction))
+                {
+                    cmdOrc.Parameters.AddWithValue("@id", orcamentoId);
+                    cmdOrc.ExecuteNonQuery();
+                }
+
+                transaction.Commit();
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                throw new Exception($"Erro ao excluir orçamento (ID {orcamentoId}): {ex.Message}", ex);
+            }
         }
     }
 }

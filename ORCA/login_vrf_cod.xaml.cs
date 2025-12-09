@@ -42,16 +42,31 @@ namespace ORCA
 
         private async Task<string> VerificarCodigoAsync(string email, string codigo)
         {
-            string url = $"https://blanchedalmond-worm-516150.hostingersite.com/php/verificarCodigo.php?email={Uri.EscapeDataString(email)}&codigo={Uri.EscapeDataString(codigo)}";
+            string url = $"https://fecceteceuroalbinodesouza.com.br/verificarCodigo.php?email={Uri.EscapeDataString(email)}&codigo={Uri.EscapeDataString(codigo)}";
+
             try
             {
-                return await httpClient.GetStringAsync(url);
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    httpClient.Timeout = TimeSpan.FromSeconds(15);
+                    string resposta = await httpClient.GetStringAsync(url);
+                    return resposta.Trim();
+                }
             }
             catch (HttpRequestException e)
             {
-                return "Erro na requisição: " + e.Message;
+                return $"Erro ao conectar com o servidor: {e.Message}";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Erro: o servidor demorou para responder (timeout).";
+            }
+            catch (Exception ex)
+            {
+                return $"Erro inesperado: {ex.Message}";
             }
         }
+
 
         private async void btnVerificar_Click_1(object sender, RoutedEventArgs e)
         {
@@ -65,7 +80,7 @@ namespace ORCA
 
             string resposta = await VerificarCodigoAsync(email, codigo);
 
-            if (resposta == "OK")
+            if (resposta == "Ok")
             {
                 MessageBox.Show("Código verificado com sucesso!");
                 // Aqui você pode prosseguir com o fluxo da aplicação

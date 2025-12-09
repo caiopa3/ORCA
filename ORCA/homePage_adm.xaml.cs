@@ -48,7 +48,7 @@ namespace ORCA
                 var modelos = _modeloService.ListarModelosPorCriadorId(_usuarioId);
                 foreach (var (id, nome) in modelos)
                 {
-                    // ===== Card principal =====
+                    // ===== Card principal (mesmas dimensões da outra tela) =====
                     var border = new Border
                     {
                         Width = 180,
@@ -61,7 +61,6 @@ namespace ORCA
                         Padding = new Thickness(10)
                     };
 
-                    // Efeito visual ao passar o mouse
                     border.MouseEnter += (s, e) =>
                     {
                         border.Background = (Brush)new BrushConverter().ConvertFrom("#10181C");
@@ -72,14 +71,14 @@ namespace ORCA
                     };
 
                     // ===== Conteúdo interno =====
-                    var stack = new StackPanel
+                    var panel = new StackPanel
                     {
                         VerticalAlignment = VerticalAlignment.Center,
                         HorizontalAlignment = HorizontalAlignment.Center
                     };
 
-                    // Nome do modelo
-                    var title = new TextBlock
+                    // Nome centralizado
+                    var nomeText = new TextBlock
                     {
                         Text = nome,
                         FontWeight = FontWeights.Bold,
@@ -89,21 +88,21 @@ namespace ORCA
                         HorizontalAlignment = HorizontalAlignment.Center,
                         Margin = new Thickness(0, 5, 0, 10)
                     };
-                    stack.Children.Add(title);
+                    panel.Children.Add(nomeText);
 
-                    // ===== Painel de botões =====
+                    // ===== Painel dos botões =====
                     var btnPanel = new StackPanel
                     {
                         Orientation = Orientation.Horizontal,
                         HorizontalAlignment = HorizontalAlignment.Center
                     };
 
-                    // ==== Botão Editar ====
+                    // ===== Botão Editar (TAMANHO AJUSTADO) =====
                     var btnEditar = new Button
                     {
                         Content = "Editar",
                         Tag = id,
-                        Width = 100,
+                        Width = 70,
                         Height = 28,
                         Cursor = Cursors.Hand,
                         FontWeight = FontWeights.SemiBold,
@@ -129,11 +128,11 @@ namespace ORCA
                     {
                         int modeloId = (int)(s as Button).Tag;
                         var win = new criar_orca(email, servidor, bd, usr, senha, modeloId);
-                        bool? ok = win.ShowDialog();
+                        win.ShowDialog();
                         CarregarModelosCriados();
                     };
 
-                    // ==== Botão Excluir ====
+                    // ===== Botão Excluir (TAMANHO AJUSTADO) =====
                     var btnExcluir = new Button
                     {
                         Content = "Excluir",
@@ -146,7 +145,6 @@ namespace ORCA
                         Background = Brushes.Transparent,
                         BorderBrush = (Brush)new BrushConverter().ConvertFrom("#007ACC"),
                         BorderThickness = new Thickness(1.4)
-                        
                     };
 
                     btnExcluir.MouseEnter += (s, e) =>
@@ -165,27 +163,20 @@ namespace ORCA
                         if (MessageBox.Show("Deseja realmente excluir este modelo?", "Confirmar", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                         {
                             int modeloId = (int)(s as Button).Tag;
-                            try
-                            {
-                                _modeloService.ExcluirModelo(modeloId);
-                                CarregarModelosCriados();
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("Erro ao excluir: " + ex.Message);
-                            }
+                            _modeloService.ExcluirModelo(modeloId);
+                            CarregarModelosCriados();
                         }
                     };
 
-                    // adiciona botões ao painel
+                    // adicionar botões
                     btnPanel.Children.Add(btnEditar);
                     btnPanel.Children.Add(btnExcluir);
 
-                    // adiciona ao card
-                    stack.Children.Add(btnPanel);
-                    border.Child = stack;
+                    // adicionar painel no card
+                    panel.Children.Add(btnPanel);
+                    border.Child = panel;
 
-                    // adiciona no painel
+                    // adicionar no UI
                     panelModelos.Children.Add(border);
                 }
             }

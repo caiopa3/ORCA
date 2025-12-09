@@ -18,9 +18,6 @@ using System.Data;
 
 namespace ORCA
 {
-    /// <summary>
-    /// Lógica interna para gerar_pdf.xaml
-    /// </summary>
     public partial class gerar_pdf : Window
     {
         private string headerPath;
@@ -35,7 +32,6 @@ namespace ORCA
             tituloJanela = nome;
             this.Title = $"Exportar para PDF - {tituloJanela}";
 
-            // Permite usar as fontes do Windows automaticamente
             PdfSharp.Fonts.GlobalFontSettings.UseWindowsFontsUnderWindows = true;
         }
 
@@ -73,9 +69,9 @@ namespace ORCA
                 PdfPage page = document.AddPage();
                 XGraphics gfx = XGraphics.FromPdfPage(page);
 
-                double margem = 40; // margem geral
+                double margem = 40;
 
-                // ======== CABEÇALHO ========
+                // ================= CABEÇALHO =================
                 XImage header = XImage.FromFile(headerPath);
 
                 double imgHeaderWidth = header.PixelWidth * 72.0 / header.HorizontalResolution;
@@ -85,20 +81,7 @@ namespace ORCA
                 double visibleHeaderHeight = Math.Min(imgHeaderHeight, maxHeaderHeight);
                 double visibleHeaderWidth = Math.Min(imgHeaderWidth, page.Width);
 
-                // Aviso se redimensionado
-                if (visibleHeaderHeight != imgHeaderHeight || visibleHeaderWidth != imgHeaderWidth)
-                {
-                    MessageBox.Show(
-                        "A imagem do cabeçalho foi redimensionada automaticamente para caber no layout.",
-                        "Aviso",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Information
-                    );
-                }
-
-                // Centraliza horizontalmente
                 double headerX = (page.Width - visibleHeaderWidth) / 2;
-                // Se imagem maior que página, define corte central
                 double sourceHeaderX = imgHeaderWidth > page.Width ? (imgHeaderWidth - page.Width) / 2 : 0;
 
                 gfx.DrawImage(header,
@@ -106,7 +89,7 @@ namespace ORCA
                     new XRect(sourceHeaderX, 0, visibleHeaderWidth, visibleHeaderHeight),
                     XGraphicsUnit.Point);
 
-                // ======== RODAPÉ ========
+                // ================= RODAPÉ =================
                 XImage footer = XImage.FromFile(footerPath);
 
                 double imgFooterWidth = footer.PixelWidth * 72.0 / footer.HorizontalResolution;
@@ -115,17 +98,6 @@ namespace ORCA
                 double maxFooterHeight = XUnit.FromCentimeter(3.5).Point;
                 double visibleFooterHeight = Math.Min(imgFooterHeight, maxFooterHeight);
                 double visibleFooterWidth = Math.Min(imgFooterWidth, page.Width);
-
-                // Aviso se redimensionado
-                if (visibleFooterHeight != imgFooterHeight || visibleFooterWidth != imgFooterWidth)
-                {
-                    MessageBox.Show(
-                        "A imagem do rodapé foi redimensionada automaticamente para caber no layout.",
-                        "Aviso",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Information
-                    );
-                }
 
                 double footerX = (page.Width - visibleFooterWidth) / 2;
                 double footerY = page.Height - visibleFooterHeight;
@@ -136,39 +108,42 @@ namespace ORCA
                     new XRect(sourceFooterX, 0, visibleFooterWidth, visibleFooterHeight),
                     XGraphicsUnit.Point);
 
-
-                // ======== TEXTO ========
+                // ================= TEXTO =================
                 var font = new XFont("Arial", 14, XFontStyleEx.Regular);
                 XTextFormatter tf = new XTextFormatter(gfx);
 
                 double textoY = visibleHeaderHeight + margem;
-                double textoAlturaDisponivel = page.Height - visibleHeaderHeight - visibleFooterHeight - 2 * margem;
+
+                // ★★★★★ CORREÇÃO DO ERRO ★★★★★
+                // Área reservada FIXA para o texto (nunca sobrepõe a tabela)
+                double textoAlturaDisponivel =
+                    page.Height - visibleHeaderHeight - visibleFooterHeight - (4 * margem) - 200;
 
                 XRect textRect = new XRect(margem, textoY, page.Width - 2 * margem, textoAlturaDisponivel);
                 tf.DrawString(pdfText, font, XBrushes.Black, textRect, XStringFormats.TopLeft);
 
-                // ======== TABELA ========
-                int linhasTexto = pdfText.Split('\n').Length;
-                double alturaTexto = linhasTexto * font.GetHeight();
-                double startY = textoY + alturaTexto + 20;
+                // ★ Tabela sempre começa abaixo da área segura ★
+                double startY = textoY + textoAlturaDisponivel + 30;
 
+                // ================= TABELA =================
                 if (_data != null && _data.Columns.Count > 0)
                 {
                     XFont tableFont = new XFont("Arial", 12, XFontStyleEx.Regular);
                     int rowHeight = 20;
                     int colWidth = (int)((page.Width - 2 * margem) / _data.Columns.Count);
 
-                    // Cabeçalho da tabela
+                    // Cabeçalho
                     for (int j = 0; j < _data.Columns.Count; j++)
                     {
                         gfx.DrawRectangle(XPens.Black, XBrushes.LightGray,
                             margem + j * colWidth, startY, colWidth, rowHeight);
 
                         gfx.DrawString(_data.Columns[j].ColumnName, tableFont, XBrushes.Black,
-                            new XRect(margem + j * colWidth, startY, colWidth, rowHeight), XStringFormats.Center);
+                            new XRect(margem + j * colWidth, startY, colWidth, rowHeight),
+                            XStringFormats.Center);
                     }
 
-                    // Linhas da tabela
+                    // Linhas
                     for (int i = 0; i < _data.Rows.Count; i++)
                     {
                         for (int j = 0; j < _data.Columns.Count; j++)
@@ -183,7 +158,7 @@ namespace ORCA
                     }
                 }
 
-                // ======== SALVAR PDF ========
+                // ================= SALVAR =================
                 document.Save(filename);
                 Process.Start("explorer.exe", System.IO.Path.GetFullPath(filename));
             }
@@ -191,8 +166,6 @@ namespace ORCA
             {
                 MessageBox.Show("Erro ao gerar PDF: " + ex.Message);
             }
-
-
         }
 
         private void BtnLoadHeader_Click(object sender, RoutedEventArgs e)

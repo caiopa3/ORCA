@@ -2385,11 +2385,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\internet.info\\Desktop\\ORCA CERTO\\ORCA\\ORCA\\ORCA.csproj",
+      "projectUniqueName": "D:\\Orca Apresentação\\ORCA\\ORCA.csproj",
       "projectName": "ORCA",
-      "projectPath": "C:\\Users\\internet.info\\Desktop\\ORCA CERTO\\ORCA\\ORCA\\ORCA.csproj",
+      "projectPath": "D:\\Orca Apresentação\\ORCA\\ORCA.csproj",
       "packagesPath": "C:\\Users\\internet.info\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\internet.info\\Desktop\\ORCA CERTO\\ORCA\\ORCA\\obj\\",
+      "outputPath": "D:\\Orca Apresentação\\ORCA\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

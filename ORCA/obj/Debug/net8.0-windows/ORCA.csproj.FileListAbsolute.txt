@@ -659,3 +659,904 @@ C:\Users\internet.info\Desktop\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ref
 C:\Users\internet.info\Desktop\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.pdb
 C:\Users\internet.info\Desktop\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.genruntimeconfig.cache
 C:\Users\internet.info\Desktop\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ref\ORCA.dll
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.AssemblyReference.cache
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\altFunc_adm.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_adm.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_usr.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\altFunc_adm.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\criar_orca.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\gerar_pdf.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_adm.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_ges.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_usr.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\login_alt_senha.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\login_esq_senha.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\App.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_Content.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.cache
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.lref
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.dll
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\refint\ORCA.dll
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.pdb
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.exe
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.dll.config
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.deps.json
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.runtimeconfig.json
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.pdb
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.Toolkit.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\Google.Protobuf.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\MySql.Data.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\MySqlConnector.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.BarCodes.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Cryptography.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Shared.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.System.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\System.Text.Json.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\ZstdSharp.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\ORCA CERTO\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.g.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\criar_orca.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\gerar_pdf.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_ges.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\login_alt_senha.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\login_esq_senha.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\MainWindow.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.baml
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.g.resources
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.GeneratedMSBuildEditorConfig.editorconfig
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfoInputs.cache
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfo.cs
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.CoreCompileInputs.cache
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.sourcelink.json
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.Up2Date
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.genruntimeconfig.cache
+D:\ORCA CERTO\ORCA\ORCA\obj\Debug\net8.0-windows\ref\ORCA.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.exe
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.dll.config
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.deps.json
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.runtimeconfig.json
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.pdb
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.Toolkit.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Google.Protobuf.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\MySqlConnector.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.BarCodes.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Cryptography.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Shared.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.System.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\System.Text.Json.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\ZstdSharp.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.AssemblyReference.cache
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\altFunc_adm.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_adm.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_usr.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\altFunc_adm.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\criar_orca.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\gerar_pdf.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_adm.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_ges.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_usr.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\login_alt_senha.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\login_esq_senha.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_Content.g.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.cache
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.lref
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\criar_orca.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\gerar_pdf.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_ges.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\login_alt_senha.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\login_esq_senha.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.baml
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.g.resources
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfoInputs.cache
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfo.cs
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.CoreCompileInputs.cache
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.sourcelink.json
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.Up2Date
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\refint\ORCA.dll
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.pdb
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.genruntimeconfig.cache
+C:\Users\Caiopa3\Desktop\ORCA\ORCA\obj\Debug\net8.0-windows\ref\ORCA.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.exe
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.dll.config
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.deps.json
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.runtimeconfig.json
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.pdb
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.Toolkit.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\Google.Protobuf.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\MySqlConnector.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.BarCodes.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Cryptography.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Shared.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.System.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\System.Text.Json.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\ZstdSharp.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.AssemblyReference.cache
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\altFunc_adm.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_adm.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_usr.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\altFunc_adm.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\criar_orca.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\gerar_pdf.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_adm.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_ges.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_usr.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\login_alt_senha.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\login_esq_senha.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_Content.g.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.cache
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.lref
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\criar_orca.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\gerar_pdf.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_ges.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\login_alt_senha.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\login_esq_senha.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.baml
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.g.resources
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfoInputs.cache
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfo.cs
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.CoreCompileInputs.cache
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.sourcelink.json
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.Up2Date
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\refint\ORCA.dll
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.pdb
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.genruntimeconfig.cache
+C:\Users\internet.info\Downloads\Nova pasta\ORCA\ORCA\obj\Debug\net8.0-windows\ref\ORCA.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.exe
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.dll.config
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.deps.json
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.runtimeconfig.json
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.pdb
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.Toolkit.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\Google.Protobuf.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\MySql.Data.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\MySqlConnector.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.BarCodes.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Cryptography.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Shared.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.System.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\System.Text.Json.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\ZstdSharp.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\APREsentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.AssemblyReference.cache
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\altFunc_adm.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_adm.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_usr.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\altFunc_adm.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\criar_orca.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\gerar_pdf.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_adm.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_ges.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_usr.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\login_alt_senha.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\login_esq_senha.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\App.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_Content.g.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.cache
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.lref
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\criar_orca.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\gerar_pdf.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_ges.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\login_alt_senha.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\login_esq_senha.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\MainWindow.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.baml
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.g.resources
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.GeneratedMSBuildEditorConfig.editorconfig
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfoInputs.cache
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfo.cs
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.CoreCompileInputs.cache
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.sourcelink.json
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.Up2Date
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.dll
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\refint\ORCA.dll
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.pdb
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.genruntimeconfig.cache
+D:\APREsentação\ORCA\ORCA\obj\Debug\net8.0-windows\ref\ORCA.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.exe
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.dll.config
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.deps.json
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.runtimeconfig.json
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\ORCA.pdb
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.Toolkit.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\Google.Protobuf.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\MySqlConnector.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.BarCodes.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Cryptography.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Shared.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.System.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\PdfSharp.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\System.Text.Json.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\ZstdSharp.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.AssemblyReference.cache
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\altFunc_adm.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_adm.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_usr.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\altFunc_adm.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\criar_orca.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\gerar_pdf.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_adm.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_ges.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_usr.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\login_alt_senha.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\login_esq_senha.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\PerfilWindow.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_Content.g.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.cache
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.lref
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\criar_orca.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\gerar_pdf.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\homePage_ges.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\login_alt_senha.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\login_esq_senha.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.baml
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.g.resources
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfoInputs.cache
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfo.cs
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.CoreCompileInputs.cache
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.sourcelink.json
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.Up2Date
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\refint\ORCA.dll
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.pdb
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ORCA.genruntimeconfig.cache
+C:\Users\Noppa\OneDrive\Desktop\Orca Apresentação\ORCA\ORCA\obj\Debug\net8.0-windows\ref\ORCA.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\ORCA.exe
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\ORCA.dll.config
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\ORCA.deps.json
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\ORCA.runtimeconfig.json
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\ORCA.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\ORCA.pdb
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.Toolkit.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\Google.Protobuf.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\MySqlConnector.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\PdfSharp.BarCodes.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\PdfSharp.Cryptography.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\PdfSharp.Shared.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\PdfSharp.System.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\PdfSharp.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\System.Text.Json.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\ZstdSharp.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\internet.info\Desktop\ORCA\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.AssemblyReference.cache
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\altFunc_adm.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\homePage_adm.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\homePage_usr.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\PerfilWindow.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\altFunc_adm.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\criar_orca.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\gerar_pdf.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\homePage_adm.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\homePage_ges.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\homePage_usr.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\login_alt_senha.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\login_esq_senha.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\PerfilWindow.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ORCA_Content.g.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.cache
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.lref
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\criar_orca.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\gerar_pdf.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\homePage_ges.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\login_alt_senha.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\login_esq_senha.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.baml
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ORCA.g.resources
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ORCA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfoInputs.cache
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfo.cs
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.CoreCompileInputs.cache
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.Up2Date
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ORCA.dll
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\refint\ORCA.dll
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ORCA.pdb
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ORCA.genruntimeconfig.cache
+C:\Users\internet.info\Desktop\ORCA\obj\Debug\net8.0-windows\ref\ORCA.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\ORCA.exe
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\ORCA.dll.config
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\ORCA.deps.json
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\ORCA.runtimeconfig.json
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\ORCA.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\ORCA.pdb
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.Toolkit.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\Google.Protobuf.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\MySqlConnector.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\PdfSharp.BarCodes.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\PdfSharp.Cryptography.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\PdfSharp.Shared.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\PdfSharp.System.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\PdfSharp.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\System.Text.Json.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\ZstdSharp.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.AssemblyReference.cache
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\altFunc_adm.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\homePage_adm.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\homePage_usr.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\PerfilWindow.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\altFunc_adm.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\criar_orca.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\gerar_pdf.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\homePage_adm.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\homePage_ges.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\homePage_usr.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\login_alt_senha.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\login_esq_senha.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\PerfilWindow.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ORCA_Content.g.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.cache
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.lref
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\criar_orca.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\gerar_pdf.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\homePage_ges.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\login_alt_senha.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\login_esq_senha.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.baml
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ORCA.g.resources
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ORCA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfoInputs.cache
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfo.cs
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.CoreCompileInputs.cache
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.Up2Date
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ORCA.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\refint\ORCA.dll
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ORCA.pdb
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ORCA.genruntimeconfig.cache
+C:\Users\internet.info\Desktop\AQUI CAIO\ORCA\obj\Debug\net8.0-windows\ref\ORCA.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\ORCA.exe
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\ORCA.dll.config
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\ORCA.deps.json
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\ORCA.runtimeconfig.json
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\ORCA.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\ORCA.pdb
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.AvalonDock.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\Xceed.Wpf.Toolkit.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\Google.Protobuf.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\MySql.Data.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\MySqlConnector.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\PdfSharp.BarCodes.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\PdfSharp.Charting.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\PdfSharp.Cryptography.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\PdfSharp.Quality.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\PdfSharp.Shared.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\PdfSharp.Snippets.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\PdfSharp.System.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\PdfSharp.WPFonts.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\PdfSharp.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\System.Text.Json.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\ZstdSharp.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\Orca Apresentação\ORCA\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.AssemblyReference.cache
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\altFunc_adm.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\homePage_adm.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\homePage_usr.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\PerfilWindow.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\altFunc_adm.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\cadFunc_adm.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\criar_orca.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\CustomMessageBox.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\gerar_pdf.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\homePage_adm.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\homePage_ges.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\homePage_usr.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\login_alt_senha.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\login_esq_senha.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\MainWindow.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\NovaColunaWindow.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\OrcamentoWindow.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\PerfilWindow.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\SelecionarModeloWindow.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\App.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ORCA_Content.g.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.cache
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ORCA_MarkupCompile.lref
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\criar_orca.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\gerar_pdf.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\gereFunc_adm.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\homePage_ges.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\login_alt_senha.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\login_esq_senha.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\login_vrf_cod.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\MainWindow.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\PdfContentWindow.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\SelecionarUsuariosWindow.baml
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ORCA.g.resources
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ORCA.GeneratedMSBuildEditorConfig.editorconfig
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfoInputs.cache
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ORCA.AssemblyInfo.cs
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.CoreCompileInputs.cache
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ORCA.csproj.Up2Date
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ORCA.dll
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\refint\ORCA.dll
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ORCA.pdb
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ORCA.genruntimeconfig.cache
+D:\Orca Apresentação\ORCA\obj\Debug\net8.0-windows\ref\ORCA.dll

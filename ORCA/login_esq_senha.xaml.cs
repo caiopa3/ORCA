@@ -38,16 +38,31 @@ namespace ORCA
         }
         private async Task<string> EnviarCodigoPorEmailAsync(string email)
         {
-            string url = $"https://blanchedalmond-worm-516150.hostingersite.com/php/enviarEmail.php?email={Uri.EscapeDataString(email)}";
+            string url = $"https://fecceteceuroalbinodesouza.com.br/enviarEmail.php?email={Uri.EscapeDataString(email)}";
+
             try
             {
-                return await httpClient.GetStringAsync(url);
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    httpClient.Timeout = TimeSpan.FromSeconds(15);
+                    string resposta = await httpClient.GetStringAsync(url);
+                    return resposta.Trim();
+                }
             }
             catch (HttpRequestException e)
             {
-                return "Erro na requisição: " + e.Message;
+                return $"Erro ao conectar com o servidor: {e.Message}";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Erro: o servidor demorou para responder (timeout).";
+            }
+            catch (Exception ex)
+            {
+                return $"Erro inesperado: {ex.Message}";
             }
         }
+
 
         private async void btnEnviar_Click_1(object sender, RoutedEventArgs e)
         {
@@ -63,7 +78,7 @@ namespace ORCA
 
             MessageBox.Show(resposta);
 
-            if (resposta.Contains("sucesso"))
+            if (resposta.Contains("Sucesso"))
             {
                 // Abrir a janela de verificação de código, passando o email
                 login_vrf_cod login_vrf_cod = new login_vrf_cod(email, servidor, bd, usr, senha);

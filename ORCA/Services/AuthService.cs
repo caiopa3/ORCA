@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 
 namespace ORCA.Services
 {
@@ -7,18 +8,72 @@ namespace ORCA.Services
     {
         private readonly string _connectionString;
 
+        // VARIÁVEIS ANTI-BRUTEFORCE
+        private static Dictionary<string, int> tentativas = new();
+        private static Dictionary<string, DateTime> bloqueios = new();
+
         public AuthService(string servidor, string bd, string usr, string senha)
         {
             _connectionString = $"SERVER={servidor};PORT=3306;DATABASE={bd};UID={usr};PASSWORD={senha};";
         }
 
-        // Método novo (que você já vinha usando nos testes anteriores)
-        public bool Login(string email, string senha)
+        // MÉTODO QUE VERIFICA SE O USUÁRIO ESTÁ BLOQUEADO
+        private bool PodeTentarLogin(string email)
         {
-            return ValidarLogin(email, senha);
+            // Se existe bloqueio
+            if (bloqueios.ContainsKey(email))
+            {
+                // Se o bloqueio AINDA não expirou
+                if (DateTime.Now < bloqueios[email])
+                    return false;
+
+                // Se expirou → limpa bloqueio
+                bloqueios.Remove(email);
+                tentativas[email] = 0;
+            }
+
+            return true;
         }
 
-        // Compatibilidade com código antigo
+        // MÉTODO QUE INCREMENTA TENTATIVAS
+        private void RegistrarFalha(string email)
+        {
+            if (!tentativas.ContainsKey(email))
+                tentativas[email] = 0;
+
+            tentativas[email]++;
+
+            // Se passar de 5 tentativas → BLOQUEIA POR 5 MINUTOS
+            if (tentativas[email] >= 5)
+            {
+                bloqueios[email] = DateTime.Now.AddMinutes(5);
+            }
+        }
+
+        // LOGIN MODIFICADO COM PROTEÇÃO
+        public bool Login(string email, string senha)
+        {
+            // Bloqueado?
+            if (!PodeTentarLogin(email))
+                return false;
+
+            // Login válido?
+            if (ValidarLogin(email, senha))
+            {
+                tentativas[email] = 0; // zera tentativas ao logar
+                return true;
+            }
+            else
+            {
+                RegistrarFalha(email);
+                return false;
+            }
+        }
+
+        // ----------------------------------------------------
+        // 
+        // ----------------------------------------------------
+
         public bool ValidarLogin(string email, string senha)
         {
             using var conn = new MySqlConnection(_connectionString);
@@ -34,7 +89,6 @@ namespace ORCA.Services
             return count > 0;
         }
 
-        // Compatibilidade com código antigo
         public string ObterPermissao(string email, string senha)
         {
             using var conn = new MySqlConnection(_connectionString);
@@ -50,7 +104,6 @@ namespace ORCA.Services
             return result == null || result == DBNull.Value ? string.Empty : Convert.ToString(result);
         }
 
-        // Útil caso você queira só pelo email
         public string ObterPermissaoPorEmail(string email)
         {
             using var conn = new MySqlConnection(_connectionString);
