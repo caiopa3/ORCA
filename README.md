@@ -59,7 +59,7 @@ O projeto atual (versão base) foi desenvolvido em C# + WPF + MySQL, funcionando
 
 ## 👤 Público-Alvo
 
-Pequenas e médias empresas que precisam **automatizar** a emissão de **orçamentos**.
+Micro e pequenas empresas que dependem de **orçamentos frequentes** ou negócios que buscam profissionalizar seus atendimentos.
 
 Empreendedores e gestores que buscam **economia de tempo e redução de erros manuais.**
 
@@ -67,18 +67,11 @@ Empreendedores e gestores que buscam **economia de tempo e redução de erros ma
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Linguagem:** C#
+- **Linguagem:** C# (.NET 8)
 - **Interface:** WPF (Windows Presentation Foundation)
-- **Banco de Dados:** MySQL
-
----
-
-## ⚙️ Funcionalidades
-
-- Cadastro de produtos, serviços e clientes.
-- Criação automática de orçamentos.
-- Atualização e exclusão de orçamentos.
-- Interface amigável em WPF para desktop.
+- **Banco de Dados:** MySQL (via XAMPP / phpMyAdmin)
+- **Biblioteca para PDF:** PDFSharp
+- **IDE Sugerida:** Visual Studio 2022
 
 ---
 
@@ -90,6 +83,7 @@ obj/                 # Arquivos temporários
 packages/            # Dependências do projeto
 MainWindow.xaml      # Interface principal
 MainWindow.xaml.cs   # Lógica do sistema
+# Demais telas.
 ```
 ### 💡 Diferenciais
 
@@ -98,24 +92,29 @@ MainWindow.xaml.cs   # Lógica do sistema
 
 ---
 
-## 📦 Downloads do ORCA - Para utilização seguindo o modelo:
+## 📦 Instalação e Configuração
 
-Na página de Releases você encontrará dois pacotes do ORCA:
+## 🔧 1. Pré-requisitos
+
+Instale:
+
+- ✔️ XAMPP (para rodar o MySQL) [Download XAMPP)](https://www.apachefriends.org/pt_br/download.html) https://www.apachefriends.org/pt_br/download.html
+
+- ✔️ Projeto ORCA (.zip) – baixado nas Releases
+
+- ✔️ (Opcional) Visual Studio 2022 caso queira compilar
+
+- ✔️ .NET 8 Runtime (se usar a versão compacta do ORCA) https://dotnet.microsoft.com/en-us/download/dotnet/8.0/runtime
+
+##### Download do ORCA - Para utilização seguindo o modelo:
+
+Na página do repositório você encontrará o projeto, basta baixado e recebera todo o conteudo zipado.
 ```
-🔹 ORCA-win-x64-versão.zip
+🔹 ORCA.zip # Exemplo
 ```
-Menor tamanho.
 **Requer** que o usuário tenha o .NET 8 Runtime instalado no Windows.
-Ideal para quem já possui outras aplicações .NET 8.
 **Baixar o runtime oficial (caso não tenha):**
 👉[Download .NET 8 Runtime (Microsoft)]([https://nodejs.org/](https://dotnet.microsoft.com/en-us/download/dotnet/8.0/runtime))
-
-```
-🔹 ORCA-win-x64-selfcontained-versão.zip
-```
-Maior tamanho (inclui o runtime).
-**Não precisa** instalar nada extra.
-Recomendado para a maioria dos usuários que só querem baixar e usar.
 
 ## 🚀 Como usar:
 
