@@ -2,25 +2,58 @@
 
 ## 📌 Descrição do Projeto
 
-O ORCA é um sistema desktop voltado para automatizar orçamentos manuais em pequenas e médias empresas. O objetivo é facilitar o processo de geração de orçamentos, tornando-o mais rápido, confiável e acessível, reduzindo erros humanos e aumentando a produtividade.
+O ORCA é um sistema desktop desenvolvido como Trabalho de Conclusão de Curso (TCC) do Técnico em Desenvolvimento de Sistemas.
+Seu objetivo é automatizar orçamentos manuais, reduzindo erros, aumentando a produtividade e garantindo padronização no atendimento de pequenas e médias empresas.
 
-O sistema é pensado para cidades como Mogi Guaçu e Mogi Mirim, mas possui potencial para expansão. Ele integra funcionalidades de cadastro de produtos, clientes e serviços, além de geração automática de orçamentos prontos para envio ou impressão.
+Ele permite criar modelos personalizados de orçamento, inserir valores e gerar PDFs profissionais com rapidez e consistência.
+
+O projeto atual (versão base) foi desenvolvido em C# + WPF + MySQL, funcionando totalmente em ambiente local.
 
 ---
+## 🎯 Objetivo do Sistema
 
-## ⚙️ Funcionalidades Principais
+- Substituir orçamentos feitos manualmente.
 
-- Cadastro de produtos, serviços e clientes.
+- Automatizar cálculos e fórmulas.
 
-- Criação de orçamentos de forma automatizada.
+- Padronizar a geração de PDFs.
 
-- Gestão de orçamentos emitidos, com histórico e status.
+- Facilitar o trabalho de micro e pequenas empresas.
 
-- Interface amigável e intuitiva, pronta para uso em desktop.
+- Reduzir erros humanos.
+---
 
-- Controle de custos fixos e variáveis para análise de viabilidade.
+## ⚙️ Funcionalidades Disponíveis (Versão Base – TCC)
 
-- Possibilidade de expansão para diferentes tipos de empresas.
+#### Login com usuários cadastrados no banco de dados (ADM e USR).
+
+- ## Criação de modelos de orçamento:
+
+- Nome do modelo
+
+- Quantidade de colunas
+
+- Tipos de dados
+
+- Fórmulas personalizadas
+
+- Edição e exclusão de modelos criados.
+
+- Criação de orçamentos utilizando os modelos existentes.
+
+- Execução automática de fórmulas ao pressionar ENTER.
+
+- Armazenamento de orçamentos no banco de dados.
+
+- ## Exportação para PDF com:
+
+- Cabeçalho personalizado
+
+- Rodapé personalizado
+
+- Tabela formatada
+
+- Texto explicativo e valores totais
 
 ---
 
@@ -65,7 +98,7 @@ MainWindow.xaml.cs   # Lógica do sistema
 
 ---
 
-## 📦 Downloads do ORCA:
+## 📦 Downloads do ORCA - Para utilização seguindo o modelo:
 
 Na página de Releases você encontrará dois pacotes do ORCA:
 ```
